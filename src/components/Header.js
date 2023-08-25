@@ -14,7 +14,7 @@ function Header() {
 	return (
 		<StyledHeader>
 			<StyledDiv>
-				<Link to="/">
+				<Link to="/skyamg">
 					<div>
 						<img src={logoImg} alt="logo" />
 					</div>
