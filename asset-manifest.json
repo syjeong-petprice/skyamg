@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/skyamg/static/css/main.13a83779.css",
-    "main.js": "/skyamg/static/js/main.1d074635.js",
+    "main.js": "/skyamg/static/js/main.f8289c39.js",
     "static/js/787.d322386b.chunk.js": "/skyamg/static/js/787.d322386b.chunk.js",
     "static/media/portfolio_080228.jpg": "/skyamg/static/media/portfolio_080228.c1a565e3faa4692a5685.jpg",
     "static/media/portfolio_062119.jpg(062119).jpg": "/skyamg/static/media/portfolio_062119.jpg(062119).cf14f09ec740eec8f2f1.jpg",
@@ -11,11 +11,11 @@
     "static/media/스카이초음파실.jpeg": "/skyamg/static/media/스카이초음파실.e572fa90f145cf2bf6f3.jpeg",
     "index.html": "/skyamg/index.html",
     "main.13a83779.css.map": "/skyamg/static/css/main.13a83779.css.map",
-    "main.1d074635.js.map": "/skyamg/static/js/main.1d074635.js.map",
+    "main.f8289c39.js.map": "/skyamg/static/js/main.f8289c39.js.map",
     "787.d322386b.chunk.js.map": "/skyamg/static/js/787.d322386b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.13a83779.css",
-    "static/js/main.1d074635.js"
+    "static/js/main.f8289c39.js"
   ]
 }
