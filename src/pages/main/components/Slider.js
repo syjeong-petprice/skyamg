@@ -26,30 +26,92 @@ function Slider() {
 			modules={[Autoplay, EffectFade, Navigation, Pagination]}
 		>
 			<StyledSlideWrapper>
-				<img alt="bg img 1" src={bgImg1} />
+				<div className="imgWrapper">
+					<img alt="bg img 1" src={bgImg1} />
+				</div>
+				<div className="textWrapper">
+					<div>
+						<p>
+							하루 <strong>24시간,</strong>
+							1년 <strong>365일,</strong>
+						</p>
+						<p>
+							당신 곁엔 <strong>SKY 동물메디컬센터</strong>
+						</p>
+						<div>
+							<p>어디서든 방문하는</p>
+							<p>
+								<strong>각 지역 최대의 동물병원</strong>
+							</p>
+						</div>
+					</div>
+				</div>
 			</StyledSlideWrapper>
 			<StyledSlideWrapper>
-				<img alt="bg img 2" src={bgImg2} />
+				<div className="imgWrapper">
+					<img alt="bg img 2" src={bgImg2} />
+				</div>
+				<div className="textWrapper">
+					<div>
+						<span>최고의 의료진과 함께하는</span>
+					</div>
+					<div>
+						<p>
+							<strong>어디서도 볼 수 없는, 초특급 의료진!</strong>
+						</p>
+						<p>수의사들도 추천하는 동물병원!</p>
+					</div>
+				</div>
 			</StyledSlideWrapper>
 			<StyledSlideWrapper>
-				<img alt="bg img 3" src={bgImg3} />
+				<div className="imgWrapper">
+					<img alt="bg img 3" src={bgImg3} />
+				</div>
+				<div className="textWrapper">
+					<div>
+						<span>
+							<strong>최첨단 시스템 도입</strong>
+						</span>
+					</div>
+					<div>
+						<span>
+							<p>
+								<strong>차별화되고 특화된 전문진료로,</strong>
+							</p>
+							<p>우리 가족의 건강한 행복을 약속합니다.</p>
+						</span>
+					</div>
+				</div>
 			</StyledSlideWrapper>
 		</StyledSwiper>
 	);
 }
 const zoomOutImg = keyframes`
-		0% {
+		from {
 			scale: 1.5;
 		}
-		100% {
+		to {
 			scale: 1;
 		}
-	
+`;
+
+const slideDown = keyframes`
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
 `;
 
 const StyledSwiper = styled(Swiper)`
 	.swiper-slide-active img {
 		animation: ${zoomOutImg} 5s ease-in-out;
+	}
+	.swiper-slide-active .textWrapper {
+		animation: ${slideDown} 3s ease-in;
 	}
 
 	@media screen and (min-width: 1280px) {
@@ -59,10 +121,35 @@ const StyledSwiper = styled(Swiper)`
 const StyledSlideWrapper = styled(SwiperSlide)`
 	width: 100%;
 	height: 100%;
-	img {
+	position: relative;
+
+	.imgWrapper {
+		z-index: 1;
+		position: relative;
+
+		img {
+			width: 100%;
+			height: auto;
+			scale: 1;
+
+			@media screen and (max-width: 690px) {
+				width: auto;
+				height: 92vh;
+				transform: translate(-52vw, 0);
+			}
+		}
+	}
+
+	.textWrapper {
+		color: #fff;
+		position: absolute;
+		z-index: 10;
+		top: 40%;
+		left: 50%;
 		width: 100%;
-		height: auto;
-		scale: 1;
+		transform: translate(-50%, -50%);
+		font-size: 2rem;
+		text-align: center;
 	}
 `;
 

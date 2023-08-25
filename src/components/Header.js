@@ -99,9 +99,27 @@ const StyledUl = styled.ul`
 const StyledLink = styled(Link)`
 	color: #999;
 	text-decoration: none;
+	display: inline-block;
+	position: relative;
+	padding-bottom: 2px;
+
+	&::before {
+		content: ''; /* 가상 요소의 내용을 비워 둡니다 */
+		position: absolute; /* 부모 요소인 .text를 기준으로 위치를 설정합니다 */
+		bottom: 0; /* 밑줄을 텍스트의 바닥에 맞춥니다 */
+		left: 0; /* 시작 위치를 왼쪽 끝으로 설정합니다 */
+		width: 0; /* 초기 밑줄의 너비는 0입니다 */
+		height: 1px; /* 밑줄의 높이를 설정합니다 */
+		background-color: #dabfa8; /* 밑줄의 색상을 설정합니다 */
+		transition: width 0.3s ease; /* 밑줄의 너비가 변할 때의 애니메이션 효과를 설정합니다 */
+	}
 
 	&:hover {
 		color: #dabfa8;
+		font-weight: bold;
+	}
+	&:hover::before {
+		width: 100%; /* 마우스를 올렸을 때 밑줄의 너비를 100%로 만듭니다 */
 	}
 `;
 
