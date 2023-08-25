@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/skyamg/static/css/main.13a83779.css",
+    "main.js": "/skyamg/static/js/main.9e2e3b24.js",
+    "static/js/787.d322386b.chunk.js": "/skyamg/static/js/787.d322386b.chunk.js",
+    "static/media/portfolio_080228.jpg": "/skyamg/static/media/portfolio_080228.c1a565e3faa4692a5685.jpg",
+    "static/media/portfolio_062119.jpg(062119).jpg": "/skyamg/static/media/portfolio_062119.jpg(062119).cf14f09ec740eec8f2f1.jpg",
+    "static/media/제목.png": "/skyamg/static/media/제목.24906d5262e3e1db397d.png",
+    "static/media/portfolio_053945.png": "/skyamg/static/media/portfolio_053945.6c371fe8f1fed48778ab.png",
+    "static/media/충남대로고.png": "/skyamg/static/media/충남대로고.73378eb91d19e26935b9.png",
+    "static/media/스카이초음파실.jpeg": "/skyamg/static/media/스카이초음파실.e572fa90f145cf2bf6f3.jpeg",
+    "index.html": "/skyamg/index.html",
+    "main.13a83779.css.map": "/skyamg/static/css/main.13a83779.css.map",
+    "main.9e2e3b24.js.map": "/skyamg/static/js/main.9e2e3b24.js.map",
+    "787.d322386b.chunk.js.map": "/skyamg/static/js/787.d322386b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.13a83779.css",
+    "static/js/main.9e2e3b24.js"
+  ]
+}
