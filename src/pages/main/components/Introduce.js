@@ -1,13 +1,21 @@
 import { styled } from 'styled-components';
+import profileImg from '../../../images/resource/images/제목.png';
+import univLogo from '../../../images/resource/images/충남대로고.png';
 
 function Introduce() {
 	return (
 		<IntroduceContainer>
+			<ImageWrapper>
+				<img src={profileImg} alt="profile img" />
+			</ImageWrapper>
 			<TextWrapper>
 				<div className="titleWrapper">
 					<h2>안녕하세요.</h2>
 					<h2>
-						<strong>SKY 동물메디컬센터 대표원장 오이세입니다.</strong>
+						<strong>
+							SKY 동물메디컬센터
+							<br /> 대표원장 오이세입니다.
+						</strong>
 					</h2>
 				</div>
 				<div className="contentWrapper">
@@ -36,7 +44,16 @@ function Introduce() {
 const IntroduceContainer = styled.section`
 	width: 100%;
 	height: 92vh;
-	background-color: pink;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	background: url(${univLogo}) center no-repeat;
+	background-size: 40%;
+
+	@media screen and (max-width: 690px) {
+		background-size: 90%;
+		align-items: center;
+	}
 
 	* {
 		margin: 0;
@@ -50,12 +67,30 @@ const TextWrapper = styled.div`
 		h2 {
 			font-size: 2rem;
 			font-weight: normal;
+
+			@media screen and (max-width: 690px) {
+				font-size: 1.5rem;
+			}
 		}
 	}
 	.contentWrapper {
+		p {
+			margin: 35px 0;
+
+			@media screen and (max-width: 690px) {
+				font-size: 0.9rem;
+			}
+		}
 		ul {
 			li {
 				list-style-type: none;
+				position: relative;
+				right: 35px;
+
+				@media screen and (max-width: 690px) {
+					font-size: 0.9rem;
+				}
+
 				&:before {
 					content: '';
 					display: inline-block;
@@ -68,6 +103,25 @@ const TextWrapper = styled.div`
 				}
 			}
 		}
+	}
+`;
+
+const ImageWrapper = styled.div`
+	width: 45%;
+	height: 100%;
+	position: absolute;
+	right: 10vw;
+	bottom: 0;
+	display: flex;
+	align-items: flex-end;
+
+	@media screen and (max-width: 690px) {
+		display: none;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
 	}
 `;
 

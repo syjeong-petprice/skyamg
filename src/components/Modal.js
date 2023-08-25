@@ -18,7 +18,7 @@ const style = {
 	boxShadow: 24,
 	p: 4,
 	backgroundColor: '#101010',
-	opacity: 0.85,
+	borderRadius: '15px',
 };
 
 export default function TransitionsModal(props) {
@@ -38,7 +38,7 @@ export default function TransitionsModal(props) {
 				}}
 			>
 				<Fade in={props.open}>
-					<Box sx={style}>
+					<Box sx={style} style={{ opacity: 0.9 }}>
 						<StyledUl>
 							<li>
 								<StyledLink to="/one" onClick={props.handleOpen}>
