@@ -22,7 +22,7 @@ function Slider() {
 			}}
 			loop={true}
 			onSlideChange={() => console.log('slide change')}
-			onSwiper={(swiper) => console.log(swiper)}
+			// onSwiper={(swiper) => console.log(swiper)}
 			modules={[Autoplay, EffectFade, Navigation, Pagination]}
 		>
 			<StyledSlideWrapper>
