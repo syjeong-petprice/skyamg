@@ -4,7 +4,7 @@ import Main from './pages/main/main';
 function App() {
 	return (
 		<Routes>
-			<Route path="/" element={<Main name={'Main'} />} />
+			<Route path="/skyamg" element={<Main name={'Main'} />} />
 		</Routes>
 	);
 }
