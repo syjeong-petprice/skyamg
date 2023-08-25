@@ -110,7 +110,7 @@ const IntroduceContainer = styled.section`
 const TextWrapper = styled.div`
 	padding: 10vh 15vw;
 	.animate {
-		animation: ${slideLeft} 3s ease;
+		animation: ${slideLeft} 4s ease;
 	}
 
 	.titleWrapper {
@@ -167,7 +167,7 @@ const ImageWrapper = styled.div`
 	align-items: flex-end;
 
 	.animate {
-		animation: ${slideRight} 3s ease;
+		animation: ${slideRight} 4s ease;
 	}
 
 	@media screen and (max-width: 690px) {
