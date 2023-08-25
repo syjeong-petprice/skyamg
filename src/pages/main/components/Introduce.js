@@ -1,15 +1,40 @@
-import { styled } from 'styled-components';
+import { useState, useEffect } from 'react';
+import { styled, keyframes } from 'styled-components';
 import profileImg from '../../../images/resource/images/제목.png';
 import univLogo from '../../../images/resource/images/충남대로고.png';
 
 function Introduce() {
+	const [animate, setAnimate] = useState(false);
+	useEffect(() => {
+		const handleScroll = () => {
+			// 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
+			const midScreen = window.innerHeight / 2;
+
+			if (window.scrollY > midScreen) {
+				setAnimate(true);
+			} else {
+				setAnimate(false);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			// 컴포넌트 언마운트 시 이벤트 리스너 제거
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 	return (
 		<IntroduceContainer>
 			<ImageWrapper>
-				<img src={profileImg} alt="profile img" />
+				<img
+					className={animate ? 'animate' : ''}
+					src={profileImg}
+					alt="profile img"
+				/>
 			</ImageWrapper>
 			<TextWrapper>
-				<div className="titleWrapper">
+				<div className={animate ? 'titleWrapper animate' : 'titleWrapper'}>
 					<h2>안녕하세요.</h2>
 					<h2>
 						<strong>
@@ -18,7 +43,7 @@ function Introduce() {
 						</strong>
 					</h2>
 				</div>
-				<div className="contentWrapper">
+				<div className={animate ? 'contentWrapper animate' : 'contentWrapper'}>
 					<p>
 						24시간 연중무휴로 공휴일, 명절 없이 한밤중이라도 걱정없이
 						<br />
@@ -41,6 +66,28 @@ function Introduce() {
 	);
 }
 
+const slideRight = keyframes`
+    from {
+        transform: translate(30%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+`;
+
+const slideLeft = keyframes`
+    from {
+        transform: translate(-30%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+`;
+
 const IntroduceContainer = styled.section`
 	width: 100%;
 	height: 92vh;
@@ -62,6 +109,9 @@ const IntroduceContainer = styled.section`
 
 const TextWrapper = styled.div`
 	padding: 10vh 15vw;
+	.animate {
+		animation: ${slideLeft} 3s ease;
+	}
 
 	.titleWrapper {
 		h2 {
@@ -86,6 +136,7 @@ const TextWrapper = styled.div`
 				list-style-type: none;
 				position: relative;
 				right: 35px;
+				margin-bottom: 10px;
 
 				@media screen and (max-width: 690px) {
 					font-size: 0.9rem;
@@ -114,6 +165,10 @@ const ImageWrapper = styled.div`
 	bottom: 0;
 	display: flex;
 	align-items: flex-end;
+
+	.animate {
+		animation: ${slideRight} 3s ease;
+	}
 
 	@media screen and (max-width: 690px) {
 		display: none;
