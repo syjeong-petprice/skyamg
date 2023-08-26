@@ -13,28 +13,6 @@ const settings = {
 	slidesToScroll: 1,
 };
 
-function MemberSlider() {
-	return (
-		<StyledSlider {...settings}>
-			<div>
-				<h3>1</h3>
-			</div>
-			<div>
-				<h3>2</h3>
-			</div>
-			<div>
-				<h3>3</h3>
-			</div>
-			<div>
-				<h3>4</h3>
-			</div>
-			<div>
-				<h3>5</h3>
-			</div>
-		</StyledSlider>
-	);
-}
-
 function Member() {
 	const [animate, setAnimate] = useState(false);
 	useEffect(() => {
@@ -70,7 +48,27 @@ function Member() {
 					</p>
 				</div>
 			</TitleWrapper>
-			<MemberSlider />
+			<SliderWrapper>
+				<div className={animate ? 'animate' : ''}>
+					<StyledSlider {...settings}>
+						<div>
+							<h3>1</h3>
+						</div>
+						<div>
+							<h3>2</h3>
+						</div>
+						<div>
+							<h3>3</h3>
+						</div>
+						<div>
+							<h3>4</h3>
+						</div>
+						<div>
+							<h3>5</h3>
+						</div>
+					</StyledSlider>
+				</div>
+			</SliderWrapper>
 		</MemberContainer>
 	);
 }
@@ -78,6 +76,17 @@ function Member() {
 const slideDown = keyframes`
     from {
         transform: translate(0, -50%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+`;
+
+const slideUp = keyframes`
+    from {
+        transform: translate(0, 50%);
         opacity: 0;
     }
     to {
@@ -134,10 +143,15 @@ const StyledSlider = styled(Slider)`
 		height: 40vh;
 		background-color: #f0f9ff;
 	}
-
 	.slick-prev:before,
 	.slick-next:before {
 		display: none;
+	}
+`;
+
+const SliderWrapper = styled.div`
+	.animate {
+		animation: ${slideUp} 4s ease;
 	}
 `;
 
