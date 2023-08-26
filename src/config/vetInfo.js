@@ -1,0 +1,292 @@
+import vet1 from '../images/vet/doc_cheonwoojin.jpg';
+import vet2 from '../images/vet/doc_oise.png';
+import vet3 from '../images/vet/doc_moonjongsun.png';
+import vet4 from '../images/vet/doc_jeongdaseul.png';
+import vet5 from '../images/vet/doc_kimdohee.png';
+import vet6 from '../images/vet/doc_choidongjun.png';
+import vet7 from '../images/vet/doc_parksulki.png';
+import vet8 from '../images/vet/doc_parkjoohyang.png';
+import vet9 from '../images/vet/doc_choiyujin.png';
+import vet10 from '../images/vet/doc_jeongtaegyu.png';
+import vet11 from '../images/vet/doc_yoongihong.png';
+import vet12 from '../images/vet/doc_jangminhyuk.png';
+import vet13 from '../images/vet/doc_leesunback.png';
+import vet14 from '../images/vet/doc_seoseungwon.png';
+import vet15 from '../images/vet/doc_songjaeseong.png';
+
+const vetInfo = [
+	{
+		id: 1,
+		position: '대표원장',
+		name: '천우진',
+		img: vet1,
+		history: [],
+		paper: [],
+		completion: [],
+	},
+	{
+		id: 2,
+		position: '대표원장',
+		name: '오이세',
+		img: vet2,
+		history: [
+			'충남대학교 수의과대학 수의학과 졸업',
+			'충남대학교 수의과대학 대학원 석사 졸업 (영상의학전공)',
+			'충남대학교 수의과대학 대학원 박사과정 (영상의학전공)',
+			'충남대학교 수의과대학 부속동물병원 진료수의사',
+			'대전과학기술대학교 애완동물과 교수',
+			'서울 충현동물종합병원 영상과장',
+			'서울 충현동물종합병원 진료부장',
+			'서울 충현동물종합병원 부원장',
+			'현) 인천스카이동물의료센터 대표원장',
+		],
+		paper: [
+			'[학술논문]컴퓨터단층촬영을 이용한 거대 낭포성 폐기종의 진단 3례',
+			'[학술논문]개에서 복수의 평가에 있어서 필름-증감지 방사선 사진과 디지털 방사선 사진',
+			'[학술논문]개에서 발생한 비전형적 부신피질선종 1례',
+			'[학술논문]비글견에서 발생한 전반적 대뇌허혈',
+			'[학술논문]개에서 발생한 결장직장 선암종 1례',
+			'[학술논문]치와와견에서 발생한 원발성 Acalvaria 증례',
+			'[학술논문]개에서 발생한 연부조직 섬유종 2례',
+			'[학술논문]시츄견에서 발생한 간경화의 영상 진단',
+			'[학술논문]비글견에서 실험적으로 유발한 흉수의 정량 평가',
+			'[학술논문]개의 복강내 잔존 수술용 거즈 2예',
+			'[학술논문]고양이에서의 선천성 요추 기형의 평가',
+			'[학술논문]말티즈 견에서 발생한 골육증',
+			'[동향·연구보고서]개에서 자기공명영상을 이용한 뇌수두증과 척수공동증 진단',
+			'[동향·연구보고서]개에서 컴퓨터단층촬영술을 이용한 창상성 두개강 내 출혈의 진단',
+		],
+		completion: [],
+	},
+	{
+		id: 3,
+		position: '원장',
+		name: '문종선',
+		img: vet3,
+		history: [
+			'전북대학교 수의과대학 수의학과 졸업',
+			'이천시청,성남시청 공중방역수의사',
+			'우리아이동물메디컬센터진료수의사',
+			'부천SKY동물메디컬센터 진료수의사',
+			'서울 신사SKY동물메디컬센터 선임 진료수의사',
+			'서울 신사SKY동물메디컬센터 진료과장',
+			'전)인천SKY동물의료센터 부원장',
+			'전)계양SKY동물의료센터 원장',
+			'현)인천SKY동물메디컬센터 원장',
+			'한국고양이수의사회 정회원',
+		],
+		paper: [],
+		completion: ['CVA(미국수의한방침치료과정인증) 수료'],
+	},
+	{
+		id: 4,
+		position: '부원장',
+		name: '정다슬',
+		img: vet4,
+		history: [
+			'건국대학교 수의과대학 수의학과 졸업',
+			'수원SKY동물메디컬센터 진료수의사',
+			'인천SKY동물메디컬센터 진료수의사',
+			'인천SKY동물메디컬센터 진료과장',
+			'현)인천SKY동물메디컬센터 부원장',
+		],
+		paper: [],
+		completion: [],
+	},
+	{
+		id: 5,
+		position: '외과과장',
+		name: '김도희',
+		img: vet5,
+		history: [
+			'건국대학교 수의과대학 수의학과 졸업',
+			'건국대학교 수의과대학 수의외과학 석박사통합과정 수료',
+			'건국대학교 수의과대학 부속동물병원 진료수의사',
+			'건국대학교 수의과대학 외과실습 조교',
+			'현)인천SKY동물메디컬센터 외과과장',
+		],
+		paper: [],
+		completion: [],
+	},
+	{
+		id: 6,
+		position: '외과과장',
+		name: '최동준',
+		img: vet6,
+		history: [
+			'경북대학교 수의과대학 졸업',
+			'해마루 2차진료 동물병원 진료수의사',
+			'건국대학교 수의외과학 석사 수료',
+			'건국대학교 부속동물병원 외과 진료수의사',
+			'건국대학교 수의학부 수의외과학 조교',
+			'현)인천SKY동물메디컬센터 외과과장',
+		],
+		paper: [],
+		completion: [
+			'AOVET Principle in small animal management course',
+			'SACEC DFO Seminar 수료',
+		],
+	},
+	{
+		id: 7,
+		position: '내과과장',
+		name: '박설기',
+		img: vet7,
+		history: [
+			'경상대학교 수의학과 학사 졸업',
+			'서울대학교 수의과대학 부속 동물병원 수련과정 수료',
+			'서울대학교 수의과대학 내과학교실 실습조교',
+			'서울대학교 수의과대학 수의내과학 석사 졸업',
+			'우리동물메디컬센터 내과과장',
+			'2018.05 한국임상수의학회 춘계학술대회 구두발표',
+			'2019.06 ISSCR in LA 참가',
+			'2019.09 FASAVA in tokyo 참가',
+		],
+		paper: [
+			'Pretreatment with IFN-γ enhances the immunomodulatory effect of feline adipose tissue-derived mesenchymal stem cells through the COX-2/PGE2 pathway',
+			'Case of babesiosis induced thrombocytopenia in a dog.',
+			'Clinical application of both amniotic membranes and adipose derived mesenchymal stem cells in a cat with large skin defect',
+		],
+		completion: [
+			'2019 해마루 심장초음파 wet lab 수료',
+			'2020 수의한방 침술사 자격증(CVA) 취득',
+		],
+	},
+	{
+		id: 8,
+		position: '영상의학과장',
+		name: '박주향',
+		img: vet8,
+		history: [
+			'경북대학교 수의과대학 수의과대학 졸업',
+			'경북대학교 수의과대학 대학원 석사 졸업 (수의영상의학 전공)',
+			'경북대학교 부속동물병원 수련수의사',
+			'경북대학교 수의과대학 수의영상의학 조교',
+			'대구광역시 초등학교 동물보호교육 강사',
+			'현) 인천스카이동물의료센터 영상과장',
+		],
+		paper: [
+			'Diagnosis of mammary carcinoma in a castrated male Maltese dog. Journal of Veterinary Clinics (2019)',
+		],
+		completion: [
+			'2018 미국 텍사스 International Veterinary Radiology Association 참가 및 포스터 발표',
+			'2018-2019 서울시수의사회 학술지 VETIS 연재',
+			'2018-2019 한국임상수의학회 참석',
+			'2019 한국수의영상의학연구회 참가 및 feline alimentary lymphoma case 구두 발표',
+			'2019 미국 아리조나 American College of Veterinary Internal Medicine Forum 참석',
+		],
+	},
+	{
+		id: 9,
+		position: '진료과장',
+		name: '최유진',
+		img: vet9,
+		history: [
+			'충북대학교 수의과대학 수의학과 졸업',
+			'충북대학교 수의과대학 수의생화학실험실',
+			'충북대학교 수의과대학 부속동물병원 동물병원 임상실습 수료',
+			'인천SKY동물메디컬센터 진료수의사',
+			'현)인천SKY동물메디컬센터 진료과장',
+		],
+		paper: [],
+		completion: [],
+	},
+	{
+		id: 10,
+		position: '한방응급의학과장',
+		name: '정태규',
+		img: vet10,
+		history: [
+			'서울대학교 수의과대학 수의학과 졸업',
+			'서울대학교 수의과대학 임상수의학 응급의학과 석사졸업',
+			'서울대학교 동물병원 진료수의사',
+			'서울대학교 수의학과 수의응급의학과 실습조교',
+			'관악구 이로동물병원 진료수의사',
+			'수원 24시바른동물의료센터 응급의학과장',
+			'현)인천SKY동물메디컬센터 한방응급의학과장',
+		],
+		paper: [],
+		completion: ['CVA(미국수의한방침치료인증) 수료'],
+	},
+	{
+		id: 11,
+		position: '진료수의사',
+		name: '윤기홍',
+		img: vet11,
+		history: [
+			'경상대학교 수의학과 졸업',
+			'전) (주)CRONEX 책임 연구수의사',
+			'전) 24시 대전성심동물메디컬센터 진료수의사',
+			'현) SKY동물메디컬센터 인천점 진료수의사',
+		],
+		paper: [],
+		completion: [],
+	},
+	{
+		id: 12,
+		position: '진료수의사',
+		name: '장민혁',
+		img: vet12,
+		history: [
+			'건국대학교 수의학과 학사 졸업',
+			'전) 계양스카이동물병원 인턴수의사',
+			'전) 건국대학교부속동물병원 내과 계약직 수의사',
+			'전) 우리들동물병원 진료과장',
+			'현) 인천스카이동물병원 진료수의사',
+		],
+		paper: [],
+		completion: [],
+	},
+	{
+		id: 13,
+		position: '진료수의사',
+		name: '이선백',
+		img: vet13,
+		history: [
+			'건국대학교 수의과대학 졸업',
+			'경기도북부동물위생연구소 공중방역수의사',
+			'베링거인겔하임 기술지원수의사',
+			'현)인천SKY동물메디컬센터 진료수의사',
+		],
+		paper: [],
+		completion: [],
+	},
+	{
+		id: 14,
+		position: '진료수의사',
+		name: '서승원',
+		img: vet14,
+		history: [
+			'경상대학교 수의과대학 졸업',
+			'충청남도 홍성군청 공중방역수의사',
+			'부평종합동물의료센터 진료수의사',
+			'계양SKY동물의료센터 진료수의사',
+			'현)인천SKY동물메디컬센터 진료수의사',
+		],
+		paper: [],
+		completion: [
+			'베터플릭스 복부&심장 초음파 과정 수료',
+			'웨스턴동물의료센터 종합임상수의학과정 수료',
+		],
+	},
+	{
+		id: 15,
+		position: '진료수의사',
+		name: '송재성',
+		img: vet15,
+		history: [
+			'건국대학교 수의과대학 졸업',
+			'건국대학교 임상로테이션 수료',
+			'인천 보건환경연구원 공중방역수의사',
+			'인천광역시 동물보호공무원',
+			'현)인천SKY동물메디컬센터 진료수의사',
+		],
+		paper: [],
+		completion: [
+			'해마루동물병원 임상수의사 기초과정 수료',
+			'웨스턴동물의료센터종합임상수의학과장 수료',
+		],
+	},
+];
+
+export default vetInfo;
