@@ -133,6 +133,10 @@ const TitleWrapper = styled.div`
 	width: 100%;
 	height: 50%;
 	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 	.innerWrapper {
 		display: flex;
