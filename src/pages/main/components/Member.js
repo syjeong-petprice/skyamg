@@ -5,16 +5,18 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import bgSky from '../../../images/resource/images/bg_Sky.png';
 
-const settings = {
-	dots: true,
-	infinite: true,
-	speed: 500,
-	slidesToShow: 4,
-	slidesToScroll: 1,
-};
-
 function Member() {
 	const [animate, setAnimate] = useState(false);
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000, // 오토플레이 간격을 조절할 수 있습니다.
+		pauseOnHover: true,
+	};
 	useEffect(() => {
 		const handleScroll = () => {
 			// 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
@@ -48,6 +50,7 @@ function Member() {
 					</p>
 				</div>
 			</TitleWrapper>
+
 			<SliderWrapper>
 				<div className={animate ? 'animate' : ''}>
 					<StyledSlider {...settings}>
