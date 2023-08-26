@@ -1,6 +1,39 @@
 import { styled, keyframes } from 'styled-components';
 import { useState, useEffect } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import bgSky from '../../../images/resource/images/bg_Sky.png';
+
+const settings = {
+	dots: true,
+	infinite: true,
+	speed: 500,
+	slidesToShow: 4,
+	slidesToScroll: 1,
+};
+
+function MemberSlider() {
+	return (
+		<StyledSlider {...settings}>
+			<div>
+				<h3>1</h3>
+			</div>
+			<div>
+				<h3>2</h3>
+			</div>
+			<div>
+				<h3>3</h3>
+			</div>
+			<div>
+				<h3>4</h3>
+			</div>
+			<div>
+				<h3>5</h3>
+			</div>
+		</StyledSlider>
+	);
+}
 
 function Member() {
 	const [animate, setAnimate] = useState(false);
@@ -37,24 +70,10 @@ function Member() {
 					</p>
 				</div>
 			</TitleWrapper>
+			<MemberSlider />
 		</MemberContainer>
 	);
 }
-
-const MemberContainer = styled.section`
-	width: 100%;
-	height: 92vh;
-	background-image: url(${bgSky});
-	background-size: cover;
-	background-repeat: no-repeat;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	* {
-		margin: 0;
-	}
-`;
 
 const slideDown = keyframes`
     from {
@@ -65,6 +84,23 @@ const slideDown = keyframes`
         transform: translate(0,0);
         opacity: 1;
     }
+`;
+
+const MemberContainer = styled.section`
+	width: 100%;
+	height: 92vh;
+	background-image: url(${bgSky});
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+
+	* {
+		margin: 0;
+	}
 `;
 
 const TitleWrapper = styled.div`
@@ -89,6 +125,19 @@ const TitleWrapper = styled.div`
 			color: #fff;
 			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 		}
+	}
+`;
+
+const StyledSlider = styled(Slider)`
+	.slick-list {
+		width: 65vw;
+		height: 40vh;
+		background-color: #f0f9ff;
+	}
+
+	.slick-prev:before,
+	.slick-next:before {
+		display: none;
 	}
 `;
 
