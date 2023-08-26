@@ -1,21 +1,42 @@
 {
   "files": {
-    "main.css": "/skyamg/static/css/main.13a83779.css",
-    "main.js": "/skyamg/static/js/main.f8289c39.js",
+    "main.css": "/skyamg/static/css/main.5bffff13.css",
+    "main.js": "/skyamg/static/js/main.bcf77c59.js",
     "static/js/787.d322386b.chunk.js": "/skyamg/static/js/787.d322386b.chunk.js",
+    "static/media/bg_Sky.png": "/skyamg/static/media/bg_Sky.36edbf88b3f052725c59.png",
     "static/media/portfolio_080228.jpg": "/skyamg/static/media/portfolio_080228.c1a565e3faa4692a5685.jpg",
     "static/media/portfolio_062119.jpg(062119).jpg": "/skyamg/static/media/portfolio_062119.jpg(062119).cf14f09ec740eec8f2f1.jpg",
     "static/media/제목.png": "/skyamg/static/media/제목.24906d5262e3e1db397d.png",
     "static/media/portfolio_053945.png": "/skyamg/static/media/portfolio_053945.6c371fe8f1fed48778ab.png",
+    "static/media/doc_parkjoohyang.png": "/skyamg/static/media/doc_parkjoohyang.8a87c2a4d128cb56fedc.png",
+    "static/media/doc_choiyujin.png": "/skyamg/static/media/doc_choiyujin.1fca10e24605a674a739.png",
+    "static/media/doc_moonjongsun.png": "/skyamg/static/media/doc_moonjongsun.e2c29e1bc977cae95712.png",
+    "static/media/doc_yoongihong.png": "/skyamg/static/media/doc_yoongihong.696db4bff5a9baf4869e.png",
+    "static/media/doc_jeongdaseul.png": "/skyamg/static/media/doc_jeongdaseul.b16adcbffaa1911ea19b.png",
+    "static/media/doc_parksulki.png": "/skyamg/static/media/doc_parksulki.aa1ba5df7feb745571b0.png",
+    "static/media/doc_oise.png": "/skyamg/static/media/doc_oise.8026810882d89b4204a7.png",
     "static/media/충남대로고.png": "/skyamg/static/media/충남대로고.73378eb91d19e26935b9.png",
+    "static/media/doc_cheonwoojin.jpg": "/skyamg/static/media/doc_cheonwoojin.48e994872aecdb4ad36a.jpg",
+    "static/media/doc_jangminhyuk.png": "/skyamg/static/media/doc_jangminhyuk.56bb70a1da67a6178e55.png",
+    "static/media/스카이MRI_2.jpeg": "/skyamg/static/media/스카이MRI_2.50d3e08299606c505b95.jpeg",
     "static/media/스카이초음파실.jpeg": "/skyamg/static/media/스카이초음파실.e572fa90f145cf2bf6f3.jpeg",
+    "static/media/doc_choidongjun.png": "/skyamg/static/media/doc_choidongjun.2c5380d03cd96982f5a1.png",
+    "static/media/doc_jeongtaegyu.png": "/skyamg/static/media/doc_jeongtaegyu.2c5380d03cd96982f5a1.png",
+    "static/media/doc_kimdohee.png": "/skyamg/static/media/doc_kimdohee.2c5380d03cd96982f5a1.png",
+    "static/media/doc_leesunback.png": "/skyamg/static/media/doc_leesunback.2c5380d03cd96982f5a1.png",
+    "static/media/doc_seoseungwon.png": "/skyamg/static/media/doc_seoseungwon.2c5380d03cd96982f5a1.png",
+    "static/media/doc_songjaeseong.png": "/skyamg/static/media/doc_songjaeseong.2c5380d03cd96982f5a1.png",
+    "static/media/slick.svg": "/skyamg/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/skyamg/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/skyamg/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/skyamg/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/skyamg/index.html",
-    "main.13a83779.css.map": "/skyamg/static/css/main.13a83779.css.map",
-    "main.f8289c39.js.map": "/skyamg/static/js/main.f8289c39.js.map",
+    "main.5bffff13.css.map": "/skyamg/static/css/main.5bffff13.css.map",
+    "main.bcf77c59.js.map": "/skyamg/static/js/main.bcf77c59.js.map",
     "787.d322386b.chunk.js.map": "/skyamg/static/js/787.d322386b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.13a83779.css",
-    "static/js/main.f8289c39.js"
+    "static/css/main.5bffff13.css",
+    "static/js/main.bcf77c59.js"
   ]
 }
