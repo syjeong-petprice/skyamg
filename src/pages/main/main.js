@@ -16,12 +16,12 @@ function Main() {
 		<>
 			<Slider />
 			<Introduce />
+			<Member />
 			<Subject />
 			<Subject2 />
 			<Equip />
 			<Example />
 			<Subject3 />
-			<Member />
 			<Location />
 			<Preview />
 			<Youtube />
