@@ -111,7 +111,7 @@ const imgZoomin = keyframes`
         scale: 1
     }
     to {
-        scale: 1.1
+        scale: 1.2
     }
 `;
 
@@ -173,6 +173,7 @@ const StyledSlider = styled(Slider)`
 		div {
 			width: 100%;
 			height: 100%;
+			overflow: hidden;
 
 			img {
 				width: 100%;
@@ -181,8 +182,8 @@ const StyledSlider = styled(Slider)`
 				cursor: pointer;
 
 				&:hover {
-					scale: 1.1;
-					animation: ${imgZoomin} 0.5s ease;
+					scale: 1.2;
+					animation: ${imgZoomin} 1s ease;
 				}
 			}
 		}
