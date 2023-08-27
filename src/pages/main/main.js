@@ -1,10 +1,10 @@
 import Slider from './components/Slider';
 import Introduce from './components/Introduce';
 import Subject from './components/Subject';
-import Subject2 from './components/Subject2';
+import Equip2 from './components/Equip2';
 import Equip from './components/Equip';
 import Example from './components/Example';
-import Subject3 from './components/Subject3';
+import Subject2 from './components/Subject2';
 import Member from './components/Member';
 import Location from './components/Location';
 import Preview from './components/Preview';
@@ -18,10 +18,10 @@ function Main() {
 			<Introduce />
 			<Member />
 			<Subject />
-			<Subject2 />
+			<Equip2 />
 			<Equip />
 			<Example />
-			<Subject3 />
+			<Subject2 />
 			<Location />
 			<Preview />
 			<Youtube />

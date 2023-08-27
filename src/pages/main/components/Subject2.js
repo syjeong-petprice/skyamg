@@ -1,9 +1,9 @@
 import { styled } from 'styled-components';
 
-function Subject2() {
+function Subject3() {
 	return (
 		<SubjectContainer>
-			<h1>과목소개2</h1>
+			<h1>과목소개3</h1>
 		</SubjectContainer>
 	);
 }
@@ -11,11 +11,11 @@ function Subject2() {
 const SubjectContainer = styled.section`
 	width: 100%;
 	height: 92vh;
-	background-color: blanchedalmond;
+	background-color: darkkhaki;
 
 	* {
 		margin: 0;
 	}
 `;
 
-export default Subject2;
+export default Subject3;
