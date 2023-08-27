@@ -24,7 +24,7 @@ function CustomTabPanel(props) {
 		>
 			{value === index && (
 				<Box sx={{ p: 3 }}>
-					<Typography>{children}</Typography>
+					<div>{children}</div>
 				</Box>
 			)}
 		</div>
@@ -76,6 +76,8 @@ function Example() {
 		const handleScreenWidth = () => {
 			if (window.innerWidth <= 520) {
 				setShow(false);
+			} else {
+				setShow(true);
 			}
 		};
 
