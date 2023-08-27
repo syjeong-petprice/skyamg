@@ -8,6 +8,7 @@ import stepThree from '../../../images/resource/images/스카이진료중.jpeg';
 
 function Subject2() {
 	const [animate, setAnimate] = useState(false);
+	const [show, setShow] = useState(true);
 	useEffect(() => {
 		const handleScroll = () => {
 			// 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
@@ -28,6 +29,20 @@ function Subject2() {
 		return () => {
 			// 컴포넌트 언마운트 시 이벤트 리스너 제거
 			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	useEffect(() => {
+		const handleScreenWidth = () => {
+			if (window.innerWidth <= 690) {
+				setShow(false);
+			}
+		};
+
+		window.addEventListener('resize', handleScreenWidth);
+
+		return () => {
+			window.removeEventListener('resize', handleScreenWidth);
 		};
 	}, []);
 	return (
@@ -51,11 +66,13 @@ function Subject2() {
 						</p>
 					</div>
 				</div>
-				<div className={animate ? 'innerWrapper animate' : 'innerWrapper'}>
-					<KeyboardArrowRightIcon
-						style={{ color: '#fff', fontSize: '3rem', margin: 0 }}
-					/>
-				</div>
+				{show && (
+					<div className={animate ? 'innerWrapper animate' : 'innerWrapper'}>
+						<KeyboardArrowRightIcon
+							style={{ color: '#fff', fontSize: '3rem', margin: 0 }}
+						/>
+					</div>
+				)}
 				<div className={animate ? 'innerWrapper animate' : 'innerWrapper'}>
 					<div className="innerImg2"></div>
 					<div className="innerText2">
@@ -65,11 +82,13 @@ function Subject2() {
 						</p>
 					</div>
 				</div>
-				<div className={animate ? 'innerWrapper animate' : 'innerWrapper'}>
-					<KeyboardArrowRightIcon
-						style={{ color: '#fff', fontSize: '3rem', margin: 0 }}
-					/>
-				</div>
+				{show && (
+					<div className={animate ? 'innerWrapper animate' : 'innerWrapper'}>
+						<KeyboardArrowRightIcon
+							style={{ color: '#fff', fontSize: '3rem', margin: 0 }}
+						/>
+					</div>
+				)}
 				<div className={animate ? 'innerWrapper animate' : 'innerWrapper'}>
 					<div className="innerImg3"></div>
 					<div className="innerText3">
@@ -143,6 +162,9 @@ const TextWrapper = styled.div`
 		h2 {
 			font-size: 2.5rem;
 			font-weight: normal;
+			@media screen and (max-width: 690px) {
+				font-size: 2rem;
+			}
 		}
 		p {
 			font-weight: bold;
@@ -162,6 +184,13 @@ const ImgWrapper = styled.div`
 	display: flex;
 	justify-content: space-evenly;
 
+	@media screen and (max-width: 690px) {
+		flex-direction: column;
+	}
+	@media screen and (max-width: 420px) {
+		height: 70%;
+	}
+
 	.animate {
 		animation: ${slideUp} 4s ease;
 	}
@@ -172,6 +201,10 @@ const ImgWrapper = styled.div`
 		justify-content: center;
 		text-align: center;
 		color: #fff;
+
+		@media screen and (max-width: 690px) {
+			flex-direction: row;
+		}
 
 		h4 {
 			font-size: 1.2rem;
@@ -184,18 +217,30 @@ const ImgWrapper = styled.div`
 			height: 65%;
 			background-image: url(${stepOne});
 			background-size: cover;
+			@media screen and (max-width: 690px) {
+				width: 40vw;
+				height: 100%;
+			}
 		}
 		.innerImg2 {
 			width: 25vw;
 			height: 65%;
 			background-image: url(${stepTwo});
 			background-size: cover;
+			@media screen and (max-width: 690px) {
+				width: 40vw;
+				height: 100%;
+			}
 		}
 		.innerImg3 {
 			width: 25vw;
 			height: 65%;
 			background-image: url(${stepThree});
 			background-size: cover;
+			@media screen and (max-width: 690px) {
+				width: 40vw;
+				height: 100%;
+			}
 		}
 
 		.innerText1 {
@@ -206,6 +251,9 @@ const ImgWrapper = styled.div`
 			justify-content: center;
 			align-items: center;
 			background-color: #30536f;
+			@media screen and (max-width: 690px) {
+				width: 40vw;
+			}
 		}
 		.innerText2 {
 			width: 25vw;
@@ -215,6 +263,9 @@ const ImgWrapper = styled.div`
 			justify-content: center;
 			align-items: center;
 			background-color: #324352;
+			@media screen and (max-width: 690px) {
+				width: 40vw;
+			}
 		}
 		.innerText3 {
 			width: 25vw;
@@ -224,6 +275,9 @@ const ImgWrapper = styled.div`
 			justify-content: center;
 			align-items: center;
 			background-color: #2c3032;
+			@media screen and (max-width: 690px) {
+				width: 40vw;
+			}
 		}
 	}
 `;
@@ -237,6 +291,10 @@ const SubTextWrapper = styled.div`
 	padding: 0 5vw;
 	color: #fff;
 
+	@media screen and (max-width: 420px) {
+		display: none;
+	}
+
 	.animate {
 		animation: ${slideUp} 4s ease;
 	}
@@ -244,6 +302,10 @@ const SubTextWrapper = styled.div`
 	p {
 		text-align: center;
 		font-size: 1.4rem;
+
+		@media screen and (max-width: 690px) {
+			font-size: 1.1rem;
+		}
 	}
 `;
 
