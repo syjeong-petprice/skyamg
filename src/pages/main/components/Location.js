@@ -1,9 +1,11 @@
 import { styled } from 'styled-components';
+import KakaoMap from '../../../components/KakaoMap';
 
 function Location() {
 	return (
 		<LocationContainer>
 			<h1>위치안내/연락처</h1>
+			<KakaoMap />
 		</LocationContainer>
 	);
 }
