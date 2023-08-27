@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/skyamg/static/css/main.5bffff13.css",
-    "main.js": "/skyamg/static/js/main.ddca0596.js",
+    "main.js": "/skyamg/static/js/main.dacf0e82.js",
     "static/js/787.d322386b.chunk.js": "/skyamg/static/js/787.d322386b.chunk.js",
     "static/media/bg_Sky.png": "/skyamg/static/media/bg_Sky.36edbf88b3f052725c59.png",
     "static/media/portfolio_080228.jpg": "/skyamg/static/media/portfolio_080228.c1a565e3faa4692a5685.jpg",
@@ -21,6 +21,7 @@
     "static/media/스카이방사선실.jpeg": "/skyamg/static/media/스카이방사선실.c76c75460123289672b2.jpeg",
     "static/media/충남대로고.png": "/skyamg/static/media/충남대로고.73378eb91d19e26935b9.png",
     "static/media/doc_cheonwoojin.jpg": "/skyamg/static/media/doc_cheonwoojin.48e994872aecdb4ad36a.jpg",
+    "static/media/스카이야경.jpeg": "/skyamg/static/media/스카이야경.06e20ae729705325f31b.jpeg",
     "static/media/스카이MRI실.jpeg": "/skyamg/static/media/스카이MRI실.239d8571ad8bc1550672.jpeg",
     "static/media/수원척추X-ray.jpeg": "/skyamg/static/media/수원척추X-ray.3c5faab70f8dec96e140.jpeg",
     "static/media/doc_jangminhyuk.png": "/skyamg/static/media/doc_jangminhyuk.56bb70a1da67a6178e55.png",
@@ -43,11 +44,11 @@
     "static/media/slick.woff": "/skyamg/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/skyamg/index.html",
     "main.5bffff13.css.map": "/skyamg/static/css/main.5bffff13.css.map",
-    "main.ddca0596.js.map": "/skyamg/static/js/main.ddca0596.js.map",
+    "main.dacf0e82.js.map": "/skyamg/static/js/main.dacf0e82.js.map",
     "787.d322386b.chunk.js.map": "/skyamg/static/js/787.d322386b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5bffff13.css",
-    "static/js/main.ddca0596.js"
+    "static/js/main.dacf0e82.js"
   ]
 }
