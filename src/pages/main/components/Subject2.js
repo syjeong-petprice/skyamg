@@ -9,7 +9,7 @@ function Subject3() {
 	useEffect(() => {
 		const handleScroll = () => {
 			// 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
-			const midScreen = window.innerHeight * 5.2;
+			const midScreen = window.innerHeight * 5.5;
 
 			// console.log('innerHeight : ', window.innerHeight);
 			// console.log('scrollY : ', window.scrollY);

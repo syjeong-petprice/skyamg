@@ -3,7 +3,6 @@ import { styled, keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import imgOne from '../../../images/resource/images/수원척수MRI_2.jpeg';
 import imgTwo from '../../../images/resource/images/수원척수MRI_3.jpeg';
