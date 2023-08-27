@@ -1,9 +1,100 @@
-import { styled } from 'styled-components';
+import { styled, keyframes } from 'styled-components';
+import { useState, useEffect } from 'react';
+import imgOne from '../../../images/resource/images/강아지진료_흑백.jpeg';
+import imgTwo from '../../../images/resource/images/스카이MRI실.jpeg';
 
 function Subject3() {
+	const [animate, setAnimate] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			// 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
+			const midScreen = window.innerHeight * 5.2;
+
+			// console.log('innerHeight : ', window.innerHeight);
+			// console.log('scrollY : ', window.scrollY);
+			// console.log('midScreen : ', midScreen);
+			if (window.scrollY > midScreen) {
+				setAnimate(true);
+			} else {
+				setAnimate(false);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			// 컴포넌트 언마운트 시 이벤트 리스너 제거
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 	return (
 		<SubjectContainer>
-			<h1>과목소개3</h1>
+			<TextWrapper>
+				<div className={animate ? 'animate' : ''}>
+					<p>SKY ANIMAL MEDICAL CENTER</p>
+					<h2>
+						영상의학과 <strong>업/계/선/두</strong>
+					</h2>
+				</div>
+			</TextWrapper>
+			<SubTextWrapper>
+				<div className={animate ? 'innerWrapper animate' : 'innerWrapper'}>
+					<p className="textOne">문답과 손끝에 의존한 질병 진단?</p>
+					<p className="textTwo">
+						SKY 동물메디컬센터는{' '}
+						<strong>업계에서도 손꼽히는 영상의학검사장비</strong>로<br />{' '}
+						환자분들과의 신뢰와 믿음을 지켜갑니다.
+					</p>
+				</div>
+			</SubTextWrapper>
+			<ImgWrapper>
+				<div className="imgOne">
+					<div className="innerImgWrapper">
+						<img src={imgOne} alt="img one" />
+					</div>
+					<div className="innerTextWrapper">
+						<div>
+							<h4>
+								<strong>과거의</strong> 동물진료
+							</h4>
+						</div>
+						<ul>
+							<li>문답을 통한 질병 유추</li>
+							<li>직접 환부를 만져가며 검진</li>
+							<li>떨어지는 검진 정확도</li>
+							<li>높은 오진 가능성</li>
+						</ul>
+					</div>
+				</div>
+				<div className="vsImg">
+					<div></div>
+					<p>
+						<span className="v">V</span>
+						<span className="s">S</span>
+					</p>
+					<div></div>
+				</div>
+				<div className="imgTwo">
+					<div className="innerImgWrapper">
+						<img src={imgTwo} alt="img two" />
+					</div>
+					<div className="innerTextWrapper">
+						<div>
+							<h4>
+								<strong>최첨단</strong> 영상의학검사
+							</h4>
+						</div>
+						<ul>
+							<li>사람에게도 사용되는 첨단장비</li>
+							<li>수면 마취 등 안전한 검사 시스템</li>
+							<li>눈으로 확인하는 질병</li>
+							<li>전공자에 의해 이뤄지는 촬영과 진단</li>
+							<li>적절하게 이뤄지는 치료</li>
+						</ul>
+					</div>
+				</div>
+			</ImgWrapper>
 		</SubjectContainer>
 	);
 }
@@ -11,10 +102,195 @@ function Subject3() {
 const SubjectContainer = styled.section`
 	width: 100%;
 	height: 92vh;
-	background-color: darkkhaki;
+	background-color: #c3ced7;
 
 	* {
 		margin: 0;
+	}
+`;
+
+const slideDown = keyframes`
+    from {
+        transform: translate(0, -50%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+`;
+
+const slideUp = keyframes`
+    from {
+        transform: translate(0, 50%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+`;
+
+const TextWrapper = styled.div`
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	color: #403631;
+
+	div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h2 {
+			font-size: 2.5rem;
+			font-weight: normal;
+			@media screen and (max-width: 690px) {
+				font-size: 2rem;
+			}
+		}
+		p {
+			font-weight: bold;
+			font-size: 0.9rem;
+			opacity: 0.6;
+		}
+	}
+
+	.animate {
+		animation: ${slideDown} 4s ease;
+	}
+`;
+
+const SubTextWrapper = styled.div`
+	width: 100%;
+	height: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.animate {
+		animation: ${slideDown} 4s ease;
+	}
+
+	.innerWrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.textOne {
+			font-size: 1.4rem;
+			margin-bottom: 15px;
+			color: #30536f;
+			border-bottom: 2px solid currentColor;
+			padding-bottom: 3px; /* 3px는 텍스트와 밑줄 사이의 거리입니다 */
+		}
+		.textTwo {
+			text-align: center;
+			font-size: 1.2rem;
+		}
+	}
+`;
+
+const ImgWrapper = styled.div`
+	width: 100%;
+	height: 55%;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	.imgOne,
+	.imgTwo {
+		width: 470px;
+		height: 55%;
+	}
+
+	.vsImg {
+		font-size: 3rem;
+		font-weight: bold;
+		margin: 0 25px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.v {
+			color: #6b879d;
+		}
+		.s {
+			color: #2c3032;
+		}
+		div {
+			width: 1px;
+			height: 150px;
+			background-color: #6b879d;
+			opacity: 0.7;
+		}
+	}
+
+	.innerImgWrapper {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		/* justify-content: center; */
+		align-items: center;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.innerTextWrapper {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		div {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			color: #fff;
+		}
+		ul {
+			list-style-type: none;
+			margin-top: 10px;
+			font-size: 0.9rem;
+
+			li {
+				position: relative;
+				right: 35px;
+
+				@media screen and (max-width: 690px) {
+					font-size: 0.8rem;
+				}
+
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 3px;
+					height: 9px;
+					background: #3d81b8;
+					transform: rotate(45deg);
+					margin-right: 10px;
+					vertical-align: super;
+				}
+			}
+		}
+	}
+
+	.imgOne .innerTextWrapper {
+		div {
+			background-color: #727d85;
+		}
+	}
+	.imgTwo .innerTextWrapper {
+		div {
+			background-color: #2c3032;
+		}
 	}
 `;
 
