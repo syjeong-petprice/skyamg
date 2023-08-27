@@ -49,7 +49,7 @@ function Subject3() {
 				</div>
 			</SubTextWrapper>
 			<ImgWrapper>
-				<div className="imgOne">
+				<div className={animate ? 'imgOne animateRight' : 'imgOne'}>
 					<div className="innerImgWrapper">
 						<img src={imgOne} alt="img one" />
 					</div>
@@ -67,7 +67,7 @@ function Subject3() {
 						</ul>
 					</div>
 				</div>
-				<div className="vsImg">
+				<div className={animate ? 'vsImg animate' : 'vsImg'}>
 					<div></div>
 					<p>
 						<span className="v">V</span>
@@ -75,7 +75,7 @@ function Subject3() {
 					</p>
 					<div></div>
 				</div>
-				<div className="imgTwo">
+				<div className={animate ? 'imgTwo animateLeft' : 'imgTwo'}>
 					<div className="innerImgWrapper">
 						<img src={imgTwo} alt="img two" />
 					</div>
@@ -120,9 +120,19 @@ const slideDown = keyframes`
     }
 `;
 
-const slideUp = keyframes`
+const slideLeft = keyframes`
     from {
-        transform: translate(0, 50%);
+        transform: translate(-100%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+`;
+const slideRight = keyframes`
+    from {
+        transform: translate(100%, 0);
         opacity: 0;
     }
     to {
@@ -139,6 +149,10 @@ const TextWrapper = styled.div`
 	justify-content: flex-end;
 	align-items: center;
 	color: #403631;
+
+	@media screen and (max-width: 500px) {
+		justify-content: center;
+	}
 
 	div {
 		display: flex;
@@ -172,6 +186,10 @@ const SubTextWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 
+	@media screen and (max-width: 500px) {
+		display: none;
+	}
+
 	.animate {
 		animation: ${slideDown} 4s ease;
 	}
@@ -202,10 +220,31 @@ const ImgWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	/* align-items: center; */
+
+	@media screen and (max-width: 500px) {
+		flex-direction: column;
+		align-items: center;
+		height: 80%;
+	}
+
 	.imgOne,
 	.imgTwo {
 		width: 470px;
-		height: 55%;
+		height: 100%;
+
+		@media screen and (max-width: 500px) {
+			width: 380px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+
+	.animateRight {
+		animation: ${slideRight} 2s ease;
+	}
+	.animateLeft {
+		animation: ${slideLeft} 2s ease;
 	}
 
 	.vsImg {
@@ -215,6 +254,11 @@ const ImgWrapper = styled.div`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		@media screen and (max-width: 500px) {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
 		.v {
 			color: #6b879d;
 		}
@@ -226,16 +270,24 @@ const ImgWrapper = styled.div`
 			height: 150px;
 			background-color: #6b879d;
 			opacity: 0.7;
+			@media screen and (max-width: 500px) {
+				width: 150px;
+				height: 1px;
+			}
 		}
 	}
 
 	.innerImgWrapper {
 		width: 100%;
-		height: 100%;
-		display: flex;
-		/* justify-content: center; */
-		align-items: center;
+		/* height: 100%; */
+		/* display: flex; */
+		/* justify-content: flex-start; */
+		/* align-items: center; */
 		overflow: hidden;
+
+		@media screen and (max-width: 500px) {
+			display: flex;
+		}
 		img {
 			width: 100%;
 			height: auto;
@@ -244,21 +296,25 @@ const ImgWrapper = styled.div`
 
 	.innerTextWrapper {
 		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
+		/* height: 100%; */
+		/* display: flex;
+		flex-direction: column; */
 
 		div {
 			width: 100%;
 			display: flex;
 			justify-content: center;
-			text-align: center;
+			/* text-align: center; */
 			color: #fff;
 		}
 		ul {
 			list-style-type: none;
 			margin-top: 10px;
 			font-size: 0.9rem;
+
+			@media screen and (max-width: 500px) {
+				display: none;
+			}
 
 			li {
 				position: relative;
