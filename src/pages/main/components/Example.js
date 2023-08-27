@@ -5,6 +5,12 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import imgOne from '../../../images/resource/images/수원척수MRI_2.jpeg';
+import imgTwo from '../../../images/resource/images/수원척수MRI_3.jpeg';
+import imgThree from '../../../images/resource/images/머리MRI.jpeg';
+import imgFour from '../../../images/resource/images/수원척추X-ray.jpeg';
+import imgFive from '../../../images/resource/images/스카이X-ray.jpeg';
+import imgSix from '../../../images/resource/images/슬개골탈구X-ray.png';
 function CustomTabPanel(props) {
 	const { children, value, index, ...other } = props;
 
@@ -68,7 +74,7 @@ function Example() {
 
 	useEffect(() => {
 		const handleScreenWidth = () => {
-			if (window.innerWidth <= 690) {
+			if (window.innerWidth <= 520) {
 				setShow(false);
 			}
 		};
@@ -101,28 +107,57 @@ function Example() {
 								onChange={handleChange}
 								aria-label="basic tabs example"
 								centered
+								style={{
+									width: '100%',
+								}}
 							>
-								<Tab label="척수 MRI" {...a11yProps(0)} />
-								<Tab label="두개골 MRI" {...a11yProps(1)} />
-								<Tab label="척추 X-ray" {...a11yProps(2)} />
-								<Tab label="복부 X-ray" {...a11yProps(2)} />
-								<Tab label="슬개골 X-ray" {...a11yProps(2)} />
+								<Tab label={show ? '척수 MRI' : '척수'} {...a11yProps(0)} />
+								<Tab label={show ? '두개골 MRI' : '두개골'} {...a11yProps(1)} />
+								<Tab label={show ? '척추 X-ray' : '척추'} {...a11yProps(2)} />
+								<Tab label={show ? '복부 X-ray' : '복부'} {...a11yProps(3)} />
+								<Tab
+									label={show ? '슬개골 X-ray' : '슬개골'}
+									{...a11yProps(4)}
+								/>
 							</Tabs>
 						</Box>
 						<CustomTabPanel value={value} index={0}>
-							<div className="tabImg"></div>
+							<div className="tabImg">
+								<div>
+									<img src={imgOne} alt="img one" />
+								</div>
+								<div>
+									<img src={imgTwo} alt="img two" />
+								</div>
+							</div>
 						</CustomTabPanel>
 						<CustomTabPanel value={value} index={1}>
-							<div className="tabImg"></div>
+							<div className="tabImg">
+								<div>
+									<img src={imgThree} alt="img three" />
+								</div>
+							</div>
 						</CustomTabPanel>
 						<CustomTabPanel value={value} index={2}>
-							<div className="tabImg"></div>
+							<div className="tabImg">
+								<div>
+									<img src={imgFour} alt="img four" />
+								</div>
+							</div>
 						</CustomTabPanel>
 						<CustomTabPanel value={value} index={3}>
-							<div className="tabImg"></div>
+							<div className="tabImg">
+								<div>
+									<img src={imgFive} alt="img five" />
+								</div>
+							</div>
 						</CustomTabPanel>
 						<CustomTabPanel value={value} index={4}>
-							<div className="tabImg"></div>
+							<div className="tabImg">
+								<div>
+									<img src={imgSix} alt="img six" />
+								</div>
+							</div>
 						</CustomTabPanel>
 					</Box>
 				</div>
@@ -198,14 +233,40 @@ const TextWrapper = styled.div`
 `;
 
 const ImgWrapper = styled.div`
+	width: 100%;
+	height: 100%;
 	.animate {
 		animation: ${slideUp} 4s ease;
 	}
 
 	.tabImg {
 		width: 100%;
-		height: 400px;
-		background-color: tomato;
+		height: 60vh;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		@media screen and (max-width: 890px) {
+			flex-direction: column;
+		}
+
+		div {
+			/* overflow: hidden; */
+			width: 470px;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@media screen and (max-width: 500px) {
+				width: 360px;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 `;
 export default Example;

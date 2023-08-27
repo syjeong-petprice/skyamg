@@ -116,7 +116,7 @@ const StyledLink = styled(Link)`
 
 	&:hover {
 		color: #dabfa8;
-		font-weight: bold;
+		/* font-weight: bold; */
 	}
 	&:hover::before {
 		width: 100%; /* 마우스를 올렸을 때 밑줄의 너비를 100%로 만듭니다 */
