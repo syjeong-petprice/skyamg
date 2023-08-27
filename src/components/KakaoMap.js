@@ -9,9 +9,14 @@ function KakaoMap() {
 			level: 3,
 		};
 		const map = new kakao.maps.Map(container, options);
+		const markerPosition = new kakao.maps.LatLng(126.707068, 37.454233);
+		const marker = new kakao.maps.Marker({
+			position: markerPosition,
+		});
+		marker.setMap(map);
 	}, []);
 
-	return <div id="map" style={{ width: '500px', height: '500px' }}></div>;
+	return <div id="map" style={{ width: '50%', height: '100%' }}></div>;
 }
 
 export default KakaoMap;
