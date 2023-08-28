@@ -5,6 +5,25 @@ import skyBuilding from '../../../images/resource/images/스카이야경2.jpg';
 
 function Location() {
 	const [animate, setAnimate] = useState(false);
+	useEffect(() => {
+		const handleScroll = () => {
+			// 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
+			const midScreen = window.innerHeight * 6.2;
+
+			if (window.scrollY > midScreen) {
+				setAnimate(true);
+			} else {
+				setAnimate(false);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			// 컴포넌트 언마운트 시 이벤트 리스너 제거
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 	return (
 		<LocationContainer>
 			<TextWrapper>
@@ -30,7 +49,7 @@ function Location() {
 				</div>
 			</TextWrapper>
 			<MapWrapper>
-				<div className="contactWrapper">
+				<div className={animate ? 'contactWrapper animate' : 'contactWrapper'}>
 					<div className="innerWrapper">
 						<KakaoMap />
 					</div>
@@ -39,6 +58,28 @@ function Location() {
 		</LocationContainer>
 	);
 }
+
+const slideRight = keyframes`
+    from {
+        transform: translate(30%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+`;
+
+const slideLeft = keyframes`
+    from {
+        transform: translate(-30%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+`;
 
 const LocationContainer = styled.section`
 	width: 100%;
@@ -69,6 +110,10 @@ const LocationContainer = styled.section`
 const TextWrapper = styled.div`
 	width: 50%;
 	height: 100%;
+
+	.animate {
+		animation: ${slideLeft} 3s ease;
+	}
 
 	@media screen and (max-width: 690px) {
 		width: 100%;
@@ -107,6 +152,9 @@ const TextWrapper = styled.div`
 const MapWrapper = styled.div`
 	width: 50%;
 	height: 100%;
+	.animate {
+		animation: ${slideRight} 3s ease;
+	}
 	@media screen and (max-width: 690px) {
 		width: 100%;
 		height: 50%;
