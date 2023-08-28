@@ -192,11 +192,11 @@ const ThumbnailWrapper = styled.div`
 	align-items: center;
 
 	.imgWrapper {
-		width: 20%;
-		height: 70%;
+		width: 15%;
+		height: 85%;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
+		justify-content: center;
 		align-items: center;
 		cursor: pointer;
 
