@@ -273,6 +273,31 @@ const StyledSlider = styled(Slider)`
 	align-items: center;
 	position: relative;
 
+	/* 기본 스타일 */
+	.slick-slide {
+		transition: transform 3s ease;
+		transform: scale(0.9);
+		opacity: 0.6;
+	}
+
+	/* 활성화된 슬라이드에 대한 스타일 */
+	.slick-slide.slick-active {
+		transform: scale(1);
+		opacity: 1;
+		animation: fadeInAnimation 3s forwards;
+	}
+
+	@keyframes fadeInAnimation {
+		from {
+			opacity: 0.6;
+			scale: 1.2;
+		}
+		to {
+			opacity: 1;
+			scale: 1;
+		}
+	}
+
 	.slick-list {
 		position: relative;
 		z-index: 2;
@@ -297,6 +322,7 @@ const StyledSlider = styled(Slider)`
 
 		.slideImg {
 			p {
+				margin-top: 30px;
 				color: #fff;
 				font-size: 1.2rem;
 				font-weight: bold;
