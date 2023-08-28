@@ -1,0 +1,44 @@
+import React, { useState } from "react";
+import { styled } from "styled-components";
+import img from "../../../images/vet/visual_bupyeong.jpeg";
+
+function Title() {
+  return (
+    <Container>
+      <ImageContainer>
+        <img src={img} alt="" />
+        <H2>의료진 소개</H2>
+      </ImageContainer>
+    </Container>
+  );
+}
+
+const Container = styled.div`
+  width: 100vw;
+  height: auto;
+  img {
+    width: 100%;
+  }
+`;
+const ImageContainer = styled.div`
+  position: relative;
+  img {
+    width: 100%;
+    display: block;
+  }
+`;
+
+const H2 = styled.h2`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  @media screen and (max-width: 960px) {
+    font-size: 26px;
+  }
+`;
+export default Title;
