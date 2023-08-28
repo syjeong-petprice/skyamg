@@ -171,9 +171,22 @@ const PreviewContainer = styled.section`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 
 	* {
 		margin: 0;
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 68%;
+		background: #e9e9e9;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
 	}
 `;
 
@@ -184,6 +197,7 @@ const TextWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 5%;
+	z-index: 99;
 
 	@media screen and (max-width: 1290px) {
 		flex-direction: column;
