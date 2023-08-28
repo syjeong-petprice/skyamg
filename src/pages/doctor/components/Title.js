@@ -30,7 +30,7 @@ const ImageContainer = styled.div`
 
 const H2 = styled.h2`
   position: absolute;
-  top: 50%;
+  top: calc(50% - 20px);
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 40px;
@@ -39,6 +39,7 @@ const H2 = styled.h2`
   color: #fff;
   @media screen and (max-width: 960px) {
     font-size: 26px;
+    top: calc(50% - 13px);
   }
 `;
 export default Title;
