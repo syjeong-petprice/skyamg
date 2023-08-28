@@ -228,6 +228,9 @@ const TextWrapper = styled.div`
 			@media screen and (max-width: 500px) {
 				font-size: 1.5rem;
 			}
+			@media screen and (max-width: 400px) {
+				font-size: 1.2rem;
+			}
 		}
 	}
 	.contentWrapper {
@@ -249,6 +252,12 @@ const TextWrapper = styled.div`
 			}
 			@media screen and (max-width: 500px) {
 				font-size: 0.8rem;
+				margin: 0;
+				height: 90%;
+			}
+			@media screen and (max-width: 400px) {
+				margin: 0;
+				height: 80%;
 			}
 		}
 	}

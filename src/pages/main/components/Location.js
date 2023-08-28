@@ -95,11 +95,23 @@ const LocationContainer = styled.section`
 		margin-top: 35px;
 		h3 {
 			font-size: 1.8rem;
+			@media screen and (max-width: 690px) {
+				font-size: 1.5rem;
+			}
+			@media screen and (max-width: 500px) {
+				font-size: 1.4rem;
+			}
 		}
 	}
 	p {
 		font-size: 1.2rem;
 		padding-left: 30px;
+		@media screen and (max-width: 690px) {
+			font-size: 1rem;
+		}
+		@media screen and (max-width: 500px) {
+			font-size: 0.9rem;
+		}
 	}
 
 	@media screen and (max-width: 690px) {
