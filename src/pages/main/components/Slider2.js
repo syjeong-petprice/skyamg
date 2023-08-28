@@ -6,12 +6,6 @@ import bgImg2 from '../../../images/resource/images/portfolio_062119.jpg';
 import bgImg3 from '../../../images/resource/images/portfolio_080228.jpg';
 
 function Preview() {
-	const handleClick = (e) => {
-		console.log(e.target.name);
-	};
-	const handleChange = (e) => {
-		console.log(e.target);
-	};
 	const settings = {
 		dots: false,
 		arrows: false,
@@ -28,10 +22,10 @@ function Preview() {
 	return (
 		<PreviewContainer>
 			<SlideWrapper>
-				<div>
-					<StyledSlider onChange={handleChange} {...settings}>
+				<div className="mainWrapper">
+					<StyledSlider {...settings}>
 						<div className="slideImg imgOne">
-							<div>
+							<div className="innerText">
 								<p>
 									하루 <strong>24시간,</strong>
 									1년 <strong>365일,</strong>
@@ -39,42 +33,31 @@ function Preview() {
 								<p>
 									당신 곁엔 <strong>SKY 동물메디컬센터</strong>
 								</p>
-								<div>
-									<p>어디서든 방문하는</p>
-									<p>
-										<strong>각 지역 최대의 동물병원</strong>
-									</p>
-								</div>
+
+								<p>어디서든 방문하는</p>
+								<p>
+									<strong>각 지역 최대의 동물병원</strong>
+								</p>
 							</div>
 						</div>
 						<div className="slideImg imgTwo">
-							<div>
-								<div>
-									<span>최고의 의료진과 함께하는</span>
-								</div>
-								<div>
-									<p>
-										<strong>어디서도 볼 수 없는, 초특급 의료진!</strong>
-									</p>
-									<p>수의사들도 추천하는 동물병원!</p>
-								</div>
+							<div className="innerText">
+								<p>최고의 의료진과 함께하는</p>
+								<p>
+									<strong>어디서도 볼 수 없는, 초특급 의료진!</strong>
+								</p>
+								<p>수의사들도 추천하는 동물병원!</p>
 							</div>
 						</div>
 						<div className="slideImg imgThree">
-							<div>
-								<div>
-									<span>
-										<strong>최첨단 시스템 도입</strong>
-									</span>
-								</div>
-								<div>
-									<span>
-										<p>
-											<strong>차별화되고 특화된 전문진료로,</strong>
-										</p>
-										<p>우리 가족의 건강한 행복을 약속합니다.</p>
-									</span>
-								</div>
+							<div className="innerText">
+								<p>
+									<strong>최첨단 시스템 도입</strong>
+								</p>
+								<p>
+									<strong>차별화되고 특화된 전문진료로,</strong>
+								</p>
+								<p>우리 가족의 건강한 행복을 약속합니다.</p>
 							</div>
 						</div>
 					</StyledSlider>
@@ -86,12 +69,12 @@ function Preview() {
 
 const PreviewContainer = styled.section`
 	width: 100%;
-	height: 92vh;
-	display: flex;
+	height: 100%;
+	/* display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	position: relative;
+	position: relative; */
 
 	* {
 		margin: 0;
@@ -111,12 +94,12 @@ const SlideWrapper = styled.div`
 const StyledSlider = styled(Slider)`
 	width: 100%;
 	height: 100%;
-	display: flex;
+	/* display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	overflow: hidden;
+	overflow: hidden; */
 
 	/* 기본 스타일 */
 	.slick-slide {
@@ -211,36 +194,50 @@ const StyledSlider = styled(Slider)`
 		}
 
 		div {
-			/* background-color: palegoldenrod; */
 			width: 100%;
 			height: 100%;
-		}
 
-		.slideImg {
-			p {
-				margin-top: 30px;
-				color: #fff;
-				font-size: 1.2rem;
-				font-weight: bold;
-				text-align: center;
-				text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+			.slick-active p {
+				animation: slideUp 4s forwards;
 			}
-		}
 
-		.imgOne {
-			background-image: url(${bgImg1});
-			background-size: cover;
-			background-position: center;
-		}
-		.imgTwo {
-			background-image: url(${bgImg2});
-			background-size: cover;
-			background-position: center;
-		}
-		.imgThree {
-			background-image: url(${bgImg3});
-			background-size: cover;
-			background-position: center;
+			.imgOne {
+				background-image: url(${bgImg1});
+				background-size: cover;
+				background-position: center;
+			}
+			.imgTwo {
+				background-image: url(${bgImg2});
+				background-size: cover;
+				background-position: center;
+			}
+			.imgThree {
+				background-image: url(${bgImg3});
+				background-size: cover;
+				background-position: center;
+			}
+
+			@keyframes slideUp {
+				from {
+					transform: translateY(100%);
+					opacity: 0;
+				}
+				to {
+					transform: translateY(30%);
+					opacity: 1;
+				}
+			}
+
+			.innerText {
+				width: 100%;
+				height: 100%;
+				font-size: 2.5rem;
+				color: #fff;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				transform: translateY(30%);
+			}
 		}
 	}
 
