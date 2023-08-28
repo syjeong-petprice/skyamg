@@ -43,8 +43,8 @@ function Youtube() {
 			<EmbedWrapper>
 				<div className="youtubeWrapper">
 					<iframe
-						width="790"
-						height="450"
+						width="600"
+						height="380"
 						src={`https://www.youtube.com/embed/${title}`}
 						title="YouTube video player"
 						frameborder="0"
@@ -123,13 +123,9 @@ const EmbedWrapper = styled.div`
 	.youtubeWrapper {
 		iframe {
 			border-radius: 20px;
-			@media screen and (max-width: 1380px) {
-				width: 650px;
-				height: 390px;
-			}
-			@media screen and (max-width: 720px) {
-				width: 560px;
-				height: 330px;
+			@media screen and (max-width: 1050px) {
+				width: 500px;
+				height: 300px;
 			}
 			@media screen and (max-width: 635px) {
 				width: 480px;
