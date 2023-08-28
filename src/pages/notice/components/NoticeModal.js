@@ -74,11 +74,15 @@ const StyledDialogContent = styled(DialogContent)`
     width: 100%;
     max-width: 60%;
     overflow: auto;
+    p {
+      margin: 0;
+    }
   }
   @media screen and (max-width: 690px) {
     flex-direction: column;
     align-items: center;
     overflow: auto;
+    gap: 1rem;
     .right {
       overflow: unset;
       max-width: 100%;

@@ -36,7 +36,7 @@ const H2 = styled.h2`
   font-weight: 700;
   text-align: center;
   color: #fff;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 690px) {
     font-size: 26px;
     top: calc(50% - 13px);
   }
