@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/skyamg/static/css/main.2bad91cb.css",
-    "main.js": "/skyamg/static/js/main.0eaeef08.js",
+    "main.js": "/skyamg/static/js/main.6600f2e7.js",
     "static/js/787.d322386b.chunk.js": "/skyamg/static/js/787.d322386b.chunk.js",
     "static/media/bg_Sky.png": "/skyamg/static/media/bg_Sky.36edbf88b3f052725c59.png",
     "static/media/portfolio_080228.jpg": "/skyamg/static/media/portfolio_080228.c1a565e3faa4692a5685.jpg",
@@ -57,11 +57,11 @@
     "static/media/slick.woff": "/skyamg/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/skyamg/index.html",
     "main.2bad91cb.css.map": "/skyamg/static/css/main.2bad91cb.css.map",
-    "main.0eaeef08.js.map": "/skyamg/static/js/main.0eaeef08.js.map",
+    "main.6600f2e7.js.map": "/skyamg/static/js/main.6600f2e7.js.map",
     "787.d322386b.chunk.js.map": "/skyamg/static/js/787.d322386b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2bad91cb.css",
-    "static/js/main.0eaeef08.js"
+    "static/js/main.6600f2e7.js"
   ]
 }
