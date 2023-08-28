@@ -20,10 +20,6 @@ function Slider() {
     setWindowWidth(window.innerWidth);
   }, []);
 
-  useEffect(() => {
-    console.log(windowWidth);
-  }, [windowWidth]);
-
   return (
     <StyledSwiper
       spaceBetween={0}
