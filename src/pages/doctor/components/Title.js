@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import img from "../../../images/vet/visual_bupyeong.jpeg";
 
-function Title() {
+function Title({ img, title }) {
   return (
     <Container>
       <ImageContainer>
         <img src={img} alt="" />
-        <H2>의료진 소개</H2>
+        <H2>{title}</H2>
       </ImageContainer>
     </Container>
   );
