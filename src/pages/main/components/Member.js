@@ -23,6 +23,8 @@ function Member() {
   };
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -39,7 +41,7 @@ function Member() {
   useEffect(() => {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
-      const midScreen = window.innerHeight * 1.2;
+      const midScreen = window.innerHeight / 2;
 
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
@@ -72,6 +74,8 @@ function Member() {
     if (window.innerWidth < 500) {
       setShow(2);
     }
+
+    console.log(windowWidth, window.innerWidth);
 
     // window.addEventListener("resize", handleScreenWidth);
 
