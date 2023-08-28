@@ -233,7 +233,7 @@ const MobileImageWrapper = styled.div`
 `;
 
 const MobileImg = styled.img`
-  animation: ${slideRight} 4s ease;
+  animation: ${slideRight} 7s ease;
 `;
 
 export default Introduce;
