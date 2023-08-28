@@ -2,7 +2,7 @@ import subjectInfo from "../../config/subjectInfo";
 import { useParams } from "react-router-dom";
 
 import { styled } from "styled-components";
-import Title from "../doctor/components/Title";
+import Title from "../../components/Title";
 import img from "../../images/title/visual_greeting.jpeg";
 import { Button } from "@mui/material";
 import ExtraContentTable from "./components/ExtraContentTable";
@@ -92,12 +92,12 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 92%; */
+    width: 92%;
     > img {
       width: 100%;
     }
     > div {
-      width: 92%;
+      width: 100%;
       margin-top: 20px;
       > h2.title {
         font-size: 24px;

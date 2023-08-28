@@ -1,7 +1,7 @@
 import NoticeList from "./components/NoticeList";
 import notice from "../../config/notice";
 import { styled } from "styled-components";
-import Title from "../doctor/components/Title";
+import Title from "../../components/Title";
 import img from "../../images/title/visual_greeting.jpeg";
 
 function Noti() {
