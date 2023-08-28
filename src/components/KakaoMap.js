@@ -5,10 +5,10 @@ function KakaoMap() {
 	useEffect(() => {
 		const container = document.getElementById('map');
 		const options = {
-			center: new kakao.maps.LatLng(126.707068, 37.454233),
+			center: new kakao.maps.LatLng(37.454012, 126.707794),
 			level: 3,
 		};
-		const markerPosition = new kakao.maps.LatLng(126.707068, 37.454233);
+		const markerPosition = new kakao.maps.LatLng(37.454012, 126.707794);
 		const marker = new kakao.maps.Marker({
 			position: markerPosition,
 		});
