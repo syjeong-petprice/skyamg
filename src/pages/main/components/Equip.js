@@ -1,10 +1,11 @@
 import { styled, keyframes } from "styled-components";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import mriImg from "../../../images/resource/images/스카이MRI_2.jpeg";
 
 function Equip() {
   const [animate, setAnimate] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
+  const componentRef = useRef(null);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -26,9 +27,9 @@ function Equip() {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
       // const midScreen = window.innerHeight * 3.5;
-      const midScreen = window.innerHeight / 2;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
 
-      if (window.scrollY > midScreen) {
+      if (componentTop < (window.innerHeight * 2) / 3) {
         setAnimate(true);
       } else {
         setAnimate(false);
@@ -43,7 +44,7 @@ function Equip() {
     };
   }, []);
   return (
-    <EquipContainer>
+    <EquipContainer ref={componentRef}>
       <ImgWrapper>
         <img className={animate ? "animate" : ""} src={mriImg} alt="mri" />
       </ImgWrapper>

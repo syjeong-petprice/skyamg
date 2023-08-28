@@ -1,15 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { styled, keyframes } from "styled-components";
 import bgImg from "../../../images/resource/images/스카이초음파실.jpeg";
 
 function Subject() {
   const [animate, setAnimate] = useState(false);
+  const componentRef = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
-      const midScreen = window.innerHeight * 2;
+      // const midScreen = window.innerHeight * 2;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
+      // console.log("Subject starting point:", componentTop, window.innerHeight);
 
-      if (window.scrollY > midScreen) {
+      if (componentTop < (window.innerHeight * 2) / 3) {
         setAnimate(true);
       } else {
         setAnimate(false);
@@ -24,7 +28,7 @@ function Subject() {
     };
   }, []);
   return (
-    <SubjectContainer>
+    <SubjectContainer ref={componentRef}>
       <TitleWrapper>
         <div className={animate ? "innerWrapper animate" : "innerWrapper"}>
           <h2>01</h2>

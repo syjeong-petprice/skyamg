@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { styled, keyframes } from "styled-components";
 import profileImg from "../../../images/resource/images/제목.png";
 import univLogo from "../../../images/resource/images/충남대로고.png";
@@ -7,6 +7,7 @@ function Introduce() {
   const [animate, setAnimate] = useState(false);
 
   const [windowWidth, setWindowWidth] = useState();
+  const componentRef = useRef(null);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -15,9 +16,10 @@ function Introduce() {
   useEffect(() => {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
-      const midScreen = window.innerHeight / 100;
+      // const midScreen = window.innerHeight / 100;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
 
-      if (window.scrollY > midScreen) {
+      if (window.scrollY > componentTop) {
         setAnimate(true);
       } else {
         setAnimate(false);
@@ -32,7 +34,7 @@ function Introduce() {
     };
   }, []);
   return (
-    <IntroduceContainer>
+    <IntroduceContainer ref={componentRef}>
       {windowWidth > 800 ? (
         <ImageWrapper>
           <img

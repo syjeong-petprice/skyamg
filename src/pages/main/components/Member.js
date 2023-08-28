@@ -1,5 +1,5 @@
 import { styled, keyframes } from "styled-components";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,6 +10,7 @@ function Member() {
   const [animate, setAnimate] = useState(false);
   const [show, setShow] = useState(5);
   const [windowWidth, setWindowWidth] = useState();
+  const componentRef = useRef(null);
 
   const settings = {
     dots: false,
@@ -41,12 +42,13 @@ function Member() {
   useEffect(() => {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
-      const midScreen = window.innerHeight / 2;
+      // const midScreen = window.innerHeight / 2;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
 
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
       // console.log('midScreen : ', midScreen);
-      if (window.scrollY > midScreen) {
+      if (componentTop < (window.innerHeight * 2) / 3) {
         setAnimate(true);
       } else {
         setAnimate(false);
@@ -75,8 +77,6 @@ function Member() {
       setShow(2);
     }
 
-    console.log(windowWidth, window.innerWidth);
-
     // window.addEventListener("resize", handleScreenWidth);
 
     // return () => {
@@ -85,7 +85,7 @@ function Member() {
   }, [windowWidth]);
 
   return (
-    <MemberContainer>
+    <MemberContainer ref={componentRef}>
       <TitleWrapper>
         <div className={animate ? "animate" : ""}>
           <h2 style={{ fontSize: windowWidth > 800 ? "3rem" : "2rem" }}>

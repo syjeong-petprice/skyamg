@@ -1,5 +1,5 @@
 import { styled, keyframes } from "styled-components";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import bgImg from "../../../images/resource/images/bg_lami2.jpg";
@@ -11,6 +11,7 @@ function Subject2() {
   const [animate, setAnimate] = useState(false);
   const [show, setShow] = useState(true);
   const [windowWidth, setWindowWidth] = useState();
+  const componentRef = useRef(null);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -32,12 +33,12 @@ function Subject2() {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
       //   const midScreen = window.innerHeight * 3.2;
-      const midScreen = window.innerHeight / 2;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
 
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
       // console.log('midScreen : ', midScreen);
-      if (window.scrollY > midScreen) {
+      if (componentTop < (window.innerHeight * 2) / 3) {
         setAnimate(true);
       } else {
         setAnimate(false);
@@ -78,7 +79,7 @@ function Subject2() {
   // 	};
   // }, []);
   return (
-    <SubjectContainer>
+    <SubjectContainer ref={componentRef}>
       <TextWrapper>
         <div className={animate ? "animate" : ""}>
           <p>SKY ANIMAL MEDICAL CENTER</p>
