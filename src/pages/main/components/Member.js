@@ -99,7 +99,11 @@ function Member() {
           <StyledSlider {...settings}>
             {vetInfo.map((vet) => (
               <div
-                onClick={() => setSelectedVet(vet)}
+                onClick={() => {
+                  if (vet.id !== 1) {
+                    setSelectedVet(vet);
+                  }
+                }}
                 className="vetProfile"
                 key={vet.id}
               >

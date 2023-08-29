@@ -17,7 +17,14 @@ function DoctorList({ item }) {
   return (
     <>
       <List>
-        <div className="sWrap">
+        <div
+          onClick={() => {
+            if (item.id !== 1) {
+              handleOpen();
+            }
+          }}
+          className="sWrap"
+        >
           <img
             src={item.img}
             onError={(e) => {
@@ -28,11 +35,7 @@ function DoctorList({ item }) {
           <div className="vetName">
             {item.position} {item.name}
           </div>
-          {item.id !== 1 && (
-            <div className="overlay" onClick={handleOpen}>
-              자세히 보기
-            </div>
-          )}
+          {item.id !== 1 && <div className="overlay">자세히 보기</div>}
         </div>
       </List>
       <DoctorModal item={item} open={open} handleClose={handleClose} />
