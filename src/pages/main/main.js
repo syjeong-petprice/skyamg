@@ -1,4 +1,4 @@
-import Slider from './components/Slider';
+import Slider2 from './components/Slider2';
 import Introduce from './components/Introduce';
 import Subject from './components/Subject';
 import Equip2 from './components/Equip2';
@@ -14,7 +14,7 @@ import Notice from './components/Notice';
 function Main() {
 	return (
 		<>
-			<Slider />
+			<Slider2 />
 			<Introduce />
 			<Member />
 			<Subject />
