@@ -156,13 +156,17 @@ const StyledSlider = styled(Slider)`
 
       img {
         width: 100%;
-        height: 30vh;
+        height: 100%;
         transition: ease;
         cursor: pointer;
 
         &:hover {
           scale: 1.2;
           animation: ${imgZoomin} 1s ease;
+        }
+        @media screen and (max-width: 800px) {
+          /* width: 40vw; */
+          height: 25vh;
         }
       }
     }
