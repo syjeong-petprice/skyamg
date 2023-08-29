@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import { styled, css, keyframes } from "styled-components";
 import { Button } from "@mui/material";
 
-// import img from "../../images/title/visual_greeting.jpeg";
+import img from "../../images/title/visual_greeting.jpeg";
 import subjectInfo from "../../config/subjectInfo";
 import Title from "../../components/Title";
 import ExtraContentTable from "./components/ExtraContentTable";
@@ -11,11 +11,30 @@ import ExtraContentTable from "./components/ExtraContentTable";
 function Subject() {
   const { id } = useParams();
   const idx = subjectInfo.findIndex((item) => item.id === Number(id));
-  console.log(id, idx);
+  // console.log(id, idx);
   const data = subjectInfo[idx];
   // 1: 내과, 2: 피부과, 3: 외과, 4: 치과, 5: 재활의학과, 6: 영상의학과, 7: 안과, 8: 응급의학과, 9: 건강검진센터
   const [selectedIdx, setSelectedIdx] = useState(0);
-  const [isChange, setIsChange] = useState(true);
+  const [isChange, setIsChange] = useState(false);
+
+  const contentRef = useRef(null);
+  const prevLocation = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // console.log(prevLocation.current, location.pathname);
+    if (prevLocation.current !== location.pathname) {
+      setSelectedIdx(0); // 라우트 주소가 변경된 경우에만 초기화
+      prevLocation.current = location.pathname;
+    }
+  }, [location.pathname]);
+
+  const scrollToContent = () => {
+    window.scrollTo({
+      top: contentRef.current.offsetTop - (10 * window.innerHeight) / 100,
+      behavior: "smooth",
+    });
+  };
 
   const buttonClickhandler = (i) => {
     setIsChange(true);
@@ -23,15 +42,16 @@ function Subject() {
     setTimeout(() => {
       setIsChange(false);
     }, 500);
+    scrollToContent();
   };
 
   return (
     <>
-      <Title img={data.img} title={data.title} />
+      <Title img={data.img || img} title={data.title} />
       <Container>
         {data.description && <p className="des">{data.description}</p>}
         {data.subjects.length > 1 && (
-          <ul>
+          <ul ref={contentRef}>
             {data.subjects.map((item, i) => {
               return (
                 <Button
@@ -46,29 +66,31 @@ function Subject() {
             })}
           </ul>
         )}
-        <div className={isChange ? "subInfo ani" : "subInfo"}>
-          <img src={data.subjects[selectedIdx].img} alt="" />
-          <div>
-            <h2 className="title">{data.subjects[selectedIdx].name}</h2>
-            {data.subjects[selectedIdx].content.length > 0 &&
-              data.subjects[selectedIdx].content.map((item, index) => {
-                return (
-                  <>
-                    {item.subName !== "" && (
-                      <h3>
-                        {"• "}
-                        {item.subName}
-                      </h3>
-                    )}
-                    <p>{item.subContent}</p>
-                    {item.extraContent.length > 0 && (
-                      <ExtraContentTable extraContent={item.extraContent} />
-                    )}
-                  </>
-                );
-              })}
+        {data.subjects[selectedIdx] && (
+          <div className={isChange ? "subInfo ani" : "subInfo"}>
+            <img src={data.subjects[selectedIdx].img} alt="" />
+            <div>
+              <h2 className="title">{data.subjects[selectedIdx].name}</h2>
+              {data.subjects[selectedIdx].content.length > 0 &&
+                data.subjects[selectedIdx].content.map((item, index) => {
+                  return (
+                    <>
+                      {item.subName !== "" && (
+                        <h3>
+                          {"• "}
+                          {item.subName}
+                        </h3>
+                      )}
+                      <p>{item.subContent}</p>
+                      {item.extraContent.length > 0 && (
+                        <ExtraContentTable extraContent={item.extraContent} />
+                      )}
+                    </>
+                  );
+                })}
+            </div>
           </div>
-        </div>
+        )}
       </Container>
     </>
   );
@@ -77,7 +99,7 @@ function Subject() {
 const slideInUp = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
@@ -171,11 +193,5 @@ const Container = styled.div`
     }
   }
 `;
-
-// const ContentItem = styled.div`
-//   animation: ${css`
-//     ${slideInUp} 0.5s ease-out
-//   `};
-// `;
 
 export default Subject;
