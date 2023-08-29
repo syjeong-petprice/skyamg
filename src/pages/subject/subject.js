@@ -1,13 +1,12 @@
-import subjectInfo from "../../config/subjectInfo";
 import { useParams } from "react-router-dom";
-
-import { styled } from "styled-components";
-import Title from "../../components/Title";
-import img from "../../images/title/visual_greeting.jpeg";
+import { useState, useEffect } from "react";
+import { styled, css, keyframes } from "styled-components";
 import { Button } from "@mui/material";
-import ExtraContentTable from "./components/ExtraContentTable";
 
-import { useState } from "react";
+// import img from "../../images/title/visual_greeting.jpeg";
+import subjectInfo from "../../config/subjectInfo";
+import Title from "../../components/Title";
+import ExtraContentTable from "./components/ExtraContentTable";
 
 function Subject() {
   const { id } = useParams();
@@ -16,9 +15,19 @@ function Subject() {
   const data = subjectInfo[idx];
   // 1: 내과, 2: 피부과, 3: 외과, 4: 치과, 5: 재활의학과, 6: 영상의학과, 7: 안과, 8: 응급의학과, 9: 건강검진센터
   const [selectedIdx, setSelectedIdx] = useState(0);
+  const [isChange, setIsChange] = useState(true);
+
+  const buttonClickhandler = (i) => {
+    setIsChange(true);
+    setSelectedIdx(i);
+    setTimeout(() => {
+      setIsChange(false);
+    }, 500);
+  };
+
   return (
     <>
-      <Title img={img} title={data.title} />
+      <Title img={data.img} title={data.title} />
       <Container>
         {data.description && <p className="des">{data.description}</p>}
         {data.subjects.length > 1 && (
@@ -27,7 +36,7 @@ function Subject() {
               return (
                 <Button
                   sx={{ width: "130px" }}
-                  onClick={() => setSelectedIdx(i)}
+                  onClick={() => buttonClickhandler(i)}
                   variant={i === selectedIdx ? "contained" : "outlined"}
                   key={item.id}
                 >
@@ -37,12 +46,12 @@ function Subject() {
             })}
           </ul>
         )}
-        <div className="subInfo">
+        <div className={isChange ? "subInfo ani" : "subInfo"}>
           <img src={data.subjects[selectedIdx].img} alt="" />
           <div>
             <h2 className="title">{data.subjects[selectedIdx].name}</h2>
             {data.subjects[selectedIdx].content.length > 0 &&
-              data.subjects[selectedIdx].content.map((item) => {
+              data.subjects[selectedIdx].content.map((item, index) => {
                 return (
                   <>
                     {item.subName !== "" && (
@@ -65,11 +74,27 @@ function Subject() {
   );
 }
 
+const slideInUp = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const Container = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  .ani {
+    animation: ${css`
+      ${slideInUp} 0.5s ease-out
+    `};
+  }
   > p.des {
     width: 92%;
     text-align: center;
@@ -146,5 +171,11 @@ const Container = styled.div`
     }
   }
 `;
+
+// const ContentItem = styled.div`
+//   animation: ${css`
+//     ${slideInUp} 0.5s ease-out
+//   `};
+// `;
 
 export default Subject;

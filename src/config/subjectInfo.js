@@ -27,11 +27,21 @@ import img604 from "../images/resource/subjects/radioimg_4.jpg";
 import img701 from "../images/resource/subjects/eyeimg_1.jpg";
 import img801 from "../images/resource/subjects/emeimg_1.jpg";
 import img901 from "../images/resource/subjects/phyimg_1.jpg";
+import img1 from "../images/title/visual_greeting.jpeg";
+import img2 from "../images/title/visual_der.jpeg";
+import img3 from "../images/title/visual_gs.jpeg";
+import img4 from "../images/title/visual_den.jpeg";
+import img5 from "../images/title/visual_specRe.jpeg";
+import img6 from "../images/title/visual_specVideo.jpeg";
+import img7 from "../images/title/visual_eye.jpeg";
+import img8 from "../images/title/visual_eme.jpeg";
+import img9 from "../images/title/visual_phy.jpeg";
 
 const subjectInfo = [
   {
     id: 1,
     title: "내과",
+    img: img1,
     description:
       "내과에서는 순환기, 소화기, 호흡기, 신경계, 내분비, 면역계 질환등에 내한 진단 및 비수술적 치료 등을 담당하고 있습니다.",
     subjects: [
@@ -124,6 +134,7 @@ const subjectInfo = [
   {
     id: 2,
     title: "피부과",
+    img: img2,
     description: "",
     subjects: [
       {
@@ -187,6 +198,7 @@ const subjectInfo = [
   {
     id: 3,
     title: "외과",
+    img: img3,
     description: "",
     subjects: [
       {
@@ -278,6 +290,7 @@ const subjectInfo = [
   {
     id: 4,
     title: "치과",
+    img: img4,
     description: "",
     subjects: [
       {
@@ -327,6 +340,7 @@ const subjectInfo = [
   {
     id: 5,
     title: "재활의학과",
+    img: img5,
     description:
       "본원에서는 다양한 슬개골 탈구, 전십자 인대 단열 등을 포함한 관절질환, 디스크 질환, 척수 질환 등을 포함한 신경계 환자를 대상으로 다양한 재활의학방법을 통해 재활 치료를 실시하고 있으며, 효과적인 재활 치료를 위해 전문화 된 간호 인력을 양성하고 있습니다.",
     subjects: [
@@ -391,6 +405,7 @@ const subjectInfo = [
   {
     id: 6,
     title: "영상의학과",
+    img: img6,
     description:
       "영상진단과에서는 다양한 첨단 영상의학검사장비를 이용하여 질병을 정확하게 진단하는 것을 목표로 하며, 모든 촬영과 판독이 전공자에 의해 이루어 지며, 안전한 검사를 위한 전용 마취 장비 및 모니터링 장비가 구비되어 있습니다.",
     subjects: [
@@ -492,6 +507,7 @@ const subjectInfo = [
   {
     id: 7,
     title: "안과",
+    img: img7,
     description: "",
     subjects: [
       {
@@ -513,6 +529,7 @@ const subjectInfo = [
   {
     id: 8,
     title: "응급의학과",
+    img: img8,
     description: "",
     subjects: [
       {
@@ -534,6 +551,7 @@ const subjectInfo = [
   {
     id: 9,
     title: "건강검진센터",
+    img: img9,
     description: "",
     subjects: [
       {
