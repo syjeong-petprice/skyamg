@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bgSky from "../../../images/resource/images/bg_Sky.png";
 import vetInfo from "../../../config/vetInfo";
+import DoctorModal from "../../doctor/components/DoctorModal";
 
 function Member() {
   const [animate, setAnimate] = useState(false);
@@ -42,7 +43,7 @@ function Member() {
   useEffect(() => {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
-      // const midScreen = window.innerHeight / 2;
+      //   const midScreen = window.innerHeight * 3.2;
       const componentTop = componentRef.current.getBoundingClientRect().top;
 
       // console.log('innerHeight : ', window.innerHeight);
@@ -62,6 +63,23 @@ function Member() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const [open, setOpen] = useState(false); // 닥터 모달 오픈 상태
+  const [selectedVet, setSelectedVet] = useState(); // 클릭한 vet
+
+  useEffect(() => {
+    if (selectedVet) {
+      handleOpen();
+    }
+  }, [selectedVet]);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     if (window.innerWidth > 1180) {
@@ -102,7 +120,15 @@ function Member() {
         <div className={animate ? "animate" : ""}>
           <StyledSlider {...settings}>
             {vetInfo.map((vet) => (
-              <div className="vetProfile" key={vet.id}>
+              <div
+                onClick={() => {
+                  if (vet.id !== 1) {
+                    setSelectedVet(vet);
+                  }
+                }}
+                className="vetProfile"
+                key={vet.id}
+              >
                 <div>
                   <img alt={vet.name} src={vet.img} />
                 </div>
@@ -114,6 +140,9 @@ function Member() {
           </StyledSlider>
         </div>
       </SliderWrapper>
+      {selectedVet && (
+        <DoctorModal item={selectedVet} open={open} handleClose={handleClose} />
+      )}
     </MemberContainer>
   );
 }
