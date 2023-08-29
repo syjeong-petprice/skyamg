@@ -3,12 +3,14 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import subjectList from "../../../config/subjectInfo";
 import bgImg from "../../../images/resource/images/전문진료과목_bg.jpeg";
+import { useNavigate } from "react-router-dom";
 
 function SubjectAll() {
   const [animate, setAnimate] = useState(false);
   const [show, setShow] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
-
+  const [selectedSubject, setSelectedSubject] = useState(); // 클릭한 Subject
+  const navigate = useNavigate();
   useEffect(() => {
     setWindowWidth(window.innerWidth);
 
@@ -33,6 +35,9 @@ function SubjectAll() {
     }
   }, [windowWidth]);
 
+  const clickHandler = (id) => {
+    navigate(`/skyamg/subject/${id}`);
+  };
   const settings = {
     dots: false,
     infinite: true,
@@ -62,6 +67,7 @@ function SubjectAll() {
                 key={subject.id}
                 onClick={() => {
                   console.log(subject.id);
+                  clickHandler(subject.id);
                 }}
               >
                 <div>
