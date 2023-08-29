@@ -30,11 +30,11 @@ export default function Sidebar({ open, onClose }) {
       <StyledLink to="/two" onClick={handleClose}>
         two
       </StyledLink>
-      <StyledLink to="/three" onClick={handleClose}>
-        three
+      <StyledLink to="/skyamg/skymedicaldoctor" onClick={handleClose}>
+        의료진 소개
       </StyledLink>
-      <StyledLink to="/four" onClick={handleClose}>
-        four
+      <StyledLink to="/skyamg/notice" onClick={handleClose}>
+        공지사항
       </StyledLink>
       <StyledLink
         style={{ color: isSubNavOpen ? "#011689" : "#999" }}

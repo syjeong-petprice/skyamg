@@ -39,10 +39,10 @@ function Header() {
           <StyledLink to="/two">two</StyledLink>
         </li>
         <li>
-          <StyledLink to="/three">three</StyledLink>
+          <StyledLink to="/skyamg/skymedicaldoctor">의료진 소개</StyledLink>
         </li>
         <li>
-          <StyledLink to="/four">four</StyledLink>
+          <StyledLink to="/skyamg/notice">공지사항</StyledLink>
         </li>
         <li>
           <StyledSubUl

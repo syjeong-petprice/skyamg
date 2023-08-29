@@ -83,10 +83,13 @@ const StyledDialogContent = styled(DialogContent)`
     align-items: center;
     overflow: auto;
     gap: 1rem;
+    padding: 0 !important;
+
     .right {
       overflow: unset;
       max-width: 100%;
       text-align: center;
+      padding: 24px;
     }
   }
 `;
