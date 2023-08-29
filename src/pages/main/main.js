@@ -5,6 +5,7 @@ import Equip2 from './components/Equip2';
 import Equip from './components/Equip';
 import Example from './components/Example';
 import Subject2 from './components/Subject2';
+import SubjectAll from './components/SubjectAll';
 import Member from './components/Member';
 import Location from './components/Location';
 import Preview from './components/Preview';
@@ -17,6 +18,7 @@ function Main() {
 			<Slider2 />
 			<Introduce />
 			<Member />
+			<SubjectAll />
 			<Subject />
 			<Equip2 />
 			<Equip />

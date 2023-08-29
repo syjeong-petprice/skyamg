@@ -10,28 +10,30 @@ function SubjectAll() {
 		dots: false,
 		infinite: true,
 		speed: 500,
-		slidesToShow: show,
+		slidesToShow: 5,
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 2000, // 오토플레이 간격을 조절할 수 있습니다.
 		pauseOnHover: true,
 	};
-	<SubjectContainer>
-		<SliderWrapper>
-			<div className={animate ? 'animate' : ''}>
-				<StyledSlider {...settings}>
-					{subjectList.map((subject) => (
-						<div className="subjectSlide" key={subject.id}>
-							<div>
-								<img alt={subject.title} src={''} />
+	return (
+		<SubjectContainer>
+			<SliderWrapper>
+				<div className={animate ? 'animate' : ''}>
+					<StyledSlider {...settings}>
+						{subjectList.map((subject) => (
+							<div className="subjectSlide" key={subject.id}>
+								<div>
+									<img alt={subject.title} src={subject.primaryImg} />
+								</div>
+								<p>{subject.title}</p>
 							</div>
-							<p></p>
-						</div>
-					))}
-				</StyledSlider>
-			</div>
-		</SliderWrapper>
-	</SubjectContainer>;
+						))}
+					</StyledSlider>
+				</div>
+			</SliderWrapper>
+		</SubjectContainer>
+	);
 }
 
 const slideDown = keyframes`
@@ -79,11 +81,12 @@ const StyledSlider = styled(Slider)`
 		div {
 			width: 100%;
 			height: 100%;
+			/* height: 200px; */
 			overflow: hidden;
 
 			img {
-				width: 100%;
-				height: auto;
+				width: auto;
+				height: 100%;
 				transition: ease;
 				cursor: pointer;
 
