@@ -7,7 +7,7 @@ import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { styled, keyframes } from "styled-components";
 
 import bgImg1 from "../../../images/resource/images/portfolio_053945.png";
-import bgImg2 from "../../../images/resource/images/portfolio_062119.jpg(062119).jpg";
+import bgImg2 from "../../../images/resource/images/portfolio_062119.jpg";
 import bgImg3 from "../../../images/resource/images/portfolio_080228.jpg";
 import toplogo_w from "../../../images/common/toplogo_w.png";
 import { Custom } from "../../../styles/theme";

@@ -48,6 +48,8 @@ function Example() {
   const [show, setShow] = useState(true);
   const [value, setValue] = useState(0);
 
+  const [windowWidth, setWindowWidth] = useState();
+
   const componentRef = useRef(null);
 
   useEffect(() => {
@@ -75,12 +77,10 @@ function Example() {
   }, []);
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
     const handleScreenWidth = () => {
-      if (window.innerWidth <= 520) {
-        setShow(false);
-      } else {
-        setShow(true);
-      }
+      setWindowWidth(window.innerWidth);
     };
 
     window.addEventListener("resize", handleScreenWidth);
@@ -89,6 +89,15 @@ function Example() {
       window.removeEventListener("resize", handleScreenWidth);
     };
   }, []);
+
+  useEffect(() => {
+    // if (windowWidth <= 800) {
+    //   setShow(false);
+    // } else {
+    //   setShow(true);
+    // }
+  }, [windowWidth]);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -105,12 +114,17 @@ function Example() {
       <ImgWrapper>
         <div className={animate ? "animate" : ""}>
           <Box sx={{ width: "100%" }}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <Box
+              sx={{
+                borderBottom: 1,
+                borderColor: "divider",
+              }}
+            >
               <Tabs
                 value={value}
                 onChange={handleChange}
                 aria-label="basic tabs example"
-                centered
+                // centered
                 style={{
                   width: "100%",
                 }}
@@ -239,13 +253,14 @@ const TextWrapper = styled.div`
 const ImgWrapper = styled.div`
   width: 100%;
   height: 100%;
+  /* overflow: auto; */
   .animate {
     animation: ${slideUp} 4s ease;
   }
 
   .tabImg {
     width: 100%;
-    height: 60vh;
+    /* height: 60vh; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -255,7 +270,7 @@ const ImgWrapper = styled.div`
     }
 
     div {
-      /* overflow: hidden; */
+      /* overflow: auto; */
       width: 470px;
       height: 100%;
       display: flex;

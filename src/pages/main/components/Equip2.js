@@ -61,10 +61,6 @@ function Subject2() {
     }
   }, [windowWidth]);
 
-  useEffect(() => {
-    console.log(show, windowWidth);
-  }, [show, windowWidth]);
-
   // useEffect(() => {
   // 	const handleScreenWidth = () => {
   // 		if (window.innerWidth <= 690) {
