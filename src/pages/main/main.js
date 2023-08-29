@@ -11,6 +11,7 @@ import Preview from "./components/Preview";
 import Youtube from "./components/Youtube";
 import Notice from "./components/Notice";
 import Slider from "./components/Slider";
+import SubjectAll from "./components/SubjectAll";
 
 function Main() {
   return (
@@ -19,6 +20,7 @@ function Main() {
       {/* <Slider2 /> */}
       <Introduce />
       <Member />
+      <SubjectAll />
       <Subject />
       <Equip2 />
       <Equip />
