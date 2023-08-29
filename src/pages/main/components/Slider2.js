@@ -36,7 +36,7 @@ function Preview() {
     pauseOnFocus: false,
   };
   return (
-    <PreviewContainer>
+    <PreviewContainer id={"Main_Slider"}>
       <SlideWrapper>
         <div className="mainWrapper">
           <StyledSlider {...settings}>

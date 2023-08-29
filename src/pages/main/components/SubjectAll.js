@@ -112,8 +112,8 @@ const SubjectContainer = styled.section`
   width: 100%;
   height: 92vh;
   /* background-color: #89cff0; */
-  background: linear-gradient(to bottom, #89cff0, #4a90e2);
-  /* background-image: url(${bgImg}); */
+  /* background: linear-gradient(to bottom, #bcd4e6, #6ca0dc); */
+  background-image: url(${bgImg});
   background-size: cover;
 
   display: flex;
@@ -183,7 +183,7 @@ const StyledSlider = styled(Slider)`
       font-size: 0.9rem;
       font-weight: bold;
       text-align: center;
-      /* text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); */
+      text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.5);
     }
   }
   .slick-list {
