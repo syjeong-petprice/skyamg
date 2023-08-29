@@ -34,7 +34,7 @@ function Introduce() {
     };
   }, []);
   return (
-    <IntroduceContainer ref={componentRef}>
+    <IntroduceContainer ref={componentRef} id={"Main_Intro"}>
       {windowWidth > 800 ? (
         <ImageWrapper>
           <img

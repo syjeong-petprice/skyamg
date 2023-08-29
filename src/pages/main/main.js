@@ -16,8 +16,8 @@ import SubjectAll from "./components/SubjectAll";
 function Main() {
   return (
     <>
-      <Slider />
-      {/* <Slider2 /> */}
+      {/* <Slider /> */}
+      <Slider2 />
       <Introduce />
       <Member />
       <SubjectAll />
