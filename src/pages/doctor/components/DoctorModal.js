@@ -67,9 +67,9 @@ function DoctorModal({ item, open, handleClose }) {
               </div>
             )}
             {item.paper.length > 0 && (
-              <div class="docDetail-study">
-                <div class="bedge bedge-blue">주요논문</div>
-                <div class="docDetail-eng">
+              <div className="docDetail-study">
+                <div className="bedge bedge-blue">주요논문</div>
+                <div className="docDetail-eng">
                   {item.paper.map((i) => {
                     return <p className="dot-text1 fArial">{i}</p>;
                   })}
