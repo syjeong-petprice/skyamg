@@ -146,8 +146,15 @@ function Youtube() {
       </EmbedWrapper>
       <ThumbnailWrapper>
         {isMobile && (
-          <p style={{ fontSize: "1.5rem", color: "white", margin: "1rem" }}>
-            {"+ 더 보기"}
+          <p
+            style={{
+              fontSize: "1.5rem",
+              color: "white",
+              margin: "1rem",
+              fontWeight: 900,
+            }}
+          >
+            {"더 보기"}
           </p>
         )}
         {youtubeInfo.map((item) => (
