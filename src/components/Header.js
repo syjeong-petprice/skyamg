@@ -32,12 +32,12 @@ function Header() {
         </Link>
       </StyledDiv>
       <StyledUl>
-        <li>
+        {/* <li>
           <StyledLink to="/one">one</StyledLink>
         </li>
         <li>
           <StyledLink to="/two">two</StyledLink>
-        </li>
+        </li> */}
         <li>
           <StyledLink to="/skyamg/skymedicaldoctor">의료진 소개</StyledLink>
         </li>

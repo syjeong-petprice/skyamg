@@ -24,12 +24,12 @@ export default function Sidebar({ open, onClose }) {
       >
         <CloseIcon />
       </IconButton>
-      <StyledLink to="/one" onClick={handleClose}>
+      {/* <StyledLink to="/one" onClick={handleClose}>
         one
       </StyledLink>
       <StyledLink to="/two" onClick={handleClose}>
         two
-      </StyledLink>
+      </StyledLink> */}
       <StyledLink to="/skyamg/skymedicaldoctor" onClick={handleClose}>
         의료진 소개
       </StyledLink>
