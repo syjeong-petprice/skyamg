@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import NoticeModal from "./NoticeModal";
+import noImg from "../../../images/contents/no-img-big.png";
 
 function NoticeList({ item }) {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ function NoticeList({ item }) {
     <>
       <List onClick={handleOpen}>
         <div>
-          <img src={item.img} alt="" />
+          <img src={item.img && item.img !== "" ? item.img : noImg} alt="" />
         </div>
         <h2>{item.title}</h2>
         <p>{item.content}</p>

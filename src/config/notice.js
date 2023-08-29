@@ -5,7 +5,7 @@ const notice = [
     id: 1,
     title: "제목1",
     content: "내용입니다",
-    img: img,
+    img: "",
   },
   {
     id: 2,
