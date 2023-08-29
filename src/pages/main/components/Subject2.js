@@ -234,11 +234,11 @@ const ImgWrapper = styled.div`
 
   .imgOne,
   .imgTwo {
-    width: 470px;
+    width: 25rem;
     height: 100%;
 
     @media screen and (max-width: 500px) {
-      width: 380px;
+      width: 20rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
