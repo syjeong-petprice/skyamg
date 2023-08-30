@@ -44,12 +44,12 @@ function Preview() {
               <div className={isMobile ? "innerText_m" : "innerText"}>
                 <p>
                   하루 <strong>24시간,</strong>
-                </p>
-                <p className="next_line_bar">/</p>
-                <p>
                   1년 <strong>365일,</strong>
                 </p>
-                <p className="next_line_bar">/</p>
+                {/* <p className="next_line_bar">/</p>
+                <p>
+                </p> */}
+                {/* <p className="next_line_bar">/</p> */}
                 <p>
                   당신 곁엔 <strong>SKY 동물메디컬센터</strong>
                 </p>
