@@ -7,7 +7,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Links from './components/Links';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +14,6 @@ root.render(
 		<CssBaseline />
 		<Router>
 			<Header />
-			<Links />
 			<App />
 			<Footer />
 		</Router>

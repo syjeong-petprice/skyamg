@@ -13,6 +13,7 @@ import Notice from './components/Notice';
 import Notice2 from './components/Notice2';
 import Slider from './components/Slider';
 import SubjectAll from './components/SubjectAll';
+import Links from '../../components/Links';
 
 function Main() {
 	return (
@@ -31,6 +32,7 @@ function Main() {
 			<Preview />
 			<Youtube />
 			<Notice2 />
+			<Links />
 		</>
 	);
 }
