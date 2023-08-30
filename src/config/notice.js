@@ -1,9 +1,9 @@
-import img from "../images/vet/mfban_ratio.jpeg";
-import notice_1 from "../images/resource/images/코벳엑스칼리버.jpeg";
-import notice_2 from "../images/resource/images/스카이현판.jpeg";
-import notice_3 from "../images/resource/images/스카이유기동물사료.jpeg";
-import notice_4 from "../images/resource/images/구월지웰시티푸르지오_인천스카이동물메디컬센터_주차_안내_1.jpeg";
-import notice_5 from "../images/title/visual_incheon.jpeg";
+import img from '../images/vet/mfban_ratio.jpeg';
+import notice_1 from '../images/resource/images/코벳엑스칼리버.jpeg';
+import notice_2 from '../images/resource/images/스카이현판.jpeg';
+import notice_3 from '../images/resource/images/스카이유기동물사료.jpeg';
+import notice_4 from '../images/resource/images/구월지웰시티푸르지오_인천스카이동물메디컬센터_주차_안내_1.jpeg';
+import notice_5 from '../images/title/visual_incheon.jpeg';
 
 // import notice_1 from "../images/resource/images/코벳엑스칼리버.jpeg";
 // import notice_1 from "../images/resource/images/코벳엑스칼리버.jpeg";
@@ -11,10 +11,10 @@ import notice_5 from "../images/title/visual_incheon.jpeg";
 //? 관련 이미지가 없는 경우, 빈 문자열 넣어주세요
 
 const notice = [
-  {
-    id: 4,
-    title: `주차안내 및 오시는 길`,
-    content: `안녕하세요
+	{
+		id: 4,
+		title: `주차안내 및 오시는 길`,
+		content: `안녕하세요
   
 인천24시동물병원
 인천스카이동물메디컬센터 입니다.
@@ -48,24 +48,24 @@ const notice = [
 혹시 길이 복잡하시면 병원으로 언제 든지 전화 주세요.
 자세히 안내해 드리겠습니다.
 `,
-    img: notice_4,
-  },
-  {
-    id: 1,
-    title: `더 나은 진료를 위한 영상진단보조 AI - SK 엑스칼리버`,
-    content: `스카이동물메디컬그룹의 모든 동물병원은 
+		img: 'https://raw.githubusercontent.com/syjeong-petprice/skyamg/master/src/images/resource/images/%EA%B5%AC%EC%9B%94%EC%A7%80%EC%9B%B0%EC%8B%9C%ED%8B%B0%ED%91%B8%EB%A5%B4%EC%A7%80%EC%98%A4_%EC%9D%B8%EC%B2%9C%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%8F%99%EB%AC%BC%EB%A9%94%EB%94%94%EC%BB%AC%EC%84%BC%ED%84%B0_%EC%A3%BC%EC%B0%A8_%EC%95%88%EB%82%B4_1.jpeg',
+	},
+	{
+		id: 1,
+		title: `더 나은 진료를 위한 영상진단보조 AI - SK 엑스칼리버`,
+		content: `스카이동물메디컬그룹의 모든 동물병원은 
 더 나은 진료를 위한 영상진단보조 AI SK텔레콤 엑스칼리버를 도입하여 
 반려동물의 건강을 위한 진료에 활용하고 있습니다. 
 
 앞으로도 더욱 노력하는 스카이동물메디컬그룹이 되겠습니다. 
 
 감사합니다.`,
-    img: notice_1,
-  },
-  {
-    id: 2,
-    title: `ai동물병원, ai to 동물의료 _ SK텔레콤 엑스칼리버, 스카이동물메디컬센터`,
-    content: `안녕하세요. 스카이동물메디컬그룹입니다. 
+		img: notice_1,
+	},
+	{
+		id: 2,
+		title: `ai동물병원, ai to 동물의료 _ SK텔레콤 엑스칼리버, 스카이동물메디컬센터`,
+		content: `안녕하세요. 스카이동물메디컬그룹입니다. 
 
 얼마전, 사람과 인공지능의 바둑 대결이 온 세상에 관심을 받으면서 
 인공지능, AI가 우리 생활에 가까이 왔구나를 느꼈던 적이 있습니다. 
@@ -75,12 +75,12 @@ const notice = [
 하지만 그 얼마 뒤 openAI사의 Chat GPT가 또 한번 인공지능이라는 현실을 느끼게 해주었습니다. 
 
 인공지능, AI는 이제는 결코 멀리 있는게 아닙니다.`,
-    img: notice_2,
-  },
-  {
-    id: 3,
-    title: `스카이동물메디컬센터에서 퓨리나와 함께 유기동물 보호소에 사료를 기부`,
-    content: `스카이동물메디컬그룹에서 인천시 수의사회 유기동물 보소호에 사료를 기부 하였습니다. 
+		img: notice_2,
+	},
+	{
+		id: 3,
+		title: `스카이동물메디컬센터에서 퓨리나와 함께 유기동물 보호소에 사료를 기부`,
+		content: `스카이동물메디컬그룹에서 인천시 수의사회 유기동물 보소호에 사료를 기부 하였습니다. 
 
 유기동물 문제에도 많은 관심이 필요하기 때문에 동물 복지를 위해 
 퓨리나 에서 많은 도움을 주신 덕분에 기부를 할 수 있게 되었습니다. 
@@ -88,12 +88,12 @@ const notice = [
 앞으로도 반려동물의 건강 뿐만 아니라 동물 복지의 전반적인 분야에서도 항상 관심을 갖고 노력하는 스카이동물메디컬그룹이 되겠습니다. 
 
 감사합니다.`,
-    img: notice_3,
-  },
-  {
-    id: 5,
-    title: `인사말`,
-    content: `안녕하세요
+		img: notice_3,
+	},
+	{
+		id: 5,
+		title: `인사말`,
+		content: `안녕하세요
 
 인천스카이동물메디컬센터는
 인천시청과 길병원 사이 위치 하고 있으며
@@ -109,14 +109,14 @@ CT,MRI등 최신의 진단 장비를 갖춘
 
 감사합니다.
 `,
-    img: notice_5,
-  },
-  // {
-  //   id: 6,
-  //   title: `제목6`,
-  //   content: `내용입니다`,
-  //   img: img,
-  // },
+		img: notice_5,
+	},
+	// {
+	//   id: 6,
+	//   title: `제목6`,
+	//   content: `내용입니다`,
+	//   img: img,
+	// },
 ];
 
 export default notice;
