@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/skyamg/static/css/main.dbce3e57.css",
-    "main.js": "/skyamg/static/js/main.a8bc1e5b.js",
+    "main.js": "/skyamg/static/js/main.26a94520.js",
     "static/js/787.d322386b.chunk.js": "/skyamg/static/js/787.d322386b.chunk.js",
     "static/media/PretendardVariable.ttf": "/skyamg/static/media/PretendardVariable.d008a69682c7c6bef29a.ttf",
     "static/media/bg_Sky.png": "/skyamg/static/media/bg_Sky.36edbf88b3f052725c59.png",
@@ -25,6 +25,7 @@
     "static/media/denimg_3.jpg": "/skyamg/static/media/denimg_3.26b568023bbf128cdf5b.jpg",
     "static/media/denimg_1.jpg": "/skyamg/static/media/denimg_1.82b113b0bb0561399044.jpg",
     "static/media/visual_den.jpeg": "/skyamg/static/media/visual_den.445ddaa0f1d37bb2460c.jpeg",
+    "static/media/building_night.jpeg": "/skyamg/static/media/building_night.1b36a07e4b3c44ededfd.jpeg",
     "static/media/3.png": "/skyamg/static/media/3.d9ba01e555f8b2a2f19e.png",
     "static/media/derimg_2.jpg": "/skyamg/static/media/derimg_2.b9b98c70b224e407e5a3.jpg",
     "static/media/portfolio_053945.png": "/skyamg/static/media/portfolio_053945.6c371fe8f1fed48778ab.png",
@@ -58,7 +59,6 @@
     "static/media/doc_choiyujin.png": "/skyamg/static/media/doc_choiyujin.1fca10e24605a674a739.png",
     "static/media/스카이목욕실.jpeg": "/skyamg/static/media/스카이목욕실.a1d21556e9efe2139290.jpeg",
     "static/media/doc_moonjongsun.png": "/skyamg/static/media/doc_moonjongsun.e2c29e1bc977cae95712.png",
-    "static/media/스카이야경2.jpg": "/skyamg/static/media/스카이야경2.821f90a5bd8d8e969504.jpg",
     "static/media/mfban_ratio.jpeg": "/skyamg/static/media/mfban_ratio.4f638a4ad629652b511d.jpeg",
     "static/media/doc_yoongihong.png": "/skyamg/static/media/doc_yoongihong.696db4bff5a9baf4869e.png",
     "static/media/doc_jeongdaseul.png": "/skyamg/static/media/doc_jeongdaseul.b16adcbffaa1911ea19b.png",
@@ -105,11 +105,11 @@
     "static/media/slick.woff": "/skyamg/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/skyamg/index.html",
     "main.dbce3e57.css.map": "/skyamg/static/css/main.dbce3e57.css.map",
-    "main.a8bc1e5b.js.map": "/skyamg/static/js/main.a8bc1e5b.js.map",
+    "main.26a94520.js.map": "/skyamg/static/js/main.26a94520.js.map",
     "787.d322386b.chunk.js.map": "/skyamg/static/js/787.d322386b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dbce3e57.css",
-    "static/js/main.a8bc1e5b.js"
+    "static/js/main.26a94520.js"
   ]
 }
