@@ -71,6 +71,7 @@ const StyledDialogContent = styled(DialogContent)`
     overflow: auto;
     p {
       margin: 0;
+      white-space: pre-wrap;
     }
   }
   @media screen and (max-width: 690px) {

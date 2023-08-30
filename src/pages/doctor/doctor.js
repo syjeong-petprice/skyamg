@@ -2,7 +2,7 @@ import DoctorList from "./components/DoctorList";
 import Title from "../../components/Title";
 import vetInfo from "../../config/vetInfo";
 import { styled } from "styled-components";
-import img from "../../images/title/visual_bupyeong.jpeg";
+import img from "../../images/title/visual_incheon.jpeg";
 
 function Doctor() {
   return (
