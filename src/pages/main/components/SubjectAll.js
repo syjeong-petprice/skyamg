@@ -1,14 +1,17 @@
 import { styled, keyframes } from "styled-components";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import subjectList from "../../../config/subjectInfo";
 import bgImg from "../../../images/resource/images/전문진료과목_bg.jpeg";
+import { useNavigate } from "react-router-dom";
 
 function SubjectAll() {
   const [animate, setAnimate] = useState(false);
   const [show, setShow] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
-
+  const [selectedSubject, setSelectedSubject] = useState(); // 클릭한 Subject
+  const componentRef = useRef(null);
+  const navigate = useNavigate();
   useEffect(() => {
     setWindowWidth(window.innerWidth);
 
@@ -33,6 +36,34 @@ function SubjectAll() {
     }
   }, [windowWidth]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
+      //   const midScreen = window.innerHeight * 3.2;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
+
+      // console.log('innerHeight : ', window.innerHeight);
+      // console.log('scrollY : ', window.scrollY);
+      // console.log('midScreen : ', midScreen);
+      if (componentTop < (window.innerHeight * 2) / 3) {
+        setAnimate(true);
+      } 
+      // else {
+      //   setAnimate(false);
+      // }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // 컴포넌트 언마운트 시 이벤트 리스너 제거
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const clickHandler = (id) => {
+    navigate(`/skyamg/subject/${id}`);
+  };
   const settings = {
     dots: false,
     infinite: true,
@@ -44,7 +75,7 @@ function SubjectAll() {
     pauseOnHover: true,
   };
   return (
-    <SubjectContainer>
+    <SubjectContainer ref={componentRef}>
       <TextWrapper>
         <div className={animate ? "animate" : ""}>
           {/* <p>SKY ANIMAL MEDICAL CENTER</p> */}
@@ -62,6 +93,7 @@ function SubjectAll() {
                 key={subject.id}
                 onClick={() => {
                   console.log(subject.id);
+                  clickHandler(subject.id);
                 }}
               >
                 <div>
@@ -110,10 +142,11 @@ const slideUp = keyframes`
 
 const SubjectContainer = styled.section`
   width: 100%;
-  height: 92vh;
+  height: fit-content;
+  padding: 5rem;
   /* background-color: #89cff0; */
-  background: linear-gradient(to bottom, #89cff0, #4a90e2);
-  /* background-image: url(${bgImg}); */
+  /* background: linear-gradient(to bottom, #bcd4e6, #6ca0dc); */
+  background-image: url(${bgImg});
   background-size: cover;
 
   display: flex;
@@ -183,7 +216,7 @@ const StyledSlider = styled(Slider)`
       font-size: 0.9rem;
       font-weight: bold;
       text-align: center;
-      /* text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); */
+      text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.5);
     }
   }
   .slick-list {
@@ -218,7 +251,7 @@ const SliderWrapper = styled.div`
 
 const TextWrapper = styled.div`
   width: 100%;
-  height: 25%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -33,11 +33,11 @@ function Header() {
       </StyledDiv>
       <StyledUl>
         <li>
-          <StyledLink to="/one">one</StyledLink>
+          <StyledLink to="/skyamg">SKY 소개</StyledLink>
         </li>
-        <li>
+        {/* <li>
           <StyledLink to="/two">two</StyledLink>
-        </li>
+        </li> */}
         <li>
           <StyledLink to="/skyamg/skymedicaldoctor">의료진 소개</StyledLink>
         </li>

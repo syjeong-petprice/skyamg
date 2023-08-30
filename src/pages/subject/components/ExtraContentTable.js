@@ -33,43 +33,46 @@ const StyledTableRow = styled(TableRow)`
 function ExtraContentTable({ extraContent }) {
   return (
     <Container>
-      {extraContent.map((section, sectionIndex) => (
-        <TableContainer component={Paper} key={sectionIndex}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableTitleCell colSpan={2}>
-                  <Typography variant="subtitle1">
-                    <b>{section.title}</b>
-                  </Typography>
-                </TableTitleCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {section.info.map((infoItem, infoIndex) => (
-                <StyledTableRow key={infoIndex}>
-                  <TableCell>
-                    <Typography variant="subtitle2" sx={{ fontSize: 14 }}>
-                      {infoItem.name}
+      {extraContent &&
+        extraContent.map((section, sectionIndex) => (
+          <TableContainer component={Paper} key={sectionIndex}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableTitleCell colSpan={2}>
+                    <Typography variant="subtitle1">
+                      <b>{section.title}</b>
                     </Typography>
-                  </TableCell>
-                  <TableCell>
-                    {infoItem.content.map((contentItem, contentIndex) => (
-                      <Typography
-                        key={contentIndex}
-                        sx={{ fontSize: 12, margin: 0 }}
-                        paragraph
-                      >
-                        {contentItem}
-                      </Typography>
-                    ))}
-                  </TableCell>
-                </StyledTableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      ))}
+                  </TableTitleCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {section &&
+                  section.info.map((infoItem, infoIndex) => (
+                    <StyledTableRow key={infoIndex}>
+                      <TableCell>
+                        <Typography variant="subtitle2" sx={{ fontSize: 14 }}>
+                          {infoItem.name}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
+                        {infoItem.content &&
+                          infoItem.content.map((contentItem, contentIndex) => (
+                            <Typography
+                              key={contentIndex}
+                              sx={{ fontSize: 12, margin: 0 }}
+                              paragraph
+                            >
+                              {contentItem}
+                            </Typography>
+                          ))}
+                      </TableCell>
+                    </StyledTableRow>
+                  ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        ))}
     </Container>
   );
 }

@@ -4,6 +4,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 import { CSSTransition } from "react-transition-group";
+import noImg from "../../../images/contents/no-img-big.png";
 
 const DialogAnimation = styled(CSSTransition)`
   &.dialog-enter {
@@ -44,13 +45,7 @@ function NoticeModal({ item, open, handleClose }) {
         </DialogTitle>
         <StyledDialogContent>
           <div className="left">
-            <img
-              src={item.img}
-              onError={(e) => {
-                e.target.src = "src/images/vet/no-img.png";
-              }}
-              alt=""
-            />
+            <img src={item.img && item.img !== "" ? item.img : noImg} alt="" />
           </div>
           <div className="right">
             <p>{item.content}</p>

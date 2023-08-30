@@ -15,9 +15,10 @@ function Subject() {
 
       if (componentTop < (window.innerHeight * 2) / 3) {
         setAnimate(true);
-      } else {
-        setAnimate(false);
-      }
+      } 
+      // else {
+      //   setAnimate(false);
+      // }
     };
 
     window.addEventListener("scroll", handleScroll);

@@ -28,11 +28,24 @@ import img701 from '../images/resource/subjects/eyeimg_1.jpg';
 import img801 from '../images/resource/subjects/emeimg_1.jpg';
 import img901 from '../images/resource/subjects/phyimg_1.jpg';
 
+import img1 from '../images/title/visual_greeting.jpeg';
+import img2 from '../images/title/visual_der.jpeg';
+import img3 from '../images/title/visual_gs.jpeg';
+import img4 from '../images/title/visual_den.jpeg';
+import img5 from '../images/title/visual_specRe.jpeg';
+import img6 from '../images/title/visual_specVideo.jpeg';
+import img7 from '../images/title/visual_eye.jpeg';
+import img8 from '../images/title/visual_eme.jpeg';
+import img9 from '../images/title/visual_phy.jpeg';
+
 const subjectInfo = [
 	{
 		id: 1,
-		title: '내과',
 		primaryImg: img101,
+		titleImg: img1,
+		customDescription:
+			'내과에서는 순환기, 소화기, 호흡기, 신경계, 내분비, 면역계 질환등에 내한 진단 및 비수술적 치료 등을 담당하고 있습니다.',
+		title: '내과',
 		description:
 			'내과에서는 순환기, 소화기, 호흡기, 신경계, 내분비, 면역계 질환등에 내한 진단 및 비수술적 치료 등을 담당하고 있습니다.',
 		subjects: [
@@ -125,8 +138,11 @@ const subjectInfo = [
 	{
 		id: 2,
 		title: '피부과',
-		primaryImg: img201,
+		titleImg: img2,
+		customDescription:
+			'반려동물의 가장 대표적인 피부질환인 감염성질환부터, 알러지성, 호르몬성, 종양성 피부질환까지 전문적인 의료 서비스를 제공합니다.',
 		description: '',
+		primaryImg: img201,
 		subjects: [
 			{
 				id: 201,
@@ -189,8 +205,11 @@ const subjectInfo = [
 	{
 		id: 3,
 		title: '외과',
-		primaryImg: img301,
+		titleImg: img3,
+		customDescription:
+			'숙련된 외과 전공자의 전문화된 최소 침습 수술을 통해 수술 후 회복 기간의 단축 및 재발 방지를 위해 최선을 다하고 있습니다.',
 		description: '',
+		primaryImg: img301,
 		subjects: [
 			{
 				id: 301,
@@ -281,8 +300,11 @@ const subjectInfo = [
 	{
 		id: 4,
 		title: '치과',
-		primaryImg: img401,
+		titleImg: img4,
 		description: '',
+		customDescription:
+			'간단한 예방치과는 물론이고, 고양이 치과질환 및 고위험의 구강외과질환까지도 구강CT 촬영을 통해 적절한 치료를 제공합니다.',
+		primaryImg: img401,
 		subjects: [
 			{
 				id: 401,
@@ -331,9 +353,12 @@ const subjectInfo = [
 	{
 		id: 5,
 		title: '재활의학과',
-		primaryImg: img501,
+		titleImg: img5,
 		description:
 			'본원에서는 다양한 슬개골 탈구, 전십자 인대 단열 등을 포함한 관절질환, 디스크 질환, 척수 질환 등을 포함한 신경계 환자를 대상으로 다양한 재활의학방법을 통해 재활 치료를 실시하고 있으며, 효과적인 재활 치료를 위해 전문화 된 간호 인력을 양성하고 있습니다.',
+		customDescription:
+			'본원에서는 다양한 슬개골 탈구, 전십자 인대 단열 등을 포함한 관절질환, 디스크 질환, 척수 질환 등을 포함한 신경계 환자를 대상으로 다양한 재활의학방법을 통해 재활 치료를 실시하고 있으며, 효과적인 재활 치료를 위해 전문화 된 간호 인력을 양성하고 있습니다.',
+		primaryImg: img501,
 		subjects: [
 			{
 				id: 501,
@@ -396,9 +421,12 @@ const subjectInfo = [
 	{
 		id: 6,
 		title: '영상의학과',
-		primaryImg: img601,
+		titleImg: img6,
 		description:
 			'영상진단과에서는 다양한 첨단 영상의학검사장비를 이용하여 질병을 정확하게 진단하는 것을 목표로 하며, 모든 촬영과 판독이 전공자에 의해 이루어 지며, 안전한 검사를 위한 전용 마취 장비 및 모니터링 장비가 구비되어 있습니다.',
+		customDescription:
+			'영상진단과에서는 다양한 첨단 영상의학검사장비를 이용하여 질병을 정확하게 진단하는 것을 목표로 하며, 모든 촬영과 판독이 전공자에 의해 이루어 지며, 안전한 검사를 위한 전용 마취 장비 및 모니터링 장비가 구비되어 있습니다.',
+		primaryImg: img601,
 		subjects: [
 			{
 				id: 601,
@@ -497,9 +525,12 @@ const subjectInfo = [
 	},
 	{
 		id: 7,
+		titleImg: img7,
 		title: '안과',
-		primaryImg: img701,
 		description: '',
+		customDescription:
+			'스카이동물메디컬센터는 첨단 안과 장비를 도입하여  세분화고 정확한 안과 진료와 수술을 하고 있습니다.',
+		primaryImg: img701,
 		subjects: [
 			{
 				id: 701,
@@ -520,8 +551,11 @@ const subjectInfo = [
 	{
 		id: 8,
 		title: '응급의학과',
-		primaryImg: img801,
+		titleImg: img8,
 		description: '',
+		customDescription:
+			'24시간 수의사 및 간호테크니션이 상주하여 입원 환자의 관리 및 응급진료에 최선을 다하고 있습니다.',
+		primaryImg: img801,
 		subjects: [
 			{
 				id: 801,
@@ -542,8 +576,11 @@ const subjectInfo = [
 	{
 		id: 9,
 		title: '건강검진센터',
-		primaryImg: img901,
+		titleImg: img9,
 		description: '',
+		customDescription:
+			'아무리 좋은 치료도 예방보다 좋을 수는 없기에, 첨단 장비를 활용한 건강검진 프로그램을 운영하고 있습니다.',
+		primaryImg: img901,
 		subjects: [
 			{
 				id: 901,

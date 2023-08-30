@@ -5,6 +5,7 @@ import univLogo from "../../../images/resource/images/충남대로고.png";
 
 function Introduce() {
   const [animate, setAnimate] = useState(false);
+  const [isFirst, setIsFirst] = useState(false);
 
   const [windowWidth, setWindowWidth] = useState();
   const componentRef = useRef(null);
@@ -19,11 +20,13 @@ function Introduce() {
       // const midScreen = window.innerHeight / 100;
       const componentTop = componentRef.current.getBoundingClientRect().top;
 
-      if (window.scrollY > componentTop) {
+      if (componentTop < (window.innerHeight * 2) / 3) {
         setAnimate(true);
-      } else {
-        setAnimate(false);
-      }
+        // setIsFirst(true);
+      } 
+      // else {
+      //   setAnimate(false);
+      // }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,7 +37,7 @@ function Introduce() {
     };
   }, []);
   return (
-    <IntroduceContainer ref={componentRef}>
+    <IntroduceContainer ref={componentRef} id={"Main_Intro"}>
       {windowWidth > 800 ? (
         <ImageWrapper>
           <img
