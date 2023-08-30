@@ -43,7 +43,7 @@ const FooterContainer = styled.footer`
 	justify-content: center;
 	align-items: center;
 
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 662px) {
 		padding: 0;
 		flex-direction: column;
 	}
@@ -64,7 +64,7 @@ const InfoWrapper = styled.div`
 	opacity: 0.7;
 	color: #fff;
 
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 662px) {
 		width: 100%;
 		align-items: center;
 		padding-top: 20px;
@@ -106,7 +106,7 @@ const ContactWrapper = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	@media screen and (max-width: 640px) {
+	@media screen and (max-width: 662px) {
 		width: 100%;
 		justify-content: center;
 	}
