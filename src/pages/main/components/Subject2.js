@@ -17,7 +17,7 @@ function Subject3() {
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
       // console.log('midScreen : ', midScreen);
-      if (componentTop < (window.innerHeight * 2) / 3) {
+      if (componentTop < window.innerHeight) {
         setAnimate(true);
       } 
       // else {
@@ -107,6 +107,7 @@ const SubjectContainer = styled.section`
   width: 100%;
   /* height: 92vh; */
   height: fit-content;
+  /* min-height: 92vh; */
   background-color: #c3ced7;
   padding-top: 5rem;
   padding-bottom: 5rem;

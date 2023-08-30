@@ -5,7 +5,6 @@ import univLogo from "../../../images/resource/images/충남대로고.png";
 
 function Introduce() {
   const [animate, setAnimate] = useState(false);
-  const [isFirst, setIsFirst] = useState(false);
 
   const [windowWidth, setWindowWidth] = useState();
   const componentRef = useRef(null);
@@ -20,9 +19,8 @@ function Introduce() {
       // const midScreen = window.innerHeight / 100;
       const componentTop = componentRef.current.getBoundingClientRect().top;
 
-      if (componentTop < (window.innerHeight * 2) / 3) {
+      if (componentTop < window.innerHeight) {
         setAnimate(true);
-        // setIsFirst(true);
       } 
       // else {
       //   setAnimate(false);
@@ -117,7 +115,7 @@ const slideLeft = keyframes`
 const IntroduceContainer = styled.section`
   width: 100%;
   height: fit-content;
-  padding-top: 1.8rem;
+  padding-top: 27vh;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -126,6 +124,7 @@ const IntroduceContainer = styled.section`
 
   @media screen and (max-width: 690px) {
     background-size: 90%;
+  padding-top: 1.8rem;
     align-items: center;
   }
 
@@ -136,9 +135,13 @@ const IntroduceContainer = styled.section`
 
 const TextWrapper = styled.div`
   padding: 10vh 12vw;
-  .animate {
+  animation-play-state: paused;
+  animation: ${slideLeft} 4s ease;
+
+
+  /* .animate {
     animation: ${slideLeft} 4s ease;
-  }
+  } */
 
   .titleWrapper {
     h2 {
@@ -192,6 +195,8 @@ const ImageWrapper = styled.div`
   bottom: 0;
   display: flex;
   align-items: flex-end;
+  /* animation-play-state: paused;
+  animation: ${slideRight} 4s ease; */
 
   .animate {
     animation: ${slideRight} 4s ease;
