@@ -78,7 +78,9 @@ function Subject2() {
   return (
     <SubjectContainer ref={componentRef}>
       <TextWrapper>
-        <div className={animate ? "animate" : ""}>
+        <div 
+        // className={animate ? "animate" : ""}
+        >
           <p>SKY ANIMAL MEDICAL CENTER</p>
           <h2>
             SKY 동물메디컬센터의 <strong>최첨단 장비</strong>

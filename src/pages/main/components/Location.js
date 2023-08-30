@@ -32,7 +32,8 @@ function Location() {
     <LocationContainer ref={componentRef}>
       <TextWrapper>
         <div
-          className={animate ? "locationWrapper animate" : "locationWrapper"}
+          // className={animate ? "locationWrapper animate" : "locationWrapper"}
+          className={"locationWrapper"}
         >
           <div className="addrWrapper">
             <div className="heading">
@@ -53,7 +54,10 @@ function Location() {
         </div>
       </TextWrapper>
       <MapWrapper>
-        <div className={animate ? "contactWrapper animate" : "contactWrapper"}>
+        <div 
+        // className={animate ? "contactWrapper animate" : "contactWrapper"}
+        className={"contactWrapper"}
+        >
           <div className="innerWrapper">
             <KakaoMap />
           </div>
