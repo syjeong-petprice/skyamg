@@ -45,7 +45,7 @@ function SubjectAll() {
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
       // console.log('midScreen : ', midScreen);
-      if (componentTop < (window.innerHeight * 2) / 3) {
+      if (componentTop < (window.innerHeight)) {
         setAnimate(true);
       } 
       // else {

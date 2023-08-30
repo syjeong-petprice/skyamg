@@ -38,7 +38,7 @@ function Subject2() {
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
       // console.log('midScreen : ', midScreen);
-      if (componentTop < (window.innerHeight * 2) / 3) {
+      if (componentTop < window.innerHeight) {
         setAnimate(true);
       } 
       // else {
@@ -167,6 +167,7 @@ const slideUp = keyframes`
 
 const SubjectContainer = styled.section`
   width: 100%;
+  /* height: fit-content; */
   height: 92vh;
   background-image: url(${bgImg});
   background-size: cover;

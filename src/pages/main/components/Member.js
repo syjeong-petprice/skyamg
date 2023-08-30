@@ -44,14 +44,15 @@ function Member() {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
       //   const midScreen = window.innerHeight * 3.2;
-      const componentTop = componentRef.current.getBoundingClientRect().top;
+      const componentTop =
+        componentRef.current.getBoundingClientRect().top;
 
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
       // console.log('midScreen : ', midScreen);
-      if (componentTop < (window.innerHeight * 2) / 3) {
+      if (componentTop < window.innerHeight) {
         setAnimate(true);
-      } 
+      }
       // else {
       //   setAnimate(false);
       // }
@@ -107,12 +108,14 @@ function Member() {
     <MemberContainer ref={componentRef}>
       <TitleWrapper>
         <div className={animate ? "animate" : ""}>
-          <h2 style={{ fontSize: windowWidth > 800 ? "3rem" : "2rem" }}>
+          <h2
+            style={{ fontSize: windowWidth > 800 ? "3rem" : "2rem" }}
+          >
             SKY의 자랑스런 얼굴들
           </h2>
           <p>
-            우리 가족의 건강을 최우선으로 하며 믿음을 주는 SKY 동물 메디컬 센터
-            의료진들입니다.
+            우리 가족의 건강을 최우선으로 하며 믿음을 주는 SKY 동물
+            메디컬 센터 의료진들입니다.
           </p>
         </div>
       </TitleWrapper>
@@ -142,7 +145,11 @@ function Member() {
         </div>
       </SliderWrapper>
       {selectedVet && (
-        <DoctorModal item={selectedVet} open={open} handleClose={handleClose} />
+        <DoctorModal
+          item={selectedVet}
+          open={open}
+          handleClose={handleClose}
+        />
       )}
     </MemberContainer>
   );
@@ -180,7 +187,10 @@ const slideUp = keyframes`
 
 const MemberContainer = styled.section`
   width: 100%;
-  height: 92vh;
+  /* height: 92vh; */
+  height: fit-content;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   background-image: url(${bgSky});
   background-size: cover;
   background-repeat: no-repeat;
@@ -197,7 +207,11 @@ const MemberContainer = styled.section`
 
 const TitleWrapper = styled.div`
   width: 100%;
-  height: 30vh;
+  height: fit-content;
+  @media screen and (max-width: 690px) {
+    padding-bottom: 8rem;
+  }
+  padding-bottom: 12rem;
 
   .animate {
     animation: ${slideDown} 4s ease;

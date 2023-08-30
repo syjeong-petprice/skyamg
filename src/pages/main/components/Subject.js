@@ -13,7 +13,7 @@ function Subject() {
       const componentTop = componentRef.current.getBoundingClientRect().top;
       // console.log("Subject starting point:", componentTop, window.innerHeight);
 
-      if (componentTop < (window.innerHeight * 2) / 3) {
+      if (componentTop < window.innerHeight) {
         setAnimate(true);
       } 
       // else {
