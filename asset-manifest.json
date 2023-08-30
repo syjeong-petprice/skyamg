@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/skyamg/static/css/main.655e4b83.css",
-    "main.js": "/skyamg/static/js/main.67ab8eee.js",
+    "main.js": "/skyamg/static/js/main.500305a0.js",
     "static/js/787.d322386b.chunk.js": "/skyamg/static/js/787.d322386b.chunk.js",
     "static/media/PretendardVariable.ttf": "/skyamg/static/media/PretendardVariable.d008a69682c7c6bef29a.ttf",
     "static/media/bg_Sky.png": "/skyamg/static/media/bg_Sky.36edbf88b3f052725c59.png",
@@ -104,11 +104,11 @@
     "static/media/slick.woff": "/skyamg/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/skyamg/index.html",
     "main.655e4b83.css.map": "/skyamg/static/css/main.655e4b83.css.map",
-    "main.67ab8eee.js.map": "/skyamg/static/js/main.67ab8eee.js.map",
+    "main.500305a0.js.map": "/skyamg/static/js/main.500305a0.js.map",
     "787.d322386b.chunk.js.map": "/skyamg/static/js/787.d322386b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.655e4b83.css",
-    "static/js/main.67ab8eee.js"
+    "static/js/main.500305a0.js"
   ]
 }
