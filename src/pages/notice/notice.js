@@ -26,7 +26,7 @@ const NoticeContainer = styled.div`
     width: 100%;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-items: center;
   }
 `;
