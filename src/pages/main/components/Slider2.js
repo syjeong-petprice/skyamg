@@ -45,11 +45,11 @@ function Preview() {
                 <p>
                   하루 <strong>24시간,</strong>
                 </p>
-                <p className="bar">/</p>
+                <p className="next_line_bar">/</p>
                 <p>
                   1년 <strong>365일,</strong>
                 </p>
-                <p className="bar">/</p>
+                <p className="next_line_bar">/</p>
                 <p>
                   당신 곁엔 <strong>SKY 동물메디컬센터</strong>
                 </p>
@@ -169,68 +169,68 @@ const StyledSlider = styled(Slider)`
   .slick-list {
     position: relative;
     z-index: 2;
-    width: 99.2vw;
+    width: 100vw;
     height: 92vh;
 
     @media screen and (max-width: 1700px) {
-      width: 99.1vw;
+      width: 100vw;
     }
     @media screen and (max-width: 1560px) {
-      width: 99vw;
+      width: 100vw;
     }
     @media screen and (max-width: 1400px) {
-      width: 98.9vw;
+      width: 100vw;
     }
     @media screen and (max-width: 1275px) {
-      width: 98.8vw;
+      width: 100vw;
     }
     @media screen and (max-width: 1168px) {
-      width: 98.7vw;
+      width: 100vw;
     }
     @media screen and (max-width: 1077px) {
-      width: 98.6vw;
+      width: 100vw;
     }
     @media screen and (max-width: 1000px) {
-      width: 98.5vw;
+      width: 100vw;
     }
     @media screen and (max-width: 935px) {
-      width: 98.4vw;
+      width: 100vw;
     }
     @media screen and (max-width: 874px) {
-      width: 98.3vw;
+      width: 100vw;
     }
     @media screen and (max-width: 825px) {
-      width: 98.2vw;
+      width: 100vw;
     }
     @media screen and (max-width: 778px) {
-      width: 98.1vw;
+      width: 100vw;
     }
     @media screen and (max-width: 738px) {
-      width: 98vw;
+      width: 100vw;
     }
     @media screen and (max-width: 699px) {
-      width: 97.9vw;
+      width: 100vw;
     }
     @media screen and (max-width: 667px) {
-      width: 97.8vw;
+      width: 100vw;
     }
     @media screen and (max-width: 637px) {
-      width: 97.7vw;
+      width: 100vw;
     }
     @media screen and (max-width: 609px) {
-      width: 97.6vw;
+      width: 100vw;
     }
     @media screen and (max-width: 583px) {
-      width: 97.5vw;
+      width: 100vw;
     }
     @media screen and (max-width: 560px) {
-      width: 97.4vw;
+      width: 100vw;
     }
     @media screen and (max-width: 400px) {
-      width: 96.4vw;
+      width: 100vw;
     }
     @media screen and (max-width: 394px) {
-      width: 96.1vw;
+      width: 100vw;
     }
 
     div {
@@ -283,6 +283,11 @@ const StyledSlider = styled(Slider)`
         }
         .bar {
           font-size: 3rem;
+          font-weight: 100;
+          margin: 10px;
+        }
+        .next_line_bar {
+          font-size: 1.5rem;
           font-weight: 100;
           margin: 10px;
         }

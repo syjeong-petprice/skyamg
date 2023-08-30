@@ -1,5 +1,5 @@
 import { styled, keyframes } from "styled-components";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import subjectList from "../../../config/subjectInfo";
 import bgImg from "../../../images/resource/images/전문진료과목_bg.jpeg";
@@ -10,6 +10,7 @@ function SubjectAll() {
   const [show, setShow] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
   const [selectedSubject, setSelectedSubject] = useState(); // 클릭한 Subject
+  const componentRef = useRef(null);
   const navigate = useNavigate();
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -35,6 +36,31 @@ function SubjectAll() {
     }
   }, [windowWidth]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
+      //   const midScreen = window.innerHeight * 3.2;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
+
+      // console.log('innerHeight : ', window.innerHeight);
+      // console.log('scrollY : ', window.scrollY);
+      // console.log('midScreen : ', midScreen);
+      if (componentTop < (window.innerHeight * 2) / 3) {
+        setAnimate(true);
+      } 
+      // else {
+      //   setAnimate(false);
+      // }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // 컴포넌트 언마운트 시 이벤트 리스너 제거
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const clickHandler = (id) => {
     navigate(`/skyamg/subject/${id}`);
   };
@@ -49,7 +75,7 @@ function SubjectAll() {
     pauseOnHover: true,
   };
   return (
-    <SubjectContainer>
+    <SubjectContainer ref={componentRef}>
       <TextWrapper>
         <div className={animate ? "animate" : ""}>
           {/* <p>SKY ANIMAL MEDICAL CENTER</p> */}
@@ -116,7 +142,8 @@ const slideUp = keyframes`
 
 const SubjectContainer = styled.section`
   width: 100%;
-  height: 92vh;
+  height: fit-content;
+  padding: 5rem;
   /* background-color: #89cff0; */
   /* background: linear-gradient(to bottom, #bcd4e6, #6ca0dc); */
   background-image: url(${bgImg});
@@ -224,7 +251,7 @@ const SliderWrapper = styled.div`
 
 const TextWrapper = styled.div`
   width: 100%;
-  height: 25%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;

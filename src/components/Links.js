@@ -3,6 +3,14 @@ import icons from "../images/resource/images/ico_quick.png";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 function Links() {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // 스무스 스크롤 효과를 위해 추가
+    });
+  }
+
   return (
     <LinkContainer>
       <ul>
@@ -50,7 +58,7 @@ const LinkContainer = styled.nav`
   width: 40px;
   position: fixed;
   top: 50%;
-  right: 60px;
+  right: 2.9rem;
   transform: translateY(-50%);
   z-index: 1000;
 
