@@ -10,7 +10,7 @@ function Links() {
           <a href="http://pf.kakao.com/_xeQhAG" target="_blank"></a>
         </li>
         <li className="notice">
-          <a href="/notice"></a>
+          <a href="/skyamg/notice"></a>
         </li>
         <li className="insta">
           <a
@@ -33,8 +33,8 @@ function Links() {
         {/* <li className="time">
           <a href="/"></a>
         </li> */}
-        <li className="top">
-          <a href="/skyamg">
+        <li className="top" onClick={scrollToTop}>
+          <a href="">
             <KeyboardDoubleArrowUpIcon style={{ color: "#fff" }} />
           </a>
         </li>
@@ -42,6 +42,9 @@ function Links() {
     </LinkContainer>
   );
 }
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
 
 const LinkContainer = styled.nav`
   width: 40px;
