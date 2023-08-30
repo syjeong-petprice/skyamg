@@ -105,7 +105,9 @@ function Example() {
   return (
     <ExampleContainer ref={componentRef}>
       <TextWrapper>
-        <div className={animate ? "animate" : ""}>
+        <div 
+        // className={animate ? "animate" : ""}
+        >
           <p>SKY ANIMAL MEDICAL CENTER</p>
           <h2>
             영상의학과 <strong>실제 진료 사례</strong>
@@ -113,7 +115,9 @@ function Example() {
         </div>
       </TextWrapper>
       <ImgWrapper>
-        <div className={animate ? "animate" : ""}>
+      <div 
+        // className={animate ? "animate" : ""}
+        >
           <Box sx={{ width: "100%" }}>
             <Box
               sx={{

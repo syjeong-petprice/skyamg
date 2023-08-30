@@ -81,6 +81,9 @@ function Header() {
             </StyledSubNav>
           </StyledSubUl>
         </li>
+        <li>
+          <StyledLink to="/skyamg/web">웹차트</StyledLink>
+        </li>
       </StyledUl>
       <StyledIconWrappr onClick={toggleSidebar(true)}>
         <MenuIcon />

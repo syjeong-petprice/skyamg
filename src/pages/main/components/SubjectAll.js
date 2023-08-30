@@ -271,7 +271,7 @@ const TextWrapper = styled.div`
       text-align: center;
 
       @media screen and (max-width: 800px) {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
       strong {
         font-weight: 900;

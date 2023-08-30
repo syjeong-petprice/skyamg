@@ -47,15 +47,23 @@ function Equip() {
   return (
     <EquipContainer ref={componentRef}>
       <ImgWrapper>
-        <img className={animate ? "animate" : ""} src={mriImg} alt="mri" />
+        <img
+        //  className={animate ? "animate" : ""} 
+        src={mriImg} alt="mri" />
       </ImgWrapper>
       <TextWrapper>
-        <div className={animate ? "animate titleWrapper" : "titleWrapper"}>
+        <div 
+        // className={animate ? "animate titleWrapper" : "titleWrapper"}
+        className={"titleWrapper"}
+        >
           <p>SKY ANIMAL MEDICAL CENTER</p>
           <h2 className="firstTitle">적.재.적.소</h2>
           <h2 className="secondTitle">SKY 영상의학과</h2>
         </div>
-        <div className={animate ? "animate stepWrapper" : "stepWrapper"}>
+        <div 
+        className={"stepWrapper"}
+        // className={animate ? "animate stepWrapper" : "stepWrapper"}
+        >
           <div>
             <div className="noBox">
               <p>NO</p>

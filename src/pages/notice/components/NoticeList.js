@@ -29,7 +29,7 @@ function NoticeList({ item }) {
 }
 
 const List = styled.li`
-  max-width: 100%;
+  max-width: 320px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -43,7 +43,8 @@ const List = styled.li`
   }
   img {
     border-radius: 5px;
-    width: 100%;
+    width: 320px;
+    max-width: 100%;
     height: 200px;
     object-fit: cover;
     overflow: hidden;

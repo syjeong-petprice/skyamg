@@ -116,7 +116,8 @@ const slideLeft = keyframes`
 
 const IntroduceContainer = styled.section`
   width: 100%;
-  height: 92vh;
+  height: fit-content;
+  padding-top: 1.8rem;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -134,7 +135,7 @@ const IntroduceContainer = styled.section`
 `;
 
 const TextWrapper = styled.div`
-  padding: 10vh 15vw;
+  padding: 10vh 12vw;
   .animate {
     animation: ${slideLeft} 4s ease;
   }

@@ -1,15 +1,15 @@
 import { styled } from "styled-components";
 import icons from "../images/resource/images/ico_quick.png";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
+import { Link } from "react-router-dom";
 
 function Links() {
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth" // 스무스 스크롤 효과를 위해 추가
+      behavior: "smooth", // 스무스 스크롤 효과를 위해 추가
     });
-  }
+  };
 
   return (
     <LinkContainer>
@@ -18,7 +18,7 @@ function Links() {
           <a href="http://pf.kakao.com/_xeQhAG" target="_blank"></a>
         </li>
         <li className="notice">
-          <a href="/skyamg/notice"></a>
+          <StyledLink to="/skyamg/notice"></StyledLink>
         </li>
         <li className="insta">
           <a
@@ -42,17 +42,41 @@ function Links() {
           <a href="/"></a>
         </li> */}
         <li className="top" onClick={scrollToTop}>
-          <a href="">
+          <div>
             <KeyboardDoubleArrowUpIcon style={{ color: "#fff" }} />
-          </a>
+          </div>
         </li>
       </ul>
     </LinkContainer>
   );
 }
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
+
+const StyledLink = styled(Link)`
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  color: transparent;
+  line-height: 0;
+  /* padding: 10px; */
+  border-radius: 100%;
+  background: rgba(242, 238, 230, 0.7);
+  transition: all 0.5s;
+  text-align: center;
+  &:visited {
+    text-decoration: none;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(${icons}) 0 0 no-repeat;
+    background-size: 228px 49px;
+    background-position: -31px 6px;
+  }
+`;
 
 const LinkContainer = styled.nav`
   width: 40px;
@@ -98,34 +122,7 @@ const LinkContainer = styled.nav`
       }
     }
   }
-  .notice {
-    a {
-      position: relative;
-      display: block;
-      width: 40px;
-      height: 40px;
-      font-size: 0;
-      color: transparent;
-      line-height: 0;
-      /* padding: 10px; */
-      border-radius: 100%;
-      background: rgba(242, 238, 230, 0.7);
-      transition: all 0.5s;
-      text-align: center;
-      &:visited {
-        text-decoration: none;
-      }
-      &::before {
-        content: "";
-        display: block;
-        width: 32px;
-        height: 32px;
-        background: url(${icons}) 0 0 no-repeat;
-        background-size: 228px 49px;
-        background-position: -31px 6px;
-      }
-    }
-  }
+
   .insta {
     a {
       position: relative;
@@ -240,7 +237,7 @@ const LinkContainer = styled.nav`
   }
 
   .top {
-    a {
+    div {
       position: relative;
       display: flex;
       justify-content: center;
@@ -255,6 +252,7 @@ const LinkContainer = styled.nav`
       background: rgba(0, 0, 0, 0.6);
       transition: all 0.5s;
       text-align: center;
+      cursor: pointer;
       &:visited {
         text-decoration: none;
       }

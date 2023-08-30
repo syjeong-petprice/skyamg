@@ -187,7 +187,9 @@ const TextWrapper = styled.div`
 
 const SubTextWrapper = styled.div`
   width: 100%;
-  height: 25%;
+  /* height: 25%; */
+  height: fit-content;
+  margin-bottom: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
