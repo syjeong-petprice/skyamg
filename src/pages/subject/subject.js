@@ -49,9 +49,9 @@ function Subject() {
     <>
       <Title img={data.titleImg || img} title={data.title} />
       <Container>
-        {data.customDescription && (
+        {/* {data.customDescription && (
           <p className="des">{data.customDescription}</p>
-        )}
+        )} */}
         {data.subjects.length > 1 && (
           <ul ref={contentRef}>
             {data.subjects.map((item, i) => {
