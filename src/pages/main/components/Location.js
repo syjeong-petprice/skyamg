@@ -15,7 +15,7 @@ function Location() {
 
       if (componentTop < (window.innerHeight * 2) / 3) {
         setAnimate(true);
-      } 
+      }
       // else {
       //   setAnimate(false);
       // }
@@ -48,7 +48,10 @@ function Location() {
             <div className="heading">
               <h3>주차안내</h3>
             </div>
-            <p>어디어디에 주차하시면 됩니다.</p>
+            <p>
+              구월지웰시티푸르지오 건물 내 <br />
+              지하 주차장 이용이 가능합니다.
+            </p>
           </div>
         </div>
       </TextWrapper>
