@@ -25,9 +25,9 @@ function Preview() {
   const settings = {
     dots: false,
     arrows: false,
-    fade: true,
+    fade: false,
     infinite: true,
-    speed: 500,
+    speed: 0,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -144,8 +144,8 @@ const StyledSlider = styled(Slider)`
   /* 기본 스타일 */
   .slick-slide {
     transition: transform 3s ease;
-    transform: scale(0.9);
-    opacity: 1;
+    transform: scale(1);
+    opacity: 1 !important;
   }
 
   /* 활성화된 슬라이드에 대한 스타일 */
