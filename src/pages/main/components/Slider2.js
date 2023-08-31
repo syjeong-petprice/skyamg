@@ -157,7 +157,7 @@ const StyledSlider = styled(Slider)`
 
   @keyframes fadeInAnimation {
     from {
-      opacity: 0.6;
+      opacity: 1;
       scale: 1.2;
     }
     to {
