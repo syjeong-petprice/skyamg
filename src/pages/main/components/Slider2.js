@@ -145,7 +145,7 @@ const StyledSlider = styled(Slider)`
   .slick-slide {
     transition: transform 3s ease;
     transform: scale(0.9);
-    opacity: 0.6;
+    opacity: 1;
   }
 
   /* 활성화된 슬라이드에 대한 스타일 */
