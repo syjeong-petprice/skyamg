@@ -30,48 +30,33 @@ export default function Sidebar({ open, onClose }) {
       {/* <StyledLink to="/skyamg#Main_Intro" onClick={handleClose}>
         two
       </StyledLink> */}
-      <StyledLink to="/skyamg/skymedicaldoctor" onClick={handleClose}>
+      {/* <StyledLink to="/skyamg/skymedicaldoctor" onClick={handleClose}>
         의료진 소개
       </StyledLink>
       <StyledLink to="/skyamg/notice" onClick={handleClose}>
         공지사항
-      </StyledLink>
+      </StyledLink> */}
       <StyledLink
         style={{ color: isSubNavOpen ? "#011689" : "#999" }}
         onClick={toggleAccordion}
         alignCenter
       >
-        전문진료과목
+        전문진료센터안내
         {isSubNavOpen ? <ExpandLessStyledIcon /> : <ExpandMoreStyledIcon />}
       </StyledLink>
       {isSubNavOpen && (
         <StyledSubLinks>
           <StyledSubLink to="/skyamg/subject/1" onClick={handleClose}>
-            내과
+            영상의료센터
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/2" onClick={handleClose}>
-            피부과
+            신경정형
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/3" onClick={handleClose}>
-            외과
+            만성질환
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/4" onClick={handleClose}>
-            치과
-          </StyledSubLink>
-          <StyledSubLink to="/skyamg/subject/5" onClick={handleClose}>
-            재활의학과
-          </StyledSubLink>
-          <StyledSubLink to="/skyamg/subject/6" onClick={handleClose}>
-            영상의학과
-          </StyledSubLink>
-          <StyledSubLink to="/skyamg/subject/7" onClick={handleClose}>
-            안과
-          </StyledSubLink>
-          <StyledSubLink to="/skyamg/subject/8" onClick={handleClose}>
-            응급의학과
-          </StyledSubLink>
-          <StyledSubLink to="/skyamg/subject/9" onClick={handleClose}>
-            건강검진센터
+            한방재활
           </StyledSubLink>
         </StyledSubLinks>
       )}

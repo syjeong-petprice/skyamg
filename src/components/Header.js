@@ -38,32 +38,32 @@ function Header() {
         {/* <li>
           <StyledLink to="/two">two</StyledLink>
         </li> */}
-        <li>
+        {/* <li>
           <StyledLink to="/skyamg/skymedicaldoctor">의료진 소개</StyledLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <StyledLink to="/skyamg/notice">공지사항</StyledLink>
-        </li>
+        </li> */}
         <li>
           <StyledSubUl
             onMouseEnter={handleSubNavOpen}
             onMouseLeave={handleSubNavClose}
           >
-            <StyledLink>전문진료과목</StyledLink>
+            <StyledLink>전문진료센터안내</StyledLink>
             <StyledSubNav open={isSubNavOpen}>
               <li>
-                <StyledLink to="/skyamg/subject/1">내과</StyledLink>
+                <StyledLink to="/skyamg/subject/1">영상의료센터</StyledLink>
               </li>
               <li>
-                <StyledLink to="/skyamg/subject/2">피부과</StyledLink>
+                <StyledLink to="/skyamg/subject/2">신경정형</StyledLink>
               </li>
               <li>
-                <StyledLink to="/skyamg/subject/3">외과</StyledLink>
+                <StyledLink to="/skyamg/subject/3">만성질환</StyledLink>
               </li>
               <li>
-                <StyledLink to="/skyamg/subject/4">치과</StyledLink>
+                <StyledLink to="/skyamg/subject/4">한방재활</StyledLink>
               </li>
-              <li>
+              {/* <li>
                 <StyledLink to="/skyamg/subject/5">재활의학과</StyledLink>
               </li>
               <li>
@@ -77,7 +77,7 @@ function Header() {
               </li>
               <li>
                 <StyledLink to="/skyamg/subject/9">건강검진센터</StyledLink>
-              </li>
+              </li> */}
             </StyledSubNav>
           </StyledSubUl>
         </li>
@@ -96,11 +96,11 @@ function Header() {
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 `;
 
@@ -195,20 +195,19 @@ const StyledSubUl = styled.ul`
 
 const StyledSubNav = styled.nav`
   list-style-type: none;
-  position: absolute;
-  top: 100%;
-  left: 50%; /* 왼쪽 여백을 50%로 설정하여 가운데 정렬 */
-  transform: translateX(-50%); /* 왼쪽으로 50%만큼 이동하여 가운데 정렬 */
+  position: fixed; /* 변경: fixed로 설정 */
+  top: 8vh; /* 변경: 헤더 아래에 위치하도록 설정 */
+  left: 0;
+  width: 100%; /* 변경: 화면 너비에 맞게 확장 */
   background-color: #101010;
   display: ${({ open }) => (open ? "flex" : "none")};
   padding: 0;
   margin: 0;
-  width: 130px; /* 서브메뉴의 가로 크기 조정 */
-  border-radius: 6px; /* 모서리 둥글게 만듦 */
-  flex-direction: column;
+  /* border-radius: 6px; */
+  flex-direction: row; /* 변경: 가로로 배치하도록 수정 */
+  justify-content: space-evenly; /* 변경: 수평 중앙 정렬 */
   align-items: center;
-  animation: ${({ open }) => (open ? fadeIn : "none")} 0.3s ease; /* 애니메이션 적용 */
-
+  animation: ${({ open }) => (open ? fadeIn : "none")} 0.3s ease;
   li {
     margin: 0;
   }
