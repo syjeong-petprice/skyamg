@@ -1,5 +1,6 @@
 import { styled, keyframes } from "styled-components";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,6 +16,7 @@ function Member() {
   const [showAll, setShowAll] = useState(false);
   const [selectedVet, setSelectedVet] = useState(); // 클릭한 vet
 
+  const navigate = useNavigate();
   const componentRef = useRef(null);
   const visibleVetInfo = showAll ? vetInfo : vetInfo.slice(0, 4);
 
@@ -63,6 +65,10 @@ function Member() {
     setShowAll(!showAll);
   };
 
+  const handleVetMemberClick = (id) => {
+    navigate(`/skyamg/vetMember/${id}`);
+  };
+
   return (
     <MemberContainer ref={componentRef}>
       <TitleWrapper>
@@ -91,7 +97,11 @@ function Member() {
               md={6}
               lg={3}
             >
-              <VetProfile>
+              <VetProfile
+                onClick={() => {
+                  handleVetMemberClick(vet.id);
+                }}
+              >
                 <ImgBox>
                   <img alt={vet.name} src={vet.img} />
                   <MoreButton
@@ -256,6 +266,7 @@ const MoreButton = styled(Box)`
   font-weight: 700;
 `;
 const VetProfile = styled(Box)`
+  cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
