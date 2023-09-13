@@ -6,23 +6,17 @@ import "slick-carousel/slick/slick-theme.css";
 import bgSky from "../../../images/resource/images/bg_Sky.png";
 import vetInfo from "../../../config/vetInfo";
 import DoctorModal from "../../doctor/components/DoctorModal";
+import { Typography, Box, Button, Grid, Chip } from "@mui/material";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 function Member() {
   const [animate, setAnimate] = useState(false);
-  const [show, setShow] = useState(5);
   const [windowWidth, setWindowWidth] = useState();
-  const componentRef = useRef(null);
+  const [showAll, setShowAll] = useState(false);
+  const [selectedVet, setSelectedVet] = useState(); // 클릭한 vet
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: show,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000, // 오토플레이 간격을 조절할 수 있습니다.
-    pauseOnHover: true,
-  };
+  const componentRef = useRef(null);
+  const visibleVetInfo = showAll ? vetInfo : vetInfo.slice(0, 4);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -44,8 +38,7 @@ function Member() {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
       //   const midScreen = window.innerHeight * 3.2;
-      const componentTop =
-        componentRef.current.getBoundingClientRect().top;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
 
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
@@ -66,91 +59,101 @@ function Member() {
     };
   }, []);
 
-  const [open, setOpen] = useState(false); // 닥터 모달 오픈 상태
-  const [selectedVet, setSelectedVet] = useState(); // 클릭한 vet
-
-  useEffect(() => {
-    if (selectedVet) {
-      handleOpen();
-    }
-  }, [selectedVet]);
-
-  const handleOpen = () => {
-    setOpen(true);
+  const handleShowAllClick = () => {
+    setShowAll(!showAll);
   };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  useEffect(() => {
-    if (window.innerWidth > 1180) {
-      setShow(5);
-    }
-    if (window.innerWidth < 1180) {
-      setShow(4);
-    }
-    if (window.innerWidth < 1040) {
-      setShow(3);
-    }
-    if (window.innerWidth < 500) {
-      setShow(2);
-    }
-
-    // window.addEventListener("resize", handleScreenWidth);
-
-    // return () => {
-    //   window.removeEventListener("resize", handleScreenWidth);
-    // };
-  }, [windowWidth]);
 
   return (
     <MemberContainer ref={componentRef}>
       <TitleWrapper>
         <div className={animate ? "animate" : ""}>
-          <h2
-            style={{ fontSize: windowWidth > 800 ? "3rem" : "2rem" }}
-          >
-            SKY의 자랑스런 얼굴들
+          <h2 style={{ fontSize: windowWidth > 800 ? "3rem" : "2rem" }}>
+            의료진 소개
           </h2>
           <p>
-            우리 가족의 건강을 최우선으로 하며 믿음을 주는 SKY 동물
-            메디컬 센터 의료진들입니다.
+            우리 가족의 건강을 최우선으로 하며 믿음을 주는 SKY 동물 메디컬 센터
+            의료진들입니다.
           </p>
         </div>
       </TitleWrapper>
-
-      <SliderWrapper>
-        <div className={animate ? "animate" : ""}>
-          <StyledSlider {...settings}>
-            {vetInfo.map((vet) => (
-              <div
-                onClick={() => {
-                  if (vet.id !== 1) {
-                    setSelectedVet(vet);
-                  }
-                }}
-                className="vetProfile"
-                key={vet.id}
-              >
-                <div>
+      <Grid container rowSpacing={6}>
+        {visibleVetInfo.map((vet) => {
+          return (
+            <Grid
+              sx={{
+                display: "flex",
+                flexDirection: "coulmn",
+                justifyContent: "center",
+              }}
+              key={vet.id}
+              item
+              sm={12}
+              md={6}
+              lg={3}
+            >
+              <VetProfile>
+                <ImgBox>
                   <img alt={vet.name} src={vet.img} />
-                </div>
-                <p>
-                  {vet.position} {vet.name}
-                </p>
-              </div>
-            ))}
-          </StyledSlider>
-        </div>
-      </SliderWrapper>
-      {selectedVet && (
-        <DoctorModal
-          item={selectedVet}
-          open={open}
-          handleClose={handleClose}
-        />
-      )}
+                  <MoreButton
+                    className="button-container"
+                    variant="contained"
+                    onClick={() => {
+                      if (vet.id !== 1) {
+                        setSelectedVet(vet);
+                      }
+                    }}
+                  >
+                    자세히 보기
+                    <ChevronRightIcon />
+                  </MoreButton>
+                </ImgBox>
+                <Box
+                  sx={{
+                    p: "1rem",
+                  }}
+                >
+                  <Typography sx={{ fontSize: "18px", mb: 2 }}>
+                    수의사
+                  </Typography>
+                  <Typography sx={{ fontSize: "30px", mb: 2 }}>
+                    {vet.name}
+                  </Typography>
+                  <Chip
+                    label={vet.position}
+                    variant="outlined"
+                    style={{
+                      color: "#ffffff",
+                      fontWeight: "700",
+                      fontSize: "16px",
+                      lineHeight: "14px",
+                      borderRadius: "16px",
+                      padding: "6px 10px",
+                      height: "34px",
+                      width: "fit-content",
+                    }}
+                  />
+                </Box>
+              </VetProfile>
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Button
+        size="large"
+        sx={{
+          mt: "4rem",
+          backgroundColor: "#000048",
+          "&:hover": {
+            backgroundColor: "transparent",
+            borderColor: "#000048",
+            color: "#000048",
+          },
+        }}
+        variant="contained"
+        onClick={handleShowAllClick}
+      >
+        {!showAll ? "더 보기" : "접기"}
+      </Button>
     </MemberContainer>
   );
 }
@@ -174,9 +177,9 @@ const imgZoomin = keyframes`
     }
 `;
 
-const slideUp = keyframes`
+const slideIn = keyframes`
     from {
-        transform: translate(0, 50%);
+        transform: translate(-100%, 0);
         opacity: 0;
     }
     to {
@@ -191,9 +194,10 @@ const MemberContainer = styled.section`
   height: fit-content;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-image: url(${bgSky});
+  /* background-image: url(${bgSky});
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,9 +213,9 @@ const TitleWrapper = styled.div`
   width: 100%;
   height: fit-content;
   @media screen and (max-width: 690px) {
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
   }
-  padding-bottom: 12rem;
+  padding-bottom: 8rem;
 
   .animate {
     animation: ${slideDown} 4s ease;
@@ -223,62 +227,75 @@ const TitleWrapper = styled.div`
     justify-content: center;
     align-items: center;
     h2 {
-      color: #dabfa8;
+      color: #000048;
       font-size: 3rem;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
     p {
-      color: #fff;
+      color: #000048;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
       margin: 5px;
     }
   }
 `;
 
-const StyledSlider = styled(Slider)`
-  .vetProfile {
-    div {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+const MoreButton = styled(Box)`
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  background-color: #000048;
+  color: #fff;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s, left 0.3s;
+  padding: 16px;
+  border-bottom: 0.1px solid #262663;
+  font-weight: 700;
+`;
+const VetProfile = styled(Box)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  div {
+    background-color: #000048;
+    width: 350px;
+  }
 
-      img {
-        width: 100%;
-        height: auto;
-        transition: ease;
-        cursor: pointer;
-
-        &:hover {
-          scale: 1.2;
-          animation: ${imgZoomin} 1s ease;
-        }
-      }
-    }
-    p {
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: bold;
-      text-align: center;
-      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  &:hover {
+    ${MoreButton} {
+      display: flex; /* 버튼을 보이게 함 */
+      opacity: 1;
+      left: 0;
     }
   }
-  .slick-list {
-    width: 85vw;
-    height: 55vh;
 
-    @media screen and (max-width: 690px) {
-      height: 40vh;
-    }
-  }
-  .slick-prev:before,
-  .slick-next:before {
-    display: none;
+  p {
+    color: #fff;
+    /* font-size: 0.9rem; */
+    font-weight: bold;
+    /* text-align: center; */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   }
 `;
 
-const SliderWrapper = styled.div`
-  .animate {
-    animation: ${slideUp} 4s ease;
+const ImgBox = styled(Box)`
+  position: relative;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+    transition: ease;
+
+    ${VetProfile}:hover & {
+      scale: 1.2;
+      animation: ${imgZoomin} 0.3s ease;
+    }
   }
 `;
 

@@ -17,9 +17,6 @@ function Links() {
         <li className="kakao">
           <a href="http://pf.kakao.com/_xeQhAG" target="_blank"></a>
         </li>
-        <li className="notice">
-          <StyledLink to="/skyamg/notice"></StyledLink>
-        </li>
         <li className="insta">
           <a
             href="https://instagram.com/skyamg_sw?igshid=NTc4MTIwNjQ2YQ=="
@@ -38,9 +35,6 @@ function Links() {
             target="_blank"
           ></a>
         </li>
-        {/* <li className="time">
-          <a href="/"></a>
-        </li> */}
         <li className="top" onClick={scrollToTop}>
           <div>
             <KeyboardDoubleArrowUpIcon style={{ color: "#fff" }} />

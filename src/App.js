@@ -22,14 +22,9 @@ function App() {
   return (
     <Routes>
       <Route path="/skyamg" element={<Main name={"Main"} />} />
-      <Route path="/skyamg/notice" element={<Noti name={"Notice"} />} />
       <Route
         path="/skyamg/subject/:id"
         element={<Subject name={"Subject"} />}
-      />
-      <Route
-        path="/skyamg/skymedicaldoctor"
-        element={<Doctor name={"Doctor"} />}
       />
     </Routes>
   );
