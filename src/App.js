@@ -1,7 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Main from "./pages/main/main";
-import Noti from "./pages/notice/notice";
 import Doctor from "./pages/doctor/doctor";
 import Subject from "./pages/subject/subject";
 
@@ -25,6 +24,10 @@ function App() {
       <Route
         path="/skyamg/subject/:id"
         element={<Subject name={"Subject"} />}
+      />
+      <Route
+        path="/skyamg/vetMember/:id"
+        element={<Doctor name={"vetMember"} />}
       />
     </Routes>
   );
