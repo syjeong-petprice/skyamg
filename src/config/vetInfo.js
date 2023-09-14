@@ -20,6 +20,7 @@ const vetInfo = [
     position: "대표원장",
     name: "천우진",
     img: vet1,
+    title: "",
     history: [],
     paper: [],
     completion: [],
@@ -29,6 +30,7 @@ const vetInfo = [
     position: "대표원장",
     name: "오이세",
     img: vet2,
+    title: "충남대학교 영상의학 박사",
     history: [
       "충남대학교 수의과대학 수의학과 졸업",
       "충남대학교 수의과대학 대학원 석사 졸업 (영상의학전공)",
@@ -63,6 +65,7 @@ const vetInfo = [
     position: "원장",
     name: "문종선",
     img: vet3,
+    title: "전북대학교 수의학과",
     history: [
       "전북대학교 수의과대학 수의학과 졸업",
       "이천시청,성남시청 공중방역수의사",
@@ -83,6 +86,7 @@ const vetInfo = [
     position: "부원장",
     name: "정다슬",
     img: vet4,
+    title: "건국대학교 수의학과",
     history: [
       "건국대학교 수의과대학 수의학과 졸업",
       "수원SKY동물메디컬센터 진료수의사",
@@ -98,6 +102,7 @@ const vetInfo = [
     position: "외과과장",
     name: "김도희",
     img: vet5,
+    title: "건국대학교 수의외과학 석박사통합과정 수료",
     history: [
       "건국대학교 수의과대학 수의학과 졸업",
       "건국대학교 수의과대학 수의외과학 석박사통합과정 수료",
@@ -113,6 +118,7 @@ const vetInfo = [
     position: "외과과장",
     name: "최동준",
     img: vet6,
+    title: "건국대학교 수의외과학 석사",
     history: [
       "경북대학교 수의과대학 졸업",
       "해마루 2차진료 동물병원 진료수의사",
@@ -132,6 +138,7 @@ const vetInfo = [
     position: "내과과장",
     name: "박설기",
     img: vet7,
+    title: "서울대학교 수의과대학 석사",
     history: [
       "경상대학교 수의학과 학사 졸업",
       "서울대학교 수의과대학 부속 동물병원 수련과정 수료",
@@ -157,6 +164,7 @@ const vetInfo = [
     position: "영상의학과장",
     name: "박주향",
     img: vet8,
+    title: "경북대학교 수의과대학 석사",
     history: [
       "경북대학교 수의과대학 수의과대학 졸업",
       "경북대학교 수의과대학 대학원 석사 졸업 (수의영상의학 전공)",
@@ -181,6 +189,7 @@ const vetInfo = [
     position: "진료과장",
     name: "최유진",
     img: vet9,
+    title: "충북대학교 수의학과",
     history: [
       "충북대학교 수의과대학 수의학과 졸업",
       "충북대학교 수의과대학 수의생화학실험실",
@@ -196,6 +205,7 @@ const vetInfo = [
     position: "한방응급의학과장",
     name: "정태규",
     img: vet10,
+    title: "서울대학교 임상수의학 응급의학과 석사",
     history: [
       "서울대학교 수의과대학 수의학과 졸업",
       "서울대학교 수의과대학 임상수의학 응급의학과 석사졸업",
@@ -213,6 +223,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "윤기홍",
     img: vet11,
+    title: "경상대학교 수의학과",
     history: [
       "경상대학교 수의학과 졸업",
       "전) (주)CRONEX 책임 연구수의사",
@@ -227,6 +238,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "장민혁",
     img: vet12,
+    title: "건국대학교 수의학과 학사",
     history: [
       "건국대학교 수의학과 학사 졸업",
       "전) 계양스카이동물병원 인턴수의사",
@@ -242,6 +254,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "이선백",
     img: vet13,
+    title: "건국대학교 수의과대학",
     history: [
       "건국대학교 수의과대학 졸업",
       "경기도북부동물위생연구소 공중방역수의사",
@@ -256,6 +269,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "서승원",
     img: vet14,
+    title: "경상대학교 수의과대학",
     history: [
       "경상대학교 수의과대학 졸업",
       "충청남도 홍성군청 공중방역수의사",
@@ -274,6 +288,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "송재성",
     img: vet15,
+    title: "건국대학교 수의과대학",
     history: [
       "건국대학교 수의과대학 졸업",
       "건국대학교 임상로테이션 수료",
