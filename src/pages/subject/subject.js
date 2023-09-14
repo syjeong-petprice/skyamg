@@ -1,40 +1,52 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { styled, css, keyframes } from "styled-components";
-import { Button } from "@mui/material";
+import { Button, Box, Typography } from "@mui/material";
 
 import img from "../../images/title/visual_greeting.jpeg";
-import subjectInfo from "../../config/subjectInfo";
+import centerInfo from "../../config/centerInfo";
 import Title from "../../components/Title";
 import ExtraContentTable from "./components/ExtraContentTable";
 
 function Subject() {
   const { id } = useParams();
-  const idx = subjectInfo.findIndex((item) => item.id === Number(id));
+  const info = centerInfo.find((item) => item.id === Number(id));
+  const sec2ImgUrl = info.sec2Img;
+  console.log(sec2ImgUrl);
   // console.log(id, idx);
-  const data = subjectInfo[idx];
-  // 1: 내과, 2: 피부과, 3: 외과, 4: 치과, 5: 재활의학과, 6: 영상의학과, 7: 안과, 8: 응급의학과, 9: 건강검진센터
+  // 1: 영상의료센터, 2: 신경정형, 3: 만성질환, 4: 한방재활
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [isChange, setIsChange] = useState(false);
 
-  const contentRef = useRef(null);
   const prevLocation = useRef(null);
   const location = useLocation();
+  const [isVisible1, setIsVisible1] = useState(false);
 
-  useEffect(() => {
-    // console.log(prevLocation.current, location.pathname);
-    if (prevLocation.current !== location.pathname) {
-      setSelectedIdx(0); // 라우트 주소가 변경된 경우에만 초기화
-      prevLocation.current = location.pathname;
-    }
-  }, [location.pathname]);
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
 
-  const scrollToContent = () => {
-    window.scrollTo({
-      top: contentRef.current.offsetTop - (10 * window.innerHeight) / 100,
-      behavior: "smooth",
-    });
-  };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const contentOffsetTop = section1Ref.current.offsetTop;
+  //     const windowHeight = window.innerHeight;
+  //     const scrollY = window.scrollY;
+
+  //     // 요소가 화면에 나타나면 isVisible1 상태를 변경하여 애니메이션을 실행
+  //     if (scrollY + windowHeight >= contentOffsetTop) {
+  //       setIsVisible1(true);
+  //     } else {
+  //       setIsVisible1(false); // 요소가 화면에서 보이지 않을 때 다시 초기 상태로 설정
+  //     }
+  //   };
+
+  //   // 스크롤 이벤트 리스너 등록
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   // 컴포넌트가 언마운트될 때 리스너 제거
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const buttonClickhandler = (i) => {
     setIsChange(true);
@@ -42,57 +54,49 @@ function Subject() {
     setTimeout(() => {
       setIsChange(false);
     }, 500);
-    scrollToContent();
   };
 
   return (
     <>
-      <Title img={data.titleImg || img} title={data.title} />
+      <Title img={info.titleImg || img} title={info.title} />
       <Container>
-        {/* {data.customDescription && (
-          <p className="des">{data.customDescription}</p>
-        )} */}
-        {data.subjects.length > 1 && (
-          <ul ref={contentRef}>
-            {data.subjects.map((item, i) => {
-              return (
-                <Button
-                  sx={{ width: "130px" }}
-                  onClick={() => buttonClickhandler(i)}
-                  variant={i === selectedIdx ? "contained" : "outlined"}
-                  key={item.id}
-                >
-                  {item.name}
-                </Button>
-              );
-            })}
-          </ul>
-        )}
-        {data.subjects[selectedIdx] && (
-          <div className={isChange ? "subInfo ani" : "subInfo"}>
-            <img src={data.subjects[selectedIdx].img} alt="" />
-            <div>
-              <h2 className="title">{data.subjects[selectedIdx].name}</h2>
-              {data.subjects[selectedIdx].content.length > 0 &&
-                data.subjects[selectedIdx].content.map((item, index) => {
-                  return (
-                    <>
-                      {item.subName !== "" && (
-                        <h3>
-                          {"• "}
-                          {item.subName}
-                        </h3>
-                      )}
-                      <p>{item.subContent}</p>
-                      {item.extraContent.length > 0 && (
-                        <ExtraContentTable extraContent={item.extraContent} />
-                      )}
-                    </>
-                  );
-                })}
-            </div>
-          </div>
-        )}
+        <Section1 ref={section1Ref}>
+          <TextBox isVisible1={isVisible1}>
+            <Typography
+              sx={{ fontSize: "calc(100vw * (38 / 1240))", fontWeight: 700 }}
+              gutterBottom
+            >
+              {info.title}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "calc(100vw * (24 / 1240))",
+                fontWeight: 700,
+                whiteSpace: "pre-wrap",
+              }}
+              gutterBottom
+            >
+              {info.subTitle}
+            </Typography>
+          </TextBox>
+          <ImgBox isVisible1={isVisible1}>
+            <img src={info.primaryImg} />
+          </ImgBox>
+        </Section1>
+        <Section2>
+          <img src={info.sec2Img} alt="Section 2 Image" />
+          <Box>
+            <Box>
+              <InnerBox>
+                <Typography>
+                  모든 진료의 시작점,
+                  <Bold>SKY 영상의료센터</Bold>
+                </Typography>
+                <Typography>{info.description}</Typography>
+              </InnerBox>
+            </Box>
+          </Box>
+        </Section2>
       </Container>
     </>
   );
@@ -108,90 +112,158 @@ const slideInUp = keyframes`
     transform: translateY(0);
   }
 `;
+const slideInLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+/* Right로 이동하는 애니메이션 */
+const slideInRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 const Container = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  .ani {
-    animation: ${css`
-      ${slideInUp} 0.5s ease-out
-    `};
+
+  @media screen and (max-width: 767px) {
   }
-  > p.des {
-    width: 92%;
-    text-align: center;
-    font-size: 30px;
-    color: #888c8d;
-    letter-spacing: -1px;
-    line-height: 1.5em;
-    transition: all 0.2s;
+`;
+
+const Section1 = styled.section`
+  && {
+    padding-top: calc(100vw * (120 / 1580));
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
-  > ul {
-    padding: 0 20px;
-    max-width: 100%;
-    display: grid;
-    gap: 10px;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+  @media screen and (max-width: 768px) {
+    && {
+      flex-direction: column;
+    }
   }
-  > div.subInfo {
-    margin-top: 10px;
+`;
+
+const Section2 = styled(Section1)`
+  && {
+    height: calc(100vw * (550 / 1580));
+    background: url(${(props) => props.sec2ImgUrl}) no-repeat center bottom /
+      100% calc(100vw * (210 / 390));
+  }
+`;
+
+const TextBox = styled(Box)`
+  && {
+    margin-left: calc(100vw * (50 / 1580));
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 92%;
-    > img {
+    justify-content: space-between;
+    padding-bottom: calc(100vw * (48 / 1240));
+    opacity: 0; /* 초기에 숨김 */
+    animation: ${slideInLeft} 0.5s ease-in-out forwards;
+  }
+
+  @media screen and (max-width: 768px) {
+    && {
       width: 100%;
+      /* height: calc(100vw * (210 / 390)); */
     }
-    > div {
-      width: 100%;
-      margin-top: 20px;
-      > h2.title {
-        font-size: 24px;
-        font-weight: 800;
-        display: table-cell;
-        width: 250px;
-        vertical-align: top;
-        letter-spacing: -1px;
-      }
-      > p {
-        font-size: 16px;
-        color: #888c8d;
-        letter-spacing: -0.8px;
-        line-height: 1.5em;
-        transition: all 0.2s;
-      }
-      > h3 {
-        font-size: 24px;
-        font-weight: 800;
-        vertical-align: top;
-        letter-spacing: -1px;
-        margin-bottom: 15px;
-      }
+    :first-child {
+      font-size: calc(100vw * (24 / 390));
+    }
+    :last-child {
+      font-size: calc(100vw * (20 / 390));
     }
   }
-  @media screen and (max-width: 767px) {
-    p.des {
-      font-size: 18px;
+`;
+
+const ImgBox = styled(Box)`
+  && {
+    width: calc(100vw * (700 / 1240));
+    /* height: calc(100vw * (400 / 1240)); */
+    overflow: hidden;
+    opacity: 0; /* 초기에 숨김 */
+    animation: ${slideInRight} 0.5s ease-in-out forwards;
+
+    img {
+      width: 100%;
+      height: auto;
     }
-    div.subInfo {
-      > div {
-        > h2.title {
-          font-size: 18px;
-          margin-bottom: 15px;
-          padding-left: 0;
-        }
-        > p {
-          font-size: 12px;
-        }
-        > h3 {
-          font-size: 16px;
-          margin-bottom: 15px;
-          padding-left: 0;
-        }
-      }
+  }
+  @media screen and (max-width: 768px) {
+    && {
+      width: 100%;
+      /* height: calc(100vw * (210 / 390)); */
+    }
+  }
+`;
+
+const InnerBox = styled(Box)`
+  && {
+    width: calc(100vw * (540 / 1580));
+    height: calc(100vw * (490 / 1580));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(100vw * (30 / 1580));
+    padding: calc(100vw * (50 / 1580));
+    margin-left: calc(100vw * (50 / 1580));
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.44;
+    background-color: #222;
+
+    :first-child {
+      /* font-size: calc(100vw * (16 / 390)); */
+      font-size: calc(100vw * (26 / 1580));
+    }
+    :last-child {
+      font-size: calc(100vw * (18 / 1580));
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    && {
+      width: 100%;
+      height: 100vw;
+      margin-left: 0;
+      gap: calc(100vw * (30 / 390));
+    }
+    :first-child {
+      font-size: calc(100vw * (20 / 390)) !important;
+    }
+    :last-child {
+      font-size: calc(100vw * (16 / 390)) !important;
+    }
+  }
+`;
+
+const Bold = styled(Typography)`
+  && {
+    font-size: calc(100vw * (30 / 1240)) !important;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 768px) {
+    && {
+      margin-top: calc(100vw * (10 / 390));
+      font-size: calc(100vw * (24 / 390)) !important;
     }
   }
 `;
