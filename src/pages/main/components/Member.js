@@ -98,24 +98,29 @@ function Member() {
               lg={3}
             >
               <VetProfile
+                sx={{ cursor: vet.id !== 1 ? "pointer" : "default" }}
                 onClick={() => {
-                  handleVetMemberClick(vet.id);
+                  if (vet.id !== 1) {
+                    handleVetMemberClick(vet.id);
+                  }
                 }}
               >
                 <ImgBox>
                   <img alt={vet.name} src={vet.img} />
-                  <MoreButton
-                    className="button-container"
-                    variant="contained"
-                    onClick={() => {
-                      if (vet.id !== 1) {
-                        setSelectedVet(vet);
-                      }
-                    }}
-                  >
-                    자세히 보기
-                    <ChevronRightIcon />
-                  </MoreButton>
+                  {vet.id !== 1 && (
+                    <MoreButton
+                      className="button-container"
+                      variant="contained"
+                      onClick={() => {
+                        if (vet.id !== 1) {
+                          setSelectedVet(vet);
+                        }
+                      }}
+                    >
+                      자세히 보기
+                      <ChevronRightIcon />
+                    </MoreButton>
+                  )}
                 </ImgBox>
                 <Box
                   sx={{
