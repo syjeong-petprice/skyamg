@@ -474,7 +474,7 @@ const Section6 = styled(Section1)`
       font-weight: 700;
     }
     .sub-title {
-      font-size: calc(100vw * (38 / 1240));
+      font-size: calc(100vw * (30 / 1240));
       font-weight: 700;
     }
   }
