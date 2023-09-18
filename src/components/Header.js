@@ -55,29 +55,14 @@ function Header() {
                 <StyledLink to="/skyamg/subject/1">영상의료센터</StyledLink>
               </li>
               <li>
-                <StyledLink to="/skyamg/subject/2">신경정형</StyledLink>
+                <StyledLink to="/skyamg/subject/2">신경정형센터</StyledLink>
               </li>
               <li>
-                <StyledLink to="/skyamg/subject/3">만성질환</StyledLink>
+                <StyledLink to="/skyamg/subject/3">만성질환센터</StyledLink>
               </li>
               <li>
-                <StyledLink to="/skyamg/subject/4">한방재활</StyledLink>
+                <StyledLink to="/skyamg/subject/4">한방재활센터</StyledLink>
               </li>
-              {/* <li>
-                <StyledLink to="/skyamg/subject/5">재활의학과</StyledLink>
-              </li>
-              <li>
-                <StyledLink to="/skyamg/subject/6">영상의학과</StyledLink>
-              </li>
-              <li>
-                <StyledLink to="/skyamg/subject/7">안과</StyledLink>
-              </li>
-              <li>
-                <StyledLink to="/skyamg/subject/8">응급의학과</StyledLink>
-              </li>
-              <li>
-                <StyledLink to="/skyamg/subject/9">건강검진센터</StyledLink>
-              </li> */}
             </StyledSubNav>
           </StyledSubUl>
         </li>

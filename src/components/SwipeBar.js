@@ -50,13 +50,13 @@ export default function Sidebar({ open, onClose }) {
             영상의료센터
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/2" onClick={handleClose}>
-            신경정형
+            신경정형센터
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/3" onClick={handleClose}>
-            만성질환
+            만성질환센터
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/4" onClick={handleClose}>
-            한방재활
+            한방재활센터
           </StyledSubLink>
         </StyledSubLinks>
       )}

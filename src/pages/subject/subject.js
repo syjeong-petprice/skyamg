@@ -1,102 +1,220 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import { styled, css, keyframes } from "styled-components";
 import { Button, Box, Typography } from "@mui/material";
+import PropTypes from "prop-types";
 
 import img from "../../images/title/visual_greeting.jpeg";
 import centerInfo from "../../config/centerInfo";
 import Title from "../../components/Title";
-import ExtraContentTable from "./components/ExtraContentTable";
+import ActionAreaCard from "./components/sec3Card";
+import Slider from "./components/equipSlider";
+// import ExtraContentTable from "./components/ExtraContentTable";
+import bg1 from "./bg-image/영상의료센터.jpeg";
+import bg2 from "./bg-image/영상의료센터.jpeg";
+import bg3 from "./bg-image/영상의료센터.jpeg";
+import bg4 from "./bg-image/영상의료센터.jpeg";
+import prideImg from "./bg-image/pride_banner.jpeg";
+
+function Section1Component({ img, title, content }) {
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setIsAnimated(true);
+    } else setIsAnimated(false);
+  }, [inView]);
+
+  return (
+    <Section1>
+      <TextBox className={`${isAnimated ? "animate" : ""}`} ref={ref}>
+        <Typography gutterBottom>{title}</Typography>
+        <Typography sx={{ whiteSpace: "pre-wrap" }} color="text.secondary">
+          {content}
+        </Typography>
+      </TextBox>
+      <ImgBox className={`${isAnimated ? "animate" : ""}`} ref={ref}>
+        <img src={img} alt="Image" />
+      </ImgBox>
+    </Section1>
+  );
+}
+
+function Section2Component({ id, description }) {
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setIsAnimated(true);
+    } else setIsAnimated(false);
+  }, [inView]);
+
+  return (
+    <Section2 id={id}>
+      <Box>
+        <Box>
+          <InnerBox ref={ref}>
+            <Typography className={`${isAnimated ? "animate" : ""}`}>
+              모든 진료의 시작점,
+              <Bold className={`${isAnimated ? "animate" : ""}`}>
+                SKY 영상의료센터
+              </Bold>
+            </Typography>
+            <Typography className={`${isAnimated ? "animate" : ""}`}>
+              {description}
+            </Typography>
+          </InnerBox>
+        </Box>
+      </Box>
+    </Section2>
+  );
+}
+
+function Section5Component({ data }) {
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      setIsAnimated(true);
+    } else setIsAnimated(false);
+  }, [inView]);
+
+  return (
+    <Section5 ref={ref}>
+      <Typography
+        className={`${isAnimated ? "animate" : ""}`}
+        ref={ref}
+        gutterBottom
+      >
+        대표수술안내
+      </Typography>
+      {data.map((list, index) => {
+        return (
+          <div className="content">
+            <img
+              src={list.img}
+              alt={`img${index}`}
+              ref={ref}
+              className={`${isAnimated ? "animate" : ""}`}
+            />
+            <div className="des-wrapper">
+              {list.content.map((i) => {
+                return (
+                  <div ref={ref}>
+                    <h3 className={`${isAnimated ? "animate" : ""}`}>
+                      {i.title}
+                    </h3>
+                    <p className={`${isAnimated ? "animate" : ""}`}>
+                      {i.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </Section5>
+  );
+}
+
+function Section6Component({ id, description }) {
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setIsAnimated(true);
+    } else setIsAnimated(false);
+  }, [inView]);
+
+  return (
+    <Section6 id={id}>
+      <Box>
+        <Box>
+          <InnerBox ref={ref}>
+            <Typography className={`${isAnimated ? "animate" : ""}`}>
+              모든 진료의 시작점,
+              <Bold className={`${isAnimated ? "animate" : ""}`}>
+                SKY 영상의료센터
+              </Bold>
+            </Typography>
+            <Typography className={`${isAnimated ? "animate" : ""}`}>
+              {description}
+            </Typography>
+          </InnerBox>
+        </Box>
+      </Box>
+    </Section6>
+  );
+}
 
 function Subject() {
   const { id } = useParams();
   const info = centerInfo.find((item) => item.id === Number(id));
-  const sec2ImgUrl = info.sec2Img;
-  console.log(sec2ImgUrl);
   // console.log(id, idx);
   // 1: 영상의료센터, 2: 신경정형, 3: 만성질환, 4: 한방재활
-  const [selectedIdx, setSelectedIdx] = useState(0);
-  const [isChange, setIsChange] = useState(false);
-
-  const prevLocation = useRef(null);
-  const location = useLocation();
-  const [isVisible1, setIsVisible1] = useState(false);
-
-  const section1Ref = useRef(null);
-  const section2Ref = useRef(null);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const contentOffsetTop = section1Ref.current.offsetTop;
-  //     const windowHeight = window.innerHeight;
-  //     const scrollY = window.scrollY;
-
-  //     // 요소가 화면에 나타나면 isVisible1 상태를 변경하여 애니메이션을 실행
-  //     if (scrollY + windowHeight >= contentOffsetTop) {
-  //       setIsVisible1(true);
-  //     } else {
-  //       setIsVisible1(false); // 요소가 화면에서 보이지 않을 때 다시 초기 상태로 설정
-  //     }
-  //   };
-
-  //   // 스크롤 이벤트 리스너 등록
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // 컴포넌트가 언마운트될 때 리스너 제거
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  const buttonClickhandler = (i) => {
-    setIsChange(true);
-    setSelectedIdx(i);
-    setTimeout(() => {
-      setIsChange(false);
-    }, 500);
-  };
 
   return (
     <>
       <Title img={info.titleImg || img} title={info.title} />
       <Container>
-        <Section1 ref={section1Ref}>
-          <TextBox isVisible1={isVisible1}>
-            <Typography
-              sx={{ fontSize: "calc(100vw * (38 / 1240))", fontWeight: 700 }}
-              gutterBottom
-            >
-              {info.title}
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "calc(100vw * (24 / 1240))",
-                fontWeight: 700,
-                whiteSpace: "pre-wrap",
-              }}
-              gutterBottom
-            >
-              {info.subTitle}
-            </Typography>
-          </TextBox>
-          <ImgBox isVisible1={isVisible1}>
-            <img src={info.primaryImg} />
-          </ImgBox>
-        </Section1>
-        <Section2>
-          <img src={info.sec2Img} alt="Section 2 Image" />
+        <Section1Component
+          img={info.primaryImg}
+          title={info.title}
+          content={info.subTitle}
+        />
+        <Section2Component url={info.id} description={info.description} />
+        <Section3>
+          <Typography gutterBottom>
+            SKY {info.title}를 선택해야하는 이유
+          </Typography>
           <Box>
-            <Box>
-              <InnerBox>
-                <Typography>
-                  모든 진료의 시작점,
-                  <Bold>SKY 영상의료센터</Bold>
-                </Typography>
-                <Typography>{info.description}</Typography>
-              </InnerBox>
-            </Box>
+            {info.sec3.map((list, index) => {
+              return <ActionAreaCard key={index} index={index} {...list} />;
+            })}
           </Box>
-        </Section2>
+        </Section3>
+        <Section4>
+          <Typography gutterBottom>{info.title} 전문장비</Typography>
+          <Slider equipmentData={info.equip} />
+        </Section4>
+        {info.surgery.length > 0 && <Section5Component data={info.surgery} />}
+        <Section6>
+          <div>
+            <Typography
+              className="title"
+              sx={{ color: "#ccc", opacity: "0.8" }}
+              gutterBottom
+            >
+              SKYAMC PRIDE
+            </Typography>
+            <Typography
+              className="sub-title"
+              sx={{ color: "#fff" }}
+              gutterBottom
+            >
+              {info.pride.title}
+            </Typography>
+            <Typography
+              sx={{ color: "#fff", whiteSpace: "pre-wrap" }}
+              gutterBottom
+            >
+              {info.pride.description}
+            </Typography>
+          </div>
+        </Section6>
       </Container>
     </>
   );
@@ -105,7 +223,7 @@ function Subject() {
 const slideInUp = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
@@ -147,7 +265,7 @@ const Container = styled.div`
 
 const Section1 = styled.section`
   && {
-    padding-top: calc(100vw * (120 / 1580));
+    margin-top: calc(100vw * (120 / 1580));
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -163,32 +281,259 @@ const Section1 = styled.section`
 const Section2 = styled(Section1)`
   && {
     height: calc(100vw * (550 / 1580));
-    background: url(${(props) => props.sec2ImgUrl}) no-repeat center bottom /
-      100% calc(100vw * (210 / 390));
+    background: ${(props) => {
+      let backgroundImage;
+      switch (props.id) {
+        case 1:
+          backgroundImage = `url(${bg1})`;
+          break;
+        case 2:
+          backgroundImage = `url(${bg2})`;
+          break;
+        case 3:
+          backgroundImage = `url(${bg3})`;
+          break;
+        case 4:
+          backgroundImage = `url(${bg4})`;
+          break;
+        default:
+          backgroundImage = `url(${bg1})`;
+      }
+      return backgroundImage;
+    }};
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% calc(100vw * (210 / 390));
+
+    @media screen and (max-width: 768px) {
+      && {
+        height: calc(100vw * (580 / 390));
+        background-position: center bottom;
+        background-size: 100% calc(100vw * (210 / 390));
+      }
+    }
+  }
+`;
+
+Section2.propTypes = {
+  id: PropTypes.number.isRequired, // id 프로퍼티를 전달받아야 합니다.
+};
+
+const Section3 = styled(Section1)`
+  && {
+    flex-direction: column;
+  }
+  > p {
+    font-size: calc(100vw * (38 / 1240));
+    font-weight: 700;
+    margin-left: calc(100vw * (50 / 1580));
+  }
+  > div {
+    margin: 0 calc(100vw * (50 / 1580));
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    > p {
+      font-size: calc(100vw * (24 / 390));
+    }
+    > div {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+`;
+
+const Section4 = styled(Section1)`
+  && {
+    flex-direction: column;
+  }
+  > p {
+    margin-left: calc(100vw * (50 / 1580));
+    font-size: calc(100vw * (38 / 1240));
+    font-weight: 700;
+  }
+  @media screen and (max-width: 768px) {
+    && {
+      /* width: 100%; */
+      /* height: calc(100vw * (210 / 390)); */
+    }
+    > p {
+      font-size: calc(100vw * (24 / 390));
+    }
+  }
+`;
+
+const Section5 = styled(Section4)`
+  && {
+    padding: 0 calc(100vw * (50 / 1580));
+    > p {
+      margin-left: 0;
+      opacity: 0;
+      transform: translateX(-100px);
+
+      &.animate {
+        opacity: 1;
+        transform: translateX(0);
+        animation: ${slideInLeft} 0.5s ease-in-out; // 애니메이션 효과 적용
+      }
+    }
+    .content {
+      display: flex;
+    }
+    img {
+      max-width: 40%;
+      margin-right: calc(100vw * (50 / 1580));
+      opacity: 0;
+      transform: translateX(-100px);
+
+      &.animate {
+        opacity: 1;
+        transform: translateX(0);
+        animation: ${slideInLeft} 0.5s ease-in-out; // 애니메이션 효과 적용
+      }
+    }
+    .des-wrapper {
+      display: flex;
+      flex-direction: column;
+      > div h3 {
+        font-size: calc(100vw * (20 / 1240));
+        font-weight: 700;
+        transition: opacity 0.5s, transform 0.5s;
+        opacity: 0;
+        transform: translateX(100px);
+
+        &.animate {
+          opacity: 1;
+          transform: translateX(0);
+          animation: ${slideInRight} 0.5s ease-in-out; // 애니메이션 효과 적용
+        }
+      }
+      > div p {
+        font-size: calc(100vw * (18 / 1240));
+        /* font-weight: 600; */
+        transition: opacity 0.5s, transform 0.5s;
+        opacity: 0;
+        transform: translateX(100px);
+
+        &.animate {
+          opacity: 1;
+          transform: translateX(0);
+          animation: ${slideInRight} 0.5s ease-in-out; // 애니메이션 효과 적용
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    && {
+      > p {
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+      img {
+        max-width: unset;
+        width: 100%;
+      }
+      .des-wrapper {
+        display: flex;
+        flex-direction: column;
+        > div h3 {
+          font-size: calc(100vw * (20 / 390));
+          font-weight: 700;
+        }
+        > div p {
+          font-size: calc(100vw * (16 / 390));
+          /* font-weight: 600; */
+        }
+      }
+    }
+  }
+`;
+
+const Section6 = styled(Section1)`
+  && {
+    /* height: calc(100vw * (600 / 1580)); */
+    margin-bottom: calc(100vw * (120 / 1580));
+    height: 100%;
+    padding: 0 calc(100vw * (50 / 1580));
+    /* flex-direction: column; */
+    justify-content: start;
+    background-image: url(${prideImg});
+    background-repeat: no-repeat;
+    background-position: center center;
+    > div {
+      width: 35%;
+      margin: calc(100vw * (50 / 1580)) 0;
+    }
+    .title {
+      font-size: calc(100vw * (38 / 1240));
+      font-weight: 700;
+    }
+    .sub-title {
+      font-size: calc(100vw * (38 / 1240));
+      font-weight: 700;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    && {
+      background-image: unset;
+      background-repeat: unset;
+      background-position: unset;
+      background-color: #222;
+      > div {
+        width: 100%;
+      }
+      .title {
+        font-size: calc(100vw * (24 / 390));
+      }
+      .sub-title {
+        font-size: calc(100vw * (18 / 390));
+      }
+    }
   }
 `;
 
 const TextBox = styled(Box)`
   && {
-    margin-left: calc(100vw * (50 / 1580));
+    margin: 0 calc(100vw * (50 / 1580));
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: calc(100vw * (48 / 1240));
-    opacity: 0; /* 초기에 숨김 */
-    animation: ${slideInLeft} 0.5s ease-in-out forwards;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateX(-100px);
+
+    :first-child {
+      font-size: calc(100vw * (38 / 1240));
+      font-weight: 700;
+    }
+    :last-child {
+      font-size: calc(100vw * (24 / 1240));
+      font-weight: 700;
+    }
+
+    &.animate {
+      opacity: 1;
+      transform: translateX(0);
+      animation: ${slideInLeft} 0.3s ease-in-out; // 애니메이션 효과 적용
+    }
   }
 
   @media screen and (max-width: 768px) {
     && {
-      width: 100%;
+      /* width: 100%; */
       /* height: calc(100vw * (210 / 390)); */
-    }
-    :first-child {
-      font-size: calc(100vw * (24 / 390));
-    }
-    :last-child {
-      font-size: calc(100vw * (20 / 390));
+      :first-child {
+        font-size: calc(100vw * (24 / 390));
+      }
+      :last-child {
+        font-size: calc(100vw * (20 / 390));
+      }
     }
   }
 `;
@@ -198,8 +543,15 @@ const ImgBox = styled(Box)`
     width: calc(100vw * (700 / 1240));
     /* height: calc(100vw * (400 / 1240)); */
     overflow: hidden;
-    opacity: 0; /* 초기에 숨김 */
-    animation: ${slideInRight} 0.5s ease-in-out forwards;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateX(100px);
+
+    &.animate {
+      opacity: 1;
+      transform: translateX(0);
+      animation: ${slideInRight} 0.3s ease-in-out; // 애니메이션 효과 적용
+    }
 
     img {
       width: 100%;
@@ -232,9 +584,27 @@ const InnerBox = styled(Box)`
     :first-child {
       /* font-size: calc(100vw * (16 / 390)); */
       font-size: calc(100vw * (26 / 1580));
+      transition: opacity 0.3s, transform 0.3s;
+      opacity: 0;
+      transform: translateY(100px);
+
+      &.animate {
+        opacity: 1;
+        transform: translateY(0);
+        animation: ${slideInUp} 0.3s ease-in-out; // 애니메이션 효과 적용
+      }
     }
     :last-child {
       font-size: calc(100vw * (18 / 1580));
+      transition: opacity 0.5s, transform 0.5s;
+      opacity: 0;
+      transform: translateY(100px);
+
+      &.animate {
+        opacity: 1;
+        transform: translateY(0);
+        animation: ${slideInUp} 0.5s ease-in-out; // 애니메이션 효과 적용
+      }
     }
   }
 
@@ -244,12 +614,13 @@ const InnerBox = styled(Box)`
       height: 100vw;
       margin-left: 0;
       gap: calc(100vw * (30 / 390));
-    }
-    :first-child {
-      font-size: calc(100vw * (20 / 390)) !important;
-    }
-    :last-child {
-      font-size: calc(100vw * (16 / 390)) !important;
+
+      :first-child {
+        font-size: calc(100vw * (20 / 390)) !important;
+      }
+      :last-child {
+        font-size: calc(100vw * (16 / 390)) !important;
+      }
     }
   }
 `;
