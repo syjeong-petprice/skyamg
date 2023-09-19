@@ -20,6 +20,7 @@ const centerInfo = [
     id: 1,
     primaryImg: img101,
     titleImg: img1,
+    vetMemberIdx: [2, 5, 7, 11, 1, 2, 3, 4, 4],
     title: "영상의료센터",
     subTitle: `대학병원급 최첨단 진단 장비
 마취과 담당의 근무

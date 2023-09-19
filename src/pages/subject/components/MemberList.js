@@ -17,7 +17,13 @@ export function MemberItem({ visibleVetInfo }) {
   };
 
   return (
-    <Grid container rowSpacing={6}>
+    <Grid
+      container
+      rowSpacing={6}
+      sx={{
+        justifyContent: visibleVetInfo.length > 4 ? "flex-start" : "center",
+      }}
+    >
       {visibleVetInfo.map((vet) => {
         return (
           <Grid
@@ -82,13 +88,16 @@ export function MemberItem({ visibleVetInfo }) {
   );
 }
 
-function Member() {
+function MemberList({ memberIdx, subject }) {
   const [animate, setAnimate] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
   const [showAll, setShowAll] = useState(false);
-
+  const filteredVetInfo = vetInfo.filter((vet) => memberIdx.includes(vet.id));
+  console.log(filteredVetInfo);
   const componentRef = useRef(null);
-  const visibleVetInfo = showAll ? vetInfo : vetInfo.slice(0, 4);
+  const visibleVetInfo = showAll
+    ? filteredVetInfo
+    : filteredVetInfo.slice(0, 4);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -142,33 +151,27 @@ function Member() {
   return (
     <MemberContainer ref={componentRef}>
       <TitleWrapper>
-        <div className={animate ? "animate" : ""}>
-          <h2 style={{ fontSize: windowWidth > 800 ? "3rem" : "2rem" }}>
-            의료진 소개
-          </h2>
-          <p>
-            우리 가족의 건강을 최우선으로 하며 믿음을 주는 SKY 동물 메디컬 센터
-            의료진들입니다.
-          </p>
-        </div>
+        <Typography>{subject} 의료진</Typography>
       </TitleWrapper>
       <MemberItem visibleVetInfo={visibleVetInfo} />
-      <Button
-        size="large"
-        sx={{
-          mt: "4rem",
-          backgroundColor: "#000048",
-          "&:hover": {
-            backgroundColor: "transparent",
-            borderColor: "#000048",
-            color: "#000048",
-          },
-        }}
-        variant="contained"
-        onClick={handleShowAllClick}
-      >
-        {!showAll ? "더 보기" : "접기"}
-      </Button>
+      {filteredVetInfo.length > 4 && (
+        <Button
+          size="large"
+          sx={{
+            mt: "4rem",
+            backgroundColor: "#000048",
+            "&:hover": {
+              backgroundColor: "transparent",
+              borderColor: "#000048",
+              color: "#000048",
+            },
+          }}
+          variant="contained"
+          onClick={handleShowAllClick}
+        >
+          {!showAll ? "더 보기" : "접기"}
+        </Button>
+      )}
     </MemberContainer>
   );
 }
@@ -206,13 +209,13 @@ const slideIn = keyframes`
 const MemberContainer = styled.section`
   width: 100%;
   /* height: 92vh; */
-  height: fit-content;
+  /* height: fit-content; */
   padding-top: 5rem;
   padding-bottom: 5rem;
   /* background-image: url(${bgSky});
   background-size: cover;
   background-repeat: no-repeat; */
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,31 +228,30 @@ const MemberContainer = styled.section`
 `;
 
 const TitleWrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  @media screen and (max-width: 690px) {
-    padding-bottom: 4rem;
-  }
-  padding-bottom: 8rem;
+  && {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 2rem;
 
-  .animate {
-    animation: ${slideDown} 4s ease;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h2 {
-      color: #000048;
-      font-size: 3rem;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    .animate {
+      animation: ${slideDown} 4s ease;
     }
-    p {
-      color: #000048;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-      margin: 5px;
+
+    > p {
+      /* color: #000048; */
+      margin-left: calc(100vw * (50 / 1580));
+      margin-bottom: 0.35em;
+      font-size: calc(100vw * (38 / 1240));
+      font-weight: 700;
+      /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); */
+    }
+  }
+  @media screen and (max-width: 768px) {
+    /* padding-bottom: 4rem; */
+    && {
+      > p {
+        font-size: calc(100vw * (24 / 390));
+      }
     }
   }
 `;
@@ -315,4 +317,4 @@ const ImgBox = styled(Box)`
   }
 `;
 
-export default Member;
+export default MemberList;

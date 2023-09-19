@@ -10,6 +10,7 @@ import centerInfo from "../../config/centerInfo";
 import Title from "../../components/Title";
 import ActionAreaCard from "./components/sec3Card";
 import Slider from "./components/equipSlider";
+import MemberList from "./components/MemberList";
 // import ExtraContentTable from "./components/ExtraContentTable";
 import bg1 from "./bg-image/영상의료센터.jpeg";
 import bg2 from "./bg-image/영상의료센터.jpeg";
@@ -170,6 +171,7 @@ function Subject() {
             })}
           </Box>
         </Section3>
+        <MemberList memberIdx={info.vetMemberIdx} subject={info.title} />
         <Section4>
           <Typography gutterBottom>{info.title} 전문장비</Typography>
           <Slider equipmentData={info.equip} />
