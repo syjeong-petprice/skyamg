@@ -368,6 +368,7 @@ const Section5 = styled(Section4)`
     }
     img {
       max-width: 40%;
+      height: auto;
       margin-right: calc(100vw * (50 / 1580));
     }
     .left {
@@ -434,11 +435,12 @@ const Section5 = styled(Section4)`
       }
       .content {
         display: flex;
-        flex-direction: column;
+        flex-direction: column !important;
       }
       img {
-        max-width: unset;
-        width: 100%;
+        max-width: unset !important;
+        width: 100% !important;
+        margin: 0 !important;
       }
       .des-wrapper {
         display: flex;

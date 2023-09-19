@@ -169,7 +169,7 @@ function MemberList({ memberIdx, subject }) {
   // };
 
   return (
-    <MemberContainer ref={ref} className={`${isAnimated ? "animate" : ""}`}>
+    <MemberContainer>
       <TitleWrapper>
         <Typography>{subject} 의료진</Typography>
       </TitleWrapper>
@@ -241,17 +241,7 @@ const MemberContainer = styled.section`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  && {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: opacity 0.5s, transform 0.5s;
 
-    &.animate {
-      opacity: 1;
-      transform: translateX(0);
-      animation: ${slideInLeft} 0.5s ease-in-out; // 애니메이션 효과 적용
-    }
-  }
   * {
     margin: 0;
   }
