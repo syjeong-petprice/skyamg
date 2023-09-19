@@ -1,14 +1,22 @@
 import { styled, keyframes } from "styled-components";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useInView } from "react-intersection-observer";
 import bgSky from "../../../images/resource/images/bg_Sky.png";
 import vetInfo from "../../../config/vetInfo";
-import DoctorModal from "../../doctor/components/DoctorModal";
 import { Typography, Box, Button, Grid, Chip } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+
+const slideInLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 export function MemberItem({ visibleVetInfo }) {
   const navigate = useNavigate();
@@ -89,56 +97,68 @@ export function MemberItem({ visibleVetInfo }) {
 }
 
 function MemberList({ memberIdx, subject }) {
-  const [animate, setAnimate] = useState(false);
-  const [windowWidth, setWindowWidth] = useState();
+  // const [animate, setAnimate] = useState(false);
+  // const [windowWidth, setWindowWidth] = useState();
   const [showAll, setShowAll] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+
   const filteredVetInfo = vetInfo.filter((vet) => memberIdx.includes(vet.id));
   console.log(filteredVetInfo);
-  const componentRef = useRef(null);
+  // const componentRef = useRef(null);
   const visibleVetInfo = showAll
     ? filteredVetInfo
     : filteredVetInfo.slice(0, 4);
 
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    // 윈도우 리사이즈 이벤트 리스너 추가
-    window.addEventListener("resize", handleResize);
-
-    // 컴포넌트 언마운트 시 이벤트 리스너 제거
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
-    const handleScroll = () => {
-      // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
-      //   const midScreen = window.innerHeight * 3.2;
-      const componentTop = componentRef.current.getBoundingClientRect().top;
+    if (inView) {
+      setIsAnimated(true);
+    }
+  }, [inView]);
 
-      // console.log('innerHeight : ', window.innerHeight);
-      // console.log('scrollY : ', window.scrollY);
-      // console.log('midScreen : ', midScreen);
-      if (componentTop < window.innerHeight) {
-        setAnimate(true);
-      }
-      // else {
-      //   setAnimate(false);
-      // }
-    };
+  // useEffect(() => {
+  //   setWindowWidth(window.innerWidth);
 
-    window.addEventListener("scroll", handleScroll);
+  //   const handleResize = () => {
+  //     setWindowWidth(window.innerWidth);
+  //   };
 
-    return () => {
-      // 컴포넌트 언마운트 시 이벤트 리스너 제거
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   // 윈도우 리사이즈 이벤트 리스너 추가
+  //   window.addEventListener("resize", handleResize);
+
+  //   // 컴포넌트 언마운트 시 이벤트 리스너 제거
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
+  //     //   const midScreen = window.innerHeight * 3.2;
+  //     const componentTop = componentRef.current.getBoundingClientRect().top;
+
+  //     // console.log('innerHeight : ', window.innerHeight);
+  //     // console.log('scrollY : ', window.scrollY);
+  //     // console.log('midScreen : ', midScreen);
+  //     if (componentTop < window.innerHeight) {
+  //       setAnimate(true);
+  //     }
+  //     // else {
+  //     //   setAnimate(false);
+  //     // }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     // 컴포넌트 언마운트 시 이벤트 리스너 제거
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const handleShowAllClick = () => {
     setShowAll(!showAll);
@@ -149,7 +169,7 @@ function MemberList({ memberIdx, subject }) {
   // };
 
   return (
-    <MemberContainer ref={componentRef}>
+    <MemberContainer ref={ref} className={`${isAnimated ? "animate" : ""}`}>
       <TitleWrapper>
         <Typography>{subject} 의료진</Typography>
       </TitleWrapper>
@@ -221,7 +241,17 @@ const MemberContainer = styled.section`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  && {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.5s, transform 0.5s;
 
+    &.animate {
+      opacity: 1;
+      transform: translateX(0);
+      animation: ${slideInLeft} 0.5s ease-in-out; // 애니메이션 효과 적용
+    }
+  }
   * {
     margin: 0;
   }

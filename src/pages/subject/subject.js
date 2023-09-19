@@ -86,38 +86,14 @@ function Section5Component({ data }) {
   useEffect(() => {
     if (inView) {
       setIsAnimated(true);
-    }
+    } else setIsAnimated(false);
   }, [inView]);
 
-  function InnerContent({ innerIndex, list }) {
-    const [isAnimated, setIsAnimated] = useState(false);
-    const [ref, inView] = useInView({
-      threshold: 0.1,
-    });
-
-    useEffect(() => {
-      if (inView) {
-        // 각 카드가 나타나는 시간차를 두기 위한 setTimeout 사용
-        const timeoutId = setTimeout(() => {
-          setIsAnimated(true);
-        }, innerIndex * 200); // 시간차를 조절하려면 여기의 숫자를 조정하세요
-        return () => clearTimeout(timeoutId);
-      } else setIsAnimated(false);
-    }, [inView, innerIndex]);
-
-    return (
-      <div ref={ref} className={`des-content ${isAnimated ? "animate" : ""}`}>
-        <h3>{list.title}</h3>
-        <p>{list.description}</p>
-      </div>
-    );
-  }
-
   return (
-    <Section5>
+    <Section5 ref={ref}>
       <Typography
         className={`${isAnimated ? "animate" : ""}`}
-        ref={ref}
+        // ref={ref}
         gutterBottom
       >
         대표수술안내
@@ -125,17 +101,36 @@ function Section5Component({ data }) {
       {data.map((list, index) => {
         const animateDelay = 300 * index; // 0.3초씩 시간 차이를 둠
         return (
-          <div className="content">
+          <div
+            className="content"
+            style={{ flexDirection: list.type === 1 ? "row" : "row-reverse" }}
+          >
             <img
               src={list.img}
               alt={`img${index}`}
-              ref={(i) => (ref.current = i)}
-              className={`${isAnimated ? "animate" : ""}`}
-              style={{ animationDelay: `${animateDelay}ms` }}
+              className={`${list.type === 1 ? "left" : "rigth"} ${
+                isAnimated ? "animate" : ""
+              }`}
+              style={{
+                animationDelay: `${animateDelay}ms`,
+                margin:
+                  list.type === 1
+                    ? "0 calc(100vw * (50 / 1580)) 0 0"
+                    : "0 0 0 calc(100vw * (50 / 1580))",
+              }}
             />
-            <div className="des-wrapper">
+            <div
+              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${
+                isAnimated ? "animate" : ""
+              }`}
+            >
               {list.content.map((i, innerIndex) => {
-                return <InnerContent list={i} innerIndex={innerIndex} />;
+                return (
+                  <div>
+                    <h3>{i.title}</h3>
+                    <p>{i.description}</p>
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -369,10 +364,13 @@ const Section5 = styled(Section4)`
     }
     .content {
       display: flex;
+      margin-bottom: calc(100vw * (50 / 1580));
     }
     img {
       max-width: 40%;
       margin-right: calc(100vw * (50 / 1580));
+    }
+    .left {
       opacity: 0;
       transform: translateX(-100px);
       transition: opacity 0.5s, transform 0.5s;
@@ -383,20 +381,43 @@ const Section5 = styled(Section4)`
         animation: ${slideInLeft} 0.5s ease-in-out; // 애니메이션 효과 적용
       }
     }
+    .rigth {
+      transition: opacity 0.8s, transform 0.8s;
+      opacity: 0;
+      transform: translateX(100px);
+
+      &.animate {
+        opacity: 1;
+        transform: translateX(0);
+        animation: ${slideInRight} 0.8 ease-in-out; // 애니메이션 효과 적용
+      }
+    }
     .des-wrapper {
       display: flex;
       flex-direction: column;
-      > .des-content {
-        transition: opacity 0.5s, transform 0.5s;
+      /* .rigth {
+        transition: opacity 0.8s, transform 0.8s;
         opacity: 0;
         transform: translateX(100px);
 
         &.animate {
           opacity: 1;
           transform: translateX(0);
-          animation: ${slideInRight} 0.5 ease-in-out; // 애니메이션 효과 적용
+          animation: ${slideInRight} 0.8 ease-in-out; // 애니메이션 효과 적용
         }
       }
+      .left {
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 0.5s, transform 0.5s;
+
+        &.animate {
+          opacity: 1;
+          transform: translateX(0);
+          animation: ${slideInLeft} 0.5s ease-in-out; // 애니메이션 효과 적용
+        }
+      } */
+
       > div h3 {
         font-size: calc(100vw * (20 / 1240));
         font-weight: 700;
