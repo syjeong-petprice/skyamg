@@ -85,11 +85,35 @@ function Section5Component({ data }) {
   useEffect(() => {
     if (inView) {
       setIsAnimated(true);
-    } else setIsAnimated(false);
+    }
   }, [inView]);
 
+  function InnerContent({ innerIndex, list }) {
+    const [isAnimated, setIsAnimated] = useState(false);
+    const [ref, inView] = useInView({
+      threshold: 0.1,
+    });
+
+    useEffect(() => {
+      if (inView) {
+        // 각 카드가 나타나는 시간차를 두기 위한 setTimeout 사용
+        const timeoutId = setTimeout(() => {
+          setIsAnimated(true);
+        }, innerIndex * 200); // 시간차를 조절하려면 여기의 숫자를 조정하세요
+        return () => clearTimeout(timeoutId);
+      } else setIsAnimated(false);
+    }, [inView, innerIndex]);
+
+    return (
+      <div ref={ref} className={`des-content ${isAnimated ? "animate" : ""}`}>
+        <h3>{list.title}</h3>
+        <p>{list.description}</p>
+      </div>
+    );
+  }
+
   return (
-    <Section5 ref={ref}>
+    <Section5>
       <Typography
         className={`${isAnimated ? "animate" : ""}`}
         ref={ref}
@@ -98,65 +122,25 @@ function Section5Component({ data }) {
         대표수술안내
       </Typography>
       {data.map((list, index) => {
+        const animateDelay = 300 * index; // 0.3초씩 시간 차이를 둠
         return (
           <div className="content">
             <img
               src={list.img}
               alt={`img${index}`}
-              ref={ref}
+              ref={(i) => (ref.current = i)}
               className={`${isAnimated ? "animate" : ""}`}
+              style={{ animationDelay: `${animateDelay}ms` }}
             />
             <div className="des-wrapper">
-              {list.content.map((i) => {
-                return (
-                  <div ref={ref}>
-                    <h3 className={`${isAnimated ? "animate" : ""}`}>
-                      {i.title}
-                    </h3>
-                    <p className={`${isAnimated ? "animate" : ""}`}>
-                      {i.description}
-                    </p>
-                  </div>
-                );
+              {list.content.map((i, innerIndex) => {
+                return <InnerContent list={i} innerIndex={innerIndex} />;
               })}
             </div>
           </div>
         );
       })}
     </Section5>
-  );
-}
-
-function Section6Component({ id, description }) {
-  const [isAnimated, setIsAnimated] = useState(false);
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      setIsAnimated(true);
-    } else setIsAnimated(false);
-  }, [inView]);
-
-  return (
-    <Section6 id={id}>
-      <Box>
-        <Box>
-          <InnerBox ref={ref}>
-            <Typography className={`${isAnimated ? "animate" : ""}`}>
-              모든 진료의 시작점,
-              <Bold className={`${isAnimated ? "animate" : ""}`}>
-                SKY 영상의료센터
-              </Bold>
-            </Typography>
-            <Typography className={`${isAnimated ? "animate" : ""}`}>
-              {description}
-            </Typography>
-          </InnerBox>
-        </Box>
-      </Box>
-    </Section6>
   );
 }
 
@@ -373,6 +357,7 @@ const Section5 = styled(Section4)`
       margin-left: 0;
       opacity: 0;
       transform: translateX(-100px);
+      transition: opacity 0.5s, transform 0.5s;
 
       &.animate {
         opacity: 1;
@@ -388,6 +373,7 @@ const Section5 = styled(Section4)`
       margin-right: calc(100vw * (50 / 1580));
       opacity: 0;
       transform: translateX(-100px);
+      transition: opacity 0.5s, transform 0.5s;
 
       &.animate {
         opacity: 1;
@@ -398,9 +384,7 @@ const Section5 = styled(Section4)`
     .des-wrapper {
       display: flex;
       flex-direction: column;
-      > div h3 {
-        font-size: calc(100vw * (20 / 1240));
-        font-weight: 700;
+      > .des-content {
         transition: opacity 0.5s, transform 0.5s;
         opacity: 0;
         transform: translateX(100px);
@@ -408,21 +392,16 @@ const Section5 = styled(Section4)`
         &.animate {
           opacity: 1;
           transform: translateX(0);
-          animation: ${slideInRight} 0.5s ease-in-out; // 애니메이션 효과 적용
+          animation: ${slideInRight} 0.5 ease-in-out; // 애니메이션 효과 적용
         }
+      }
+      > div h3 {
+        font-size: calc(100vw * (20 / 1240));
+        font-weight: 700;
       }
       > div p {
         font-size: calc(100vw * (18 / 1240));
         /* font-weight: 600; */
-        transition: opacity 0.5s, transform 0.5s;
-        opacity: 0;
-        transform: translateX(100px);
-
-        &.animate {
-          opacity: 1;
-          transform: translateX(0);
-          animation: ${slideInRight} 0.5s ease-in-out; // 애니메이션 효과 적용
-        }
       }
     }
   }
