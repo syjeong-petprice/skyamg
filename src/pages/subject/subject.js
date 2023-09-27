@@ -145,7 +145,20 @@ function Subject() {
   const info = centerInfo.find((item) => item.id === Number(id));
   // console.log(id, idx);
   // 1: 영상의료센터, 2: 신경정형, 3: 만성질환, 4: 한방재활
-
+  if (!info) {
+    return (
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: "24px",
+          paddingTop: "200px",
+          height: "80vh",
+        }}
+      >
+        페이지 준비 중입니다.
+      </div>
+    );
+  }
   return (
     <>
       <Title img={info.titleImg || img} title={info.title} />
