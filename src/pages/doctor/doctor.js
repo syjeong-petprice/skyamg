@@ -1,6 +1,5 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import DoctorList from "./components/DoctorList";
 import Title from "../../components/Title";
 import vetInfo from "../../config/vetInfo";
 import { styled } from "styled-components";
