@@ -40,7 +40,7 @@ function Introduce() {
   }, []);
   return (
     <IntroduceContainer ref={componentRef} id={"Main_Intro"}>
-      {windowWidth > 800 ? (
+      {windowWidth > 900 ? (
         <ImageWrapper>
           <img
             className={animate ? "animate" : ""}
@@ -49,17 +49,18 @@ function Introduce() {
           />
         </ImageWrapper>
       ) : (
-        <MobileImg
-          src={profileImg}
-          alt="profile img"
-          style={{
-            width: "10rem",
-            position: "absolute",
-            right: 0,
-            top: 35,
-            zIndex: 0,
-          }}
-        />
+        <></>
+        // <MobileImg
+        //   src={profileImg}
+        //   alt="profile img"
+        //   style={{
+        //     width: "10rem",
+        //     position: "absolute",
+        //     right: 0,
+        //     top: 35,
+        //     zIndex: 0,
+        //   }}
+        // />
       )}
       <TextWrapper style={{ zIndex: 1 }}>
         <div className={animate ? "titleWrapper animate" : "titleWrapper"}>
@@ -128,16 +129,16 @@ const slideLeft = keyframes`
 const IntroduceContainer = styled.section`
   width: 100%;
   height: fit-content;
-  padding-top: 27vh;
+  padding-top: 10vh;
   position: relative;
   display: flex;
   justify-content: space-between;
   /* background: url(${univLogo}) center no-repeat; */
   background-size: 40%;
 
-  @media screen and (max-width: 690px) {
-    background-size: 90%;
-    padding-top: 1.8rem;
+  @media screen and (max-width: 900px) {
+    /* background-size: 90%; */
+    padding-top: 1rem;
     align-items: center;
   }
 
@@ -218,7 +219,7 @@ const ImageWrapper = styled.div`
     animation: ${slideRight} 10s ease;
   }
 
-  @media screen and (max-width: 690px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 
