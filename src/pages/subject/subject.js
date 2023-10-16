@@ -16,6 +16,7 @@ import bg1 from "./bg-image/영상의료센터.jpeg";
 import bg2 from "./bg-image/영상의료센터.jpeg";
 import bg3 from "./bg-image/영상의료센터.jpeg";
 import bg4 from "./bg-image/영상의료센터.jpeg";
+import bg5 from "../../images/resource/images/전문진료과목_bg.jpeg";
 import prideImg from "./bg-image/pride_banner.jpeg";
 
 function Section1Component({ img, title, content }) {
@@ -168,7 +169,7 @@ function Subject() {
           title={info.title}
           content={info.subTitle}
         />
-        <Section2Component url={info.id} info={info.sec2} />
+        <Section2Component id={info.id} info={info.sec2} />
         <Section3>
           <Typography gutterBottom>
             SKY {info.title}를 선택해야하는 이유
@@ -280,6 +281,7 @@ const Section2 = styled(Section1)`
     height: calc(100vw * (550 / 1580));
     background: ${(props) => {
       let backgroundImage;
+      console.log(props.id, backgroundImage);
       switch (props.id) {
         case 1:
           backgroundImage = `url(${bg1})`;
@@ -292,6 +294,9 @@ const Section2 = styled(Section1)`
           break;
         case 4:
           backgroundImage = `url(${bg4})`;
+          break;
+        case 5:
+          backgroundImage = `url(${bg5})`;
           break;
         default:
           backgroundImage = `url(${bg1})`;
