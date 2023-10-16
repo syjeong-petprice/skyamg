@@ -65,6 +65,7 @@ const Slider = ({ equipmentData }) => {
     if (equipmentData.length > 1) {
       setAutoSlide(true);
     } else setAutoSlide(false);
+    setIndex(0);
   }, [equipmentData]);
 
   return (
