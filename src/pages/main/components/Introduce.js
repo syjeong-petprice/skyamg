@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { styled, keyframes } from "styled-components";
-import profileImg from "../../../images/vet/doc_moonjongsun.png";
+import profileImg from "../../../images/main/doc_moonjongsun_desc2.png";
 import univLogo from "../../../images/resource/images/충남대로고.png";
 import vetInfo from "../../../config/vetInfo";
 
@@ -91,20 +91,12 @@ function Introduce() {
             {windowWidth > 800 ? <br /> : ", "}
             진료받을 수 있도록 하는 진료시스템을 마련하고 있습니다. */}
           </p>
-          <ul>
+          {/* 원장 인사말에 약력 넣을건지 확인 필요 */}
+          {/* <ul>
             {moonInfo?.history?.map((item) => {
               return <li>{item}</li>;
             })}
-            {/* <li>충남대학교 수의과대학 수의학과 졸업</li>
-            <li>충남대학교 수의과대학 대학원 석사 졸업 (영상의학전공)</li>
-            <li>충남대학교 수의과대학 대학원 박사과정 (영상의학전공)</li>
-            <li>충남대학교 수의과대학 부속동물병원 진료수의사</li>
-            <li>대전과학기술대학교 애완동물과 교수</li>
-            <li>서울 충현동물종합병원 영상과장</li>
-            <li>서울 충현동물종합병원 진료부장</li>
-            <li>서울 충현동물종합병원 부원장</li>
-            <li>현) 인천스카이동물의료센터 대표원장</li> */}
-          </ul>
+          </ul> */}
         </div>
       </TextWrapper>
     </IntroduceContainer>
@@ -140,7 +132,7 @@ const IntroduceContainer = styled.section`
   position: relative;
   display: flex;
   justify-content: space-between;
-  background: url(${univLogo}) center no-repeat;
+  /* background: url(${univLogo}) center no-repeat; */
   background-size: 40%;
 
   @media screen and (max-width: 690px) {
