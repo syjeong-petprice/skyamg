@@ -108,7 +108,7 @@ const SliderItems = styled.div`
   display: flex;
 
   > img {
-    width: 100%;
+    /* width: 100%; */
     height: calc(100vw * (400 / 1240));
   }
   > div {
@@ -131,11 +131,12 @@ const SliderItems = styled.div`
 
     > img {
       width: 100%;
-      height: calc(100vw * (220 / 390));
+      height: calc(100vw * (300 / 390));
+      object-fit: cover;
     }
     > div {
       width: 100%;
-      height: calc(100vw * (420 / 390));
+      height: calc(100vw * (300 / 390));
       padding: calc(100vw * (35 / 390));
       align-items: flex-start;
 
