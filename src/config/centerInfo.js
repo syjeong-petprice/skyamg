@@ -8,10 +8,13 @@ import sec3img1 from "../images/resource/subjects/section3_img01.png";
 import sec3img2 from "../images/resource/subjects/section3_img02.png";
 import sec3img3 from "../images/resource/subjects/section3_img03.png";
 
-import equip1 from "../images/resource/subjects/slide01.jpeg";
-import equip2 from "../images/resource/subjects/slide02.jpeg";
-import equip3 from "../images/resource/subjects/slide03.jpeg";
-import equip4 from "../images/resource/subjects/slide04.jpeg";
+import equip1 from "../images/resource/subjects/equip/image1.png";
+import equip2 from "../images/resource/subjects/equip/image2.png";
+import equip3 from "../images/resource/subjects/equip/image3.png";
+import equip4 from "../images/resource/subjects/equip/image4.png";
+import equip5 from "../images/resource/subjects/equip/image5.png";
+import equip6 from "../images/resource/subjects/equip/image6.png";
+import equip7 from "../images/resource/subjects/equip/image7.png";
 
 import surgery1 from "../images/resource/subjects/surgery_01.jpeg";
 
@@ -154,13 +157,13 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     ],
     equip: [
       {
-        img: equip1,
+        img: equip4,
         name: "Stryker Sonopet",
         description:
           "초음파 수술장비로서 공명현상을 통해 조직을 선택적으로 절제할 수 있습니다. 뼈 및 종양조직을 주변 조직의 손상 없이 제거할 수 있어 술 후 재발 가능성을 최소화 할 수 있습니다. 정형외과 및 신경외과 수술 시, 활용도가 매우 높은 장비입니다.",
       },
       {
-        img: equip2,
+        img: equip5,
         name: "C-arm 메디슨 MCA-6200",
         description:
           "뼈와 관절을 연속적으로 투시하는 디지털 방사선촬영 장비입니다. 100만 화소의 고해상도 카메라와 9인치 렌즈를 적용하여 영상의 왜곡을 최소화하였습니다. 정형 수술시, 관절 및 골 병변부의 정확한 접근이 가능합니다.",
@@ -252,7 +255,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     ],
     equip: [
       {
-        img: equip1,
+        img: equip6,
         name: "이동형 초음파 GE Venue go",
         description:
           "휴대가 가능한 이동형 초음파로서 호흡 곤란과 같이 응급한 상태의 환자에게 신속하게 입원장에서 검사를 실시할 수 있습니다. 폐초음파 검사 및 대형견의 초음파 검사 시 유용하게 사용할 수 있습니다.",
@@ -344,7 +347,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     ],
     equip: [
       {
-        img: equip2,
+        img: equip7,
         name: "DIOWAVE 10&15WATT LASER SYSTEM",
         description:
           "근육층에 조사하는 2가지 파장 외에 피부층 및 심부 조직까지 적용할 수 있는 2가지 파장이 추가되어 있는 레이저 재활 치료기입니다. 술 후 염증 및 통증 관리, 피부 질환, 염증성 질환 등에 폭넓게 사용할 수 있습니다.",
