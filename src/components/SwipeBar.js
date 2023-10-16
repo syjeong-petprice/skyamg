@@ -50,13 +50,16 @@ export default function Sidebar({ open, onClose }) {
             영상의료센터
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/2" onClick={handleClose}>
-            신경정형센터
+            정형신경센터
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/3" onClick={handleClose}>
-            만성질환센터
+            내과질환센터
           </StyledSubLink>
           <StyledSubLink to="/skyamg/subject/4" onClick={handleClose}>
             한방재활센터
+          </StyledSubLink>
+          <StyledSubLink to="/skyamg/subject/5" onClick={handleClose}>
+            응급의학센터
           </StyledSubLink>
         </StyledSubLinks>
       )}
@@ -107,7 +110,8 @@ const StyledLink = styled(Link)`
 `;
 const StyledSubLinks = styled.div`
   margin-top: 10px;
-  width: 60%;
+  width: 100%;
+  border-bottom: 0.5px solid #ccc;
 `;
 
 const StyledSubLink = styled(Link)`

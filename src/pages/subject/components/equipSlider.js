@@ -61,6 +61,12 @@ const Slider = ({ equipmentData }) => {
     };
   }, [autoSlide, index, equipmentData]);
 
+  useEffect(() => {
+    if (equipmentData.length > 1) {
+      setAutoSlide(true);
+    } else setAutoSlide(false);
+  }, [equipmentData]);
+
   return (
     <div
       style={{
@@ -71,7 +77,9 @@ const Slider = ({ equipmentData }) => {
       onMouseEnter={stopAutoSlide} // 마우스 오버시 자동 슬라이딩 멈춤
       onMouseLeave={startAutoSlide} // 마우스 아웃시 자동 슬라이딩 시작
     >
-      <ChevronLeftIcon onClick={handlePrevSlide} />
+      {equipmentData.length > 1 && (
+        <ChevronLeftIcon onClick={handlePrevSlide} />
+      )}
 
       <SwipeableViews
         style={{ width: "90%", height: "100%" }}
@@ -88,7 +96,9 @@ const Slider = ({ equipmentData }) => {
           </SliderItems>
         ))}
       </SwipeableViews>
-      <ChevronRightIcon onClick={handleNextSlide} />
+      {equipmentData.length > 1 && (
+        <ChevronRightIcon onClick={handleNextSlide} />
+      )}
     </div>
   );
 };

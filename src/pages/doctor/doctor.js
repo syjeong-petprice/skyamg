@@ -67,7 +67,7 @@ function Doctor() {
               )}
               {vet.paper.length > 0 && (
                 <Box>
-                  <Bedge>주요논문</Bedge>
+                  <Bedge2>주요논문</Bedge2>
                   {vet.paper.map((list) => {
                     return <Typography2>{list}</Typography2>;
                   })}
@@ -106,7 +106,7 @@ function Doctor() {
               )}
               {vet.paper.length > 0 && (
                 <Box>
-                  <Bedge>주요논문</Bedge>
+                  <Bedge2>주요논문</Bedge2>
                   {vet.paper.map((list) => {
                     return <Typography2>{list}</Typography2>;
                   })}

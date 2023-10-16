@@ -65,10 +65,16 @@ const StyledCard = styled(Card)`
   transition: opacity 0.3s, transform 0.3s;
   opacity: 0;
   transform: translateY(100px);
+  width: 30%;
 
   &.animate {
     opacity: 1;
     transform: translateY(0);
     animation: ${fadeIn} 0.3s ease-in-out; // 애니메이션 효과 적용
+  }
+  @media screen and (max-width: 768px) {
+    & {
+      width: 100%;
+    }
   }
 `;

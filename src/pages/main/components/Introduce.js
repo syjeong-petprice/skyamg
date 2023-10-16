@@ -1,13 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { styled, keyframes } from "styled-components";
-import profileImg from "../../../images/resource/images/제목.png";
+import profileImg from "../../../images/vet/doc_moonjongsun.png";
 import univLogo from "../../../images/resource/images/충남대로고.png";
+import vetInfo from "../../../config/vetInfo";
 
 function Introduce() {
   const [animate, setAnimate] = useState(false);
 
   const [windowWidth, setWindowWidth] = useState();
   const componentRef = useRef(null);
+
+  const moonInfo = vetInfo.filter((i) => i.id === 3)[0];
+  console.log(moonInfo);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -21,7 +25,7 @@ function Introduce() {
 
       if (componentTop < window.innerHeight) {
         setAnimate(true);
-      } 
+      }
       // else {
       //   setAnimate(false);
       // }
@@ -60,21 +64,38 @@ function Introduce() {
       <TextWrapper style={{ zIndex: 1 }}>
         <div className={animate ? "titleWrapper animate" : "titleWrapper"}>
           <h2>안녕하세요.</h2>
-          <h2>
+          {/* <h2>
             <strong>
               SKY 동물메디컬센터
-              <br /> 대표원장 오이세입니다.
+              <br /> 대표원장 문종선입니다.
             </strong>
-          </h2>
+          </h2> */}
         </div>
         <div className={animate ? "contentWrapper animate" : "contentWrapper"}>
-          <p>
-            24시간 연중무휴로 공휴일, 명절 없이 한밤중이라도 걱정없이
+          <p style={{ whiteSpace: "pre-wrap" }}>
+            {`저희 인천SKY동물메디컬센터는 2014년 개원 이래로, 
+우리 아이들이 정확한 진단과 신속한 치료를 받게 하는 것을 
+사명으로 새기고 성장해왔습니다.
+
+최신의 의료 시설과 각 분야의 전문 인력들이 지금 이 순간에도 
+아이들의 건강을 위하여 노력을 아끼지 않고 있습니다.
+
+우리 아이들과 보호자님들의 눈높이에서 마음까지 헤아릴 수 있는 
+따뜻한 병원이 되도록 노력하겠습니다.
+
+감사합니다.
+
+대표 원장 문종선 올림.
+`}
+            {/* 24시간 연중무휴로 공휴일, 명절 없이 한밤중이라도 걱정없이
             {windowWidth > 800 ? <br /> : ", "}
-            진료받을 수 있도록 하는 진료시스템을 마련하고 있습니다.
+            진료받을 수 있도록 하는 진료시스템을 마련하고 있습니다. */}
           </p>
           <ul>
-            <li>충남대학교 수의과대학 수의학과 졸업</li>
+            {moonInfo?.history?.map((item) => {
+              return <li>{item}</li>;
+            })}
+            {/* <li>충남대학교 수의과대학 수의학과 졸업</li>
             <li>충남대학교 수의과대학 대학원 석사 졸업 (영상의학전공)</li>
             <li>충남대학교 수의과대학 대학원 박사과정 (영상의학전공)</li>
             <li>충남대학교 수의과대학 부속동물병원 진료수의사</li>
@@ -82,7 +103,7 @@ function Introduce() {
             <li>서울 충현동물종합병원 영상과장</li>
             <li>서울 충현동물종합병원 진료부장</li>
             <li>서울 충현동물종합병원 부원장</li>
-            <li>현) 인천스카이동물의료센터 대표원장</li>
+            <li>현) 인천스카이동물의료센터 대표원장</li> */}
           </ul>
         </div>
       </TextWrapper>
@@ -124,7 +145,7 @@ const IntroduceContainer = styled.section`
 
   @media screen and (max-width: 690px) {
     background-size: 90%;
-  padding-top: 1.8rem;
+    padding-top: 1.8rem;
     align-items: center;
   }
 
@@ -137,7 +158,6 @@ const TextWrapper = styled.div`
   padding: 10vh 12vw;
   animation-play-state: paused;
   animation: ${slideLeft} 4s ease;
-
 
   /* .animate {
     animation: ${slideLeft} 4s ease;

@@ -55,13 +55,16 @@ function Header() {
                 <StyledLink to="/skyamg/subject/1">영상의료센터</StyledLink>
               </li>
               <li>
-                <StyledLink to="/skyamg/subject/2">신경정형센터</StyledLink>
+                <StyledLink to="/skyamg/subject/2">정형신경센터</StyledLink>
               </li>
               <li>
-                <StyledLink to="/skyamg/subject/3">만성질환센터</StyledLink>
+                <StyledLink to="/skyamg/subject/3">내과질환센터</StyledLink>
               </li>
               <li>
                 <StyledLink to="/skyamg/subject/4">한방재활센터</StyledLink>
+              </li>
+              <li>
+                <StyledLink to="/skyamg/subject/5">응급의학센터</StyledLink>
               </li>
             </StyledSubNav>
           </StyledSubUl>

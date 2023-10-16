@@ -46,7 +46,7 @@ function Section1Component({ img, title, content }) {
   );
 }
 
-function Section2Component({ id, description }) {
+function Section2Component({ id, info }) {
   const [isAnimated, setIsAnimated] = useState(false);
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -64,13 +64,13 @@ function Section2Component({ id, description }) {
         <Box>
           <InnerBox ref={ref}>
             <Typography className={`${isAnimated ? "animate" : ""}`}>
-              모든 진료의 시작점,
+              {info.title1},
               <Bold className={`${isAnimated ? "animate" : ""}`}>
-                SKY 영상의료센터
+                {info.title2}
               </Bold>
             </Typography>
             <Typography className={`${isAnimated ? "animate" : ""}`}>
-              {description}
+              {info.description}
             </Typography>
           </InnerBox>
         </Box>
@@ -168,7 +168,7 @@ function Subject() {
           title={info.title}
           content={info.subTitle}
         />
-        <Section2Component url={info.id} description={info.description} />
+        <Section2Component url={info.id} info={info.sec2} />
         <Section3>
           <Typography gutterBottom>
             SKY {info.title}를 선택해야하는 이유
@@ -180,10 +180,12 @@ function Subject() {
           </Box>
         </Section3>
         <MemberList memberIdx={info.vetMemberIdx} subject={info.title} />
-        <Section4>
-          <Typography gutterBottom>{info.title} 전문장비</Typography>
-          <Slider equipmentData={info.equip} />
-        </Section4>
+        {info.equip.length > 0 && (
+          <Section4>
+            <Typography gutterBottom>{info.title} 전문장비</Typography>
+            <Slider equipmentData={info.equip} />
+          </Section4>
+        )}
         {info.surgery.length > 0 && <Section5Component data={info.surgery} />}
         <Section6>
           <div>
