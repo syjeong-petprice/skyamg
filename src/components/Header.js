@@ -70,7 +70,9 @@ function Header() {
           </StyledSubUl>
         </li>
         <li>
-          <StyledLink to="/skyamg/web">웹차트</StyledLink>
+          <StyledLink to="https://icw.skyamg.com" target="_blank">
+            웹차트
+          </StyledLink>
         </li>
       </StyledUl>
       <StyledIconWrappr onClick={toggleSidebar(true)}>

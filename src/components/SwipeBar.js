@@ -63,7 +63,11 @@ export default function Sidebar({ open, onClose }) {
           </StyledSubLink>
         </StyledSubLinks>
       )}
-      <StyledLink to="/skyamg/web" onClick={handleClose}>
+      <StyledLink
+        to="https://icw.skyamg.com"
+        target="_blank"
+        onClick={handleClose}
+      >
         웹차트
       </StyledLink>
     </StyledSidebar>
