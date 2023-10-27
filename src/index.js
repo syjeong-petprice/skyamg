@@ -9,18 +9,21 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import theme from "./styles/muiTheme";
 import { ThemeProvider } from "@mui/material/styles";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CssBaseline />
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Header />
-        <App />
-        <Footer />
-      </Router>
-    </ThemeProvider>
+    <HelmetProvider>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Header />
+          <App />
+          <Footer />
+        </Router>
+      </ThemeProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
 

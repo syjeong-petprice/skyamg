@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { styled, css, keyframes } from "styled-components";
 import { Button, Box, Typography } from "@mui/material";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet-async";
 
 import img from "../../images/title/visual_greeting.jpeg";
 import centerInfo from "../../config/centerInfo";
@@ -18,6 +19,7 @@ import bg3 from "./bg-image/영상의료센터.jpeg";
 import bg4 from "./bg-image/영상의료센터.jpeg";
 import bg5 from "../../images/resource/images/전문진료과목_bg.jpeg";
 import prideImg from "./bg-image/pride_banner.jpeg";
+import MetaTag from "../../MetaTag";
 
 function Section1Component({ img, title, content }) {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -160,8 +162,16 @@ function Subject() {
       </div>
     );
   }
+
+  const metaData = {
+    title: info.title,
+    description: info.sec2.description,
+    imgsrc: info.primaryImg,
+    url: window.location.href,
+  };
   return (
     <>
+      <MetaTag {...metaData} />
       <Title img={info.titleImg || img} title={info.title} />
       <Container>
         <Section1Component

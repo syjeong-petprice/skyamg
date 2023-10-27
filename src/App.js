@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Main from "./pages/main/main";
 import Doctor from "./pages/doctor/doctor";
 import Subject from "./pages/subject/subject";
+import { Helmet } from "react-helmet-async";
 
 function App() {
   const { pathname } = useLocation();
@@ -19,17 +20,22 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route path="/skyamg" element={<Main name={"Main"} />} />
-      <Route
-        path="/skyamg/subject/:id"
-        element={<Subject name={"Subject"} />}
-      />
-      <Route
-        path="/skyamg/vetMember/:id"
-        element={<Doctor name={"vetMember"} />}
-      />
-    </Routes>
+    <>
+      <Helmet>
+        <title>인천 SKY 동물의료센터</title>
+      </Helmet>
+      <Routes>
+        <Route path="/skyamg" element={<Main name={"Main"} />} />
+        <Route
+          path="/skyamg/subject/:id"
+          element={<Subject name={"Subject"} />}
+        />
+        <Route
+          path="/skyamg/vetMember/:id"
+          element={<Doctor name={"vetMember"} />}
+        />
+      </Routes>
+    </>
   );
 }
 
