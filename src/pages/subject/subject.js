@@ -168,6 +168,7 @@ function Subject() {
     description: info.sec2.description,
     imgsrc: info.primaryImg,
     url: window.location.href,
+    keywords: info.title,
   };
   return (
     <>
