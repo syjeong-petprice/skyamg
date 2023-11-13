@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import Slider from "react-slick";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import imgOne from "../../../images/resource/images/스카이대기실.jpeg";
+import imgOne from "../../../images/resource/images/대기실.jpg";
 import imgTwo from "../../../images/resource/images/스카이입원실.jpeg";
 import imgThree from "../../../images/resource/images/스카이입원실_2.jpeg";
 import imgFour from "../../../images/resource/images/스카이목욕실.jpeg";
@@ -12,7 +12,7 @@ import imgSix from "../../../images/resource/images/스카이수술실.jpeg";
 import imgSeven from "../../../images/resource/images/스카이수술실_3.jpeg";
 import imgEight from "../../../images/resource/images/스카이초음파_컬러.jpeg";
 import imgNine from "../../../images/resource/images/스카이MRI실.jpeg";
-import imgTen from "../../../images/resource/images/스카이카운터.jpeg";
+import imgTen from "../../../images/resource/images/카운터.jpg";
 
 const skyInfo = [
   {

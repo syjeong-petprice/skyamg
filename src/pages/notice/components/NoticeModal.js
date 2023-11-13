@@ -64,6 +64,8 @@ const StyledDialogContent = styled(DialogContent)`
   gap: 3rem;
   .left img {
     max-width: 300px;
+    height: 200px;
+    object-fit: cover;
   }
   .right {
     width: 100%;

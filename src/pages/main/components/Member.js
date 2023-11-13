@@ -34,21 +34,17 @@ export function MemberItem({ visibleVetInfo }) {
             lg={3}
           >
             <VetProfile
-              sx={{ cursor: vet.id !== 1 ? "pointer" : "default" }}
+              sx={{ cursor: "pointer" }}
               onClick={() => {
-                if (vet.id !== 1) {
-                  handleVetMemberClick(vet.id);
-                }
+                handleVetMemberClick(vet.id);
               }}
             >
               <ImgBox>
                 <img alt={vet.name} src={vet.img} />
-                {vet.id !== 1 && (
-                  <MoreButton className="button-container" variant="contained">
-                    자세히 보기
-                    <ChevronRightIcon />
-                  </MoreButton>
-                )}
+                <MoreButton className="button-container" variant="contained">
+                  자세히 보기
+                  <ChevronRightIcon />
+                </MoreButton>
               </ImgBox>
               <Box
                 sx={{
@@ -207,8 +203,7 @@ const MemberContainer = styled.section`
   width: 100%;
   /* height: 92vh; */
   height: fit-content;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding: 5rem 1rem;
   /* background-image: url(${bgSky});
   background-size: cover;
   background-repeat: no-repeat; */

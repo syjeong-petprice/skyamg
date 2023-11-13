@@ -24,7 +24,7 @@ const centerInfo = [
     id: 1,
     primaryImg: img101,
     titleImg: img1,
-    vetMemberIdx: [8],
+    vetMemberIdx: [6],
     title: "영상진단센터",
     subTitle: `대학병원급 최첨단 진단 장비
 마취과 담당의 근무
@@ -128,7 +128,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     id: 2,
     primaryImg: img101,
     titleImg: img1,
-    vetMemberIdx: [5, 6],
+    vetMemberIdx: [3, 4],
     title: "정형신경센터",
     subTitle: `외과학전공의 및 수술 전문팀
 철저한 수술 전 검사
@@ -226,7 +226,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     id: 3,
     primaryImg: img101,
     titleImg: img1,
-    vetMemberIdx: [7, 4],
+    vetMemberIdx: [5, 2],
     title: "내과질환센터",
     subTitle: `심장, 신장질환 특화
 고양이 의료시설 분리
@@ -318,7 +318,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     id: 4,
     primaryImg: img101,
     titleImg: img1,
-    vetMemberIdx: [3, 7, 10],
+    vetMemberIdx: [1, 5, 8],
     title: "한방재활센터",
     subTitle: `수의한방침치료인증과정 수료
 반복적인 세션 치료
@@ -413,7 +413,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     id: 5,
     primaryImg: img101,
     titleImg: img1,
-    vetMemberIdx: [10, 11],
+    vetMemberIdx: [8, 9],
     title: "응급의학센터",
     subTitle: `응급의학전공의 상주
 전 입원장의 ICU화

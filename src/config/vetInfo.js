@@ -1,70 +1,24 @@
-// import vet1 from "../images/vet/doc_cheonwoojin.jpg";
-// import vet2 from "../images/vet/doc_oise.png";
-import vet3 from "../images/vet/doc_moonjongsun.png";
-import vet4 from "../images/vet/doc_jeongdaseul.png";
-import vet5 from "../images/vet/doc_kimdohee.png";
-import vet6 from "../images/vet/doc_choidongjun.png";
-import vet7 from "../images/vet/doc_parksulki.png";
-import vet8 from "../images/vet/doc_parkjoohyang.png";
-import vet9 from "../images/vet/doc_choiyujin.png";
-import vet10 from "../images/vet/doc_jeongtaegyu.png";
-import vet11 from "../images/vet/doc_yoongihong.png";
-// import vet12 from "../images/vet/doc_jangminhyuk.png";
-import vet13 from "../images/vet/doc_leesunback.png";
-import vet14 from "../images/vet/doc_seoseungwon.png";
-import vet15 from "../images/vet/doc_songjaeseong.png";
+import vet1 from "../images/vet/문종선.png";
+import vet2 from "../images/vet/정다슬.png";
+import vet3 from "../images/vet/김도희.png";
+import vet4 from "../images/vet/최동준.png";
+import vet5 from "../images/vet/박설기.png";
+import vet6 from "../images/vet/박주향.png";
+import vet7 from "../images/vet/최유진.png";
+import vet8 from "../images/vet/정태규.png";
+import vet9 from "../images/vet/윤기홍.png";
+import vet10 from "../images/vet/이선백.png";
+import vet11 from "../images/vet/서승원.png";
+import vet12 from "../images/vet/송재성.png";
+import vet13 from "../images/vet/박기종.png";
+import vet14 from "../images/vet/이한중.png";
 
 const vetInfo = [
-  // {
-  //   id: 1,
-  //   position: "대표원장",
-  //   name: "천우진",
-  //   img: vet1,
-  //   title: "",
-  //   history: [],
-  //   paper: [],
-  //   completion: [],
-  // },
-  // {
-  //   id: 2,
-  //   position: "대표원장",
-  //   name: "오이세",
-  //   img: vet2,
-  //   title: "충남대학교 영상의학 박사",
-  //   history: [
-  //     "충남대학교 수의과대학 수의학과 졸업",
-  //     "충남대학교 수의과대학 대학원 석사 졸업 (영상의학전공)",
-  //     "충남대학교 수의과대학 대학원 박사과정 (영상의학전공)",
-  //     "충남대학교 수의과대학 부속동물병원 진료수의사",
-  //     "대전과학기술대학교 애완동물과 교수",
-  //     "서울 충현동물종합병원 영상과장",
-  //     "서울 충현동물종합병원 진료부장",
-  //     "서울 충현동물종합병원 부원장",
-  //     "현) 인천스카이동물의료센터 대표원장",
-  //   ],
-  //   paper: [
-  //     "[학술논문]컴퓨터단층촬영을 이용한 거대 낭포성 폐기종의 진단 3례",
-  //     "[학술논문]개에서 복수의 평가에 있어서 필름-증감지 방사선 사진과 디지털 방사선 사진",
-  //     "[학술논문]개에서 발생한 비전형적 부신피질선종 1례",
-  //     "[학술논문]비글견에서 발생한 전반적 대뇌허혈",
-  //     "[학술논문]개에서 발생한 결장직장 선암종 1례",
-  //     "[학술논문]치와와견에서 발생한 원발성 Acalvaria 증례",
-  //     "[학술논문]개에서 발생한 연부조직 섬유종 2례",
-  //     "[학술논문]시츄견에서 발생한 간경화의 영상 진단",
-  //     "[학술논문]비글견에서 실험적으로 유발한 흉수의 정량 평가",
-  //     "[학술논문]개의 복강내 잔존 수술용 거즈 2예",
-  //     "[학술논문]고양이에서의 선천성 요추 기형의 평가",
-  //     "[학술논문]말티즈 견에서 발생한 골육증",
-  //     "[동향·연구보고서]개에서 자기공명영상을 이용한 뇌수두증과 척수공동증 진단",
-  //     "[동향·연구보고서]개에서 컴퓨터단층촬영술을 이용한 창상성 두개강 내 출혈의 진단",
-  //   ],
-  //   completion: [],
-  // },
   {
-    id: 3,
+    id: 1,
     position: "대표원장",
     name: "문종선",
-    img: vet3,
+    img: vet1,
     title: "전북대학교 수의학과",
     history: [
       "전북대학교 수의과대학 수의학과 졸업",
@@ -82,10 +36,10 @@ const vetInfo = [
     completion: ["CVA(미국수의한방침치료과정인증) 수료"],
   },
   {
-    id: 4,
+    id: 2,
     position: "부원장",
     name: "정다슬",
-    img: vet4,
+    img: vet2,
     title: "건국대학교 수의학과",
     history: [
       "건국대학교 수의과대학 수의학과 졸업",
@@ -98,10 +52,10 @@ const vetInfo = [
     completion: [],
   },
   {
-    id: 5,
+    id: 3,
     position: "외과과장",
     name: "김도희",
-    img: vet5,
+    img: vet3,
     title: "건국대학교 수의외과학 석박사통합과정 수료",
     history: [
       "건국대학교 수의과대학 수의학과 졸업",
@@ -114,10 +68,10 @@ const vetInfo = [
     completion: [],
   },
   {
-    id: 6,
+    id: 4,
     position: "외과과장",
     name: "최동준",
-    img: vet6,
+    img: vet4,
     title: "건국대학교 수의외과학 석사",
     history: [
       "경북대학교 수의과대학 졸업",
@@ -134,10 +88,25 @@ const vetInfo = [
     ],
   },
   {
-    id: 7,
+    id: 14,
+    position: "외과과장",
+    name: "이한중",
+    img: vet14,
+    title: "건국대학교 수의과대학",
+    history: [
+      "건국대학교 수의과대학 졸업",
+      "평창 산업동물임상교육연수원 심화과정 수료",
+      "서울 아산병원 비교병리연구실 2019년 실습",
+      "현)인천SKY동물메디컬센터 진료수의사",
+    ],
+    paper: [],
+    completion: [],
+  },
+  {
+    id: 5,
     position: "내과과장",
     name: "박설기",
-    img: vet7,
+    img: vet5,
     title: "서울대학교 수의과대학 석사",
     history: [
       "경상대학교 수의학과 학사 졸업",
@@ -160,10 +129,10 @@ const vetInfo = [
     ],
   },
   {
-    id: 8,
+    id: 6,
     position: "영상의학과장",
     name: "박주향",
-    img: vet8,
+    img: vet6,
     title: "경북대학교 수의과대학 석사",
     history: [
       "경북대학교 수의과대학 수의과대학 졸업",
@@ -185,10 +154,10 @@ const vetInfo = [
     ],
   },
   {
-    id: 9,
+    id: 7,
     position: "진료팀장",
     name: "최유진",
-    img: vet9,
+    img: vet7,
     title: "충북대학교 수의학과",
     history: [
       "충북대학교 수의과대학 수의학과 졸업",
@@ -201,10 +170,10 @@ const vetInfo = [
     completion: [],
   },
   {
-    id: 10,
+    id: 8,
     position: "한방응급의학과장",
     name: "정태규",
-    img: vet10,
+    img: vet8,
     title: "서울대학교 임상수의학 응급의학과 석사",
     history: [
       "서울대학교 수의과대학 수의학과 졸업",
@@ -219,10 +188,10 @@ const vetInfo = [
     completion: ["CVA(미국수의한방침치료인증) 수료"],
   },
   {
-    id: 11,
+    id: 9,
     position: "응급의학팀장",
     name: "윤기홍",
-    img: vet11,
+    img: vet9,
     title: "경상대학교 수의과 대학 졸업",
     history: [
       "경상대학교 수의학과 졸업",
@@ -234,27 +203,11 @@ const vetInfo = [
     paper: [],
     completion: [],
   },
-  // {
-  //   id: 12,
-  //   position: "진료수의사",
-  //   name: "장민혁",
-  //   img: vet12,
-  //   title: "건국대학교 수의학과 학사",
-  //   history: [
-  //     "건국대학교 수의학과 학사 졸업",
-  //     "전) 계양스카이동물병원 인턴수의사",
-  //     "전) 건국대학교부속동물병원 내과 계약직 수의사",
-  //     "전) 우리들동물병원 진료과장",
-  //     "현) 인천스카이동물병원 진료수의사",
-  //   ],
-  //   paper: [],
-  //   completion: [],
-  // },
   {
-    id: 13,
+    id: 10,
     position: "진료수의사",
     name: "이선백",
-    img: vet13,
+    img: vet10,
     title: "건국대학교 수의과대학",
     history: [
       "건국대학교 수의과대학 졸업",
@@ -266,10 +219,10 @@ const vetInfo = [
     completion: [],
   },
   {
-    id: 14,
+    id: 11,
     position: "진료수의사",
     name: "서승원",
-    img: vet14,
+    img: vet11,
     title: "경상대학교 수의과대학",
     history: [
       "경상대학교 수의과대학 졸업",
@@ -285,10 +238,10 @@ const vetInfo = [
     ],
   },
   {
-    id: 15,
+    id: 12,
     position: "진료수의사",
     name: "송재성",
-    img: vet15,
+    img: vet12,
     title: "건국대학교 수의과대학",
     history: [
       "건국대학교 수의과대학 졸업",
@@ -304,10 +257,10 @@ const vetInfo = [
     ],
   },
   {
-    id: 16,
+    id: 13,
     position: "진료수의사",
     name: "박기종",
-    img: vet15,
+    img: vet13,
     title: "건국대학교 수의과대학",
     history: [
       "건국대학교 수의과대학 졸업",

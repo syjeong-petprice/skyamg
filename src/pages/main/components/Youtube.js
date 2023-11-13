@@ -1,6 +1,6 @@
 import { styled, keyframes } from "styled-components";
-import imgOne from "../../../images/resource/youtube/1.png";
-import imgTwo from "../../../images/resource/youtube/2.png";
+import imgTwo from "../../../images/resource/youtube/01.png";
+import imgOne from "../../../images/resource/youtube/KakaoTalk_Photo_2023-11-13-11-55-23.png";
 import imgThree from "../../../images/resource/youtube/3.png";
 import imgFour from "../../../images/resource/youtube/4.png";
 import youtubeLogo from "../../../images/resource/youtube/youtubelogo.png";
@@ -14,32 +14,32 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 const youtubeInfo = [
   {
     id: 1,
-    title: "강아지&고양이 가루약 먹이는 방법",
-    code: "Yx4FOQ47flQ?si=BcDTkFl_2IYDTW_a",
+    title: "동물병원에서도 초전도체가 사용된다?!",
+    code: "/nA7ELDQ6x7k",
     img: imgOne,
   },
   {
     id: 2,
-    title: "인천동물병원 MRI검사 인천스카이동물메디컬센터",
-    code: "jfWjvgYb4-g?si=GaFS7ktQCrRRE1TO",
+    title: "강아지 귀 청소 안 하면 어떻게 될까?",
+    code: "rKl5euhr98k",
     img: imgTwo,
   },
-  {
-    id: 3,
-    title: "닥스훈트 디스크 MRI검사 디스크 수술 인천동물병원",
-    code: "DtuyDsVEUcQ?si=A2PN1e9qAECWC8So",
-    img: imgThree,
-  },
-  {
-    id: 4,
-    title: "부평스카이동물의료센터의 수술 후 물리치료 모습",
-    code: "noDZFjR6-Mw?si=OiAlp62NLDvAi8Xj",
-    img: imgFour,
-  },
+  // {
+  //   id: 3,
+  //   title: "닥스훈트 디스크 MRI검사 디스크 수술 인천동물병원",
+  //   code: "DtuyDsVEUcQ?si=A2PN1e9qAECWC8So",
+  //   img: imgThree,
+  // },
+  // {
+  //   id: 4,
+  //   title: "부평스카이동물의료센터의 수술 후 물리치료 모습",
+  //   code: "noDZFjR6-Mw?si=OiAlp62NLDvAi8Xj",
+  //   img: imgFour,
+  // },
 ];
 
 function Youtube() {
-  const [title, setTitle] = useState("Yx4FOQ47flQ?si=BcDTkFl_2IYDTW_a");
+  const [title, setTitle] = useState("nA7ELDQ6x7k");
   const [isMobile, setIsMobile] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
   //   const componentRef = useRef(null);
@@ -125,11 +125,11 @@ function Youtube() {
 						<p>SKY동물메디컬센터를 구독하고 최신 정보를 받아보세요.</p>
 					</div> */}
           <div style={{ marginBottom: "1rem" }}>
-            <Link to="https://www.youtube.com/@skyskyamg8351">
+            <a href="https://www.youtube.com/@skyamg" target="_blank">
               <Button variant="contained" color="primary">
                 채널 바로가기
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
         <div className="youtubeWrapper">
@@ -144,7 +144,7 @@ function Youtube() {
           ></iframe>
         </div>
       </EmbedWrapper>
-      <ThumbnailWrapper>
+      <ThumbnailWrapper youtubeInfo={youtubeInfo}>
         {isMobile && (
           <p
             style={{
@@ -159,17 +159,15 @@ function Youtube() {
         )}
         {youtubeInfo.map((item) => (
           <div className="imgWrapper" key={item.id}>
-            <div>
-              <img
-                onClick={() => setTitle(item.code)}
-                src={item.img}
-                alt={item.title}
-                value={item.code}
-                style={{
-                  border: title === item.code ? "3px solid #fc1c00" : "none",
-                }}
-              />
-            </div>
+            <img
+              onClick={() => setTitle(item.code)}
+              src={item.img}
+              alt={item.title}
+              value={item.code}
+              style={{
+                border: title === item.code ? "3px solid #fc1c00" : "none",
+              }}
+            />
             <p>{item.title}</p>
           </div>
         ))}
@@ -276,38 +274,53 @@ const ThumbnailWrapper = styled.div`
   height: fit-content;
   background-color: #30536f;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: ${({ youtubeInfo }) =>
+    youtubeInfo.length > 3 ? "flex-start" : "center"};
   align-items: center;
-  padding-top: 2rem;
+  padding: ${({ youtubeInfo }) =>
+    youtubeInfo.length > 3 ? "2rem 5rem 0 5rem" : "2rem 0 0 0"};
+  gap: 5rem;
+  overflow-x: auto;
+  white-space: nowrap;
 
   @media screen and (max-width: 800px) {
     flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0 0 0;
+    gap: 2rem;
   }
 
   .imgWrapper {
-    width: 15%;
+    /* width: 300px; */
+
     /* height: 85%; */
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     cursor: pointer;
+    /* margin-right: 5rem; */
+    box-sizing: border-box;
 
     @media screen and (max-width: 800px) {
       /* flex-direction: row; */
       width: 80%;
+      margin-right: 0; // 모바일에서는 간격 제거
     }
 
     img {
-      width: 100%;
-      height: auto;
+      width: 300px;
+      height: 100%;
+      object-fit: cover;
     }
     p {
       height: 50px;
       color: #fff;
       font-size: 0.9rem;
       opacity: 0.8;
+      text-align: center;
     }
   }
 `;
@@ -454,7 +467,7 @@ const StyledSlider = styled(Slider)`
       background-size: cover;
       background-position: center;
     }
-    .imgThree {
+    /* .imgThree {
       background-image: url(${imgThree});
       background-size: cover;
       background-position: center;
@@ -463,7 +476,7 @@ const StyledSlider = styled(Slider)`
       background-image: url(${imgFour});
       background-size: cover;
       background-position: center;
-    }
+    } */
   }
 
   .slick-prev {
