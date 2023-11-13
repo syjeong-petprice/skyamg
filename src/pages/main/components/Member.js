@@ -260,7 +260,7 @@ const MoreButton = styled(Box)`
   color: #fff;
   width: 100%;
   opacity: 1;
-  transition: opacity 0.3s, left 0.3s;
+  transition: opacity 0.7s, left 0.7s;
   padding: 16px;
   border-bottom: 0.1px solid #262663;
   font-weight: 700;
@@ -305,7 +305,7 @@ const ImgBox = styled(Box)`
 
     ${VetProfile}:hover & {
       scale: 1.2;
-      animation: ${imgZoomin} 0.3s ease;
+      animation: ${imgZoomin} 1s ease;
     }
   }
 `;
