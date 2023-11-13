@@ -24,7 +24,7 @@ function Links() {
           ></a>
         </li>
         <li className="tube">
-          <a href="https://www.youtube.com/@skyskyamg8351" target="_blank"></a>
+          <a href="https://www.youtube.com/@skyamg" target="_blank"></a>
         </li>
         <li className="naver">
           <a href="https://blog.naver.com/vetleader" target="_blank"></a>
