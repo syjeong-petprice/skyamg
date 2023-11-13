@@ -92,14 +92,16 @@ const vetInfo = [
     position: "외과과장",
     name: "이한중",
     img: vet14,
-    title: "건국대학교 수의과대학",
+    title: "충남대학교 임상수의학 석사",
     history: [
-      "건국대학교 수의과대학 졸업",
-      "평창 산업동물임상교육연수원 심화과정 수료",
-      "서울 아산병원 비교병리연구실 2019년 실습",
-      "현)인천SKY동물메디컬센터 진료수의사",
+      "전북대학교 수의학과 졸업",
+      "충남대학교 임상수의학 석사 졸업",
+      "전) VIP동물의료센터 동대문점 외과 팀장",
+      "현) 인천SKY동물메디컬센터 외과 과장",
     ],
-    paper: [],
+    paper: [
+      'Lee, Hanjung, et al. "Epineural Neurorrhaphy of a Large Nerve Defect Due to IatroGenic Sciatic Nerve Injury in a Maltese Dog." Veterinary Sciences 9.7 (2022): 361.',
+    ],
     completion: [],
   },
   {
