@@ -1,6 +1,7 @@
 import img101 from "../images/resource/subjects/mgimg_heart.jpg";
 
-import img1 from "../images/title/visual_greeting.jpeg";
+//import img1 from "../images/title/visual_greeting.jpeg";
+import img1 from "../images/title/visual_mri.jpg";
 
 // import sec2img from "../images/resource/subjects/스카이MRI실.jpeg";
 

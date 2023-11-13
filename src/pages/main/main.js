@@ -5,19 +5,40 @@ import Location from "./components/Location";
 import Preview from "./components/Preview";
 import Links from "../../components/Links";
 import { Helmet } from "react-helmet-async";
+import Subject from './components/Subject';
+import Equip2 from './components/Equip2';
+import Equip from './components/Equip';
+import Example from './components/Example';
+import Subject2 from './components/Subject2';
+import Youtube from './components/Youtube';
+import Notice from './components/Notice';
+import Notice2 from './components/Notice2';
+import Slider from './components/Slider';
+import SubjectAll from './components/SubjectAll';
 
 function Main() {
   return (
     <>
       <Helmet>
-        <title>안녕</title>
+        <title>인천스카이메디컬센터</title>
       </Helmet>
       <Slider2 />
       <Introduce />
+      <Youtube />
+
       <Member />
+      <Links />
+
+
+      <Subject />
+      <Equip2 />
+      <Equip />
+      <Subject2 />
       <Location />
       <Preview />
-      <Links />
+
+      <Notice2 />
+
     </>
   );
 }
