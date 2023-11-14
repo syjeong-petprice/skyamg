@@ -61,7 +61,7 @@ function Preview() {
       <TextWrapper>
         <div className="titleWrapper">
           <h3>
-            SKY 동물메디컬센터 시설을
+            인천SKY동물메디컬센터 시설을
             <br /> <span>미리 둘러보세요</span>
           </h3>
         </div>

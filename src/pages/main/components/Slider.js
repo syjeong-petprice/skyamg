@@ -56,7 +56,7 @@ function Slider() {
               <Custom.Extra_Bold_20>/</Custom.Extra_Bold_20>
             </p>
             <p style={{ margin: 0 }}>
-              당신 곁엔 <strong>SKY 동물메디컬센터</strong>
+              당신 곁엔 <strong>인천SKY동물메디컬센터</strong>
             </p>
 
             <div>

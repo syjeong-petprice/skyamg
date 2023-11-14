@@ -40,7 +40,7 @@ function Subject2() {
       // console.log('midScreen : ', midScreen);
       if (componentTop < window.innerHeight) {
         setAnimate(true);
-      } 
+      }
       // else {
       //   setAnimate(false);
       // }
@@ -78,12 +78,12 @@ function Subject2() {
   return (
     <SubjectContainer ref={componentRef}>
       <TextWrapper>
-        <div 
+        <div
         // className={animate ? "animate" : ""}
         >
           <p>SKY ANIMAL MEDICAL CENTER</p>
           <h2>
-            SKY 동물메디컬센터의 <strong>최첨단 장비</strong>
+            인천SKY동물메디컬센터의 <strong>최첨단 장비</strong>
           </h2>
         </div>
       </TextWrapper>
@@ -134,7 +134,7 @@ function Subject2() {
       </ImgWrapper>
       <SubTextWrapper>
         <p className={animate ? "animate" : ""}>
-          영상진단과에서는 다양한 첨단 영상의학검사장비를 이용하여 질병을
+          인천SKY동물메디컬센터에서는 다양한 첨단 영상의학검사장비를 이용하여 질병을
           정확하게 진단하는 것을 목표로 하며, 모든 촬영과 판독이 전공자에 의해
           이루어 지며, 안전한 검사를 위한 전용 마취 장비 및 모니터링 장비가
           구비되어 있습니다.

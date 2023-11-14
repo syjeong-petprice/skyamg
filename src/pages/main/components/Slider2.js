@@ -51,14 +51,14 @@ function Preview() {
                 </p> */}
                 {/* <p className="next_line_bar">/</p> */}
                 <p>
-                  당신 곁엔 <strong>SKY 동물메디컬센터</strong>
+                  당신 곁엔 <strong>인천SKY동물메디컬센터</strong>
                 </p>
                 <p className={isMobile ? "bar_m" : "bar"}>|</p>
                 <p className={isMobile ? "smallText_m" : "smallText"}>
                   어디서든 방문하는
                 </p>
                 <p className={isMobile ? "smallText_m" : "smallText"}>
-                  <strong>각 지역 최대의 동물병원</strong>
+                  <strong>인천 지역 최대의 동물병원</strong>
                 </p>
               </div>
             </div>

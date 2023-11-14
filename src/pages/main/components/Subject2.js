@@ -46,7 +46,7 @@ function Subject3() {
         <div className={animate ? "innerWrapper animate" : "innerWrapper"}>
           <p className="textOne">문답과 손끝에 의존한 질병 진단?</p>
           <p className="textTwo">
-            SKY 동물메디컬센터는{" "}
+            인천SKY동물메디컬센터는{" "}
             <strong>업계에서도 손꼽히는 영상의학검사장비</strong>로<br />{" "}
             환자분들과의 신뢰와 믿음을 지켜갑니다.
           </p>
