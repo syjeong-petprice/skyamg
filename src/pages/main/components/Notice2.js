@@ -8,18 +8,18 @@ function Notice() {
   const [open, setOpen] = useState(false);
   const [item, setItem] = useState();
 
-  const handleContentOverflow = (text) => {
-    if (text.length > 50) {
-      return text.slice(0, 48) + "...";
-    }
-    return text;
-  };
-  const handleTitleOverflow = (text) => {
-    if (text.length > 15) {
-      return text.slice(0, 14) + "...";
-    }
-    return text;
-  };
+  //   const handleContentOverflow = (text) => {
+  //     if (text.length > 50) {
+  //       return text.slice(0, 48) + "...";
+  //     }
+  //     return text;
+  //   };
+  //   const handleTitleOverflow = (text) => {
+  //     if (text.length > 15) {
+  //       return text.slice(0, 14) + "...";
+  //     }
+  //     return text;
+  //   };
 
   const handleOpen = () => {
     setOpen(true);
@@ -58,8 +58,10 @@ function Notice() {
                   <img src={notice.img} alt={notice.title} />
                 </div>
                 <div className="textWrapper">
-                  <h6>{handleTitleOverflow(notice.title)}</h6>
-                  <p>{handleContentOverflow(notice.content)}</p>
+                  {/* <h6>{handleTitleOverflow(notice.title)}</h6>
+                  <p>{handleContentOverflow(notice.content)}</p> */}
+                  <h6>{notice.title}</h6>
+                  <p>{notice.content}</p>
                 </div>
               </div>
             );
@@ -191,10 +193,17 @@ const NoticeContainer = styled.section`
         h6 {
           font-size: 0.9rem;
           margin: 10px 0 0 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
         p {
           font-size: 0.8rem;
           margin: 10px 0 0 0;
+          overflow: hidden;
+          display: -webkit-box; /* Multi-line layout */
+          -webkit-line-clamp: 2; /* Show 2 lines */
+          -webkit-box-orient: vertical;
         }
       }
     }

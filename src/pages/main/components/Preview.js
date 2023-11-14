@@ -7,6 +7,7 @@ import imgOne from "../../../images/resource/images/대기실.jpg";
 import img1 from "../../../images/resource/images/DSC06702.jpg";
 import img2 from "../../../images/resource/images/DSC06706.jpg";
 import img3 from "../../../images/resource/images/DSC06711.jpg";
+import img4 from "../../../images/resource/images/DSC06699.jpg";
 import imgTwo from "../../../images/resource/images/스카이입원실.jpeg";
 import imgThree from "../../../images/resource/images/스카이입원실_2.jpeg";
 import imgFour from "../../../images/resource/images/스카이목욕실.jpeg";
@@ -102,6 +103,9 @@ function Preview() {
               <p>수술실</p>
             </div>
             <div className="slideImg imgSeven">
+              <p>수술실</p>
+            </div>
+            <div className="slideImg img4">
               <p>수술실</p>
             </div>
             <div className="slideImg imgEight">
@@ -310,6 +314,11 @@ const StyledSlider = styled(Slider)`
     }
     .img3 {
       background-image: url(${img3});
+      background-size: cover;
+      background-position: center;
+    }
+    .img4 {
+      background-image: url(${img4});
       background-size: cover;
       background-position: center;
     }

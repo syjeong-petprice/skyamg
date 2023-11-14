@@ -19,7 +19,7 @@ function Subject3() {
       // console.log('midScreen : ', midScreen);
       if (componentTop < window.innerHeight) {
         setAnimate(true);
-      } 
+      }
       // else {
       //   setAnimate(false);
       // }
@@ -108,7 +108,7 @@ const SubjectContainer = styled.section`
   /* height: 92vh; */
   height: fit-content;
   /* min-height: 92vh; */
-  background-color: #c3ced7;
+  background-color: #e9e9e9;
   padding-top: 5rem;
   padding-bottom: 5rem;
   * {

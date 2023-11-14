@@ -31,7 +31,7 @@ function Equip() {
 
       if (componentTop < (window.innerHeight * 2) / 3) {
         setAnimate(true);
-      } 
+      }
       // else {
       //   setAnimate(false);
       // }
@@ -48,21 +48,23 @@ function Equip() {
     <EquipContainer ref={componentRef}>
       <ImgWrapper>
         <img
-        //  className={animate ? "animate" : ""} 
-        src={mriImg} alt="mri" />
+          //  className={animate ? "animate" : ""}
+          src={mriImg}
+          alt="mri"
+        />
       </ImgWrapper>
       <TextWrapper>
-        <div 
-        // className={animate ? "animate titleWrapper" : "titleWrapper"}
-        className={"titleWrapper"}
+        <div
+          // className={animate ? "animate titleWrapper" : "titleWrapper"}
+          className={"titleWrapper"}
         >
           <p>SKY ANIMAL MEDICAL CENTER</p>
           <h2 className="firstTitle">적.재.적.소</h2>
           <h2 className="secondTitle">SKY 영상의학과</h2>
         </div>
-        <div 
-        className={"stepWrapper"}
-        // className={animate ? "animate stepWrapper" : "stepWrapper"}
+        <div
+          className={"stepWrapper"}
+          // className={animate ? "animate stepWrapper" : "stepWrapper"}
         >
           <div>
             <div className="noBox">
@@ -166,7 +168,7 @@ const TextWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding-left: 5vw;
-  background-color: #e8c0a2;
+  background-color: #c3ced7;
 
   @media screen and (max-width: 690px) {
     width: 100%;
@@ -192,7 +194,7 @@ const TextWrapper = styled.div`
     }
     p {
       font-size: 0.8rem;
-      color: #a37550;
+      color: #30536f;
     }
     .firstTitle {
       font-weight: lighter;
