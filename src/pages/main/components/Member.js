@@ -239,11 +239,9 @@ const TitleWrapper = styled.div`
     h2 {
       color: #000048;
       font-size: 3rem;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
     p {
       color: #000048;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
       margin: 5px;
     }
   }

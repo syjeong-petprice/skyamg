@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { styled, keyframes } from "styled-components";
-import profileImg from "../../../images/main/doc_moonjongsun_desc2.png";
+import profileImg2 from "../../../images/main/doc_moonjongsun_desc2.png";
 import univLogo from "../../../images/resource/images/충남대로고.png";
 import vetInfo from "../../../config/vetInfo";
+import profileImg from "../../../images/vet/문종선.png";
 
 function Introduce() {
   const [animate, setAnimate] = useState(false);
@@ -41,8 +42,9 @@ function Introduce() {
   return (
     <IntroduceContainer ref={componentRef} id={"Main_Intro"}>
       {windowWidth > 900 ? (
-        <ImageWrapper>
+        <ImageWrapper style={{ right: '5vh' }}>
           <img
+            style={{ maxHeight: '760px', width: '620px' }}
             className={animate ? "animate" : ""}
             src={profileImg}
             alt="profile img"
