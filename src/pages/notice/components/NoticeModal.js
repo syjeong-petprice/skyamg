@@ -61,16 +61,19 @@ function NoticeModal({ item, open, handleClose }) {
 
 const StyledDialogContent = styled(DialogContent)`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
   gap: 3rem;
   .left img {
-    max-width: 300px;
-    height: 200px;
+    max-height: 250px;
+    /* height: 200px; */
     object-fit: cover;
   }
   .right {
     width: 100%;
-    max-width: 60%;
-    overflow: auto;
+    padding: 0 3rem;
+    /* max-width: 60%; */
     p {
       margin: 0;
       white-space: pre-wrap;
@@ -82,7 +85,11 @@ const StyledDialogContent = styled(DialogContent)`
     overflow: auto;
     gap: 1rem;
     padding: 0 !important;
-
+    .left img {
+      width: 100%;
+      /* height: 200px; */
+      object-fit: cover;
+    }
     .right {
       overflow: unset;
       max-width: 100%;
