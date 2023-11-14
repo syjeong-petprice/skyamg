@@ -141,9 +141,14 @@ const VetContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     && {
+    }
+    & > div {
       flex-direction: column;
       align-items: center;
       padding: calc(100vw * (112 / 1240));
+      width: 100%;
+      height: 100%;
+      background-color: rgba(1, 1, 1, 0.8);
     }
   }
 `;
