@@ -5,7 +5,7 @@ import vetInfo from "../../config/vetInfo";
 import { styled } from "styled-components";
 import img from "../../images/title/visual_incheon.jpeg";
 import { Typography, Box } from "@mui/material";
-import bgImg from "../../images/resource/images/detail_staff_bg.jpeg";
+import bgImg from "../../images/resource/images/DSC06723.jpg";
 
 function Doctor() {
   const { id } = useParams();
@@ -34,7 +34,7 @@ function Doctor() {
       <Title img={img} title="의료진 소개" />
       <VetContainer isMobile={isMobile}>
         {isMobile ? (
-          <>
+          <div>
             <TextBox>
               <StaffTitle>
                 "{vet.title}, {vet.position}"
@@ -74,9 +74,9 @@ function Doctor() {
                 </Box>
               )}
             </TextBox>
-          </>
+          </div>
         ) : (
-          <>
+          <div>
             <TextBox>
               <StaffTitle>
                 "{vet.title}, {vet.position}"
@@ -116,7 +116,7 @@ function Doctor() {
             <ImgBox>
               <img src={vet.img} alt={vet.name} />
             </ImgBox>
-          </>
+          </div>
         )}
       </VetContainer>
     </>
@@ -125,13 +125,18 @@ function Doctor() {
 
 const VetContainer = styled.div`
   && {
-    padding: calc(100vw * (112 / 1240)) 0;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
     background-image: url(${bgImg}); /* 이 부분 수정 */
     background-size: cover; /* 원하는 배경 이미지 크기 조절 설정 */
     background-repeat: no-repeat; /* 원하는 배경 이미지 반복 설정 */
+  }
+  & > div {
+    padding: calc(100vw * (112 / 1240)) 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0.8);
   }
 
   @media screen and (max-width: 768px) {
