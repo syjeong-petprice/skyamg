@@ -15,7 +15,7 @@ function Subject() {
 
       if (componentTop < window.innerHeight) {
         setAnimate(true);
-      } 
+      }
       // else {
       //   setAnimate(false);
       // }
@@ -32,7 +32,7 @@ function Subject() {
     <SubjectContainer ref={componentRef}>
       <TitleWrapper>
         <div className={animate ? "innerWrapper animate" : "innerWrapper"}>
-          <h2>01</h2>
+          {/* <h2>01</h2> */}
           <p>눈으로 보는 정밀검진</p>
           <h3>
             <strong>최첨단</strong> 영상의학과

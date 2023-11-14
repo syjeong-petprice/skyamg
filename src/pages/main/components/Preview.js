@@ -4,6 +4,9 @@ import Slider from "react-slick";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import imgOne from "../../../images/resource/images/대기실.jpg";
+import img1 from "../../../images/resource/images/DSC06702.jpg";
+import img2 from "../../../images/resource/images/DSC06706.jpg";
+import img3 from "../../../images/resource/images/DSC06711.jpg";
 import imgTwo from "../../../images/resource/images/스카이입원실.jpeg";
 import imgThree from "../../../images/resource/images/스카이입원실_2.jpeg";
 import imgFour from "../../../images/resource/images/스카이목욕실.jpeg";
@@ -13,59 +16,6 @@ import imgSeven from "../../../images/resource/images/스카이수술실_3.jpeg"
 import imgEight from "../../../images/resource/images/스카이초음파_컬러.jpeg";
 import imgNine from "../../../images/resource/images/스카이MRI실.jpeg";
 import imgTen from "../../../images/resource/images/카운터.jpg";
-
-const skyInfo = [
-  {
-    id: 1,
-    img: imgOne,
-    name: "대기실",
-  },
-  {
-    id: 2,
-    img: imgTwo,
-    name: "강아지 치료실&입원실",
-  },
-  {
-    id: 3,
-    img: imgThree,
-    name: "고양이 치료실&입원실",
-  },
-  {
-    id: 4,
-    img: imgFour,
-    name: "대형견입원실",
-  },
-  {
-    id: 5,
-    img: imgFive,
-    name: "방사선실",
-  },
-  {
-    id: 6,
-    img: imgSix,
-    name: "수술실",
-  },
-  {
-    id: 7,
-    img: imgSeven,
-    name: "수술실 2",
-  },
-  {
-    id: 8,
-    img: imgEight,
-    name: "초음파실",
-  },
-  {
-    id: 9,
-    img: imgNine,
-    name: "MRI실",
-  },
-  {
-    id: 10,
-    img: imgTen,
-    name: "카운터",
-  },
-];
 
 function Preview() {
   const handleClick = (e) => {
@@ -128,7 +78,13 @@ function Preview() {
         <div>
           <StyledSlider onChange={handleChange} {...settings}>
             <div className="slideImg imgOne">
-              <p>대기실</p>
+              <p>고객공간</p>
+            </div>
+            <div className="slideImg img1">
+              <p>고객공간</p>
+            </div>
+            <div className="slideImg img2">
+              <p>고객공간</p>
             </div>
             <div className="slideImg imgTwo">
               <p>강아지 치료실&입원실</p>
@@ -146,7 +102,7 @@ function Preview() {
               <p>수술실</p>
             </div>
             <div className="slideImg imgSeven">
-              <p>수술실2</p>
+              <p>수술실</p>
             </div>
             <div className="slideImg imgEight">
               <p>초음파실</p>
@@ -155,7 +111,10 @@ function Preview() {
               <p>MRI실</p>
             </div>
             <div className="slideImg imgTen">
-              <p>카운터</p>
+              <p>리셉션</p>
+            </div>
+            <div className="slideImg img3">
+              <p>리셉션</p>
             </div>
           </StyledSlider>
         </div>
@@ -339,7 +298,21 @@ const StyledSlider = styled(Slider)`
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
       }
     }
-
+    .img1 {
+      background-image: url(${img1});
+      background-size: cover;
+      background-position: center;
+    }
+    .img2 {
+      background-image: url(${img2});
+      background-size: cover;
+      background-position: center;
+    }
+    .img3 {
+      background-image: url(${img3});
+      background-size: cover;
+      background-position: center;
+    }
     .imgOne {
       background-image: url(${imgOne});
       background-size: cover;
