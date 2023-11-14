@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { styled } from "styled-components";
 import NoticeModal from "./NoticeModal";
 import noImg from "../../../images/contents/no-img-big.png";
+import { useNavigate } from "react-router-dom";
 
 function NoticeList({ item }) {
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate();
   const handleOpen = () => {
-    setOpen(true);
+    // setOpen(true);
+    navigate(`/skyamg/notice/${item.id}`);
   };
 
   const handleClose = () => {

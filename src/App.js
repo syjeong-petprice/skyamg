@@ -5,6 +5,7 @@ import Doctor from "./pages/doctor/doctor";
 import Subject from "./pages/subject/subject";
 import { Helmet } from "react-helmet-async";
 import Notice from "./pages/notice/notice";
+import NoticeDetails from "./pages/notice/notice-details";
 
 function App() {
   const { pathname } = useLocation();
@@ -34,6 +35,10 @@ function App() {
         <Route
           path="/skyamg/vetMember/:id"
           element={<Doctor name={"vetMember"} />}
+        />
+        <Route
+          path="/skyamg/notice/:id"
+          element={<NoticeDetails name={"notice"} />}
         />
         <Route path="/skyamg/notice" element={<Notice name={"notice"} />} />
       </Routes>
