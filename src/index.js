@@ -18,7 +18,6 @@ root.render(
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <Router>
-          <Header />
           <App />
           <Footer />
         </Router>

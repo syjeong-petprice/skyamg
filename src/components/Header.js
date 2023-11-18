@@ -6,10 +6,12 @@ import { SwipeableDrawer } from "@mui/material";
 import Sidebar from "./SwipeBar";
 import { useState } from "react";
 
-function Header() {
+function Header({ isScrolledDown }) {
   const [open, setOpen] = useState(false);
   const [isSubNavOpen, setIsSubNavOpen] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
+
+
 
   const toggleSidebar = (isOpen) => () => {
     setOpenSidebar(isOpen);
@@ -23,7 +25,7 @@ function Header() {
   };
 
   return (
-    <StyledHeader>
+    <StyledHeader isScrolledDown={isScrolledDown}>
       <StyledDiv>
         <Link to="/skyamg">
           <div>
@@ -97,14 +99,25 @@ const fadeIn = keyframes`
 const StyledHeader = styled.header`
   width: 100%;
   height: 8vh;
-  background-color: #101010;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 999;
-  opacity: 0.85;
+  opacity: 0.9;
+  background-color: ${({ isScrolledDown }) => (isScrolledDown ? "#000" : "none")};
+
+  &:hover  {
+    background-color: #000;
+    opacity: 0.9;
+    
+    > * {
+      opacity: 1;
+    }
+  }
+
+
   /* padding: 0 300px; */
 `;
 
@@ -146,7 +159,8 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLink = styled(Link)`
-  color: #999;
+  color: #FFF;
+  font-weight: 700;
   text-decoration: none;
   display: inline-block;
   position: relative;
@@ -154,6 +168,15 @@ const StyledLink = styled(Link)`
   height: 8vh;
   display: flex;
   align-items: center;
+  opacity: 1;
+
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em;
+  color: #eee;
+  line-height: 68px;
 
   &::before {
     content: ""; /* 가상 요소의 내용을 비워 둡니다 */
@@ -168,6 +191,8 @@ const StyledLink = styled(Link)`
 
   &:hover {
     color: #dabfa8;
+    opacity: 1;
+
     /* font-weight: bold; */
   }
   &:hover::before {

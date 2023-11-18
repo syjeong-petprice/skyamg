@@ -44,7 +44,6 @@ function Notice() {
       <div className="noticeWrapper">
         {noticeInfo &&
           noticeInfo.map((notice) => {
-            console.log(notice);
             return (
               <div
                 className="noticeInnerWrapper"

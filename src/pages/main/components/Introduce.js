@@ -12,7 +12,6 @@ function Introduce() {
   const componentRef = useRef(null);
 
   const moonInfo = vetInfo.filter((i) => i.id === 3)[0];
-  console.log(moonInfo);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
