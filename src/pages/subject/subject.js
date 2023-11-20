@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { styled, css, keyframes } from "styled-components";
 import { Box, Card, Typography } from "@mui/material";
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
 import vetInfo from "../../config/vetInfo";
 
 import PropTypes from "prop-types";
@@ -117,8 +117,9 @@ function Section5Component({ data }) {
             <img
               src={list.img}
               alt={`img${index}`}
-              className={`${list.type === 1 ? "left" : "rigth"} ${isAnimated ? "animate" : ""
-                }`}
+              className={`${list.type === 1 ? "left" : "rigth"} ${
+                isAnimated ? "animate" : ""
+              }`}
               style={{
                 animationDelay: `${animateDelay}ms`,
                 margin:
@@ -128,8 +129,9 @@ function Section5Component({ data }) {
               }}
             />
             <div
-              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${isAnimated ? "animate" : ""
-                }`}
+              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${
+                isAnimated ? "animate" : ""
+              }`}
             >
               {list.content.map((i, innerIndex) => {
                 return (
@@ -177,14 +179,24 @@ function Subject() {
   return (
     <>
       <MetaTag {...metaData} />
-      <Title img={info.titleImg || img} title={info.title} />
+      <Title
+        img={info.titleImg || img}
+        title={info.title}
+        enTitle={info.enTitle}
+      />
       <CssBaseline />
       <Container>
         <MemberList2 memberIdx={info.vetMemberIdx} subject={info.title} />
         <Section2Component id={info.id} info={info.sec2} />
         <Section3>
-          <Typography gutterBottom>
-            SKY {info.title}를 선택해야하는 이유
+          <Typography className="section-sub">
+            SPECIAL SKY MEDICAL CENTER
+          </Typography>
+          <Typography className="section-title" gutterBottom>
+            <span style={{ color: "#3260AE" }}>
+              인천SKY동물메디컬센터의 {info.title}가
+            </span>{" "}
+            특별한 이유!
           </Typography>
           <Box>
             {info.sec3.map((list, index) => {
@@ -223,12 +235,10 @@ function Subject() {
             <Slider equipmentData={info.equip} />
           </Section4>
         )}
-      </Container >
+      </Container>
     </>
   );
 }
-
-
 
 const slideInUp = keyframes`
   0% {
@@ -293,29 +303,29 @@ const Section2 = styled(Section1)`
   && {
     height: calc(100vw * (550 / 1580));
     background: ${(props) => {
-    let backgroundImage;
-    console.log(props.id, backgroundImage);
-    switch (props.id) {
-      case 1:
-        backgroundImage = `url(${bg1})`;
-        break;
-      case 2:
-        backgroundImage = `url(${bg2})`;
-        break;
-      case 3:
-        backgroundImage = `url(${bg3})`;
-        break;
-      case 4:
-        backgroundImage = `url(${bg4})`;
-        break;
-      case 5:
-        backgroundImage = `url(${bg5})`;
-        break;
-      default:
-        backgroundImage = `url(${bg1})`;
-    }
-    return backgroundImage;
-  }};
+      let backgroundImage;
+      console.log(props.id, backgroundImage);
+      switch (props.id) {
+        case 1:
+          backgroundImage = `url(${bg1})`;
+          break;
+        case 2:
+          backgroundImage = `url(${bg2})`;
+          break;
+        case 3:
+          backgroundImage = `url(${bg3})`;
+          break;
+        case 4:
+          backgroundImage = `url(${bg4})`;
+          break;
+        case 5:
+          backgroundImage = `url(${bg5})`;
+          break;
+        default:
+          backgroundImage = `url(${bg1})`;
+      }
+      return backgroundImage;
+    }};
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% calc(100vw * (210 / 390));
@@ -337,11 +347,19 @@ Section2.propTypes = {
 const Section3 = styled(Section1)`
   && {
     flex-direction: column;
+    align-items: center;
   }
-  > p {
+  > p.section-title {
     font-size: calc(100vw * (38 / 1240));
     font-weight: 700;
-    margin-left: calc(100vw * (50 / 1580));
+    text-align: center;
+    margin: 0 calc(100vw * (50 / 1580)) calc(100vw * (50 / 1580));
+  }
+  > p.section-sub {
+    font-size: calc(100vw * (26 / 1240));
+    font-weight: 400;
+    color: #989898;
+    /* margin-left: calc(100vw * (30 / 1580)); */
   }
   > div {
     margin: 0 calc(100vw * (50 / 1580));
@@ -351,8 +369,11 @@ const Section3 = styled(Section1)`
   }
 
   @media screen and (max-width: 768px) {
-    > p {
-      font-size: calc(100vw * (24 / 390));
+    > p.section-title {
+      font-size: calc(100vw * (18 / 390));
+    }
+    > p.section-sub {
+      font-size: calc(100vw * (12 / 390));
     }
     > div {
       flex-direction: column;
@@ -576,7 +597,6 @@ const TextBox = styled(Box)`
   }
 `;
 
-
 const imgZoomin = keyframes`
     from {
         scale: 1
@@ -587,9 +607,9 @@ const imgZoomin = keyframes`
 `;
 
 const VetImgBox = styled(Box)`
-  display:flex;  
+  display: flex;
   overflow: hidden;
-  justify-content:center;
+  justify-content: center;
   img {
     height: 100%;
     max-height: 370px;
@@ -600,7 +620,6 @@ const VetImgBox = styled(Box)`
     }
   }
 `;
-
 
 const ImgBox = styled(Box)`
   && {

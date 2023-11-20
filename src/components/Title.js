@@ -79,15 +79,12 @@ const TextDiv = styled.div`
   top: calc(50% - 20px);
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 70px;
+  font-size: calc(100vw * (60 / 1240));
   font-weight: 500;
   text-align: center;
   color: #fff;
   line-height: 1.1;
-  @media screen and (max-width: 690px) {
-    font-size: 50px;
-    top: calc(50% - 13px);
-  }
+
   p,
   span {
     margin: 0px;
@@ -98,8 +95,8 @@ const TextDiv = styled.div`
     /*  */
 
     font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: calc(100vw * (16 / 1240));
     /* identical to box height */
     text-align: center;
 
@@ -115,11 +112,24 @@ const TextDiv = styled.div`
     /* MRI & CT Center */
 
     font-weight: 400;
-    font-size: 30px;
+    font-size: calc(100vw * (26 / 1240));
     /* identical to box height */
     text-align: center;
 
     color: #f7f0cb;
+  }
+
+  @media screen and (max-width: 768px) {
+    && {
+      font-size: calc(100vw * (26 / 390));
+      top: calc(50% - 13px);
+      > span {
+        font-size: calc(100vw * (10 / 390));
+      }
+      > p.bottom {
+        font-size: calc(100vw * (12 / 390));
+      }
+    }
   }
 `;
 
@@ -132,7 +142,7 @@ const H2 = styled.h2`
   font-weight: 500;
   text-align: center;
   color: #fff;
-  @media screen and (max-width: 690px) {
+  @media screen and (max-width: 768px) {
     font-size: 26px;
     top: calc(50% - 13px);
   }

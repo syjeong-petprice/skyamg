@@ -25,33 +25,84 @@ export function MemberItem({ visibleVetInfo }) {
   };
 
   return (
-    <Box container sx={{ width: '100%', maxWidth: '1200px', }}>
+    <Box container sx={{ width: "100%", maxWidth: "1200px" }}>
       {visibleVetInfo.map((vet) => {
         return (
-          <Grid container spacing={0} sx={{ maxWidth: '1200px', mt: 10, paddingX: 5, }}>
+          <Grid
+            container
+            spacing={0}
+            sx={{ maxWidth: "1200px", mt: 10, paddingX: 5 }}
+          >
             <Grid item xs={12} sm={12} md={4}>
-              <Box sx={{ display: { md: 'flex', xs: 'flex', sm: 'flex' }, bgcolor: '#3260AE', alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: { md: '100%', sm: '370px', xs: '370px' } }} >
+              <Box
+                sx={{
+                  display: { md: "flex", xs: "flex", sm: "flex" },
+                  bgcolor: "#3260AE",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  height: { md: "100%", sm: "370px", xs: "370px" },
+                }}
+              >
                 <VetImgBox>
                   <img alt={vet.name} src={vet.timg} />
                 </VetImgBox>
               </Box>
             </Grid>
             <Grid item xs={12} sm={12} md={8}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: '#F4F4F4', alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: { md: '100%', sm: '300px', xs: '300px' } }} >
-                <Typography sx={{ fontWeight: '600', fontSize: '30px', color: '#3260AE', lineHeight: 2 }}>
+              <TextBox
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  bgcolor: "#F4F4F4",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  height: { md: "100%", sm: "300px", xs: "300px" },
+                }}
+              >
+                <Typography
+                  className="medium"
+                  sx={{
+                    fontWeight: "600",
+                    color: "#3260AE",
+                    lineHeight: 2,
+                  }}
+                >
                   Special Veterinary
                 </Typography>
-                <Typography sx={{ fontWeight: '100', fontSize: '50px', color: '#000000', lineHeight: 1 }}>
+                <Typography
+                  className="large"
+                  sx={{
+                    fontWeight: "100",
+                    color: "#000000",
+                    lineHeight: 1,
+                  }}
+                >
                   {vet.position}
                 </Typography>
-                <Typography sx={{ fontWeight: '700', fontSize: '50px', color: '#000000', lineHeight: 1.5 }}>
+                <Typography
+                  className="large"
+                  sx={{
+                    fontWeight: "700",
+                    color: "#000000",
+                    lineHeight: 1.5,
+                  }}
+                >
                   수의사 {vet.name}
                 </Typography>
-                <Typography sx={{ fontWeight: '400', fontSize: '24px', color: '#000000', maxWidth: '370px' }}>
-                  숙련된 영상의학 전문 수의사가
-                  안전하고 정확한 진단을 진행합니다.
+                <Typography
+                  className="small"
+                  sx={{
+                    fontWeight: "400",
+                    color: "#000000",
+                    maxWidth: "370px",
+                  }}
+                >
+                  숙련된 영상의학 전문 수의사가 안전하고 정확한 진단을
+                  진행합니다.
                 </Typography>
-              </Box>
+              </TextBox>
             </Grid>
           </Grid>
         );
@@ -218,6 +269,34 @@ const TitleWrapper = styled.div`
   }
 `;
 
+const TextBox = styled(Box)`
+  && {
+    padding: 0 calc(100vw * (50 / 1580));
+    p.large {
+      font-size: calc(100vw * (52 / 1240));
+    }
+    p.medium {
+      font-size: calc(100vw * (32 / 1240));
+    }
+    p.small {
+      font-size: calc(100vw * (22 / 1240));
+    }
+  }
+  @media screen and (max-width: 768px) {
+    && {
+      p.large {
+        font-size: calc(100vw * (32 / 390));
+      }
+      p.medium {
+        font-size: calc(100vw * (24 / 390));
+      }
+      p.small {
+        font-size: calc(100vw * (14 / 390));
+      }
+    }
+  }
+`;
+
 const MoreButton = styled(Box)`
   position: absolute;
   bottom: 0;
@@ -271,7 +350,6 @@ const ImgBox = styled(Box)`
     width: 100%;
     height: auto;
     transition: ease;
-    
 
     ${VetProfile}:hover & {
       scale: 1.2;
@@ -281,9 +359,9 @@ const ImgBox = styled(Box)`
 `;
 
 const VetImgBox = styled(Box)`
-  display:flex;  
+  display: flex;
   overflow: hidden;
-  justify-content:center;
+  justify-content: center;
   img {
     height: 100%;
     max-height: 370px;
