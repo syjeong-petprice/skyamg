@@ -397,7 +397,7 @@ const Section3 = styled(Section1)`
 const Section4 = styled(Section1)`
   && {
     flex-direction: column;
-    margin-bottom: 60px;
+    margin-bottom: calc(100vw * (120 / 1580));
     align-items: center;
   }
   > p.section-title {
@@ -551,7 +551,7 @@ const Section5 = styled(Section4)`
 const Section6 = styled(Section1)`
   && {
     /* height: calc(100vw * (600 / 1580)); */
-    margin-bottom: calc(100vw * (120 / 1580));
+    /* margin-bottom: calc(100vw * (120 / 1580)); */
     height: 100%;
     padding: 0 calc(100vw * (50 / 1580));
     /* flex-direction: column; */
