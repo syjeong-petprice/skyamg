@@ -27,6 +27,7 @@ const centerInfo = [
     titleImg: titleImg1,
     vetMemberIdx: [6],
     title: "영 상 진 단 센 터",
+    enTitle: "MRI & CT Center",
     subTitle: `대학병원급 최첨단 진단 장비
 마취과 담당의 근무
 지역병원 MRI, CT 의뢰`,
@@ -131,6 +132,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     titleImg: img1,
     vetMemberIdx: [3, 4],
     title: "정형신경센터",
+    enTitle: "MRI & CT Center",
     subTitle: `외과학전공의 및 수술 전문팀
 철저한 수술 전 검사
 한방치료 병행`,
@@ -229,6 +231,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     titleImg: img1,
     vetMemberIdx: [5, 2],
     title: "내과질환센터",
+    enTitle: "MRI & CT Center",
     subTitle: `심장, 신장질환 특화
 고양이 의료시설 분리
 한방치료 병행`,
@@ -321,6 +324,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     titleImg: img1,
     vetMemberIdx: [1, 5, 8],
     title: "한방재활센터",
+    enTitle: "MRI & CT Center",
     subTitle: `수의한방침치료인증과정 수료
 반복적인 세션 치료
 동물전용 한방의료기구 사용`,
@@ -416,6 +420,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     titleImg: img1,
     vetMemberIdx: [8, 9],
     title: "응급의학센터",
+    enTitle: "MRI & CT Center",
     subTitle: `응급의학전공의 상주
 전 입원장의 ICU화
 외,내과와의 긴밀한 협진`,

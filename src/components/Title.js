@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import { styled, keyframes } from "styled-components";
 
-function Title({ img, title }) {
+function Title({ img, title, enTitle }) {
   return (
     <Container>
       <ImageContainer>
         <img src={img} alt="" />
 
-        <div className={"innerWrapper animate"} style={{ width: '100%', height: '100%', position: 'absolute', top: 0, backgroundColor: '#000', opacity: 0.7 }} />
+        <div
+          className={"innerWrapper animate"}
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+            top: 0,
+            backgroundColor: "#000",
+            opacity: 0.7,
+          }}
+        />
         <TextDiv>
           <span>INCHEON SKY ANIMAL MEDICAL CENTER</span>
           <p>{title}</p>
-          <p className="bottom">MRI & CT Center</p>
+          {enTitle && <p className="bottom">{enTitle}</p>}
         </TextDiv>
-
       </ImageContainer>
     </Container>
   );
@@ -37,7 +46,6 @@ const ImageContainer = styled.div`
     animation: fadeInAnimation 3s forwards;
   }
 
-
   max-height: 60vh;
   overflow: hidden;
 
@@ -52,8 +60,6 @@ const ImageContainer = styled.div`
     }
   }
 `;
-
-
 
 const slideUp = keyframes`
     from {
@@ -82,12 +88,13 @@ const TextDiv = styled.div`
     font-size: 50px;
     top: calc(50% - 13px);
   }
-  p,span {
+  p,
+  span {
     margin: 0px;
   }
   span {
     font-size: 20px;
-    font-weight: 300;    
+    font-weight: 300;
     /*  */
 
     font-style: normal;
@@ -96,17 +103,15 @@ const TextDiv = styled.div`
     /* identical to box height */
     text-align: center;
 
-    color: #FFFFFF;
-
+    color: #ffffff;
 
     /* Inside auto layout */
     flex: none;
     order: 0;
     flex-grow: 0;
-
   }
 
-  .bottom { 
+  .bottom {
     /* MRI & CT Center */
 
     font-weight: 400;
@@ -114,7 +119,7 @@ const TextDiv = styled.div`
     /* identical to box height */
     text-align: center;
 
-    color: #F7F0CB;
+    color: #f7f0cb;
   }
 `;
 
