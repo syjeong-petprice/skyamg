@@ -74,6 +74,7 @@ const Slider = ({ equipmentData }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        width: "100%",
       }}
       onMouseEnter={stopAutoSlide} // 마우스 오버시 자동 슬라이딩 멈춤
       onMouseLeave={startAutoSlide} // 마우스 아웃시 자동 슬라이딩 시작
