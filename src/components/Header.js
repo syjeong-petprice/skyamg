@@ -11,8 +11,6 @@ function Header({ isScrolledDown }) {
   const [isSubNavOpen, setIsSubNavOpen] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
 
-
-
   const toggleSidebar = (isOpen) => () => {
     setOpenSidebar(isOpen);
   };
@@ -106,17 +104,17 @@ const StyledHeader = styled.header`
   top: 0;
   z-index: 999;
   opacity: 0.9;
-  background-color: ${({ isScrolledDown }) => (isScrolledDown ? "#000" : "none")};
+  background-color: ${({ isScrolledDown }) =>
+    isScrolledDown ? "#000" : "none"};
 
-  &:hover  {
+  &:hover {
     background-color: #000;
     opacity: 0.9;
-    
+
     > * {
       opacity: 1;
     }
   }
-
 
   /* padding: 0 300px; */
 `;
@@ -159,13 +157,13 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLink = styled(Link)`
-  color: #FFF;
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
   position: relative;
   padding-bottom: 2px;
-  height: 8vh;
+  /* height: 8vh; */
   display: flex;
   align-items: center;
   opacity: 1;
