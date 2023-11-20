@@ -2,7 +2,7 @@ import { useParams, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { styled, css, keyframes } from "styled-components";
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Card, Typography, Stack } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import vetInfo from "../../config/vetInfo";
@@ -199,9 +199,16 @@ function Subject() {
             특별한 이유!
           </Typography>
           <Box>
-            {info.sec3.map((list, index) => {
-              return <ActionAreaCard key={index} index={index} {...list} />;
-            })}
+            <Stack direction="column" spacing={10}>
+              {info.sec3.map((list, index) => {
+                // return <ActionAreaCard key={index} index={index} {...list} />;
+                return (
+                  <>
+                    <ActionAreaCard key={index} index={index} {...list} />
+                  </>
+                );
+              })}
+            </Stack>
           </Box>
         </Section3>
 
@@ -231,7 +238,12 @@ function Subject() {
         </Section6>
         {info.equip.length > 0 && (
           <Section4>
-            <Typography gutterBottom>{info.title} 전문장비</Typography>
+            <Typography className="section-sub">
+              SPECIAL SKY MEDICAL CENTER
+            </Typography>
+            <Typography className="section-title" gutterBottom>
+              <span style={{ color: "#3260AE" }}>{info.title}</span> 장비 소개
+            </Typography>
             <Slider equipmentData={info.equip} />
           </Section4>
         )}
@@ -370,10 +382,10 @@ const Section3 = styled(Section1)`
 
   @media screen and (max-width: 768px) {
     > p.section-title {
-      font-size: calc(100vw * (18 / 390));
+      font-size: calc(100vw * (26 / 390));
     }
     > p.section-sub {
-      font-size: calc(100vw * (12 / 390));
+      font-size: calc(100vw * (16 / 390));
     }
     > div {
       flex-direction: column;
@@ -385,21 +397,44 @@ const Section3 = styled(Section1)`
 const Section4 = styled(Section1)`
   && {
     flex-direction: column;
+    margin-bottom: 60px;
+    align-items: center;
   }
-  > p {
+  > p.section-title {
+    font-size: calc(100vw * (38 / 1240));
+    font-weight: 700;
+    text-align: center;
+    margin: 0 calc(100vw * (50 / 1580)) calc(100vw * (50 / 1580));
+  }
+  > p.section-sub {
+    font-size: calc(100vw * (26 / 1240));
+    font-weight: 400;
+    color: #989898;
+    /* margin-left: calc(100vw * (30 / 1580)); */
+  }
+
+  @media screen and (max-width: 768px) {
+    > p.section-title {
+      font-size: calc(100vw * (26 / 390));
+    }
+    > p.section-sub {
+      font-size: calc(100vw * (16 / 390));
+    }
+  }
+  /* > p {
     margin-left: calc(100vw * (50 / 1580));
     font-size: calc(100vw * (38 / 1240));
     font-weight: 700;
-  }
-  @media screen and (max-width: 768px) {
+  } */
+  /* @media screen and (max-width: 768px) {
     && {
-      /* width: 100%; */
-      /* height: calc(100vw * (210 / 390)); */
+      // width: 100%;
+      // height: calc(100vw * (210 / 390));
     }
     > p {
       font-size: calc(100vw * (24 / 390));
     }
-  }
+  } */
 `;
 
 const Section5 = styled(Section4)`
