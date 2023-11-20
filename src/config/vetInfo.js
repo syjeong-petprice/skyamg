@@ -13,12 +13,30 @@ import vet12 from "../images/vet2/송재성.png";
 import vet13 from "../images/vet2/박기종.png";
 import vet14 from "../images/vet2/이한중.png";
 
+
+import tvet1 from "../images/vet/문종선.png";
+import tvet2 from "../images/vet/정다슬.png";
+import tvet3 from "../images/vet/김도희.png";
+import tvet4 from "../images/vet/최동준.png";
+import tvet5 from "../images/vet/박설기.png";
+import tvet6 from "../images/vet/박주향.png";
+import tvet7 from "../images/vet/최유진.png";
+import tvet8 from "../images/vet/정태규.png";
+import tvet9 from "../images/vet/윤기홍.png";
+import tvet10 from "../images/vet/이선백.png";
+import tvet11 from "../images/vet/서승원.png";
+import tvet12 from "../images/vet/송재성.png";
+import tvet13 from "../images/vet/박기종.png";
+import tvet14 from "../images/vet/이한중.png";
+
+
 const vetInfo = [
   {
     id: 1,
     position: "대표원장",
     name: "문종선",
     img: vet1,
+    timg: tvet1,
     title: "전북대학교 수의학과",
     history: [
       "전북대학교 수의과대학 수의학과 졸업",
@@ -40,6 +58,7 @@ const vetInfo = [
     position: "부원장",
     name: "정다슬",
     img: vet2,
+    timg: tvet2,
     title: "건국대학교 수의학과",
     history: [
       "건국대학교 수의과대학 수의학과 졸업",
@@ -56,6 +75,7 @@ const vetInfo = [
     position: "외과과장",
     name: "김도희",
     img: vet3,
+    timg: tvet3,
     title: "건국대학교 수의외과학 석박사통합과정 수료",
     history: [
       "건국대학교 수의과대학 수의학과 졸업",
@@ -72,6 +92,7 @@ const vetInfo = [
     position: "외과과장",
     name: "최동준",
     img: vet4,
+    timg: tvet4,
     title: "건국대학교 수의외과학 석사",
     history: [
       "경북대학교 수의과대학 졸업",
@@ -92,6 +113,7 @@ const vetInfo = [
     position: "외과과장",
     name: "이한중",
     img: vet14,
+    timg: tvet14,
     title: "충남대학교 임상수의학 석사",
     history: [
       "전북대학교 수의학과 졸업",
@@ -109,6 +131,7 @@ const vetInfo = [
     position: "내과과장",
     name: "박설기",
     img: vet5,
+    timg: tvet5,
     title: "서울대학교 수의과대학 석사",
     history: [
       "경상대학교 수의학과 학사 졸업",
@@ -135,6 +158,7 @@ const vetInfo = [
     position: "영상의학과장",
     name: "박주향",
     img: vet6,
+    timg: tvet6,
     title: "경북대학교 수의과대학 석사",
     history: [
       "경북대학교 수의과대학 수의과대학 졸업",
@@ -160,6 +184,7 @@ const vetInfo = [
     position: "진료팀장",
     name: "최유진",
     img: vet7,
+    timg: tvet7,
     title: "충북대학교 수의학과",
     history: [
       "충북대학교 수의과대학 수의학과 졸업",
@@ -176,6 +201,7 @@ const vetInfo = [
     position: "한방응급의학과장",
     name: "정태규",
     img: vet8,
+    timg: tvet8,
     title: "서울대학교 임상수의학 응급의학과 석사",
     history: [
       "서울대학교 수의과대학 수의학과 졸업",
@@ -194,6 +220,7 @@ const vetInfo = [
     position: "응급의학팀장",
     name: "윤기홍",
     img: vet9,
+    timg: tvet9,
     title: "경상대학교 수의과 대학 졸업",
     history: [
       "경상대학교 수의학과 졸업",
@@ -210,6 +237,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "이선백",
     img: vet10,
+    timg: tvet10,
     title: "건국대학교 수의과대학",
     history: [
       "건국대학교 수의과대학 졸업",
@@ -225,6 +253,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "서승원",
     img: vet11,
+    timg: tvet11,
     title: "경상대학교 수의과대학",
     history: [
       "경상대학교 수의과대학 졸업",
@@ -244,6 +273,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "송재성",
     img: vet12,
+    timg: tvet12,
     title: "건국대학교 수의과대학",
     history: [
       "건국대학교 수의과대학 졸업",
@@ -263,6 +293,7 @@ const vetInfo = [
     position: "진료수의사",
     name: "박기종",
     img: vet13,
+    timg: tvet13,
     title: "건국대학교 수의과대학",
     history: [
       "건국대학교 수의과대학 졸업",

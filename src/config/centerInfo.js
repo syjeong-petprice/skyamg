@@ -2,6 +2,7 @@ import img101 from "../images/resource/subjects/mgimg_heart.jpg";
 
 //import img1 from "../images/title/visual_greeting.jpeg";
 import img1 from "../images/title/visual_mri.jpg";
+import titleImg1 from "../images/resource/images/스카이MRI실.jpeg";
 
 // import sec2img from "../images/resource/subjects/스카이MRI실.jpeg";
 
@@ -23,9 +24,9 @@ const centerInfo = [
   {
     id: 1,
     primaryImg: img101,
-    titleImg: img1,
+    titleImg: titleImg1,
     vetMemberIdx: [6],
-    title: "영상진단센터",
+    title: "영 상 진 단 센 터",
     subTitle: `대학병원급 최첨단 진단 장비
 마취과 담당의 근무
 지역병원 MRI, CT 의뢰`,

@@ -25,78 +25,42 @@ export function MemberItem({ visibleVetInfo }) {
   };
 
   return (
-    <Grid
-      container
-      rowSpacing={6}
-      sx={{
-        justifyContent: visibleVetInfo.length > 4 ? "flex-start" : "center",
-      }}
-    >
+    <Box container sx={{ width: '100%', maxWidth: '1200px', }}>
       {visibleVetInfo.map((vet) => {
         return (
-          <Grid
-            sx={{
-              display: "flex",
-              flexDirection: "coulmn",
-              justifyContent: "center",
-              flexBasis: "100%",
-            }}
-            key={vet.id}
-            item
-            sm={12}
-            md={6}
-            lg={3}
-          >
-            <VetProfile
-              sx={{ cursor: vet.id !== 1 ? "pointer" : "default" }}
-              onClick={() => {
-                if (vet.id !== 1) {
-                  handleVetMemberClick(vet.id);
-                }
-              }}
-            >
-              <ImgBox>
-                <img alt={vet.name} src={vet.img} />
-                {vet.id !== 1 && (
-                  <MoreButton className="button-container" variant="contained">
-                    자세히 보기
-                    <ChevronRightIcon />
-                  </MoreButton>
-                )}
-              </ImgBox>
-              <Box
-                sx={{
-                  p: "1rem",
-                }}
-              >
-                <Typography sx={{ fontSize: "18px", mb: 2 }}>수의사</Typography>
-                <Typography sx={{ fontSize: "30px", mb: 2 }}>
-                  {vet.name}
-                </Typography>
-                <Chip
-                  label={vet.position}
-                  variant="outlined"
-                  style={{
-                    color: "#ffffff",
-                    fontWeight: "700",
-                    fontSize: "16px",
-                    lineHeight: "14px",
-                    borderRadius: "16px",
-                    padding: "6px 10px",
-                    height: "34px",
-                    width: "fit-content",
-                  }}
-                />
+          <Grid container spacing={0} sx={{ maxWidth: '1200px', mt: 10, paddingX: 5, }}>
+            <Grid item xs={12} sm={12} md={4}>
+              <Box sx={{ display: { md: 'flex', xs: 'flex', sm: 'flex' }, bgcolor: '#3260AE', alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: { md: '100%', sm: '370px', xs: '370px' } }} >
+                <VetImgBox>
+                  <img alt={vet.name} src={vet.timg} />
+                </VetImgBox>
               </Box>
-            </VetProfile>
+            </Grid>
+            <Grid item xs={12} sm={12} md={8}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: '#F4F4F4', alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: { md: '100%', sm: '300px', xs: '300px' } }} >
+                <Typography sx={{ fontWeight: '600', fontSize: '30px', color: '#3260AE', lineHeight: 2 }}>
+                  Special Veterinary
+                </Typography>
+                <Typography sx={{ fontWeight: '100', fontSize: '50px', color: '#000000', lineHeight: 1 }}>
+                  {vet.position}
+                </Typography>
+                <Typography sx={{ fontWeight: '700', fontSize: '50px', color: '#000000', lineHeight: 1.5 }}>
+                  수의사 {vet.name}
+                </Typography>
+                <Typography sx={{ fontWeight: '400', fontSize: '24px', color: '#000000', maxWidth: '370px' }}>
+                  숙련된 영상의학 전문 수의사가
+                  안전하고 정확한 진단을 진행합니다.
+                </Typography>
+              </Box>
+            </Grid>
           </Grid>
         );
       })}
-    </Grid>
+    </Box>
   );
 }
 
-function MemberList({ memberIdx, subject }) {
+function MemberList2({ memberIdx, subject }) {
   // const [animate, setAnimate] = useState(false);
   // const [windowWidth, setWindowWidth] = useState();
   const [showAll, setShowAll] = useState(false);
@@ -170,28 +134,7 @@ function MemberList({ memberIdx, subject }) {
 
   return (
     <MemberContainer>
-      <TitleWrapper>
-        <Typography>{subject} 의료진</Typography>
-      </TitleWrapper>
       <MemberItem visibleVetInfo={visibleVetInfo} />
-      {filteredVetInfo.length > 4 && (
-        <Button
-          size="large"
-          sx={{
-            mt: "4rem",
-            backgroundColor: "#000048",
-            "&:hover": {
-              backgroundColor: "transparent",
-              borderColor: "#000048",
-              color: "#000048",
-            },
-          }}
-          variant="contained"
-          onClick={handleShowAllClick}
-        >
-          {!showAll ? "더 보기" : "접기"}
-        </Button>
-      )}
     </MemberContainer>
   );
 }
@@ -230,7 +173,6 @@ const MemberContainer = styled.section`
   width: 100%;
   /* height: 92vh; */
   /* height: fit-content; */
-  padding-top: 5rem;
   padding-bottom: 5rem;
   /* background-image: url(${bgSky});
   background-size: cover;
@@ -338,4 +280,19 @@ const ImgBox = styled(Box)`
   }
 `;
 
-export default MemberList;
+const VetImgBox = styled(Box)`
+  display:flex;  
+  overflow: hidden;
+  justify-content:center;
+  img {
+    height: 100%;
+    max-height: 370px;
+    transition: ease;
+    &:hover {
+      scale: 1.2;
+      animation: ${imgZoomin} 0.3s ease;
+    }
+  }
+`;
+
+export default MemberList2;

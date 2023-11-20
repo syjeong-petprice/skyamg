@@ -16,8 +16,6 @@ import Title from "../../components/Title";
 import ActionAreaCard from "./components/sec3Card";
 import Slider from "./components/equipSlider";
 import MemberList from "./components/MemberList";
-import MemberList2 from "./components/MemberList2";
-
 // import ExtraContentTable from "./components/ExtraContentTable";
 import bg1 from "./bg-image/sec1title.jpg";
 import bg2 from "./bg-image/영상의료센터.jpeg";
@@ -178,9 +176,37 @@ function Subject() {
     <>
       <MetaTag {...metaData} />
       <Title img={info.titleImg || img} title={info.title} />
-      <CssBaseline />
       <Container>
-        <MemberList2 memberIdx={info.vetMemberIdx} subject={info.title} />
+        <Grid container spacing={0} sx={{ maxWidth: '1200px', mt: 10, paddingX: 5, }}>
+          <CssBaseline />
+
+          <Grid item xs={12} sm={12} md={4}>
+
+            <Box sx={{ display: { md: 'flex', xs: 'flex', sm: 'flex' }, bgcolor: '#3260AE', alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: { md: '100%', sm: '370px', xs: '370px' } }} >
+              <VetImgBox>
+                <img alt={'수의사 박주향'} src={vetInfo[0].img} />
+              </VetImgBox>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={8}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: '#F4F4F4', alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: { md: '100%', sm: '300px', xs: '300px' } }} >
+              <Typography sx={{ fontWeight: '600', fontSize: '30px', color: '#3260AE', lineHeight: 2 }}>
+                Special Veterinary
+              </Typography>
+              <Typography sx={{ fontWeight: '100', fontSize: '50px', color: '#000000', lineHeight: 1 }}>
+                영상의학과장
+              </Typography>
+              <Typography sx={{ fontWeight: '700', fontSize: '50px', color: '#000000', lineHeight: 1.5 }}>
+                수의사 박주향
+              </Typography>
+              <Typography sx={{ fontWeight: '400', fontSize: '24px', color: '#000000', maxWidth: '370px' }}>
+                숙련된 영상의학 전문 수의사가
+                안전하고 정확한 진단을 진행합니다.
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+
         <Section2Component id={info.id} info={info.sec2} />
         <Section3>
           <Typography gutterBottom>
@@ -192,7 +218,14 @@ function Subject() {
             })}
           </Box>
         </Section3>
-
+        <MemberList memberIdx={info.vetMemberIdx} subject={info.title} />
+        {info.equip.length > 0 && (
+          <Section4>
+            <Typography gutterBottom>{info.title} 전문장비</Typography>
+            <Slider equipmentData={info.equip} />
+          </Section4>
+        )}
+        {info.surgery.length > 0 && <Section5Component data={info.surgery} />}
         <Section6>
           <div>
             <Typography
@@ -217,12 +250,6 @@ function Subject() {
             </Typography>
           </div>
         </Section6>
-        {info.equip.length > 0 && (
-          <Section4>
-            <Typography gutterBottom>{info.title} 전문장비</Typography>
-            <Slider equipmentData={info.equip} />
-          </Section4>
-        )}
       </Container >
     </>
   );
