@@ -20,7 +20,7 @@ function Title({ img, title, enTitle }) {
         />
         <TextDiv>
           <span>INCHEON SKY ANIMAL MEDICAL CENTER</span>
-          <p>{title}</p>
+          <p className={enTitle ? "spacing title" : "title"}>{title}</p>
           {enTitle && <p className="bottom">{enTitle}</p>}
         </TextDiv>
       </ImageContainer>
@@ -107,7 +107,9 @@ const TextDiv = styled.div`
     order: 0;
     flex-grow: 0;
   }
-
+  .title.spacing {
+    letter-spacing: calc(100vw * (26 / 1240));
+  }
   .bottom {
     /* MRI & CT Center */
 

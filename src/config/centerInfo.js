@@ -26,7 +26,7 @@ const centerInfo = [
     primaryImg: img101,
     titleImg: titleImg1,
     vetMemberIdx: [6],
-    title: "영 상 진 단 센 터",
+    title: "영상진단센터",
     enTitle: "MRI & CT Center",
     subTitle: `대학병원급 최첨단 진단 장비
 마취과 담당의 근무
