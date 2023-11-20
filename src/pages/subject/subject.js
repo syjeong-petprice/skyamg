@@ -362,13 +362,13 @@ const Section3 = styled(Section1)`
     align-items: center;
   }
   > p.section-title {
-    font-size: calc(100vw * (38 / 1240));
+    font-size: 50px;
     font-weight: 700;
     text-align: center;
     margin: 0 calc(100vw * (50 / 1580)) calc(100vw * (50 / 1580));
   }
   > p.section-sub {
-    font-size: calc(100vw * (26 / 1240));
+    font-size: 30px;
     font-weight: 400;
     color: #989898;
     /* margin-left: calc(100vw * (30 / 1580)); */
@@ -392,6 +392,14 @@ const Section3 = styled(Section1)`
       justify-content: center;
     }
   }
+  @media screen and (min-width: 767px) and (max-width: 1500px) {
+    > p.section-title {
+      font-size: calc(100vw * (38 / 1240));
+    }
+    > p.section-sub {
+      font-size: calc(100vw * (26 / 1240));
+    }
+  }
 `;
 
 const Section4 = styled(Section1)`
@@ -401,13 +409,13 @@ const Section4 = styled(Section1)`
     align-items: center;
   }
   > p.section-title {
-    font-size: calc(100vw * (38 / 1240));
+    font-size: 50px;
     font-weight: 700;
     text-align: center;
     margin: 0 calc(100vw * (50 / 1580)) calc(100vw * (50 / 1580));
   }
   > p.section-sub {
-    font-size: calc(100vw * (26 / 1240));
+    font-size: 30px;
     font-weight: 400;
     color: #989898;
     /* margin-left: calc(100vw * (30 / 1580)); */
@@ -419,6 +427,14 @@ const Section4 = styled(Section1)`
     }
     > p.section-sub {
       font-size: calc(100vw * (16 / 390));
+    }
+  }
+  @media screen and (min-width: 767px) and (max-width: 1500px) {
+    > p.section-title {
+      font-size: calc(100vw * (38 / 1240));
+    }
+    > p.section-sub {
+      font-size: calc(100vw * (26 / 1240));
     }
   }
   /* > p {
@@ -564,11 +580,11 @@ const Section6 = styled(Section1)`
       margin: calc(100vw * (50 / 1580)) 0;
     }
     .title {
-      font-size: calc(100vw * (38 / 1240));
+      font-size: 50px;
       font-weight: 700;
     }
     .sub-title {
-      font-size: calc(100vw * (30 / 1240));
+      font-size: 30px;
       font-weight: 700;
     }
   }
@@ -586,6 +602,16 @@ const Section6 = styled(Section1)`
       }
       .sub-title {
         font-size: calc(100vw * (18 / 390));
+      }
+    }
+  }
+  @media screen and (min-width: 767px) and (max-width: 1500px) {
+    && {
+      .title {
+        font-size: calc(100vw * (38 / 1240));
+      }
+      .sub-title {
+        font-size: calc(100vw * (30 / 1240));
       }
     }
   }

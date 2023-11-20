@@ -112,20 +112,20 @@ const StyledBox = styled(Box)`
       left: 50%;
       transform: translate(-50%, -50%);
       color: rgb(179, 204, 248, 0.4);
-      font-size: calc(100vw * (200 / 1240));
+      font-size: 200px;
     }
     .en {
-      font-size: calc(100vw * (26 / 1240));
+      font-size: 30px;
       z-index: 1;
     }
     .title {
-      font-size: calc(100vw * (38 / 1240));
+      font-size: 50px;
       font-weight: 700;
       color: #3260ae;
       z-index: 1;
     }
     .content {
-      font-size: calc(100vw * (22 / 1240));
+      font-size: 24px;
       z-index: 1;
     }
     &.animate {
@@ -157,6 +157,22 @@ const StyledBox = styled(Box)`
         .content {
           font-size: calc(100vw * (16 / 390));
         }
+      }
+    }
+  }
+  @media screen and (min-width: 767px) and (max-width: 1500px) {
+    && {
+      .num {
+        font-size: calc(100vw * (200 / 1240));
+      }
+      .en {
+        font-size: calc(100vw * (26 / 1240));
+      }
+      .title {
+        font-size: calc(100vw * (38 / 1240));
+      }
+      .content {
+        font-size: calc(100vw * (22 / 1240));
       }
     }
   }

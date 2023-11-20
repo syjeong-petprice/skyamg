@@ -273,13 +273,13 @@ const TextBox = styled(Box)`
   && {
     padding: 0 calc(100vw * (50 / 1580));
     p.large {
-      font-size: calc(100vw * (52 / 1240));
+      font-size: 50px;
     }
     p.medium {
-      font-size: calc(100vw * (32 / 1240));
+      font-size: 30px;
     }
     p.small {
-      font-size: calc(100vw * (22 / 1240));
+      font-size: 24px;
     }
   }
   @media screen and (max-width: 768px) {
@@ -292,6 +292,19 @@ const TextBox = styled(Box)`
       }
       p.small {
         font-size: calc(100vw * (14 / 390));
+      }
+    }
+  }
+  @media screen and (min-width: 767px) and (max-width: 1500px) {
+    && {
+      p.large {
+        font-size: calc(100vw * (52 / 1240));
+      }
+      p.medium {
+        font-size: calc(100vw * (32 / 1240));
+      }
+      p.small {
+        font-size: calc(100vw * (22 / 1240));
       }
     }
   }
