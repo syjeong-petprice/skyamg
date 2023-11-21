@@ -117,9 +117,8 @@ function Section5Component({ data }) {
             <img
               src={list.img}
               alt={`img${index}`}
-              className={`${list.type === 1 ? "left" : "rigth"} ${
-                isAnimated ? "animate" : ""
-              }`}
+              className={`${list.type === 1 ? "left" : "rigth"} ${isAnimated ? "animate" : ""
+                }`}
               style={{
                 animationDelay: `${animateDelay}ms`,
                 margin:
@@ -129,9 +128,8 @@ function Section5Component({ data }) {
               }}
             />
             <div
-              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${
-                isAnimated ? "animate" : ""
-              }`}
+              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${isAnimated ? "animate" : ""
+                }`}
             >
               {list.content.map((i, innerIndex) => {
                 return (
@@ -199,7 +197,7 @@ function Subject() {
             특별한 이유!
           </Typography>
           <Box>
-            <Stack direction="column" spacing={10}>
+            <Stack direction="column" spacing={10} sx={{ justifyContent: "center", alignItems: 'center' }}>
               {info.sec3.map((list, index) => {
                 // return <ActionAreaCard key={index} index={index} {...list} />;
                 return (
@@ -315,29 +313,29 @@ const Section2 = styled(Section1)`
   && {
     height: calc(100vw * (550 / 1580));
     background: ${(props) => {
-      let backgroundImage;
-      console.log(props.id, backgroundImage);
-      switch (props.id) {
-        case 1:
-          backgroundImage = `url(${bg1})`;
-          break;
-        case 2:
-          backgroundImage = `url(${bg2})`;
-          break;
-        case 3:
-          backgroundImage = `url(${bg3})`;
-          break;
-        case 4:
-          backgroundImage = `url(${bg4})`;
-          break;
-        case 5:
-          backgroundImage = `url(${bg5})`;
-          break;
-        default:
-          backgroundImage = `url(${bg1})`;
-      }
-      return backgroundImage;
-    }};
+    let backgroundImage;
+    console.log(props.id, backgroundImage);
+    switch (props.id) {
+      case 1:
+        backgroundImage = `url(${bg1})`;
+        break;
+      case 2:
+        backgroundImage = `url(${bg2})`;
+        break;
+      case 3:
+        backgroundImage = `url(${bg3})`;
+        break;
+      case 4:
+        backgroundImage = `url(${bg4})`;
+        break;
+      case 5:
+        backgroundImage = `url(${bg5})`;
+        break;
+      default:
+        backgroundImage = `url(${bg1})`;
+    }
+    return backgroundImage;
+  }};
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% calc(100vw * (210 / 390));

@@ -51,7 +51,7 @@ function NoticeModal({ item, open, handleClose }) {
             <p>{item.content}</p>
           </div>
         </StyledDialogContent>
-        <Button onClick={handleClose} color="primary">
+        <Button onClick={handleClose} color="primary" sx={{ fontWeight: 700, fontSize: "18px", color: "#000", bgcolor: "#eee" }}>
           닫기
         </Button>
       </Dialog>

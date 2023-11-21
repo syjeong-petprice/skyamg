@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import Slider from "react-slick";
-import bgImg1 from "../../../images/resource/images/portfolio_053945.png";
+
+import bgImg1 from "../../../images/main/icsky_building.jpg";
+import bgImg3 from "../../../images/resource/images/portfolio_053945.png";
 import bgImg2 from "../../../images/resource/images/portfolio_062119.jpg";
-import bgImg3 from "../../../images/resource/images/portfolio_080228.jpg";
+// import bgImg3 from "../../../images/resource/images/portfolio_080228.jpg";
 import toplogo_w from "../../../images/common/toplogo_w.png";
 
 function Preview() {

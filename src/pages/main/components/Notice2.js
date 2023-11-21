@@ -35,11 +35,11 @@ function Notice() {
           SKY동물메디컬센터의 <br />
           <span>새소식</span>
         </h4>
-        <Link className="customLink" to={`/skyamg/notice`}>
+        {/* <Link className="customLink" to={`/skyamg/notice`}>
           <div>
             <p>View More</p>
           </div>
-        </Link>
+        </Link> */}
       </div>
       <div className="noticeWrapper">
         {noticeInfo &&

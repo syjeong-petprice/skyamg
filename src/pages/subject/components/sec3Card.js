@@ -85,7 +85,7 @@ const StyledBox = styled(Box)`
     transition: opacity 0.3s, transform 0.3s;
     opacity: 0;
     transform: translateY(100px);
-    width: 100%;
+    width: 80%;    
     display: flex;
     > img {
       width: 50%;
@@ -115,17 +115,17 @@ const StyledBox = styled(Box)`
       font-size: 200px;
     }
     .en {
-      font-size: 30px;
+      font-size: 24px;
       z-index: 1;
     }
     .title {
-      font-size: 50px;
+      font-size: 40px;
       font-weight: 700;
       color: #3260ae;
       z-index: 1;
     }
     .content {
-      font-size: 24px;
+      font-size: 20px;
       z-index: 1;
     }
     &.animate {
@@ -149,13 +149,13 @@ const StyledBox = styled(Box)`
           font-size: calc(100vw * (160 / 390));
         }
         .en {
-          font-size: calc(100vw * (20 / 390));
+          font-size: calc(100vw * (14 / 390));
         }
         .title {
-          font-size: calc(100vw * (26 / 390));
+          font-size: calc(100vw * (18 / 390));
         }
         .content {
-          font-size: calc(100vw * (16 / 390));
+          font-size: calc(100vw * (12 / 390));
         }
       }
     }
@@ -163,16 +163,16 @@ const StyledBox = styled(Box)`
   @media screen and (min-width: 767px) and (max-width: 1500px) {
     && {
       .num {
-        font-size: calc(100vw * (200 / 1240));
+        font-size: calc(100vw * (150 / 1240));
       }
       .en {
-        font-size: calc(100vw * (26 / 1240));
+        font-size: calc(100vw * (20 / 1240));
       }
       .title {
-        font-size: calc(100vw * (38 / 1240));
+        font-size: calc(100vw * (28 / 1240));
       }
       .content {
-        font-size: calc(100vw * (22 / 1240));
+        font-size: calc(100vw * (16 / 1240));
       }
     }
   }

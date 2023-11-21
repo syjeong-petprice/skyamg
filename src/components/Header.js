@@ -147,6 +147,7 @@ const StyledUl = styled.ul`
   align-items: center;
   margin: 0;
   padding: 0 10vw;
+  padding-top: 4px;
 
   li {
     margin-right: 5vw;
@@ -161,14 +162,12 @@ const StyledLink = styled(Link)`
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
-  position: relative;
-  padding-bottom: 2px;
-  /* height: 8vh; */
+  position: relative;  
+  height: 8vh;
   display: flex;
   align-items: center;
   opacity: 1;
 
-  display: block;
   width: 100%;
   margin: 0;
   padding: 0;
