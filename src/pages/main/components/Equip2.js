@@ -134,9 +134,9 @@ function Subject2() {
       </ImgWrapper>
       <SubTextWrapper>
         <p className={animate ? "animate" : ""}>
-          인천SKY동물메디컬센터에서는 다양한 첨단 영상의학검사장비를 이용하여 질병을
-          정확하게 진단하는 것을 목표로 하며, 모든 촬영과 판독이 전공자에 의해
-          이루어 지며, 안전한 검사를 위한 전용 마취 장비 및 모니터링 장비가
+          인천SKY동물메디컬센터에서는 다양한 첨단 영상의학검사장비를 이용하여
+          질병을 정확하게 진단하는 것을 목표로 하며, 모든 촬영과 판독이 전공자에
+          의해 이루어 지며, 안전한 검사를 위한 전용 마취 장비 및 모니터링 장비가
           구비되어 있습니다.
         </p>
       </SubTextWrapper>
@@ -180,6 +180,7 @@ const SubjectContainer = styled.section`
 const TextWrapper = styled.div`
   width: 100%;
   height: 25%;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,6 +196,7 @@ const TextWrapper = styled.div`
     h2 {
       font-size: 2.5rem;
       font-weight: normal;
+      text-align: center;
       @media screen and (max-width: 800px) {
         font-size: 1.5rem;
       }
@@ -235,7 +237,7 @@ const ImgWrapper = styled.div`
     text-align: center;
     color: #fff;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 690px) {
       flex-direction: row;
     }
 
@@ -284,9 +286,9 @@ const ImgWrapper = styled.div`
       justify-content: center;
       align-items: center;
       background-color: #30536f;
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 690px) {
         width: 40vw;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
     .innerText2 {
@@ -297,9 +299,9 @@ const ImgWrapper = styled.div`
       justify-content: center;
       align-items: center;
       background-color: #324352;
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 690px) {
         width: 40vw;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
     .innerText3 {
@@ -310,9 +312,9 @@ const ImgWrapper = styled.div`
       justify-content: center;
       align-items: center;
       background-color: #2c3032;
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 690px) {
         width: 40vw;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
   }
@@ -327,7 +329,7 @@ const SubTextWrapper = styled.div`
   padding: 0 5vw;
   color: #fff;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 690px) {
     display: none;
   }
 

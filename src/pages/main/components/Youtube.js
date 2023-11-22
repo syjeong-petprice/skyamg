@@ -222,8 +222,8 @@ const EmbedWrapper = styled.div`
       }
 
       @media screen and (max-width: 425px) {
-        width: 375px;
-        height: 210px;
+        width: 305px;
+        height: 200px;
       }
     }
   }

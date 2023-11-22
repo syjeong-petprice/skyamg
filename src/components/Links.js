@@ -45,32 +45,32 @@ function Links() {
   );
 }
 
-const StyledLink = styled(Link)`
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 40px;
-  font-size: 0;
-  color: transparent;
-  line-height: 0;
-  /* padding: 10px; */
-  border-radius: 100%;
-  background: rgba(242, 238, 230, 0.7);
-  transition: all 0.5s;
-  text-align: center;
-  &:visited {
-    text-decoration: none;
-  }
-  &::before {
-    content: "";
-    display: block;
-    width: 32px;
-    height: 32px;
-    background: url(${icons}) 0 0 no-repeat;
-    background-size: 228px 49px;
-    background-position: -31px 6px;
-  }
-`;
+// const StyledLink = styled(Link)`
+//   position: relative;
+//   display: block;
+//   width: 40px;
+//   height: 40px;
+//   font-size: 0;
+//   color: transparent;
+//   line-height: 0;
+//   /* padding: 10px; */
+//   border-radius: 100%;
+//   background: rgba(242, 238, 230, 0.7);
+//   transition: all 0.5s;
+//   text-align: center;
+//   &:visited {
+//     text-decoration: none;
+//   }
+//   &::before {
+//     content: "";
+//     display: block;
+//     width: 32px;
+//     height: 32px;
+//     background: url(${icons}) 0 0 no-repeat;
+//     background-size: 228px 49px;
+//     background-position: -31px 6px;
+//   }
+// `;
 
 const LinkContainer = styled.nav`
   width: 40px;
@@ -85,6 +85,7 @@ const LinkContainer = styled.nav`
       list-style: none;
       text-align: left;
       margin-bottom: 10px;
+      width: 100%;
     }
   }
 
