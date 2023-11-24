@@ -13,7 +13,6 @@ import vet12 from "../images/vet2/송재성.png";
 import vet13 from "../images/vet2/박기종.png";
 import vet14 from "../images/vet2/이한중.png";
 
-
 import tvet1 from "../images/vet/문종선.png";
 import tvet2 from "../images/vet/정다슬.png";
 import tvet3 from "../images/vet/김도희.png";
@@ -29,7 +28,7 @@ import tvet12 from "../images/vet/송재성.png";
 import tvet13 from "../images/vet/박기종.png";
 import tvet14 from "../images/vet/이한중.png";
 
-
+// 순서: 문종선 정다슬 박설기 김도희 최동준 이한중 박주향 정태규 윤기홍 최유진 이선백 서승원 송재성 박기종
 const vetInfo = [
   {
     id: 1,
@@ -69,6 +68,33 @@ const vetInfo = [
     ],
     paper: [],
     completion: [],
+  },
+  {
+    id: 5,
+    position: "내과과장",
+    name: "박설기",
+    img: vet5,
+    timg: tvet5,
+    title: "서울대학교 수의과대학 석사",
+    history: [
+      "경상대학교 수의학과 학사 졸업",
+      "서울대학교 수의과대학 부속 동물병원 수련과정 수료",
+      "서울대학교 수의과대학 내과학교실 실습조교",
+      "서울대학교 수의과대학 수의내과학 석사 졸업",
+      "우리동물메디컬센터 내과과장",
+      "2018.05 한국임상수의학회 춘계학술대회 구두발표",
+      "2019.06 ISSCR in LA 참가",
+      "2019.09 FASAVA in tokyo 참가",
+    ],
+    paper: [
+      "Pretreatment with IFN-γ enhances the immunomodulatory effect of feline adipose tissue-derived mesenchymal stem cells through the COX-2/PGE2 pathway",
+      "Case of babesiosis induced thrombocytopenia in a dog.",
+      "Clinical application of both amniotic membranes and adipose derived mesenchymal stem cells in a cat with large skin defect",
+    ],
+    completion: [
+      "2019 해마루 심장초음파 wet lab 수료",
+      "2020 수의한방 침술사 자격증(CVA) 취득",
+    ],
   },
   {
     id: 3,
@@ -126,33 +152,7 @@ const vetInfo = [
     ],
     completion: [],
   },
-  {
-    id: 5,
-    position: "내과과장",
-    name: "박설기",
-    img: vet5,
-    timg: tvet5,
-    title: "서울대학교 수의과대학 석사",
-    history: [
-      "경상대학교 수의학과 학사 졸업",
-      "서울대학교 수의과대학 부속 동물병원 수련과정 수료",
-      "서울대학교 수의과대학 내과학교실 실습조교",
-      "서울대학교 수의과대학 수의내과학 석사 졸업",
-      "우리동물메디컬센터 내과과장",
-      "2018.05 한국임상수의학회 춘계학술대회 구두발표",
-      "2019.06 ISSCR in LA 참가",
-      "2019.09 FASAVA in tokyo 참가",
-    ],
-    paper: [
-      "Pretreatment with IFN-γ enhances the immunomodulatory effect of feline adipose tissue-derived mesenchymal stem cells through the COX-2/PGE2 pathway",
-      "Case of babesiosis induced thrombocytopenia in a dog.",
-      "Clinical application of both amniotic membranes and adipose derived mesenchymal stem cells in a cat with large skin defect",
-    ],
-    completion: [
-      "2019 해마루 심장초음파 wet lab 수료",
-      "2020 수의한방 침술사 자격증(CVA) 취득",
-    ],
-  },
+
   {
     id: 6,
     position: "영상의학과장",
@@ -179,26 +179,10 @@ const vetInfo = [
       "2019 미국 아리조나 American College of Veterinary Internal Medicine Forum 참석",
     ],
   },
-  {
-    id: 7,
-    position: "진료팀장",
-    name: "최유진",
-    img: vet7,
-    timg: tvet7,
-    title: "충북대학교 수의학과",
-    history: [
-      "충북대학교 수의과대학 수의학과 졸업",
-      "충북대학교 수의과대학 수의생화학실험실",
-      "충북대학교 수의과대학 부속동물병원 동물병원 임상실습 수료",
-      "인천SKY동물메디컬센터 진료수의사",
-      "현)인천SKY동물메디컬센터 진료과장",
-    ],
-    paper: [],
-    completion: [],
-  },
+
   {
     id: 8,
-    position: "한방응급의학과장",
+    position: "응급의학과장",
     name: "정태규",
     img: vet8,
     timg: tvet8,
@@ -210,7 +194,7 @@ const vetInfo = [
       "서울대학교 수의학과 수의응급의학과 실습조교",
       "관악구 이로동물병원 진료수의사",
       "수원 24시바른동물의료센터 응급의학과장",
-      "현)인천SKY동물메디컬센터 한방응급의학과장",
+      "현)인천SKY동물메디컬센터 응급의학과장",
     ],
     paper: [],
     completion: ["CVA(미국수의한방침치료인증) 수료"],
@@ -228,6 +212,23 @@ const vetInfo = [
       "전) 대전성심동물메디컬센터 진료수의사",
       "전) 인천SKY동물메디컬센터 진료수의사",
       "현) 인천SKY동물메디컬센터 응급의학팀장",
+    ],
+    paper: [],
+    completion: [],
+  },
+  {
+    id: 7,
+    position: "진료팀장",
+    name: "최유진",
+    img: vet7,
+    timg: tvet7,
+    title: "충북대학교 수의학과",
+    history: [
+      "충북대학교 수의과대학 수의학과 졸업",
+      "충북대학교 수의과대학 수의생화학실험실",
+      "충북대학교 수의과대학 부속동물병원 동물병원 임상실습 수료",
+      "인천SKY동물메디컬센터 진료수의사",
+      "현)인천SKY동물메디컬센터 진료과장",
     ],
     paper: [],
     completion: [],
