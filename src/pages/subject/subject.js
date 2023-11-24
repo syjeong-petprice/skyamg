@@ -412,6 +412,7 @@ const Section3 = styled(Section1)`
 const Section4 = styled(Section1)`
   && {
     flex-direction: column;
+    margin-top: 0;
     margin-bottom: calc(100vw * (120 / 1580));
     align-items: center;
   }
@@ -579,7 +580,7 @@ const Section6 = styled(Section1)`
     align-items: center;
     background-color: #222;
     position: relative;
-    margin-top: calc(100vw * (120 / 1580));
+    margin: calc(100vw * (120 / 1580)) 0;
     > div.text-box {
       width: 50%;
       height: 100%;
