@@ -130,7 +130,7 @@ SKY동물메디컬센터는 국내 최우수 의료진이 간, 담낭, 췌장을
     id: 2,
     primaryImg: img101,
     titleImg: img1,
-    vetMemberIdx: [3, 4],
+    vetMemberIdx: [3, 4, 14],
     title: "정형신경센터",
     enTitle: "Orthopedic & Neurological Surgery center",
     subTitle: `외과학전공의 및 수술 전문팀

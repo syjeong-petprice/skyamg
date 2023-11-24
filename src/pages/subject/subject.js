@@ -24,7 +24,8 @@ import bg2 from "./bg-image/영상의료센터.jpeg";
 import bg3 from "./bg-image/영상의료센터.jpeg";
 import bg4 from "./bg-image/영상의료센터.jpeg";
 import bg5 from "../../images/resource/images/전문진료과목_bg.jpeg";
-import prideImg from "./bg-image/pride_banner.jpeg";
+// import prideImg from "./bg-image/pride_banner.jpeg";
+import prideImg from "./bg-image/pride임시.png";
 import MetaTag from "../../MetaTag";
 
 function Section1Component({ img, title, content }) {
@@ -117,8 +118,9 @@ function Section5Component({ data }) {
             <img
               src={list.img}
               alt={`img${index}`}
-              className={`${list.type === 1 ? "left" : "rigth"} ${isAnimated ? "animate" : ""
-                }`}
+              className={`${list.type === 1 ? "left" : "rigth"} ${
+                isAnimated ? "animate" : ""
+              }`}
               style={{
                 animationDelay: `${animateDelay}ms`,
                 margin:
@@ -128,8 +130,9 @@ function Section5Component({ data }) {
               }}
             />
             <div
-              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${isAnimated ? "animate" : ""
-                }`}
+              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${
+                isAnimated ? "animate" : ""
+              }`}
             >
               {list.content.map((i, innerIndex) => {
                 return (
@@ -197,7 +200,11 @@ function Subject() {
             특별한 이유!
           </Typography>
           <Box>
-            <Stack direction="column" spacing={10} sx={{ justifyContent: "center", alignItems: 'center' }}>
+            <Stack
+              direction="column"
+              spacing={10}
+              sx={{ justifyContent: "center", alignItems: "center" }}
+            >
               {info.sec3.map((list, index) => {
                 // return <ActionAreaCard key={index} index={index} {...list} />;
                 return (
@@ -211,7 +218,7 @@ function Subject() {
         </Section3>
 
         <Section6>
-          <div>
+          <div className="text-box">
             <Typography
               className="title"
               sx={{ color: "#ccc", opacity: "0.8" }}
@@ -227,12 +234,14 @@ function Subject() {
               {info.pride.title}
             </Typography>
             <Typography
+              className="des"
               sx={{ color: "#fff", whiteSpace: "pre-wrap" }}
               gutterBottom
             >
               {info.pride.description}
             </Typography>
           </div>
+          <img src={prideImg} alt="pride-img" />
         </Section6>
         {info.equip.length > 0 && (
           <Section4>
@@ -313,29 +322,29 @@ const Section2 = styled(Section1)`
   && {
     height: calc(100vw * (550 / 1580));
     background: ${(props) => {
-    let backgroundImage;
-    console.log(props.id, backgroundImage);
-    switch (props.id) {
-      case 1:
-        backgroundImage = `url(${bg1})`;
-        break;
-      case 2:
-        backgroundImage = `url(${bg2})`;
-        break;
-      case 3:
-        backgroundImage = `url(${bg3})`;
-        break;
-      case 4:
-        backgroundImage = `url(${bg4})`;
-        break;
-      case 5:
-        backgroundImage = `url(${bg5})`;
-        break;
-      default:
-        backgroundImage = `url(${bg1})`;
-    }
-    return backgroundImage;
-  }};
+      let backgroundImage;
+      console.log(props.id, backgroundImage);
+      switch (props.id) {
+        case 1:
+          backgroundImage = `url(${bg1})`;
+          break;
+        case 2:
+          backgroundImage = `url(${bg2})`;
+          break;
+        case 3:
+          backgroundImage = `url(${bg3})`;
+          break;
+        case 4:
+          backgroundImage = `url(${bg4})`;
+          break;
+        case 5:
+          backgroundImage = `url(${bg5})`;
+          break;
+        default:
+          backgroundImage = `url(${bg1})`;
+      }
+      return backgroundImage;
+    }};
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% calc(100vw * (210 / 390));
@@ -564,18 +573,24 @@ const Section5 = styled(Section4)`
 
 const Section6 = styled(Section1)`
   && {
-    /* height: calc(100vw * (600 / 1580)); */
-    /* margin-bottom: calc(100vw * (120 / 1580)); */
-    height: 100%;
-    padding: 0 calc(100vw * (50 / 1580));
-    /* flex-direction: column; */
+    width: 100%;
+    height: fit-content;
     justify-content: start;
-    background-image: url(${prideImg});
-    background-repeat: no-repeat;
-    background-position: center center;
-    > div {
-      width: 35%;
-      margin: calc(100vw * (50 / 1580)) 0;
+    align-items: center;
+    background-color: #222;
+    position: relative;
+    margin-top: calc(100vw * (120 / 1580));
+    > div.text-box {
+      width: 50%;
+      height: 100%;
+      padding: calc(100vw * (50 / 1580));
+    }
+    > img {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      right: 0;
     }
     .title {
       font-size: 50px;
@@ -585,21 +600,28 @@ const Section6 = styled(Section1)`
       font-size: 30px;
       font-weight: 700;
     }
+    .des {
+      font-size: 20px;
+      font-weight: 400;
+    }
   }
   @media screen and (max-width: 768px) {
     && {
-      background-image: unset;
-      background-repeat: unset;
-      background-position: unset;
-      background-color: #222;
-      > div {
+      div.text-box {
         width: 100%;
+        padding: calc(100vw * (100 / 1580));
+      }
+      img {
+        display: none;
       }
       .title {
         font-size: calc(100vw * (24 / 390));
       }
       .sub-title {
         font-size: calc(100vw * (18 / 390));
+      }
+      .des {
+        font-size: calc(100vw * (12 / 390));
       }
     }
   }
@@ -609,7 +631,10 @@ const Section6 = styled(Section1)`
         font-size: calc(100vw * (38 / 1240));
       }
       .sub-title {
-        font-size: calc(100vw * (30 / 1240));
+        font-size: calc(100vw * (18 / 1240));
+      }
+      .des {
+        font-size: calc(100vw * (16 / 1240));
       }
     }
   }
