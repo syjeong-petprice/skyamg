@@ -3,12 +3,21 @@ import img101 from "../images/resource/subjects/mgimg_heart.jpg";
 //import img1 from "../images/title/visual_greeting.jpeg";
 import img1 from "../images/title/visual_mri.jpg";
 import titleImg1 from "../images/resource/images/스카이MRI실.jpeg";
-
+import titleImg2 from "../images/resource/subjects/radioimg_1.jpg";
+import titleImg3 from "../images/resource/subjects/gsimg_gs.jpg";
+import titleImg4 from "../images/resource/subjects/DSC06707.jpg";
+import titleImg5 from "../images/resource/subjects/gsimg_gs.jpg";
 // import sec2img from "../images/resource/subjects/스카이MRI실.jpeg";
 
 import sec3img1 from "../images/resource/subjects/section3_img01.png";
 import sec3img2 from "../images/resource/subjects/section3_img02.png";
 import sec3img3 from "../images/resource/subjects/section3_img03.png";
+import sec3img52 from "../images/resource/subjects/sec3/5-2.jpg";
+import sec3img22 from "../images/resource/subjects/mgimg_endocrine.jpg";
+import sec3img31 from "../images/resource/subjects/sec3/3-1.jpg";
+import sec3img32 from "../images/resource/subjects/sec3/3-2.jpg";
+import sec3img33 from "../images/resource/subjects/sec3/3-3.jpg";
+import sec3img41 from "../images/resource/subjects/sec3/5-1.png";
 
 import equip1 from "../images/resource/subjects/equip/image1.png";
 import equip2 from "../images/resource/subjects/equip/image2.png";
@@ -129,7 +138,7 @@ const centerInfo = [
   {
     id: 2,
     primaryImg: img101,
-    titleImg: img1,
+    titleImg: titleImg2,
     vetMemberIdx: [3, 4, 14],
     title: "정형신경센터",
     enTitle: "Orthopedic & Neurological Surgery center",
@@ -149,12 +158,12 @@ const centerInfo = [
         content: `외과학 석/박사 출신의 수의사가 상주하고 있으며 모든 수술의 집도를 담당하여 성공률을 높이고 있으며, 수술 전담 테크니션과 구성된 수술팀이 항시 수술실과 수술장비의 멸균 및 소독에 힘쓰고 있습니다.`,
       },
       {
-        img: sec3img2,
+        img: sec3img22,
         title: "철저한 수술 전 검사",
         content: `치밀한 수술 전 검사를 통해 반드시 필요한 수술만을 실시하는 것을 지향하고 있습니다. 영상진단센터 및 내과센터의 사전 체크 후, 수술에 임하고 있습니다.`,
       },
       {
-        img: sec3img3,
+        img: sec3img33,
         title: "한방치료 병행",
         content: `통증관리 및 재활에 있어 한방치료센터와의 협진을 통해 술 후 안전하고 빠른 회복에 집중하고 있습니다.`,
       },
@@ -228,7 +237,7 @@ const centerInfo = [
   {
     id: 3,
     primaryImg: img101,
-    titleImg: img1,
+    titleImg: titleImg3,
     vetMemberIdx: [5, 2],
     title: "내과질환센터",
     enTitle: "Internal Medicine Center",
@@ -243,17 +252,17 @@ const centerInfo = [
     },
     sec3: [
       {
-        img: sec3img1,
+        img: sec3img31,
         title: "심장, 신장질환 특화",
         content: `심장, 신장은 긴밀하게 연결되어 있어 치료 과정에서 항상 함께 고려해야하는 장기입니다. 투여 약물의 결정은 내과전공의 및 숙련된 수의사에 의해 이루어지며 약물 사용의 효과 및 부작용, 합병증에 대한 고지 및 충분한 설명이 이루어집니다.`,
       },
       {
-        img: sec3img2,
+        img: sec3img32,
         title: "고양이 의료시설 분리",
         content: `고양이 진료실 및 입원실을 별도로 두어 통원 및 입원 치료 과정에서의 스트레스 최소화에 힘쓰고 있습니다.`,
       },
       {
-        img: sec3img3,
+        img: sec3img33,
         title: "한방치료 병행",
         content: `중증 내과환자의 치료 과정을 양한방의 협진을 통해 다각적인 관점으로 바라보려고 노력하고 있습니다. 수의한방침치료인증과정을 수료한 다수의 수의사가 내과질환 치료에 함께 임하고 있습니다.`,
       },
@@ -321,7 +330,7 @@ const centerInfo = [
   {
     id: 4,
     primaryImg: img101,
-    titleImg: img1,
+    titleImg: titleImg4,
     vetMemberIdx: [1, 5, 8],
     title: "한방재활센터",
     enTitle: "Traditional Chinese Medicine Center",
@@ -336,7 +345,7 @@ const centerInfo = [
     },
     sec3: [
       {
-        img: sec3img1,
+        img: sec3img41,
         title: "수의한방침치료인증과정 수료",
         content: `세계적인 동물 한방 및 재활 전문 교육기관인 Chi university에서 공인한 인증과정을 수료한 수의사들의 시침이 이루어집니다.`,
       },
@@ -356,7 +365,7 @@ const centerInfo = [
         img: equip7,
         name: "DIOWAVE 10&15WATT LASER SYSTEM",
         description:
-          "근육층에 조사하는 2가지 파장 외에 피부층 및 심부 조직까지 적용할 수 있는 2가지 파장이 추가되어 있는 레이저 재활 치료기입니다. 술 후 염증 및 통증 관리, 피부 질환, 염증성 질환 등에 폭넓게 사용할 수 있습니다.",
+          "근육층에 조사하는 2가지 파장 외에 피부층 및 심부 조직까지 적용할 수 있는 2가지 파장이 추가되어 있는 레이저 재활 치료기입니다. 수술 후 염증 및 통증 관리, 피부 질환, 염증성 질환 등에 폭넓게 사용할 수 있습니다.",
       },
     ],
     // surgery: [],
@@ -414,7 +423,7 @@ const centerInfo = [
   {
     id: 5,
     primaryImg: img101,
-    titleImg: img1,
+    titleImg: titleImg5,
     vetMemberIdx: [8, 9],
     title: "응급의학센터",
     enTitle: "Emergency Medicine Center",
@@ -431,10 +440,10 @@ const centerInfo = [
       {
         img: sec3img1,
         title: "응급의학전공의 진료",
-        content: `응급수의학전공의가 주간에 상주함으로써 교통사고, 쇼크, 중독 등의 응급상황에 대하여 신속한 치료를 실시합니다.`,
+        content: `응급수의학전공의가 교통사고, 쇼크, 중독 등의 응급상황에 대하여 신속한 치료를 실시합니다.`,
       },
       {
-        img: sec3img2,
+        img: sec3img52,
         title: "전 입원장의 ICU화",
         content: `호흡이 불안정한 응급환자들의 관리를 위해 모든 입원장은 독립적으로 고압산소공급이 가능하도록 설계되어 있습니다.`,
       },

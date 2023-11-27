@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import Slider from "react-slick";
 
 import bgImg1 from "../../../images/main/icsky_building.jpg";
-import bgImg3 from "../../../images/resource/images/portfolio_053945.png";
+import bgImg3 from "../../../images/resource/subjects/스카이MRI실.jpeg";
 import bgImg2 from "../../../images/resource/images/portfolio_062119.jpg";
 // import bgImg3 from "../../../images/resource/images/portfolio_080228.jpg";
 import toplogo_w from "../../../images/common/toplogo_w.png";
@@ -83,7 +83,7 @@ function Preview() {
               </div>
             </div>
             <div className="slideImg imgThree">
-              <div className={isMobile ? "innerText_m" : "innerText"}>
+              <div className={isMobile ? "innerText_m" : "innerText"} >
                 <p>
                   <strong>최첨단 시스템 도입</strong>
                 </p>
