@@ -102,8 +102,7 @@ export function MemberItem({ visibleVetInfo }) {
                     maxWidth: "370px",
                   }}
                 >
-                  숙련된 영상의학 전문 수의사가 안전하고 정확한 진단을
-                  진행합니다.
+                  숙련된 전문 수의사가 안전하고 정확한 진단을 진행합니다.
                 </Typography>
               </TextBox>
             </Grid>
