@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { styled, css, keyframes } from "styled-components";
 import { Box, Card, Typography } from "@mui/material";
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
 import vetInfo from "../../config/vetInfo";
 
 import PropTypes from "prop-types";
@@ -115,8 +115,9 @@ function Section5Component({ data }) {
             <img
               src={list.img}
               alt={`img${index}`}
-              className={`${list.type === 1 ? "left" : "rigth"} ${isAnimated ? "animate" : ""
-                }`}
+              className={`${list.type === 1 ? "left" : "rigth"} ${
+                isAnimated ? "animate" : ""
+              }`}
               style={{
                 animationDelay: `${animateDelay}ms`,
                 margin:
@@ -126,8 +127,9 @@ function Section5Component({ data }) {
               }}
             />
             <div
-              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${isAnimated ? "animate" : ""
-                }`}
+              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${
+                isAnimated ? "animate" : ""
+              }`}
             >
               {list.content.map((i, innerIndex) => {
                 return (
@@ -149,7 +151,7 @@ function Subject() {
   const { id } = useParams();
   const info = centerInfo.find((item) => item.id === Number(id));
   // console.log(id, idx);
-  // 1: 영상의료센터, 2: 신경정형, 3: 만성질환, 4: 한방재활
+  // 1: 영상진단센터, 2: 신경정형, 3: 만성질환, 4: 한방재활
   if (!info) {
     return (
       <div
@@ -177,31 +179,80 @@ function Subject() {
       <MetaTag {...metaData} />
       <Title img={info.titleImg || img} title={info.title} />
       <Container>
-        <Grid container spacing={0} sx={{ maxWidth: '1200px', mt: 10, paddingX: 5, }}>
+        <Grid
+          container
+          spacing={0}
+          sx={{ maxWidth: "1200px", mt: 10, paddingX: 5 }}
+        >
           <CssBaseline />
 
           <Grid item xs={12} sm={12} md={4}>
-
-            <Box sx={{ display: { md: 'flex', xs: 'flex', sm: 'flex' }, bgcolor: '#3260AE', alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: { md: '100%', sm: '370px', xs: '370px' } }} >
+            <Box
+              sx={{
+                display: { md: "flex", xs: "flex", sm: "flex" },
+                bgcolor: "#3260AE",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                height: { md: "100%", sm: "370px", xs: "370px" },
+              }}
+            >
               <VetImgBox>
-                <img alt={'수의사 박주향'} src={vetInfo[0].img} />
+                <img alt={"수의사 박주향"} src={vetInfo[0].img} />
               </VetImgBox>
             </Box>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: '#F4F4F4', alignItems: 'center', justifyContent: 'center', textAlign: 'center', height: { md: '100%', sm: '300px', xs: '300px' } }} >
-              <Typography sx={{ fontWeight: '600', fontSize: '30px', color: '#3260AE', lineHeight: 2 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                bgcolor: "#F4F4F4",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                height: { md: "100%", sm: "300px", xs: "300px" },
+              }}
+            >
+              <Typography
+                sx={{
+                  fontWeight: "600",
+                  fontSize: "30px",
+                  color: "#3260AE",
+                  lineHeight: 2,
+                }}
+              >
                 Special Veterinary
               </Typography>
-              <Typography sx={{ fontWeight: '100', fontSize: '50px', color: '#000000', lineHeight: 1 }}>
+              <Typography
+                sx={{
+                  fontWeight: "100",
+                  fontSize: "50px",
+                  color: "#000000",
+                  lineHeight: 1,
+                }}
+              >
                 영상의학과장
               </Typography>
-              <Typography sx={{ fontWeight: '700', fontSize: '50px', color: '#000000', lineHeight: 1.5 }}>
+              <Typography
+                sx={{
+                  fontWeight: "700",
+                  fontSize: "50px",
+                  color: "#000000",
+                  lineHeight: 1.5,
+                }}
+              >
                 수의사 박주향
               </Typography>
-              <Typography sx={{ fontWeight: '400', fontSize: '24px', color: '#000000', maxWidth: '370px' }}>
-                숙련된 영상의학 전문 수의사가
-                안전하고 정확한 진단을 진행합니다.
+              <Typography
+                sx={{
+                  fontWeight: "400",
+                  fontSize: "24px",
+                  color: "#000000",
+                  maxWidth: "370px",
+                }}
+              >
+                숙련된 영상의학 전문 수의사가 안전하고 정확한 진단을 진행합니다.
               </Typography>
             </Box>
           </Grid>
@@ -250,12 +301,10 @@ function Subject() {
             </Typography>
           </div>
         </Section6>
-      </Container >
+      </Container>
     </>
   );
 }
-
-
 
 const slideInUp = keyframes`
   0% {
@@ -320,29 +369,29 @@ const Section2 = styled(Section1)`
   && {
     height: calc(100vw * (550 / 1580));
     background: ${(props) => {
-    let backgroundImage;
-    console.log(props.id, backgroundImage);
-    switch (props.id) {
-      case 1:
-        backgroundImage = `url(${bg1})`;
-        break;
-      case 2:
-        backgroundImage = `url(${bg2})`;
-        break;
-      case 3:
-        backgroundImage = `url(${bg3})`;
-        break;
-      case 4:
-        backgroundImage = `url(${bg4})`;
-        break;
-      case 5:
-        backgroundImage = `url(${bg5})`;
-        break;
-      default:
-        backgroundImage = `url(${bg1})`;
-    }
-    return backgroundImage;
-  }};
+      let backgroundImage;
+      console.log(props.id, backgroundImage);
+      switch (props.id) {
+        case 1:
+          backgroundImage = `url(${bg1})`;
+          break;
+        case 2:
+          backgroundImage = `url(${bg2})`;
+          break;
+        case 3:
+          backgroundImage = `url(${bg3})`;
+          break;
+        case 4:
+          backgroundImage = `url(${bg4})`;
+          break;
+        case 5:
+          backgroundImage = `url(${bg5})`;
+          break;
+        default:
+          backgroundImage = `url(${bg1})`;
+      }
+      return backgroundImage;
+    }};
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% calc(100vw * (210 / 390));
@@ -603,7 +652,6 @@ const TextBox = styled(Box)`
   }
 `;
 
-
 const imgZoomin = keyframes`
     from {
         scale: 1
@@ -614,9 +662,9 @@ const imgZoomin = keyframes`
 `;
 
 const VetImgBox = styled(Box)`
-  display:flex;  
+  display: flex;
   overflow: hidden;
-  justify-content:center;
+  justify-content: center;
   img {
     height: 100%;
     max-height: 370px;
@@ -627,7 +675,6 @@ const VetImgBox = styled(Box)`
     }
   }
 `;
-
 
 const ImgBox = styled(Box)`
   && {

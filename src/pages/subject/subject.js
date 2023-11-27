@@ -118,8 +118,9 @@ function Section5Component({ data }) {
             <img
               src={list.img}
               alt={`img${index}`}
-              className={`${list.type === 1 ? "left" : "rigth"} ${isAnimated ? "animate" : ""
-                }`}
+              className={`${list.type === 1 ? "left" : "rigth"} ${
+                isAnimated ? "animate" : ""
+              }`}
               style={{
                 animationDelay: `${animateDelay}ms`,
                 margin:
@@ -129,8 +130,9 @@ function Section5Component({ data }) {
               }}
             />
             <div
-              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${isAnimated ? "animate" : ""
-                }`}
+              className={`des-wrapper ${list.type === 1 ? "rigth" : "left"} ${
+                isAnimated ? "animate" : ""
+              }`}
             >
               {list.content.map((i, innerIndex) => {
                 return (
@@ -152,7 +154,7 @@ function Subject() {
   const { id } = useParams();
   const info = centerInfo.find((item) => item.id === Number(id));
   // console.log(id, idx);
-  // 1: 영상의료센터, 2: 신경정형, 3: 만성질환, 4: 한방재활
+  // 1: 영상진단센터, 2: 신경정형, 3: 만성질환, 4: 한방재활
   if (!info) {
     return (
       <div
@@ -320,29 +322,29 @@ const Section2 = styled(Section1)`
   && {
     height: calc(100vw * (550 / 1580));
     background: ${(props) => {
-    let backgroundImage;
-    console.log(props.id, backgroundImage);
-    switch (props.id) {
-      case 1:
-        backgroundImage = `url(${bg1})`;
-        break;
-      case 2:
-        backgroundImage = `url(${bg2})`;
-        break;
-      case 3:
-        backgroundImage = `url(${bg3})`;
-        break;
-      case 4:
-        backgroundImage = `url(${bg4})`;
-        break;
-      case 5:
-        backgroundImage = `url(${bg5})`;
-        break;
-      default:
-        backgroundImage = `url(${bg1})`;
-    }
-    return backgroundImage;
-  }};
+      let backgroundImage;
+      console.log(props.id, backgroundImage);
+      switch (props.id) {
+        case 1:
+          backgroundImage = `url(${bg1})`;
+          break;
+        case 2:
+          backgroundImage = `url(${bg2})`;
+          break;
+        case 3:
+          backgroundImage = `url(${bg3})`;
+          break;
+        case 4:
+          backgroundImage = `url(${bg4})`;
+          break;
+        case 5:
+          backgroundImage = `url(${bg5})`;
+          break;
+        default:
+          backgroundImage = `url(${bg1})`;
+      }
+      return backgroundImage;
+    }};
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% calc(100vw * (210 / 390));
