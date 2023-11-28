@@ -20,7 +20,7 @@ function Main() {
   return (
     <>
       <Helmet>
-        <title>인천 SKY 동물의료센터</title>
+        <title>인천스카이동물메디컬센터</title>
       </Helmet>
       <Slider2 />
       <Introduce />
