@@ -27,7 +27,6 @@ function Main() {
       <Youtube />
 
       <Member />
-      <Links />
 
       <Subject />
       <Equip2 />

@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet-async";
 import Notice from "./pages/notice/notice";
 import NoticeDetails from "./pages/notice/notice-details";
 import Header from "./components/Header";
+import Links from "./components/Links";
 
 const useThrottle = (value, limit) => {
   const [throttledValue, setThrottledValue] = useState(value);
@@ -61,6 +62,7 @@ function App() {
   return (
     <>
       <Header isScrolledDown={isScrolledDown} />
+      <Links />
 
       <Helmet>
         <title>인천 SKY 동물의료센터</title>
