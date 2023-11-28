@@ -9,7 +9,7 @@ import vetInfo from "../../../config/vetInfo";
 import DoctorModal from "../../doctor/components/DoctorModal";
 import { Typography, Box, Button, Grid, Chip } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { scrollToComponent } from "../util";
+import { scrollToComponent } from "../../../scrollToComponent";
 
 export function MemberItem({ visibleVetInfo }) {
   const navigate = useNavigate();
