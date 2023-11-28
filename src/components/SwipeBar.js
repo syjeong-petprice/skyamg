@@ -39,7 +39,7 @@ export default function Sidebar({ open, onClose }) {
       <StyledLink
         style={{ color: isSubNavOpen ? "#011689" : "#999" }}
         onClick={toggleAccordion}
-        alignCenter
+        // alignCenter={true}
       >
         전문진료센터안내
         {isSubNavOpen ? <ExpandLessStyledIcon /> : <ExpandMoreStyledIcon />}
@@ -105,8 +105,8 @@ const StyledLink = styled(Link)`
   border-bottom: 0.5px solid #ccc;
   display: block;
   transition: color 0.3s ease;
-  justify-content: ${({ alignCenter }) =>
-    alignCenter ? "center" : "space-between"};
+  /* justify-content: ${({ alignCenter }) =>
+    alignCenter ? "center" : "space-between"}; */
 
   /* &:hover {
     color: #dabfa8;

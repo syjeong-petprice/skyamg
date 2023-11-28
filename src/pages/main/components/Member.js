@@ -1,5 +1,5 @@
 import { styled, keyframes } from "styled-components";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, forwardRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,6 +9,7 @@ import vetInfo from "../../../config/vetInfo";
 import DoctorModal from "../../doctor/components/DoctorModal";
 import { Typography, Box, Button, Grid, Chip } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { scrollToComponent } from "../util";
 
 export function MemberItem({ visibleVetInfo }) {
   const navigate = useNavigate();
@@ -82,9 +83,22 @@ function Member() {
   const [animate, setAnimate] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
   const [showAll, setShowAll] = useState(false);
+  const [fragment, setFragment] = useState();
 
-  const componentRef = useRef(null);
+  const memberRef = useRef(null);
+
   const visibleVetInfo = showAll ? vetInfo : vetInfo.slice(0, 4);
+
+  useEffect(() => {
+    setFragment(window.location.hash.substring(1));
+  }, []);
+
+  useEffect(() => {
+    console.log(fragment, memberRef.current);
+    if (fragment === "member" && memberRef.current) {
+      scrollToComponent(memberRef);
+    }
+  }, [fragment, memberRef]);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -106,7 +120,7 @@ function Member() {
     const handleScroll = () => {
       // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
       //   const midScreen = window.innerHeight * 3.2;
-      const componentTop = componentRef.current.getBoundingClientRect().top;
+      const componentTop = memberRef.current.getBoundingClientRect().top;
 
       // console.log('innerHeight : ', window.innerHeight);
       // console.log('scrollY : ', window.scrollY);
@@ -136,7 +150,7 @@ function Member() {
   // };
 
   return (
-    <MemberContainer ref={componentRef}>
+    <MemberContainer ref={memberRef}>
       <TitleWrapper>
         <div className={animate ? "animate" : ""}>
           <h2 style={{ fontSize: windowWidth > 800 ? "3rem" : "2rem" }}>
@@ -229,7 +243,7 @@ const TitleWrapper = styled.div`
   padding-bottom: 8rem;
 
   .animate {
-    animation: ${slideDown} 4s ease;
+    animation: ${slideDown} 2s ease;
   }
 
   div {
