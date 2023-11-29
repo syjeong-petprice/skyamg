@@ -35,7 +35,7 @@ function Doctor() {
       <VetContainer isMobile={isMobile}>
         {isMobile ? (
           <div>
-            <TextBox>
+            <TextBox2>
               <StaffTitle>
                 "{vet.title}, {vet.position}"
               </StaffTitle>
@@ -73,49 +73,53 @@ function Doctor() {
                   })}
                 </Box>
               )}
-            </TextBox>
+            </TextBox2>
           </div>
         ) : (
-          <div>
-            <TextBox>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <TextBox1>
               <StaffTitle>
                 "{vet.title}, {vet.position}"
               </StaffTitle>
-              <StaffName>
-                <Typography>수의사</Typography>
-                <Typography>{vet.name}</Typography>
-              </StaffName>
-              {/* <Box>
+            </TextBox1>
+            <div style={{ display: "flex" }}>
+              <TextBox2>
+                <StaffName>
+                  <Typography>수의사</Typography>
+                  <Typography>{vet.name}</Typography>
+                </StaffName>
+                {/* <Box>
                 전문분야
                 <Typography2>일반외과, 정형외과 / 디스크, 신경외과 등</Typography2>
               </Box> */}
-              {vet.history.length > 0 && (
-                <Box sx={{ marginBottom: 1 }}>
-                  <Bedge2>약력</Bedge2>
-                  {/* Bedge 디자인 택 1 */}
-                  {vet.history.map((list) => {
-                    return <Typography2>{list}</Typography2>;
-                  })}
-                  <Box sx={{ mt: 1 }}>
-                    {vet.completion.length > 0 &&
-                      vet.completion.map((list) => {
-                        return <Typography3>・ {list}</Typography3>;
-                      })}
+                {vet.history.length > 0 && (
+                  <Box sx={{ marginBottom: 1 }}>
+                    <Bedge2>약력</Bedge2>
+                    {/* Bedge 디자인 택 1 */}
+                    {vet.history.map((list) => {
+                      return <Typography2>{list}</Typography2>;
+                    })}
+                    <Box sx={{ mt: 1 }}>
+                      {vet.completion.length > 0 &&
+                        vet.completion.map((list) => {
+                          return <Typography3>・ {list}</Typography3>;
+                        })}
+                    </Box>
                   </Box>
-                </Box>
-              )}
-              {vet.paper.length > 0 && (
-                <Box>
-                  <Bedge2>주요논문</Bedge2>
-                  {vet.paper.map((list) => {
-                    return <Typography2>{list}</Typography2>;
-                  })}
-                </Box>
-              )}
-            </TextBox>
-            <ImgBox>
-              <img src={vet.img} alt={vet.name} />
-            </ImgBox>
+                )}
+                {vet.paper.length > 0 && (
+                  <Box>
+                    <Bedge2>주요논문</Bedge2>
+                    {vet.paper.map((list) => {
+                      return <Typography2>{list}</Typography2>;
+                    })}
+                  </Box>
+                )}
+              </TextBox2>
+              <ImgBox>
+                <img src={vet.img} alt={vet.name} />
+              </ImgBox>
+            </div>
           </div>
         )}
       </VetContainer>
@@ -131,7 +135,7 @@ const VetContainer = styled.div`
     background-repeat: no-repeat; /* 원하는 배경 이미지 반복 설정 */
   }
   & > div {
-    padding: calc(100vw * (112 / 1240)) 0;
+    padding: calc(100vw * (112 / 1240));
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -152,7 +156,20 @@ const VetContainer = styled.div`
     }
   }
 `;
-const TextBox = styled(Box)`
+const TextBox1 = styled(Box)`
+  && {
+    color: #fff;
+    margin-bottom: calc(100vw * (50 / 1240));
+  }
+
+  @media screen and (max-width: 768px) {
+    && {
+      width: 100%;
+      font-size: calc(100vw * (26 / 390));
+    }
+  }
+`;
+const TextBox2 = styled(Box)`
   && {
     width: calc(100vw * (620 / 1240));
     color: #fff;

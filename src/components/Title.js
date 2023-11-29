@@ -74,7 +74,7 @@ const slideUp = keyframes`
 
 const TextDiv = styled.div`
   animation: ${slideUp} 4s ease;
-
+  width: 100%;
   position: absolute;
   top: calc(50% - 20px);
   left: 50%;
@@ -124,7 +124,7 @@ const TextDiv = styled.div`
   @media screen and (max-width: 768px) {
     && {
       font-size: calc(100vw * (26 / 390));
-      top: calc(50% - 13px);
+      top: calc(50% - 10px);
       > span {
         font-size: calc(100vw * (10 / 390));
       }

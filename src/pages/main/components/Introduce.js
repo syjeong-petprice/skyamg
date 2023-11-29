@@ -41,9 +41,9 @@ function Introduce() {
   return (
     <IntroduceContainer ref={componentRef} id={"Main_Intro"}>
       {windowWidth > 900 ? (
-        <ImageWrapper style={{ right: '5vh' }}>
+        <ImageWrapper style={{ right: "5vh" }}>
           <img
-            style={{ maxHeight: '760px', width: '620px' }}
+            style={{ maxHeight: "760px", width: "620px" }}
             className={animate ? "animate" : ""}
             src={profileImg}
             alt="profile img"
@@ -75,14 +75,16 @@ function Introduce() {
         </div>
         <div className={animate ? "contentWrapper animate" : "contentWrapper"}>
           <p style={{ whiteSpace: "pre-wrap", maxWidth: "600px" }}>
-            {`저희 인천SKY동물메디컬센터는 2014년 개원 이래로,우리 아이들이 정확한 진단과 신속한 치료를 받게 하는 것을 사명으로 새기고 성장해왔습니다.
+            {`저희 인천SKY동물메디컬센터는 2014년 개원 이래로, 우리 아이들이 정확한 진단과 신속한 치료를 받게 하는 것을 사명으로 새기고 성장해왔습니다.
 
 최신의 의료 시설과 각 분야의 전문 인력들이 지금 이 순간에도 아이들의 건강을 위하여 노력을 아끼지 않고 있습니다.
 
 우리 아이들과 보호자님들의 눈높이에서 마음까지 헤아릴 수 있는 따뜻한 병원이 되도록 노력하겠습니다.
 감사합니다.
 `}
-            <p><strong>대표원장 문종선 올림.</strong></p>
+            <p>
+              <strong>대표원장 문종선 올림.</strong>
+            </p>
             {/* 24시간 연중무휴로 공휴일, 명절 없이 한밤중이라도 걱정없이
             {windowWidth > 800 ? <br /> : ", "}
             진료받을 수 있도록 하는 진료시스템을 마련하고 있습니다. */}

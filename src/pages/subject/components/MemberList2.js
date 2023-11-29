@@ -99,7 +99,7 @@ export function MemberItem({ visibleVetInfo }) {
                   sx={{
                     fontWeight: "400",
                     color: "#000000",
-                    maxWidth: "370px",
+                    // maxWidth: "370px",
                   }}
                 >
                   숙련된 전문 수의사가 안전하고 정확한 진단을 진행합니다.
@@ -291,6 +291,7 @@ const TextBox = styled(Box)`
   }
   @media screen and (max-width: 768px) {
     && {
+      padding: 0 calc(100vw * (100 / 1580));
       p.large {
         font-size: calc(100vw * (32 / 390));
       }
@@ -304,6 +305,7 @@ const TextBox = styled(Box)`
   }
   @media screen and (min-width: 767px) and (max-width: 1500px) {
     && {
+      padding: 0 calc(100vw * (100 / 1580));
       p.large {
         font-size: calc(100vw * (52 / 1240));
       }

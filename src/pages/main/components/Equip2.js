@@ -83,7 +83,8 @@ function Subject2() {
         >
           <p>SKY ANIMAL MEDICAL CENTER</p>
           <h2>
-            인천SKY동물메디컬센터의 <strong>최첨단 장비</strong>
+            {`인천SKY동물메디컬센터의 \n`}
+            <strong>최첨단 장비</strong>
           </h2>
         </div>
       </TextWrapper>
@@ -200,6 +201,9 @@ const TextWrapper = styled.div`
       @media screen and (max-width: 800px) {
         font-size: 1.5rem;
       }
+      @media screen and (max-width: 410px) {
+        white-space: pre-wrap;
+      }
     }
     p {
       font-weight: bold;
@@ -221,6 +225,7 @@ const ImgWrapper = styled.div`
 
   @media screen and (max-width: 690px) {
     flex-direction: column;
+    height: 70%;
   }
   @media screen and (max-width: 420px) {
     height: 70%;

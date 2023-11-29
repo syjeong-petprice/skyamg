@@ -35,7 +35,7 @@ export default function ActionAreaCard(props) {
       // }}
       >
         <Typography className="num">{props.index + 1}</Typography>
-        <Typography className="en">Safe & Professional</Typography>
+        <Typography className="en">{props.enTitle}</Typography>
         <Typography className="title">{props.title}</Typography>
         <Typography className="content">{props.content}</Typography>
       </Box>
@@ -85,7 +85,7 @@ const StyledBox = styled(Box)`
     transition: opacity 0.3s, transform 0.3s;
     opacity: 0;
     transform: translateY(100px);
-    width: 80%;    
+    width: 80%;
     display: flex;
     > img {
       width: 50%;
