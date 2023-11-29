@@ -83,7 +83,7 @@ function Preview() {
               </div>
             </div>
             <div className="slideImg imgThree">
-              <div className={isMobile ? "innerText_m" : "innerText"} >
+              <div className={isMobile ? "innerText_m" : "innerText"}>
                 <p>
                   <strong>최첨단 시스템 도입</strong>
                 </p>
@@ -172,7 +172,7 @@ const StyledSlider = styled(Slider)`
     position: relative;
     z-index: 2;
     width: 100vw;
-    height: 92vh;
+    height: 100vh;
 
     @media screen and (max-width: 1700px) {
       width: 100vw;
