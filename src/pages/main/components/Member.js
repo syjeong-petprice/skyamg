@@ -52,7 +52,7 @@ export function MemberItem({ visibleVetInfo }) {
                   p: "1rem",
                 }}
               >
-                <Typography sx={{ fontSize: "18px", mb: 2 }}>수의사</Typography>
+                {/* <Typography sx={{ fontSize: "18px", mb: 2 }}>수의사</Typography> */}
                 <Typography sx={{ fontSize: "30px", mb: 2 }}>
                   {vet.name}
                 </Typography>
