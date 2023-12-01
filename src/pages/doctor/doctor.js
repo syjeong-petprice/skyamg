@@ -37,8 +37,9 @@ function Doctor() {
           <div>
             <TextBox2>
               <StaffTitle>
-                "{vet.title}, {vet.position}"
+                {vet.title}, {vet.position}
               </StaffTitle>
+              <Greetings>"{vet.greetings}"</Greetings>
               <StaffName>
                 <Typography>수의사</Typography>
                 <Typography>{vet.name}</Typography>
@@ -79,8 +80,9 @@ function Doctor() {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <TextBox1>
               <StaffTitle>
-                "{vet.title}, {vet.position}"
+                {vet.title}, {vet.position}
               </StaffTitle>
+              <Greetings>"{vet.greetings}"</Greetings>
             </TextBox1>
             <div style={{ display: "flex" }}>
               <TextBox2>
@@ -195,6 +197,21 @@ const StaffTitle = styled(Typography)`
   @media screen and (max-width: 768px) {
     && {
       font-size: calc(100vw * (20 / 390));
+    }
+  }
+`;
+
+const Greetings = styled(Typography)`
+  && {
+    font-size: calc(100vw * (24 / 1240));
+    font-weight: 700;
+    opacity: 0.6;
+    margin-top: 0;
+    margin-bottom: calc(100vw * (30 / 1240));
+  }
+  @media screen and (max-width: 768px) {
+    && {
+      font-size: calc(100vw * (16 / 390));
     }
   }
 `;
