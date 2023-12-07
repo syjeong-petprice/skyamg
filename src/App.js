@@ -5,6 +5,7 @@ import Doctor from "./pages/doctor/doctor";
 import Subject from "./pages/subject/subject";
 import { Helmet } from "react-helmet-async";
 import Notice from "./pages/notice/notice";
+import Review from "./pages/main/components/Review";
 import NoticeDetails from "./pages/notice/notice-details";
 import Header from "./components/Header";
 import Links from "./components/Links";
@@ -62,7 +63,7 @@ function App() {
   return (
     <>
       <Header isScrolledDown={isScrolledDown} />
-      <Links />
+      {/* <Links /> */}
 
       <Helmet>
         <title>인천 SKY 동물의료센터</title>
@@ -75,6 +76,7 @@ function App() {
         <Route path="/vetMember/:id" element={<Doctor name={"vetMember"} />} />
         <Route path="/notice/:id" element={<NoticeDetails name={"notice"} />} />
         <Route path="/notice" element={<Notice name={"notice"} />} />
+        <Route path="/review" element={<Review name={"review"} />} />
       </Routes>
     </>
   );

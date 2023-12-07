@@ -15,6 +15,7 @@ import Notice from "./components/Notice";
 import Notice2 from "./components/Notice2";
 import Slider from "./components/Slider";
 import SubjectAll from "./components/SubjectAll";
+import Review from "./components/Review";
 
 function Main() {
   return (
@@ -25,7 +26,7 @@ function Main() {
       <Slider2 />
       <Introduce />
       <Youtube />
-
+      <Review />
       <Member />
 
       <Subject />
