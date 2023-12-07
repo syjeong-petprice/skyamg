@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import { Carousel, Tooltip } from "antd";
+import dayjs from "dayjs";
 
 // import img from "../../images/title/visual_greeting.jpeg";
 
@@ -17,7 +18,8 @@ function Review() {
 
   const [dataList, setDataList] = useState([]);
   const [slidesToShow, setSlidesToShow] = useState(3); // 캐러셀 초기 슬라이더 갯수 설정
-  // const result = getReview();
+  // const resultData = getReview();
+  // console.log(resultData);
   const result = {
     result: "ok",
     data: [
@@ -156,7 +158,7 @@ function Review() {
             dotPosition="bottom"
           >
             {dataList.map((item, index) => (
-              <div style={{ height: "fit-content" }}>
+              <div>
                 <div
                   style={{
                     margin: "5px 20px",
@@ -178,21 +180,30 @@ function Review() {
                   >
                     <div
                       style={{
+                        minHeight: "300px",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
                         textAlign: "center",
-                        padding: "16px",
-                        // border: "1px solid #ccc",
+                        padding: "20px",
                         borderRadius: "20px",
+                        boxShadow: "0 4px 8px rgb(0,0,0,0.2)",
+                        // border: "1px solid #ccc",
                         // backgroundColor: "#e2edf6",
-                        boxShadow: "0 4px 8px rgb(0,0,0,0.1)",
                       }}
                     >
-                      <p className="name">
-                        {maskedNickname(item.nickname)}님의 리뷰
-                      </p>
+                      <div>
+                        <p className="name">
+                          {maskedNickname(item.nickname)}님의 리뷰
+                        </p>
+                        <p className="content">
+                          {windowWidth < 576 || windowWidth > 768
+                            ? item.content
+                            : truncateText(item.content, 100)}
+                        </p>
+                      </div>
                       <p className="content">
-                        {windowWidth > 576
-                          ? truncateText(item.content, 100)
-                          : item.content}
+                        {dayjs(item.regDate).format("YYYY.MM.DD")}
                       </p>
                     </div>
                   </Tooltip>
@@ -212,7 +223,7 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%; /* 가로 폭 100%로 설정 */
-  padding: 5rem 1rem;
+  padding: 5rem 1rem 6rem 1rem;
   /* margin: 50px 42px 60px 42px; */
   /* background-color: whitesmoke; */
   & .name {
