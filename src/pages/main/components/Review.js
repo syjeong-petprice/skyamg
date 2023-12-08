@@ -109,9 +109,7 @@ function Review() {
   return (
     <>
       <Container>
-
         <TextWrapper ref={componentRef}>
-
           <div className={animate ? "animate" : ""}>
             <p style={{ margin: 0 }}>Review</p>
             <h2 style={{ margin: 0, marginBottom: '16px' }}>
@@ -168,14 +166,15 @@ function Review() {
                             {maskedNickname(item.nickname)}님의 리뷰
                           </p>
                           <p className="content">
+                          {dayjs(item.regDate).format("YYYY.MM")}
+                        </p>
+                          <p className="content">
                             {windowWidth < 576 || windowWidth > 768
                               ? item.content
                               : truncateText(item.content, 100)}
                           </p>
                         </div>
-                        <p className="content">
-                          {dayjs(item.regDate).format("YYYY.MM.DD")}
-                        </p>
+                        
                       </div>
                     </Tooltip>
                     :
@@ -206,10 +205,8 @@ function Review() {
                             : item.content}
                         </p>
                       </div>
-
                     </div>
                   }
-
                 </div>
               </div>
             ))}
