@@ -125,7 +125,7 @@ function Youtube() {
 						<p>SKY동물메디컬센터를 구독하고 최신 정보를 받아보세요.</p>
 					</div> */}
           <div style={{ marginBottom: "1rem" }}>
-            <a href="https://www.youtube.com/@skyamg" target="_blank">
+            <a href="https://www.youtube.com/@skyamg" target="_blank" rel="noreferrer">
               <Button variant="contained" color="primary">
                 채널 바로가기
               </Button>
@@ -185,7 +185,7 @@ const YoutubeContainer = styled.section`
   align-items: center;
   background-color: whitesmoke;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
 
   * {
     margin: 0;

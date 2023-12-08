@@ -158,7 +158,7 @@ function Review() {
             dotPosition="bottom"
           >
             {dataList.map((item, index) => (
-              <div>
+              <div key={item.idx}>
                 <div
                   style={{
                     margin: "5px 20px",
