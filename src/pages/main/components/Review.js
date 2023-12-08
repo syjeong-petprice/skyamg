@@ -1,13 +1,14 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { styled } from "styled-components";
 import { Carousel, Tooltip } from "antd";
 import dayjs from "dayjs";
+import { keyframes } from "styled-components";
 
 export async function getReview() {
   const response = await axios.get(
-    // "http://api.dev.vetell.kr/export/v1/homepageReview?vetIdx=6"
-    "http://localhost:3000/export/v1/homepageReview?vetIdx=6"
+    "http://api.dev.vetell.kr/export/v1/homepageReview?vetIdx=6"
+    //"http://localhost:3000/export/v1/homepageReview?vetIdx=6"
   );
   return response.data;
 }
@@ -18,6 +19,8 @@ function Review() {
   const [dataList, setDataList] = useState([]);
   const [slidesToShow, setSlidesToShow] = useState(3); // 캐러셀 초기 슬라이더 갯수 설정
 
+  const [animate, setAnimate] = useState(false);
+  const componentRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +41,32 @@ function Review() {
 
   }, []); // 빈 배열은 컴포넌트가 마운트될 때 한 번만 실행
 
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // 예시: 화면의 중간에 도달했을 때 애니메이션을 실행하려면
+      // const midScreen = window.innerHeight * 5.5;
+      const componentTop = componentRef.current.getBoundingClientRect().top;
+
+      // console.log('innerHeight : ', window.innerHeight);
+      // console.log('scrollY : ', window.scrollY);
+      // console.log('midScreen : ', midScreen);
+      if (componentTop < window.innerHeight) {
+        setAnimate(true);
+      }
+      // else {
+      //   setAnimate(false);
+      // }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // 컴포넌트 언마운트 시 이벤트 리스너 제거
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -80,24 +109,23 @@ function Review() {
   return (
     <>
       <Container>
-        <TitleWrapper>
-          <div>
-            <h2 style={{ fontSize: windowWidth > 800 ? "3rem" : "2rem" }}>
-              Reviews
+
+        <TextWrapper ref={componentRef}>
+
+          <div className={animate ? "animate" : ""}>
+            <p style={{ margin: 0 }}>Review</p>
+            <h2 style={{ margin: 0, marginBottom: '16px' }}>
+              <strong>리/얼/후/기</strong>
             </h2>
-            {/* <p>
-              우리 가족의 건강을 최우선으로 하며 믿음을 주는
-              인천SKY동물메디컬센터 의료진들입니다.
-            </p> */}
           </div>
-        </TitleWrapper>
+        </TextWrapper>
         <CarouselContainer>
           <StyledCarousel
             slidesToShow={slidesToShow}
             autoplay={true}
             autoplaySpeed={5000}
             dots={false}
-            // dotPosition="bottom"
+          // dotPosition="bottom"
           >
             {dataList.map((item, index) => (
               <div key={item.idx}>
@@ -108,19 +136,49 @@ function Review() {
                   }}
                 >
                   {slidesToShow === 2 ?
-                  <Tooltip
-                    title={item.content}
-                    overlayStyle={{
-                      letterSpacing: "1px",
-                      lineHeight: "1.5",
-                      maxWidth: "400px",
-                    }}
-                    overlayInnerStyle={{
-                      // backgroundColor: "whitesmoke",
-                      // color: "#000",
-                      padding: "10px 20px",
-                    }}
-                  >
+                    <Tooltip
+                      title={item.content}
+                      overlayStyle={{
+                        letterSpacing: "1px",
+                        lineHeight: "1.5",
+                        maxWidth: "400px",
+                      }}
+                      overlayInnerStyle={{
+                        // backgroundColor: "whitesmoke",
+                        // color: "#000",
+                        padding: "10px 20px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          minHeight: "300px",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          textAlign: "center",
+                          padding: "20px",
+                          borderRadius: "20px",
+                          boxShadow: "0 4px 8px rgb(0,0,0,0.2)",
+                          // border: "1px solid #ccc",
+                          // backgroundColor: "#e2edf6",
+                        }}
+                      >
+                        <div>
+                          <p className="name">
+                            {maskedNickname(item.nickname)}님의 리뷰
+                          </p>
+                          <p className="content">
+                            {windowWidth < 576 || windowWidth > 768
+                              ? item.content
+                              : truncateText(item.content, 100)}
+                          </p>
+                        </div>
+                        <p className="content">
+                          {dayjs(item.regDate).format("YYYY.MM.DD")}
+                        </p>
+                      </div>
+                    </Tooltip>
+                    :
                     <div
                       style={{
                         minHeight: "300px",
@@ -140,34 +198,7 @@ function Review() {
                           {maskedNickname(item.nickname)}님의 리뷰
                         </p>
                         <p className="content">
-                          {windowWidth < 576 || windowWidth > 768
-                            ? item.content
-                            : truncateText(item.content, 100)}
-                        </p>
-                      </div>
-                      <p className="content">
-                        {dayjs(item.regDate).format("YYYY.MM.DD")}
-                      </p>
-                    </div>
-                  </Tooltip>
-                  :
-                  <div
-                      style={{
-                        minHeight: "300px",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between",
-                        textAlign: "center",
-                        padding: "20px",
-                        borderRadius: "20px",
-                        boxShadow: "0 4px 8px rgb(0,0,0,0.2)",
-                        // border: "1px solid #ccc",
-                        // backgroundColor: "#e2edf6",
-                      }}
-                    >
-                      <div>
-                        <p className="name">
-                          {maskedNickname(item.nickname)}님의 리뷰
+                          {dayjs(item.regDate).format("YYYY.MM")}
                         </p>
                         <p className="content">
                           {slidesToShow === 2
@@ -175,9 +206,7 @@ function Review() {
                             : item.content}
                         </p>
                       </div>
-                      <p className="content">
-                        {dayjs(item.regDate).format("YYYY.MM.DD")}
-                      </p>
+
                     </div>
                   }
 
@@ -249,6 +278,57 @@ const TitleWrapper = styled.div`
       color: #000048;
       margin: 5px;
     }
+  }
+`;
+
+
+const slideDown = keyframes`
+    from {
+        transform: translate(0, -50%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+`;
+
+
+const TextWrapper = styled.div`
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: #403631;
+
+  @media screen and (max-width: 500px) {
+    justify-content: center;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: normal;
+      @media screen and (max-width: 690px) {
+        font-size: 2rem;
+      }
+    }
+    p {
+      font-weight: bold;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  }
+
+  .animate {
+    animation: ${slideDown} 4s ease;
   }
 `;
 
