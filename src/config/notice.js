@@ -12,6 +12,13 @@ import notice_5 from "../images/title/visual_incheon.jpeg";
 
 const notice = [
   {
+    id: 6,
+    title: `봉사활동을 다녀 왔습니다~  ^^ _ 서울 용산 나비야사랑해`,
+    content: `안녕하세요 인천시 남동구 구월동에 위치한 인천24시동물병원 인천스카이동물메디컬센터 입니다.`,
+    img: "https://mblogthumb-phinf.pstatic.net/MjAyMzEyMDRfMjEw/MDAxNzAxNjc1MTU3ODUx.WjAt75KGAAiRPPaQimGEITvN764_lsDe4DDmZUaD9VUg.4_oxi3wnf_I8OYCILp4WDSFCR1Ue2bIOhtBPmU0kfEgg.JPEG.skyamg_ic/%EB%82%98%EB%B9%84%EC%95%BC%EC%82%AC%EB%9E%91%ED%95%B4_1.jpg?type=w800",
+    link: "https://m.blog.naver.com/skyamg_ic/223282651223"
+  },
+  {
     id: 4,
     title: `주차안내 및 오시는 길`,
     content: `안녕하세요
