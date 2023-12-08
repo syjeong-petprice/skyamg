@@ -7,7 +7,7 @@ import { keyframes } from "styled-components";
 
 export async function getReview() {
   const response = await axios.get(
-    "http://api.dev.vetell.kr/export/v1/homepageReview?vetIdx=6"
+    "https://api.vetell.kr/export/v1/homepageReview?vetIdx=6"
     //"http://localhost:3000/export/v1/homepageReview?vetIdx=6"
   );
   return response.data;
