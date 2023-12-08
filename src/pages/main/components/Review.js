@@ -165,6 +165,7 @@ function Review() {
                     boxSizing: "border-box",
                   }}
                 >
+                  {windowWidth >= 576 && windowWidth <= 768 ?
                   <Tooltip
                     title={item.content}
                     overlayStyle={{
@@ -207,6 +208,37 @@ function Review() {
                       </p>
                     </div>
                   </Tooltip>
+                  :
+                  <div
+                      style={{
+                        minHeight: "300px",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        textAlign: "center",
+                        padding: "20px",
+                        borderRadius: "20px",
+                        boxShadow: "0 4px 8px rgb(0,0,0,0.2)",
+                        // border: "1px solid #ccc",
+                        // backgroundColor: "#e2edf6",
+                      }}
+                    >
+                      <div>
+                        <p className="name">
+                          {maskedNickname(item.nickname)}님의 리뷰
+                        </p>
+                        <p className="content">
+                          {windowWidth < 576 || windowWidth > 768
+                            ? item.content
+                            : truncateText(item.content, 100)}
+                        </p>
+                      </div>
+                      <p className="content">
+                        {dayjs(item.regDate).format("YYYY.MM.DD")}
+                      </p>
+                    </div>
+                  }
+
                 </div>
               </div>
             ))}
