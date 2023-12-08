@@ -49,8 +49,12 @@ function Notice() {
 								className="noticeInnerWrapper"
 								key={notice.id}
 								onClick={() => {
-									setItem(notice);
-									handleOpen();
+									if (notice.link) {
+										window.open(notice.link, '_blank');
+									} else {
+										setItem(notice);
+										handleOpen();
+									}
 								}}
 							>
 								<div className="imgWrapper">
