@@ -2,7 +2,7 @@ import { styled, keyframes } from "styled-components";
 import imgTwo from "../../../images/resource/youtube/01.png";
 import imgOne from "../../../images/resource/youtube/KakaoTalk_Photo_2023-11-13-11-55-23.png";
 import imgThree from "../../../images/resource/youtube/3.png";
-import imgFour from "../../../images/resource/youtube/4.png";
+// import imgFour from "../../../images/resource/youtube/4.png";
 import youtubeLogo from "../../../images/resource/youtube/youtubelogo.png";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
@@ -24,12 +24,12 @@ const youtubeInfo = [
     code: "rKl5euhr98k",
     img: imgTwo,
   },
-  // {
-  //   id: 3,
-  //   title: "닥스훈트 디스크 MRI검사 디스크 수술 인천동물병원",
-  //   code: "DtuyDsVEUcQ?si=A2PN1e9qAECWC8So",
-  //   img: imgThree,
-  // },
+  {
+    id: 3,
+    title: "간식 얻어먹으려고 다리 아픈척 꾀병 부리는 강아지? ㅋㅋㅋ",
+    code: "hvVf19mZbYY?si=wvFTicnehkWtBU-M",
+    img: imgThree,
+  },
   // {
   //   id: 4,
   //   title: "부평스카이동물의료센터의 수술 후 물리치료 모습",
@@ -39,7 +39,7 @@ const youtubeInfo = [
 ];
 
 function Youtube() {
-  const [title, setTitle] = useState("nA7ELDQ6x7k");
+  const [title, setTitle] = useState("hvVf19mZbYY?si=wvFTicnehkWtBU-M");
   const [isMobile, setIsMobile] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
   //   const componentRef = useRef(null);
@@ -125,7 +125,11 @@ function Youtube() {
 						<p>SKY동물메디컬센터를 구독하고 최신 정보를 받아보세요.</p>
 					</div> */}
           <div style={{ marginBottom: "1rem" }}>
-            <a href="https://www.youtube.com/@skyamg" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.youtube.com/@skyamg"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button variant="contained" color="primary">
                 채널 바로가기
               </Button>
@@ -467,13 +471,13 @@ const StyledSlider = styled(Slider)`
       background-size: cover;
       background-position: center;
     }
-    /* .imgThree {
+    .imgThree {
       background-image: url(${imgThree});
       background-size: cover;
       background-position: center;
     }
-    .imgFour {
-      background-image: url(${imgFour});
+    /* .imgFour {
+      background-image: url();
       background-size: cover;
       background-position: center;
     } */
