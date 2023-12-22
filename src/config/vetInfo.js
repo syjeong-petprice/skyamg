@@ -1,7 +1,7 @@
 import vet1 from "../images/vet2/문종선.png";
 import vet2 from "../images/vet2/정다슬.png";
 import vet3 from "../images/vet2/김도희.png";
-import vet4 from "../images/vet2/최동준.png";
+// import vet4 from "../images/vet2/최동준.png";
 import vet5 from "../images/vet2/박설기.png";
 import vet6 from "../images/vet2/박주향.png";
 import vet7 from "../images/vet2/최유진.png";
@@ -16,7 +16,7 @@ import vet14 from "../images/vet2/이한중.png";
 import tvet1 from "../images/vet/문종선.png";
 import tvet2 from "../images/vet/정다슬.png";
 import tvet3 from "../images/vet/김도희.png";
-import tvet4 from "../images/vet/최동준.png";
+// import tvet4 from "../images/vet/최동준.png";
 import tvet5 from "../images/vet/박설기.png";
 import tvet6 from "../images/vet/박주향.png";
 import tvet7 from "../images/vet/최유진.png";
@@ -119,29 +119,29 @@ const vetInfo = [
     paper: [],
     completion: [],
   },
-  {
-    id: 4,
-    position: "외과과장",
-    name: "최동준",
-    img: vet4,
-    timg: tvet4,
-    title: "건국대학교 수의외과학 석사",
-    greetings:
-      "근거 중심의 정확한 지식을 바탕으로 진정성 있는 수의사가 되도록 최선을 다하겠습니다.",
-    history: [
-      "경북대학교 수의과대학 졸업",
-      "해마루 2차진료 동물병원 진료수의사",
-      "건국대학교 수의외과학 석사 수료",
-      "건국대학교 부속동물병원 외과 진료수의사",
-      "건국대학교 수의학부 수의외과학 조교",
-      "현)인천SKY동물메디컬센터 외과과장",
-    ],
-    paper: [],
-    completion: [
-      "AOVET Principle in small animal management course",
-      "SACEC DFO Seminar 수료",
-    ],
-  },
+  // {
+  //   id: 4,
+  //   position: "외과과장",
+  //   name: "최동준",
+  //   img: vet4,
+  //   timg: tvet4,
+  //   title: "건국대학교 수의외과학 석사",
+  //   greetings:
+  //     "근거 중심의 정확한 지식을 바탕으로 진정성 있는 수의사가 되도록 최선을 다하겠습니다.",
+  //   history: [
+  //     "경북대학교 수의과대학 졸업",
+  //     "해마루 2차진료 동물병원 진료수의사",
+  //     "건국대학교 수의외과학 석사 수료",
+  //     "건국대학교 부속동물병원 외과 진료수의사",
+  //     "건국대학교 수의학부 수의외과학 조교",
+  //     "현)인천SKY동물메디컬센터 외과과장",
+  //   ],
+  //   paper: [],
+  //   completion: [
+  //     "AOVET Principle in small animal management course",
+  //     "SACEC DFO Seminar 수료",
+  //   ],
+  // },
   {
     id: 14,
     position: "외과과장",

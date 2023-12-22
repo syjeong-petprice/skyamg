@@ -142,7 +142,7 @@ const centerInfo = [
     id: 2,
     primaryImg: img101,
     titleImg: titleImg2,
-    vetMemberIdx: [3, 4, 14],
+    vetMemberIdx: [3, 14],
     title: "정형신경센터",
     enTitle: "Orthopedic & Neurological Surgery center",
     subTitle: `외과학전공의 및 수술 전문팀
