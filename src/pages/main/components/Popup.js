@@ -13,13 +13,13 @@ const popup_info = [
     content: "",
     img: popup1,
   },
-  // 예시 확인 후 아래 요소는 주석처리 해주세요.
-  {
-    id: 2,
-    title: "두번째",
-    content: "두번째 팝업은 내용이 있어요.",
-    img: popup2,
-  },
+  //   예시 확인 후 아래 요소는 주석처리 해주세요.
+  //   {
+  //     id: 2,
+  //     title: "두번째",
+  //     content: "두번째 팝업은 내용이 있어요.",
+  //     img: popup2,
+  //   },
 ];
 
 function Popup() {
@@ -94,13 +94,18 @@ function Popup() {
           일주일간 보지 않기
         </Checkbox>,
       ]}
-      style={{ top: 20 }}
-      heigth={"100%"}
+      style={{
+        top: popup_info[0].content && 20,
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
       {popup_info.length === 1 ? (
-        <div>
-          <p>{popup_info[0].content}</p>
-          <Image preview={false} src={popup_info[0].img} width={"100%"} />
+        <div
+          style={{ marginTop: "30px", overflowY: "auto", maxHeight: "80vh" }}
+        >
+          <Image src={popup_info[0].img} width={"100%"} />
+          {popup_info[0].content && <p>{popup_info[0].content}</p>}
         </div>
       ) : (
         <Tabs
@@ -110,8 +115,10 @@ function Popup() {
         >
           {popup_info.map((popup) => (
             <Tabs.TabPane tab={popup.title} key={popup.id}>
-              <Image preview={false} src={popup.img} width={"100%"} />
-              <p>{popup.content}</p>
+              <div style={{ overflowY: "auto", maxHeight: "80vh" }}>
+                <Image src={popup.img} width={"100%"} />
+                {popup.content && <p>{popup.content}</p>}
+              </div>
             </Tabs.TabPane>
           ))}
         </Tabs>
