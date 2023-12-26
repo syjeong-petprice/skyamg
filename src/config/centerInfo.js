@@ -12,12 +12,17 @@ import titleImg5 from "../images/resource/subjects/gsimg_gs.jpg";
 import sec3img1 from "../images/resource/subjects/section3_img01.png";
 import sec3img2 from "../images/resource/subjects/section3_img02.png";
 import sec3img3 from "../images/resource/subjects/section3_img03.png";
-import sec3img52 from "../images/resource/subjects/sec3/5-2.jpg";
+import sec3img21 from "../images/resource/images/DSC06699.jpg"; // 수술실
 import sec3img22 from "../images/resource/subjects/mgimg_endocrine.jpg";
 import sec3img31 from "../images/resource/subjects/sec3/3-1.jpg";
 import sec3img32 from "../images/resource/subjects/sec3/3-2.jpg";
 import sec3img33 from "../images/resource/subjects/sec3/3-3.jpg";
-import sec3img41 from "../images/resource/subjects/sec3/5-1.png";
+import sec3img41 from "../images/resource/subjects/sec3/4-1.png";
+import sec3img42 from "../images/resource/subjects/sec3/4-2.jpg";
+import sec3img43 from "../images/resource/subjects/sec3/4-3.png";
+import sec3img51 from "../images/resource/subjects/sec3/5-1.jpg";
+import sec3img52 from "../images/resource/subjects/sec3/5-2.jpg";
+import sec3img53 from "../images/resource/subjects/sec3/5-3.jpg";
 
 import equip1 from "../images/resource/subjects/equip/image1.png";
 import equip2 from "../images/resource/subjects/equip/image2.png";
@@ -50,19 +55,19 @@ const centerInfo = [
       {
         img: sec3img1,
         title: "영상의학전공의 및 마취 전문 인력",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `반려동물은 품종, 나이, 기저질환 등의 차이로 인해 환자 별 마취 안정성의 편차가 큰 편입니다. 영상의학전공의의 관리하, 마취 전문 인력이 상주하고 있어 검사 과정에서의 마취 안정성을 확보하고 있습니다.`,
       },
       {
         img: sec3img2,
         title: "최상급 사양의 마취 장비",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `GE사의 Healthcare 9100c NXT는 미숙 신생아에게도 적용할 수 있는 환기 시스템을 갖추고 있어 마취 심도에 따라서 호흡 조절이 가능하기에 저산소증 및 폐손상을 최소화시킬 수 있습니다.`,
       },
       {
         img: sec3img3,
         title: "대학병원급 연계 진료 시스템",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `SKY동물메디컬센터는 최상급 의료기관과 동일하게 영상 검사 이후, 응급의학과, 내과, 외과와의 협진을 통하여 질환 치료를 one-stop으로 이어갈 수 있는 시스템을 구축하고 있습니다.`,
       },
     ],
@@ -156,21 +161,21 @@ const centerInfo = [
     },
     sec3: [
       {
-        img: sec3img1,
+        img: sec3img21,
         title: "외과학전공의 및 수술 전문팀",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `외과학 석/박사 출신의 수의사가 상주하고 있으며 모든 수술의 집도를 담당하여 성공률을 높이고 있으며, 수술 전담 테크니션과 구성된 수술팀이 항시 수술실과 수술장비의 멸균 및 소독에 힘쓰고 있습니다.`,
       },
       {
         img: sec3img22,
         title: "철저한 수술 전 검사",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `치밀한 수술 전 검사를 통해 반드시 필요한 수술만을 실시하는 것을 지향하고 있습니다. 영상진단센터 및 내과센터의 사전 체크 후, 수술에 임하고 있습니다.`,
       },
       {
         img: sec3img33,
         title: "한방치료 병행",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `통증관리 및 재활에 있어 한방치료센터와의 협진을 통해 술 후 안전하고 빠른 회복에 집중하고 있습니다.`,
       },
     ],
@@ -260,19 +265,19 @@ const centerInfo = [
       {
         img: sec3img31,
         title: "심장, 신장질환 특화",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `심장, 신장은 긴밀하게 연결되어 있어 치료 과정에서 항상 함께 고려해야하는 장기입니다. 투여 약물의 결정은 내과전공의 및 숙련된 수의사에 의해 이루어지며 약물 사용의 효과 및 부작용, 합병증에 대한 고지 및 충분한 설명이 이루어집니다.`,
       },
       {
         img: sec3img32,
         title: "고양이 의료시설 분리",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `고양이 진료실 및 입원실을 별도로 두어 통원 및 입원 치료 과정에서의 스트레스 최소화에 힘쓰고 있습니다.`,
       },
       {
         img: sec3img33,
         title: "한방치료 병행",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `중증 내과환자의 치료 과정을 양한방의 협진을 통해 다각적인 관점으로 바라보려고 노력하고 있습니다. 수의한방침치료인증과정을 수료한 다수의 수의사가 내과질환 치료에 함께 임하고 있습니다.`,
       },
     ],
@@ -359,12 +364,12 @@ const centerInfo = [
         content: `세계적인 동물 한방 및 재활 전문 교육기관인 Chi university에서 공인한 인증과정을 수료한 수의사들의 시침이 이루어집니다.`,
       },
       {
-        img: sec3img2,
+        img: sec3img42,
         title: "반복적인 세션 치료",
         content: `여러 번의 시침이 이루어질 때 효과가 더욱 극대화되는 한방치료의 특성을 고려하여, 일회성 시술로 끝내지 않고 환자 별로 필요한 혈자리 및 침법을 선택하여 주기적인 반복 치료를 실시하고 있습니다.`,
       },
       {
-        img: sec3img3,
+        img: sec3img43,
         title: "동물전용 한방의료기구 사용",
         content: `인의용 제품을 겸용하지 않고, 동물전용으로 개발된 전침기, 침틀, 재활기구를 사용하여 반려동물에게 최적화된 한방치료를 실시합니다.`,
       },
@@ -447,21 +452,21 @@ const centerInfo = [
     },
     sec3: [
       {
-        img: sec3img1,
+        img: sec3img51,
         title: "응급의학전공의 진료",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `응급수의학전공의가 교통사고, 쇼크, 중독 등의 응급상황에 대하여 신속한 치료를 실시합니다.`,
       },
       {
         img: sec3img52,
         title: "전 입원장의 ICU화",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `호흡이 불안정한 응급환자들의 관리를 위해 모든 입원장은 독립적으로 고압산소공급이 가능하도록 설계되어 있습니다.`,
       },
       {
-        img: sec3img3,
+        img: sec3img53,
         title: "외,내과와의 긴밀한 협진",
-        enTitle: "Safe & Professional",
+        enTitle: "",
         content: `응급상황을 벗어난 중증환자가 신속하게 다음 단계로 넘어갈 수 있도록 모든 치료 과정에 외과, 내과의와의 협진이 이루어집니다.`,
       },
     ],
