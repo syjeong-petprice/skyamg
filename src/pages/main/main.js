@@ -16,6 +16,7 @@ import Notice2 from "./components/Notice2";
 import Slider from "./components/Slider";
 import SubjectAll from "./components/SubjectAll";
 import Review from "./components/Review";
+import Popup from "./components/Popup";
 
 function Main() {
   return (
@@ -23,6 +24,7 @@ function Main() {
       <Helmet>
         <title>인천스카이동물메디컬센터</title>
       </Helmet>
+      <Popup open={true} />
       <Slider2 />
       <Introduce />
       <Youtube />
