@@ -3,11 +3,22 @@ import { styled } from "styled-components";
 import Slider from "react-slick";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import imgOne from "../../../images/resource/images/대기실.jpg";
 import img1 from "../../../images/resource/images/DSC06702.jpg";
 import img2 from "../../../images/resource/images/DSC06706.jpg";
 import img3 from "../../../images/resource/images/DSC06711.jpg";
-import img4 from "../../../images/resource/images/DSC06699.jpg";
+import img4 from "../../../images/resource/images/DSC06699.jpg"; // 수술실
+import img5 from "../../../images/resource/images/DSC06764.jpg"; // 진료실
+import img6 from "../../../images/resource/images/DSC06759.jpg"; // 고객공간
+import img7 from "../../../images/resource/images/DSC06756.jpg"; // 고객공간
+import img8 from "../../../images/resource/images/DSC06796.jpg"; // MRI
+import img9 from "../../../images/resource/images/DSC06793.jpg"; // MRI
+import img10 from "../../../images/resource/images/DSC06791.jpg"; // CT
+import img11 from "../../../images/resource/images/DSC06786.jpg"; // CT
+import img12 from "../../../images/resource/images/DSC06784.jpg"; // 수술실
+import img13 from "../../../images/resource/images/DSC06783.jpg"; // 수술실
+import img14 from "../../../images/resource/images/DSC06778.jpg"; // X-ray실
+import img15 from "../../../images/resource/images/DSC06769.jpg"; // 입원실
+import imgOne from "../../../images/resource/images/대기실.jpg";
 import imgTwo from "../../../images/resource/images/스카이입원실.jpeg";
 import imgThree from "../../../images/resource/images/스카이입원실_2.jpeg";
 import imgFour from "../../../images/resource/images/스카이목욕실.jpeg";
@@ -81,13 +92,19 @@ function Preview() {
             <div className="slideImg imgOne">
               <p>고객공간</p>
             </div>
-            <div className="slideImg img1">
-              <p>고객공간</p>
-            </div>
             <div className="slideImg img2">
               <p>고객공간</p>
             </div>
-            <div className="slideImg imgTwo">
+            <div className="slideImg img6">
+              <p>고객공간</p>
+            </div>
+            <div className="slideImg img7">
+              <p>고객공간</p>
+            </div>
+            <div className="slideImg img5">
+              <p>진료실</p>
+            </div>
+            <div className="slideImg img15">
               <p>강아지 치료실&입원실</p>
             </div>
             <div className="slideImg imgThree">
@@ -96,23 +113,23 @@ function Preview() {
             <div className="slideImg imgFour">
               <p>대형견입원실</p>
             </div>
-            <div className="slideImg imgFive">
+            <div className="slideImg img14">
               <p>방사선실</p>
             </div>
-            <div className="slideImg imgSix">
-              <p>수술실</p>
-            </div>
-            <div className="slideImg imgSeven">
-              <p>수술실</p>
-            </div>
-            <div className="slideImg img4">
+            <div className="slideImg img13">
               <p>수술실</p>
             </div>
             <div className="slideImg imgEight">
               <p>초음파실</p>
             </div>
-            <div className="slideImg imgNine">
+            <div className="slideImg img8">
               <p>MRI실</p>
+            </div>
+            <div className="slideImg img9">
+              <p>MRI실</p>
+            </div>
+            <div className="slideImg img10">
+              <p>CT실</p>
             </div>
             <div className="slideImg imgTen">
               <p>리셉션</p>
@@ -319,6 +336,61 @@ const StyledSlider = styled(Slider)`
     }
     .img4 {
       background-image: url(${img4});
+      background-size: cover;
+      background-position: center;
+    }
+    .img5 {
+      background-image: url(${img5});
+      background-size: cover;
+      background-position: center;
+    }
+    .img6 {
+      background-image: url(${img6});
+      background-size: cover;
+      background-position: center;
+    }
+    .img7 {
+      background-image: url(${img7});
+      background-size: cover;
+      background-position: center;
+    }
+    .img8 {
+      background-image: url(${img8});
+      background-size: cover;
+      background-position: center;
+    }
+    .img9 {
+      background-image: url(${img9});
+      background-size: cover;
+      background-position: center;
+    }
+    .img10 {
+      background-image: url(${img10});
+      background-size: cover;
+      background-position: center;
+    }
+    .img11 {
+      background-image: url(${img11});
+      background-size: cover;
+      background-position: center;
+    }
+    .img12 {
+      background-image: url(${img12});
+      background-size: cover;
+      background-position: center;
+    }
+    .img13 {
+      background-image: url(${img13});
+      background-size: cover;
+      background-position: center;
+    }
+    .img14 {
+      background-image: url(${img14});
+      background-size: cover;
+      background-position: center;
+    }
+    .img15 {
+      background-image: url(${img15});
       background-size: cover;
       background-position: center;
     }
