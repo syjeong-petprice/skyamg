@@ -92,14 +92,14 @@ function Preview() {
             <div className="slideImg imgOne">
               <p>고객공간</p>
             </div>
-            <div className="slideImg img2">
-              <p>고객공간</p>
-            </div>
             <div className="slideImg img6">
               <p>고객공간</p>
             </div>
             <div className="slideImg img7">
               <p>고객공간</p>
+            </div>
+            <div className="slideImg img2">
+              <p>면회장</p>
             </div>
             <div className="slideImg img5">
               <p>진료실</p>
