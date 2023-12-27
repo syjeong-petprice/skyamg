@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { Modal, Tabs, Checkbox, Image } from "antd";
+import Button from "@mui/material/Button";
 import dayjs from "dayjs";
 import popup1 from "../../../images/popup/인천스카이새해인사_팝업.jpg";
 import popup2 from "../../../images/resource/youtube/01.png";
@@ -22,11 +24,39 @@ const popup_info = [
   //   },
 ];
 
+export async function getPopup() {
+  const response = await axios.get(
+    "http://api.dev.vetell.kr/export/v1/homepageBanner?vetIdx=6"
+    //"http://localhost:3000/export/v1/homepageBanner?vetIdx=6"
+  );
+  return response.data;
+}
+
 function Popup() {
+  const [popupList, setPopupList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const STORAGE_KEY = "ignoreForAWeek";
   const [ignoredForAWeek, setIgnoredForAWeek] = useState(false);
   const [activeTab, setActiveTab] = useState("1"); // 현재 선택된 탭의 키
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // API 호출
+        const res = await getPopup();
+        // 데이터 받아오면 상태 업데이트
+        if (res.result === "ok") {
+          setPopupList(res.data)
+          console.log(res.data)
+        } else console.log(res.result)
+      } catch (error) {
+        console.error('Error fetching review data:', error);
+      }
+    };
+
+    fetchData(); // 함수 호출
+
+  }, []); // 빈 배열은 컴포넌트가 마운트될 때 한 번만 실행
 
   useEffect(() => {
     // 로컬 스토리지에서 저장된 상태와 날짜를 불러옵니다.
@@ -95,17 +125,18 @@ function Popup() {
         </Checkbox>,
       ]}
       style={{
-        top: popup_info[0].content && 20,
+        top: popupList[0]?.content && 20,
         display: "flex",
         flexDirection: "column",
       }}
     >
-      {popup_info.length === 1 ? (
+      {popupList.length === 1 ? (
         <div
           style={{ marginTop: "30px", overflowY: "auto", maxHeight: "80vh" }}
         >
-          <Image src={popup_info[0].img} width={"100%"} />
-          {popup_info[0].content && <p>{popup_info[0].content}</p>}
+          <Image src={popupList[0].imageUrl} width={"100%"} />
+          {popupList[0].content && <p>{popupList[0].content}</p>}
+          {popupList[0].linkBtn && <Button color="primary" sx={{ fontWeight: 700, fontSize: "18px", color: "#000", bgcolor: "#fff", width: "100%", mt: 1, border: "1px solid #ccc" }}><Link to={popupList[0].link} target="_blank" >{popupList[0].linkBtn}</Link></Button>}
         </div>
       ) : (
         <Tabs
@@ -113,11 +144,12 @@ function Popup() {
           activeKey={activeTab}
           onChange={handleTabChange}
         >
-          {popup_info.map((popup) => (
-            <Tabs.TabPane tab={popup.title} key={popup.id}>
+          {popupList.map((popup) => (
+            <Tabs.TabPane tab={popup.title} key={popup.idx}>
               <div style={{ overflowY: "auto", maxHeight: "80vh" }}>
-                <Image src={popup.img} width={"100%"} />
+                <Image src={popup.imageUrl} width={"100%"} />
                 {popup.content && <p>{popup.content}</p>}
+                {popup.linkBtn && <Button color="primary" sx={{ fontWeight: 700, fontSize: "18px", color: "#000", bgcolor: "#fff", width: "100%", mt: 1, border: "1px solid #ccc" }}><Link to={popup.link} target="_blank" >{popup.linkBtn}</Link></Button>}
               </div>
             </Tabs.TabPane>
           ))}
