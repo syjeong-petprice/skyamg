@@ -1,28 +1,9 @@
 import axios from "axios";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { styled } from "styled-components";
 import { Modal, Tabs, Checkbox, Image } from "antd";
 import Button from "@mui/material/Button";
 import dayjs from "dayjs";
-import popup1 from "../../../images/popup/인천스카이새해인사_팝업.jpg";
-import popup2 from "../../../images/resource/youtube/01.png";
-
-const popup_info = [
-  {
-    id: 1,
-    title: "첫번째",
-    content: "",
-    img: popup1,
-  },
-  //   예시 확인 후 아래 요소는 주석처리 해주세요.
-  //   {
-  //     id: 2,
-  //     title: "두번째",
-  //     content: "두번째 팝업은 내용이 있어요.",
-  //     img: popup2,
-  //   },
-];
 
 export async function getPopup() {
   const response = await axios.get(
