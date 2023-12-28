@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 
 export async function getPopup() {
   const response = await axios.get(
-    "http://api.dev.vetell.kr/export/v1/homepageBanner?vetIdx=6"
+    "http://api.vetell.kr/export/v1/homepageBanner?vetIdx=6"
     //"http://localhost:3000/export/v1/homepageBanner?vetIdx=6"
   );
   return response.data;
