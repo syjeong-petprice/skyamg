@@ -8,6 +8,7 @@ import dayjs from "dayjs";
 export async function getPopup() {
   const response = await axios.get(
     "https://api.vetell.kr/export/v1/homepageBanner?vetIdx=6"
+    // "http://api.dev.vetell.kr/export/v1/homepageBanner?vetIdx=6"
     //"http://localhost:3000/export/v1/homepageBanner?vetIdx=6"
   );
   return response.data;
@@ -18,7 +19,7 @@ function Popup() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const STORAGE_KEY = "ignoreForAWeek";
   const [ignoredForAWeek, setIgnoredForAWeek] = useState(false);
-  const [activeTab, setActiveTab] = useState("1"); // 현재 선택된 탭의 키
+  const [activeTab, setActiveTab] = useState(); // 현재 선택된 탭의 키
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +29,7 @@ function Popup() {
         // 데이터 받아오면 상태 업데이트
         if (res.result === "ok") {
           setPopupList(res.data);
+          setActiveTab(String(res.data[0].idx));
           console.log(res.data);
         } else console.log(res.result);
       } catch (error) {
@@ -57,7 +59,7 @@ function Popup() {
         isWeekAgo(storedDate))
     ) {
       // 노출중인 팝업리스트가 변경되었거나, 일주일이 지났다면 상태 초기화
-      console.log("초기화");
+      // console.log("초기화");
       setIgnoredForAWeek(false);
       localStorage.removeItem(STORAGE_KEY);
       localStorage.removeItem(`${STORAGE_KEY}_date`);
@@ -80,12 +82,12 @@ function Popup() {
   const isPopupListEqual = (list1, list2) => {
     const sortedList1 = [...list1].sort((a, b) => a - b);
     const sortedList2 = [...list2].sort((a, b) => a - b);
-    console.log(
-      "test",
-      JSON.stringify(sortedList1),
-      JSON.stringify(sortedList2),
-      JSON.stringify(sortedList1) === JSON.stringify(sortedList2)
-    );
+    // console.log(
+    //   "test",
+    //   JSON.stringify(sortedList1),
+    //   JSON.stringify(sortedList2),
+    //   JSON.stringify(sortedList1) === JSON.stringify(sortedList2)
+    // );
     return JSON.stringify(sortedList1) === JSON.stringify(sortedList2);
   };
 
@@ -206,20 +208,18 @@ function Popup() {
           {popupList[0].content && <p>{popupList[0].content}</p>}
         </div>
       ) : (
-        <Tabs
-          defaultActiveKey="1"
-          activeKey={activeTab}
-          onChange={handleTabChange}
-        >
-          {popupList.map((popup) => (
-            <Tabs.TabPane tab={popup.title} key={popup.idx}>
-              <div style={{ overflowY: "auto", maxHeight: "70vh" }}>
-                <Image src={popup.imageUrl} width={"100%"} />
-                {popup.content && <p>{popup.content}</p>}
-              </div>
-            </Tabs.TabPane>
-          ))}
-        </Tabs>
+        activeTab && (
+          <Tabs activeKey={activeTab} onChange={handleTabChange}>
+            {popupList.map((popup) => (
+              <Tabs.TabPane tab={popup.title} key={popup.idx}>
+                <div style={{ overflowY: "auto", maxHeight: "70vh" }}>
+                  <Image src={popup.imageUrl} width={"100%"} />
+                  {popup.content && <p>{popup.content}</p>}
+                </div>
+              </Tabs.TabPane>
+            ))}
+          </Tabs>
+        )
       )}
     </Modal>
   );
