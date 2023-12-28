@@ -46,16 +46,15 @@ function Popup() {
         const res = await getPopup();
         // 데이터 받아오면 상태 업데이트
         if (res.result === "ok") {
-          setPopupList(res.data)
-          console.log(res.data)
-        } else console.log(res.result)
+          setPopupList(res.data);
+          console.log(res.data);
+        } else console.log(res.result);
       } catch (error) {
-        console.error('Error fetching review data:', error);
+        console.error("Error fetching review data:", error);
       }
     };
 
     fetchData(); // 함수 호출
-
   }, []); // 빈 배열은 컴포넌트가 마운트될 때 한 번만 실행
 
   useEffect(() => {
@@ -119,24 +118,77 @@ function Popup() {
       //   title={popup_info[0].title}
       open={isModalOpen && !ignoredForAWeek}
       onCancel={handleClose}
+      maskClosable={false}
       footer={[
+        popupList.length === 1 && popupList[0].link && (
+          <Button
+            color="primary"
+            sx={{
+              fontWeight: 700,
+              fontSize: "18px",
+              color: "#000",
+              bgcolor: "#fff",
+              width: "100%",
+              mb: 1,
+              border: "1px solid #ccc",
+            }}
+            key="singlePopupButton"
+          >
+            <Link to={popupList[0].link} target="_blank">
+              {popupList[0].linkBtn}
+            </Link>
+          </Button>
+        ),
+        popupList.length > 1 &&
+          popupList.find((popup) => popup.idx === Number(activeTab)).link && (
+            <Button
+              color="primary"
+              sx={{
+                fontWeight: 700,
+                fontSize: "18px",
+                color: "#000",
+                bgcolor: "#fff",
+                width: "100%",
+                mb: 1,
+                border: "1px solid #ccc",
+              }}
+              key={`activePopupButton`}
+              onClick={() =>
+                console.log(
+                  popupList.find((popup) => popup.idx === Number(activeTab))
+                )
+              }
+            >
+              <Link
+                to={
+                  popupList.find((popup) => popup.idx === Number(activeTab))
+                    .link
+                }
+                target="_blank"
+              >
+                {
+                  popupList.find((popup) => popup.idx === Number(activeTab))
+                    .linkBtn
+                }
+              </Link>
+            </Button>
+          ),
         <Checkbox checked={ignoredForAWeek} onChange={handleIgnoreForAWeek}>
           일주일간 보지 않기
         </Checkbox>,
       ]}
       style={{
-        top: popupList[0]?.content && 20,
+        top: (popupList[0]?.content || popupList[0]?.link) && 20,
         display: "flex",
         flexDirection: "column",
       }}
     >
       {popupList.length === 1 ? (
         <div
-          style={{ marginTop: "30px", overflowY: "auto", maxHeight: "80vh" }}
+          style={{ marginTop: "30px", overflowY: "auto", maxHeight: "70vh" }}
         >
           <Image src={popupList[0].imageUrl} width={"100%"} />
           {popupList[0].content && <p>{popupList[0].content}</p>}
-          {popupList[0].linkBtn && <Button color="primary" sx={{ fontWeight: 700, fontSize: "18px", color: "#000", bgcolor: "#fff", width: "100%", mt: 1, border: "1px solid #ccc" }}><Link to={popupList[0].link} target="_blank" >{popupList[0].linkBtn}</Link></Button>}
         </div>
       ) : (
         <Tabs
@@ -146,10 +198,9 @@ function Popup() {
         >
           {popupList.map((popup) => (
             <Tabs.TabPane tab={popup.title} key={popup.idx}>
-              <div style={{ overflowY: "auto", maxHeight: "80vh" }}>
+              <div style={{ overflowY: "auto", maxHeight: "70vh" }}>
                 <Image src={popup.imageUrl} width={"100%"} />
                 {popup.content && <p>{popup.content}</p>}
-                {popup.linkBtn && <Button color="primary" sx={{ fontWeight: 700, fontSize: "18px", color: "#000", bgcolor: "#fff", width: "100%", mt: 1, border: "1px solid #ccc" }}><Link to={popup.link} target="_blank" >{popup.linkBtn}</Link></Button>}
               </div>
             </Tabs.TabPane>
           ))}
