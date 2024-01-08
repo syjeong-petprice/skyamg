@@ -198,7 +198,7 @@ function Youtube() {
           </p>
         )}
         {dataList.map((item) => (
-          <div className="imgWrapper" key={item.id}>
+          <div className="imgWrapper" key={item.idx}>
             <img
               onClick={() => setCurrentCode(item.key)}
               src={item.thumbnail}
