@@ -6,11 +6,7 @@ import Button from "@mui/material/Button";
 import dayjs from "dayjs";
 
 export async function getPopup() {
-  const response = await axios.get(
-    "https://api.vetell.kr/export/v1/homepageBanner?vetIdx=6"
-    // "http://api.dev.vetell.kr/export/v1/homepageBanner?vetIdx=6"
-    //"http://localhost:3000/export/v1/homepageBanner?vetIdx=6"
-  );
+  const response = await axios.get("/homepageBanner?vetIdx=6");
   return response.data;
 }
 

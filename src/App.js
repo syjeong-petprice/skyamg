@@ -9,6 +9,7 @@ import Review from "./pages/main/components/Review";
 import NoticeDetails from "./pages/notice/notice-details";
 import Header from "./components/Header";
 import Links from "./components/Links";
+import axios from "axios";
 
 const useThrottle = (value, limit) => {
   const [throttledValue, setThrottledValue] = useState(value);
@@ -27,6 +28,15 @@ const useThrottle = (value, limit) => {
 };
 
 function App() {
+  const isLocal =
+    window.location.hostname === "localhost" ||
+    window.location.hostname.startsWith("192.168.0.");
+  const baseURL = isLocal
+    ? "http://api.dev.vetell.kr/export/v1"
+    : "https://api.vetell.kr/export/v1";
+  axios.defaults.baseURL = baseURL;
+  // axios.defaults.baseURL = "http://api.dev.vetell.kr/export/v1";
+  // axios.defaults.baseURL = "http://api.dev.vetell.kr/export/v1";
   const { pathname } = useLocation();
 
   //스크롤시 헤더 배경색 변경을 위해.

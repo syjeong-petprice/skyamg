@@ -6,10 +6,7 @@ import dayjs from "dayjs";
 import { keyframes } from "styled-components";
 
 export async function getReview() {
-  const response = await axios.get(
-    "https://api.vetell.kr/export/v1/homepageReview?vetIdx=6"
-    //"http://localhost:3000/export/v1/homepageReview?vetIdx=6"
-  );
+  const response = await axios.get("/homepageReview?vetIdx=6");
   return response.data;
 }
 
@@ -29,19 +26,16 @@ function Review() {
         const res = await getReview();
         // 데이터 받아오면 상태 업데이트
         if (res.result === "ok") {
-          setDataList(res.data)
-          console.log(res.data)
-        } else console.log(res.result)
+          setDataList(res.data);
+          console.log(res.data);
+        } else console.log(res.result);
       } catch (error) {
-        console.error('Error fetching review data:', error);
+        console.error("Error fetching review data:", error);
       }
     };
 
     fetchData(); // 함수 호출
-
   }, []); // 빈 배열은 컴포넌트가 마운트될 때 한 번만 실행
-
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,7 +106,7 @@ function Review() {
         <TextWrapper ref={componentRef}>
           <div className={animate ? "animate" : ""}>
             <p style={{ margin: 0 }}>Review</p>
-            <h2 style={{ margin: 0, marginBottom: '16px' }}>
+            <h2 style={{ margin: 0, marginBottom: "16px" }}>
               <strong>리/얼/후/기</strong>
             </h2>
           </div>
@@ -123,7 +117,7 @@ function Review() {
             autoplay={true}
             autoplaySpeed={5000}
             dots={false}
-          // dotPosition="bottom"
+            // dotPosition="bottom"
           >
             {dataList.map((item, index) => (
               <div key={item.idx}>
@@ -133,7 +127,7 @@ function Review() {
                     boxSizing: "border-box",
                   }}
                 >
-                  {slidesToShow === 2 ?
+                  {slidesToShow === 2 ? (
                     <Tooltip
                       title={item.content}
                       overlayStyle={{
@@ -166,18 +160,17 @@ function Review() {
                             {maskedNickname(item.nickname)}님의 리뷰
                           </p>
                           <p className="content">
-                          {dayjs(item.regDate).format("YYYY.MM")}
-                        </p>
+                            {dayjs(item.regDate).format("YYYY.MM")}
+                          </p>
                           <p className="content">
                             {windowWidth < 576 || windowWidth > 768
                               ? item.content
                               : truncateText(item.content, 100)}
                           </p>
                         </div>
-                        
                       </div>
                     </Tooltip>
-                    :
+                  ) : (
                     <div
                       style={{
                         minHeight: "300px",
@@ -206,7 +199,7 @@ function Review() {
                         </p>
                       </div>
                     </div>
-                  }
+                  )}
                 </div>
               </div>
             ))}
@@ -278,7 +271,6 @@ const TitleWrapper = styled.div`
   }
 `;
 
-
 const slideDown = keyframes`
     from {
         transform: translate(0, -50%);
@@ -289,7 +281,6 @@ const slideDown = keyframes`
         opacity: 1;
     }
 `;
-
 
 const TextWrapper = styled.div`
   width: 100%;
