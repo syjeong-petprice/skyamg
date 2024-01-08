@@ -2,6 +2,7 @@ import { styled, keyframes } from "styled-components";
 import imgTwo from "../../../images/resource/youtube/01.png";
 import imgOne from "../../../images/resource/youtube/KakaoTalk_Photo_2023-11-13-11-55-23.png";
 import imgThree from "../../../images/resource/youtube/3.png";
+import imgFour from "../../../images/resource/youtube/4.png";
 // import imgFour from "../../../images/resource/youtube/4.png";
 import youtubeLogo from "../../../images/resource/youtube/youtubelogo.png";
 import Button from "@mui/material/Button";
@@ -10,77 +11,110 @@ import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import axios from "axios";
 
-const youtubeInfo = [
-  {
-    id: 1,
-    title: "동물병원에서도 초전도체가 사용된다?!",
-    code: "/nA7ELDQ6x7k",
-    img: imgOne,
-  },
-  {
-    id: 2,
-    title: "강아지 귀 청소 안 하면 어떻게 될까?",
-    code: "rKl5euhr98k",
-    img: imgTwo,
-  },
-  {
-    id: 3,
-    title: "간식 얻어먹으려고 다리 아픈척 꾀병 부리는 강아지? ㅋㅋㅋ",
-    code: "hvVf19mZbYY?si=wvFTicnehkWtBU-M",
-    img: imgThree,
-  },
-  // {
-  //   id: 4,
-  //   title: "부평스카이동물의료센터의 수술 후 물리치료 모습",
-  //   code: "noDZFjR6-Mw?si=OiAlp62NLDvAi8Xj",
-  //   img: imgFour,
-  // },
-];
+// const youtubeInfo = [
+//   {
+//     id: 1,
+//     title: "동물병원에서도 초전도체가 사용된다?!",
+//     code: "/nA7ELDQ6x7k",
+//     img: imgOne,
+//   },
+//   {
+//     id: 2,
+//     title: "강아지 귀 청소 안 하면 어떻게 될까?",
+//     code: "rKl5euhr98k",
+//     img: imgTwo,
+//   },
+//   {
+//     id: 3,
+//     title: "간식 얻어먹으려고 다리 아픈척 꾀병 부리는 강아지? ㅋㅋㅋ",
+//     code: "hvVf19mZbYY?si=wvFTicnehkWtBU-M",
+//     img: imgThree,
+//   },
+//   {
+//     id: 4,
+//     title: "강아지가 다리를 절뚝거려요! 이 질환일 수도 있다고?",
+//     code: "XL35xH7dXLs?si=4f_7JxXFDwpt2sFt",
+//     img: imgFour,
+//   },
+// ];
+
+export async function getYoutubeList() {
+  const response = await axios.get("/youtube?vetIdx=6");
+  return response.data;
+}
 
 function Youtube() {
-  const [title, setTitle] = useState("hvVf19mZbYY?si=wvFTicnehkWtBU-M");
+  const [currentCode, setCurrentCode] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
+  const [dataList, setDataList] = useState([]);
+
   //   const componentRef = useRef(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // API 호출
+        const res = await getYoutubeList();
+        // 데이터 받아오면 상태 업데이트
+        if (res.result === "ok") {
+          setDataList(res.data);
+          console.log(res.data);
+        } else console.log(res.result);
+      } catch (error) {
+        console.error("Error fetching youtube data:", error);
+      }
+    };
 
-  const handleClick = (e) => {
-    console.log(e.target.name);
-  };
-  const handleChange = (e) => {
-    console.log(e.target);
-  };
-  const settings = {
-    dots: false,
-    arrows: true,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
+    fetchData(); // 함수 호출
+  }, []);
 
-    nextArrow: (
-      <StyledNextArrow onClick={handleClick} name="next">
-        <div className="innerWrapper">
-          <KeyboardArrowRightIcon
-            style={{
-              fontSize: "3rem",
-              color: "#fff",
-            }}
-          />
-        </div>
-      </StyledNextArrow>
-    ),
-    prevArrow: (
-      <StyledPrevArrow onClick={handleClick} name="prev">
-        <div className="innerWrapper">
-          <KeyboardArrowLeftIcon style={{ fontSize: "3rem", color: "#fff" }} />
-        </div>
-      </StyledPrevArrow>
-    ),
-  };
+  // 현재 유튜브 코드 초기값 설정
+  useEffect(() => {
+    if (dataList && dataList.length > 0) {
+      setCurrentCode(dataList[0].key);
+      console.log(dataList[0].key);
+    }
+  }, [dataList]);
+
+  // const handleClick = (e) => {
+  //   console.log(e.target.name);
+  // };
+  // const handleChange = (e) => {
+  //   console.log(e.target);
+  // };
+  // const settings = {
+  //   dots: false,
+  //   arrows: true,
+  //   fade: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 4000,
+
+  //   nextArrow: (
+  //     <StyledNextArrow onClick={handleClick} name="next">
+  //       <div className="innerWrapper">
+  //         <KeyboardArrowRightIcon
+  //           style={{
+  //             fontSize: "3rem",
+  //             color: "#fff",
+  //           }}
+  //         />
+  //       </div>
+  //     </StyledNextArrow>
+  //   ),
+  //   prevArrow: (
+  //     <StyledPrevArrow onClick={handleClick} name="prev">
+  //       <div className="innerWrapper">
+  //         <KeyboardArrowLeftIcon style={{ fontSize: "3rem", color: "#fff" }} />
+  //       </div>
+  //     </StyledPrevArrow>
+  //   ),
+  // };
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -107,8 +141,8 @@ function Youtube() {
   }, [windowWidth]);
 
   useEffect(() => {
-    console.log(title);
-  }, [title]);
+    console.log(currentCode);
+  }, [currentCode]);
 
   return (
     <YoutubeContainer>
@@ -136,19 +170,21 @@ function Youtube() {
             </a>
           </div>
         </div>
-        <div className="youtubeWrapper">
-          <iframe
-            width="600"
-            height="380"
-            src={`https://www.youtube.com/embed/${title}`}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
+        {currentCode && (
+          <div className="youtubeWrapper">
+            <iframe
+              width="600"
+              height="380"
+              src={`https://www.youtube.com/embed/${currentCode}`}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        )}
       </EmbedWrapper>
-      <ThumbnailWrapper youtubeInfo={youtubeInfo}>
+      <ThumbnailWrapper youtubeInfo={dataList}>
         {isMobile && (
           <p
             style={{
@@ -161,15 +197,15 @@ function Youtube() {
             {"더 보기"}
           </p>
         )}
-        {youtubeInfo.map((item) => (
+        {dataList.map((item) => (
           <div className="imgWrapper" key={item.id}>
             <img
-              onClick={() => setTitle(item.code)}
-              src={item.img}
+              onClick={() => setCurrentCode(item.key)}
+              src={item.thumbnail}
               alt={item.title}
-              value={item.code}
+              value={item.key}
               style={{
-                border: title === item.code ? "3px solid #fc1c00" : "none",
+                border: currentCode === item.key ? "3px solid #fc1c00" : "none",
               }}
             />
             <p>{item.title}</p>
