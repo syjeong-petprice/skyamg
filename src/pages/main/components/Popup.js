@@ -73,7 +73,7 @@ function Popup() {
   useEffect(() => {
     if (ignoredForAWeek || popupList.length === 0) setIsModalOpen(false);
     else setIsModalOpen(true);
-  }, [ignoredForAWeek]);
+  }, [ignoredForAWeek, popupList]);
 
   const handleClose = () => {
     setIsModalOpen(false);
