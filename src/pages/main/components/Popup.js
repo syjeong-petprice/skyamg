@@ -23,11 +23,14 @@ function Popup() {
         // API 호출
         const res = await getPopup();
         // 데이터 받아오면 상태 업데이트
-        if (res.result === "ok") {
+        if (res.result === "ok" && res.data.length > 0) {
           setPopupList(res.data);
           setActiveTab(String(res.data[0].idx));
           console.log(res.data);
-        } else console.log(res.result);
+        } else {
+          // 팝업 데이터가 비어있을 때 모달 닫기
+          setIsModalOpen(false);
+        }
       } catch (error) {
         console.error("Error fetching review data:", error);
       }
