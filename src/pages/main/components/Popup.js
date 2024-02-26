@@ -29,6 +29,7 @@ function Popup() {
           console.log(res.data);
         } else {
           // 팝업 데이터가 비어있을 때 모달 닫기
+          setPopupList([]);
           setIsModalOpen(false);
         }
       } catch (error) {
@@ -70,7 +71,7 @@ function Popup() {
   }, [popupList]);
 
   useEffect(() => {
-    if (ignoredForAWeek) setIsModalOpen(false);
+    if (ignoredForAWeek || popupList.length === 0) setIsModalOpen(false);
     else setIsModalOpen(true);
   }, [ignoredForAWeek]);
 
