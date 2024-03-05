@@ -25,7 +25,9 @@ import bg3 from "../../images/resource/subjects/radioimg_2.jpg";
 import bg4 from "../../images/resource/subjects/reimg_3.jpg";
 import bg5 from "../../images/resource/images/전문진료과목_bg.jpeg";
 // import prideImg from "./bg-image/pride_banner.jpeg";
-import prideImg from "./bg-image/pride임시.png";
+// import prideImg from "./bg-image/pride임시.png";
+import prideImg from "../../images/resource/images/전문진료과목_bg.jpeg";
+
 import MetaTag from "../../MetaTag";
 
 function Section1Component({ img, title, content }) {

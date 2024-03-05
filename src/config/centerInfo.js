@@ -10,19 +10,24 @@ import titleImg5 from "../images/resource/subjects/gsimg_gs.jpg";
 // import sec2img from "../images/resource/subjects/스카이MRI실.jpeg";
 
 import sec3img1 from "../images/resource/subjects/section3_img01.png";
-import sec3img2 from "../images/resource/subjects/section3_img02.png";
-import sec3img3 from "../images/resource/subjects/section3_img03.png";
+// import sec3img2 from "../images/resource/subjects/section3_img02.png";
+// import sec3img3 from "../images/resource/subjects/section3_img03.png";
+import sec3img333 from "../images/resource/subjects/section3_img03.png";
 import sec3img21 from "../images/resource/images/DSC06699.jpg"; // 수술실
 import sec3img22 from "../images/resource/subjects/mgimg_endocrine.jpg";
 import sec3img31 from "../images/resource/subjects/sec3/3-1.jpg";
 import sec3img32 from "../images/resource/subjects/sec3/3-2.jpg";
-import sec3img33 from "../images/resource/subjects/sec3/3-3.jpg";
+// import sec3img33 from "../images/resource/subjects/sec3/3-3.jpg";
 import sec3img41 from "../images/resource/subjects/sec3/4-1.png";
 import sec3img42 from "../images/resource/subjects/sec3/4-2.jpg";
 import sec3img43 from "../images/resource/subjects/sec3/4-3.png";
 import sec3img51 from "../images/resource/subjects/sec3/5-1.jpg";
 import sec3img52 from "../images/resource/subjects/sec3/5-2.jpg";
 import sec3img53 from "../images/resource/subjects/sec3/5-3.jpg";
+
+import sec3img2 from "../images/resource/images/263A9154.png";
+import sec3img3 from "../images/resource/images/263A9166.png";
+import sec3img33 from "../images/resource/images/263A9154.png";
 
 import equip1 from "../images/resource/subjects/equip/image1.png";
 import equip2 from "../images/resource/subjects/equip/image2.png";
@@ -464,7 +469,7 @@ const centerInfo = [
         content: `호흡이 불안정한 응급환자들의 관리를 위해 모든 입원장은 독립적으로 고압산소공급이 가능하도록 설계되어 있습니다.`,
       },
       {
-        img: sec3img3,
+        img: sec3img333,
         title: "외,내과와의 긴밀한 협진",
         enTitle: "",
         content: `응급상황을 벗어난 중증환자가 신속하게 다음 단계로 넘어갈 수 있도록 모든 치료 과정에 외과, 내과의와의 협진이 이루어집니다.`,
