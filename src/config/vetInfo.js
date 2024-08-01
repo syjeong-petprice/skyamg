@@ -1,10 +1,10 @@
 import vet1 from "../images/vet2/문종선.png";
 import vet2 from "../images/vet2/정다슬.png";
 import vet3 from "../images/vet2/김도희.png";
-// import vet4 from "../images/vet2/최동준.png";
+import vet4 from "../images/vet2/남채민.png";
 import vet5 from "../images/vet2/박설기.png";
 import vet6 from "../images/vet2/박주향.png";
-import vet7 from "../images/vet2/최유진.png";
+import vet7 from "../images/vet2/최아름.png";
 import vet8 from "../images/vet2/정태규.png";
 import vet9 from "../images/vet2/윤기홍.png";
 import vet10 from "../images/vet2/이선백.png";
@@ -16,10 +16,10 @@ import vet14 from "../images/vet2/이한중.png";
 import tvet1 from "../images/vet/문종선.png";
 import tvet2 from "../images/vet/정다슬.png";
 import tvet3 from "../images/vet/김도희.png";
-// import tvet4 from "../images/vet/최동준.png";
+import tvet4 from "../images/vet/남채민.png";
 import tvet5 from "../images/vet/박설기.png";
 import tvet6 from "../images/vet/박주향.png";
-import tvet7 from "../images/vet/최유진.png";
+import tvet7 from "../images/vet/최아름.png";
 import tvet8 from "../images/vet/정태규.png";
 import tvet9 from "../images/vet/윤기홍.png";
 import tvet10 from "../images/vet/이선백.png";
@@ -119,29 +119,7 @@ const vetInfo = [
     paper: [],
     completion: [],
   },
-  // {
-  //   id: 4,
-  //   position: "외과과장",
-  //   name: "최동준",
-  //   img: vet4,
-  //   timg: tvet4,
-  //   title: "건국대학교 수의외과학 석사",
-  //   greetings:
-  //     "근거 중심의 정확한 지식을 바탕으로 진정성 있는 수의사가 되도록 최선을 다하겠습니다.",
-  //   history: [
-  //     "경북대학교 수의과대학 졸업",
-  //     "해마루 2차진료 동물병원 진료수의사",
-  //     "건국대학교 수의외과학 석사 수료",
-  //     "건국대학교 부속동물병원 외과 진료수의사",
-  //     "건국대학교 수의학부 수의외과학 조교",
-  //     "현)인천SKY동물메디컬센터 외과과장",
-  //   ],
-  //   paper: [],
-  //   completion: [
-  //     "AOVET Principle in small animal management course",
-  //     "SACEC DFO Seminar 수료",
-  //   ],
-  // },
+
   {
     id: 14,
     position: "외과과장",
@@ -189,7 +167,28 @@ const vetInfo = [
       "2019 미국 아리조나 American College of Veterinary Internal Medicine Forum 참석",
     ],
   },
-
+  {
+    id: 4,
+    position: "영상의학과장",
+    name: "남채민",
+    img: vet4,
+    timg: tvet4,
+    title: "건국대학교 수의과대학 수의영상의학 전공 석사 졸업",
+    greetings: "환자와 보호자를 위해 늘 최선을 다하겠습니다.",
+    history: [
+      "건국대학교 수의과대학 졸업",
+      "건국대학교 수의과대학 부속동물병원 수련 수의사",
+      "건국대학교 수의과대학 수의영상의학 실습 조교",
+      "건국대학교 수의과대학 수의영상의학 전공 석사 졸업",
+      "전) 스탠다드동물의료센터 영상의학수의사",
+      "현) 인천SKY동물메디컬센터 영상의학과장",
+    ],
+    paper: [],
+    completion: [
+      "2024   춘계 한국임상수의학회 구두발표 및 우수학술발표상 “Computed Tomographic and Ultrasonographic Imaging Features for Differentiation of Canine Intestinal Mast Cell Tumors Compared with Alimentary Lymphoma”",
+      "2024   Nam C, Park N, Shin M, Lim H, Kim J, Eom K. Sonographic and computed tomographic features of intestinal mast cell tumors m",
+    ],
+  },
   {
     id: 8,
     position: "응급의학과장",
@@ -212,6 +211,30 @@ const vetInfo = [
     completion: ["CVA(미국수의한방침치료인증) 수료"],
   },
   {
+    id: 7,
+    position: "응급의학과장",
+    name: "최아름",
+    img: vet7,
+    timg: tvet7,
+    title: "서울대학교 수의과대학 임상수의학 응급의학과 석사 졸업",
+    greetings: "생사의 길목에 서 있는 환자를 위해 항상 최선을 다하고 있습니다",
+    history: [
+      "서울대학교 수의과대학 수의학과 졸업",
+      "서울대학교 동물병원 응급실 수의사",
+      "서울대학교 수의과대학 응급의학과 실습 조교",
+      "서울대학교 수의과대학 임상수의학 응급의학과 석사 졸업",
+      "현) 인천SKY동물메디컬센터 응급의학과장",
+    ],
+    paper: [],
+    completion: [
+      "2021 한국임상수의학회 (추계) 발표",
+      "2023 Chi university Asia conference 발표",
+      "2023 서울대학교 ERD day 우수포스터 발표상 발표 및 수상",
+      "2024 국제 수의 응급의학 학회 IVECCS 포스터 발표",
+      "CVA(미국수의한방침치료과정) 취득",
+    ],
+  },
+  {
     id: 9,
     position: "응급의학팀장",
     name: "윤기홍",
@@ -229,24 +252,6 @@ const vetInfo = [
     paper: [],
     completion: [],
   },
-  // {
-  //   id: 7,
-  //   position: "진료팀장",
-  //   name: "최유진",
-  //   img: vet7,
-  //   timg: tvet7,
-  //   title: "충북대학교 수의학과",
-  //   greetings: "언제나 믿고 의지할 수 있는 평생 주치의가 되겠습니다.",
-  //   history: [
-  //     "충북대학교 수의과대학 수의학과 졸업",
-  //     "충북대학교 수의과대학 수의생화학실험실",
-  //     "충북대학교 수의과대학 부속동물병원 동물병원 임상실습 수료",
-  //     "인천SKY동물메디컬센터 진료수의사",
-  //     "현)인천SKY동물메디컬센터 진료과장",
-  //   ],
-  //   paper: [],
-  //   completion: [],
-  // },
   {
     id: 10,
     position: "진료수의사",
