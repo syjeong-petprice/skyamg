@@ -8,9 +8,9 @@ import vet7 from "../images/vet2/최아름.png";
 import vet8 from "../images/vet2/정태규.png";
 import vet9 from "../images/vet2/윤기홍.png";
 import vet10 from "../images/vet2/이선백.png";
-import vet11 from "../images/vet2/서승원.png";
-import vet12 from "../images/vet2/송재성.png";
-import vet13 from "../images/vet2/박기종.png";
+import vet11 from "../images/vet2/최신영.png";
+import vet12 from "../images/vet2/서율지.png";
+import vet13 from "../images/vet2/박성은.png";
 import vet14 from "../images/vet2/이한중.png";
 
 import tvet1 from "../images/vet/문종선.png";
@@ -23,12 +23,11 @@ import tvet7 from "../images/vet/최아름.png";
 import tvet8 from "../images/vet/정태규.png";
 import tvet9 from "../images/vet/윤기홍.png";
 import tvet10 from "../images/vet/이선백.png";
-import tvet11 from "../images/vet/서승원.png";
-import tvet12 from "../images/vet/송재성.png";
-import tvet13 from "../images/vet/박기종.png";
+import tvet11 from "../images/vet/최신영.png";
+import tvet12 from "../images/vet/서율지.png";
+import tvet13 from "../images/vet/박성은.png";
 import tvet14 from "../images/vet/이한중.png";
-// 최유진, 서승원, 송재성, 박기종 삭제
-// 순서: 문종선 정다슬 박설기 김도희 최동준 이한중 박주향 정태규 윤기홍 최유진 이선백 서승원 송재성 박기종
+// 순서: 문종선 정다슬 박설기 김도희 최동준 이한중 박주향 남채민 정태규 최아름 윤기홍 이선백 최신영
 const vetInfo = [
   {
     id: 1,
@@ -269,67 +268,63 @@ const vetInfo = [
     paper: [],
     completion: [],
   },
-  // {
-  //   id: 11,
-  //   position: "진료수의사",
-  //   name: "서승원",
-  //   img: vet11,
-  //   timg: tvet11,
-  //   title: "경상대학교 수의과대학",
-  //   greetings:
-  //     "환자와 보호자님의 입장에서 생각하고 최선을 다해 진료하겠습니다.",
-  //   history: [
-  //     "경상대학교 수의과대학 졸업",
-  //     "충청남도 홍성군청 공중방역수의사",
-  //     "부평종합동물의료센터 진료수의사",
-  //     "계양SKY동물의료센터 진료수의사",
-  //     "현)인천SKY동물메디컬센터 진료수의사",
-  //   ],
-  //   paper: [],
-  //   completion: [
-  //     "베터플릭스 복부&심장 초음파 과정 수료",
-  //     "웨스턴동물의료센터 종합임상수의학과정 수료",
-  //   ],
-  // },
-  // {
-  //   id: 12,
-  //   position: "진료수의사",
-  //   name: "송재성",
-  //   img: vet12,
-  //   timg: tvet12,
-  //   title: "건국대학교 수의과대학",
-  //   greetings:
-  //     "저와 만난 모든 아이들과 보호자님이 언제나 건강하고 행복하길 바라겠습니다.",
-  //   history: [
-  //     "건국대학교 수의과대학 졸업",
-  //     "건국대학교 임상로테이션 수료",
-  //     "인천 보건환경연구원 공중방역수의사",
-  //     "인천광역시 동물보호공무원",
-  //     "현)인천SKY동물메디컬센터 진료수의사",
-  //   ],
-  //   paper: [],
-  //   completion: [
-  //     "해마루동물병원 임상수의사 기초과정 수료",
-  //     "웨스턴동물의료센터종합임상수의학과장 수료",
-  //   ],
-  // },
-  // {
-  //   id: 13,
-  //   position: "진료수의사",
-  //   name: "박기종",
-  //   img: vet13,
-  //   timg: tvet13,
-  //   title: "건국대학교 수의과대학",
-  //   greetings: "환자와 보호자님의 마음까지 치료하는 수의사가 되겠습니다.",
-  //   history: [
-  //     "건국대학교 수의과대학 졸업",
-  //     "평창 산업동물임상교육연수원 심화과정 수료",
-  //     "서울 아산병원 비교병리연구실 2019년 실습",
-  //     "현)인천SKY동물메디컬센터 진료수의사",
-  //   ],
-  //   paper: [],
-  //   completion: [],
-  // },
+  {
+    id: 11,
+    position: "진료수의사",
+    name: "최신영",
+    img: vet11,
+    timg: tvet11,
+    title: "경상대학교 수의과대학 졸업",
+    greetings:
+      "아이들의 행복과 건강, 삶의 질을 위해 최선을 다하는 수의사가 되겠습니다.",
+    history: [
+      "경상대학교 수의과대학 졸업",
+      "현) 인천SKY동물메디컬센터 진료수의사",
+    ],
+    paper: [],
+    completion: [
+      "경상대학교 수의과대학 부속동물병원 심화임상실습 수료",
+      "서울대학교 수의과대학 부속동물병원 마취과실습 수료",
+    ],
+  },
+  {
+    id: 12,
+    position: "진료수의사",
+    name: "서율지",
+    img: vet12,
+    timg: tvet12,
+    title: "충남대학교 수의과대학 학사 졸업",
+    greetings:
+      "함께 하는 모든 순간을, 진료부터 치료, 그 끝까지 아이에게 최선을 다하겠습니다.",
+    history: [
+      "충남대학교 수의과대학 학사 졸업",
+      "현) 인천SKY동물메디컬센터 진료수의사",
+    ],
+    paper: [],
+    completion: [
+      "충남대학교 동물병원 임상 로테이션 수료",
+      "충남대학교 동물병원 내과 심화 과정 수료",
+      "충남대학교 수의과대학 병리학 실험실 심화 과정 수료",
+    ],
+  },
+  {
+    id: 13,
+    position: "진료수의사",
+    name: "박성은",
+    img: vet13,
+    timg: tvet13,
+    title: "충남대학교 수의과대학 학사 졸업",
+    greetings: "반려동물의 건강과 보호자님 마음을 위해 최선을 다하겠습니다.",
+    history: [
+      "충남대학교 수의과대학 학사 졸업",
+      "현) 인천SKY동물메디컬센터 진료수의사",
+    ],
+    paper: [],
+    completion: [
+      "충남대학교 동물병원 임상 로테이션 수료",
+      "충남대학교 수의과대학 병리학 실험실 심화 과정 수료",
+    ],
+  },
 ];
 
 export default vetInfo;

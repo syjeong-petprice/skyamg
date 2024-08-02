@@ -44,7 +44,7 @@ const centerInfo = [
     id: 1,
     primaryImg: img101,
     titleImg: titleImg1,
-    vetMemberIdx: [6],
+    vetMemberIdx: [6, 4],
     title: "영상진단센터",
     enTitle: "MRI & CT Center",
     subTitle: `대학병원급 최첨단 진단 장비
@@ -443,7 +443,7 @@ const centerInfo = [
     id: 5,
     primaryImg: img101,
     titleImg: titleImg5,
-    vetMemberIdx: [8, 9],
+    vetMemberIdx: [8, 7, 9],
     title: "응급의학센터",
     enTitle: "Emergency Medicine Center",
     subTitle: `응급의학전공의 상주
