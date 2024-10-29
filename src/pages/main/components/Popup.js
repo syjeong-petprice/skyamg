@@ -4,16 +4,26 @@ import { Link } from "react-router-dom";
 import { Modal, Tabs, Checkbox, Image } from "antd";
 import Button from "@mui/material/Button";
 import dayjs from "dayjs";
-import { CloseOutlined } from "@ant-design/icons"; // Close icon import
+import { CloseOutlined } from "@ant-design/icons";
 
 export async function getPopup() {
-  const response = await axios.get("/homepageBanner?vetIdx=6"); // vetIdx 수정
+  const response = await axios.get("/homepageBanner?vetIdx=6");
   return response.data;
 }
 
 function Popup() {
   const [popupList, setPopupList] = useState([]);
   const [visiblePopups, setVisiblePopups] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -83,14 +93,20 @@ function Popup() {
 
   // 팝업 위치 조정 (각 팝업의 위치를 조금씩 다르게 설정)
   const getPopupStyle = (index) => {
-    const baseTop = 50; // 기본 위치 (px)
-    const baseLeft = 50; // 기본 위치 (px)
-    const offset = index * 400; // 각 팝업마다 400px씩 차이나게
+    const isMobile = windowWidth <= 768;
+    const baseTop = isMobile ? 20 : 50;
+    const baseLeft = isMobile ? 10 : 50;
+    const offset = isMobile ? 0 : index * 400;
+    const width = isMobile ? windowWidth - 20 : 600;
+
     return {
       top: `${baseTop}px`,
-      left: `${baseLeft + offset}px`,
+      left: isMobile ? "50%" : `${baseLeft + offset}px`,
+      transform: isMobile ? "translateX(-50%)" : "none",
       position: "absolute",
       zIndex: 1000 + index,
+      width: `${width}px`,
+      maxWidth: "100%",
     };
   };
 
@@ -102,13 +118,15 @@ function Popup() {
             <div
               key={popup.idx}
               style={{
-                width: "600px",
+                width: "100%",
                 height: "auto",
                 backgroundColor: "white",
                 border: "1px solid #ccc",
                 position: "fixed",
                 ...getPopupStyle(index),
                 boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                maxHeight: windowWidth <= 768 ? "90vh" : "auto",
+                overflowY: "auto",
               }}
             >
               <button
@@ -122,6 +140,7 @@ function Popup() {
                   height: "30px",
                   borderRadius: "50%",
                   cursor: "pointer",
+                  zIndex: 1,
                 }}
               >
                 <CloseOutlined />
@@ -142,7 +161,9 @@ function Popup() {
                 />
               )}
               {popup.content && (
-                <p style={{ padding: "0 10px" }}>{popup.content}</p>
+                <p style={{ padding: "0 10px", wordBreak: "break-word" }}>
+                  {popup.content}
+                </p>
               )}
               <Checkbox
                 style={{ padding: "10px" }}
@@ -160,99 +181,6 @@ function Popup() {
       )}
     </>
   );
-  // return (
-  //   <Modal
-  //     //   title={popup_info[0].title}
-  //     open={isModalOpen && !ignoredForAWeek}
-  //     onCancel={handleClose}
-  //     maskClosable={false}
-  //     footer={[
-  //       popupList.length === 1 && popupList[0].link && (
-  //         <Button
-  //           color="primary"
-  //           sx={{
-  //             fontWeight: 700,
-  //             fontSize: "18px",
-  //             color: "#000",
-  //             bgcolor: "#fff",
-  //             width: "100%",
-  //             mb: 1,
-  //             border: "1px solid #ccc",
-  //           }}
-  //           key="singlePopupButton"
-  //         >
-  //           <Link to={popupList[0].link} target="_blank">
-  //             {popupList[0].linkBtn}
-  //           </Link>
-  //         </Button>
-  //       ),
-  //       popupList.length > 1 &&
-  //         popupList.find((popup) => popup.idx === Number(activeTab)).link && (
-  //           <Button
-  //             color="primary"
-  //             sx={{
-  //               fontWeight: 700,
-  //               fontSize: "18px",
-  //               color: "#000",
-  //               bgcolor: "#fff",
-  //               width: "100%",
-  //               mb: 1,
-  //               border: "1px solid #ccc",
-  //             }}
-  //             key={`activePopupButton`}
-  //             onClick={() =>
-  //               console.log(
-  //                 popupList.find((popup) => popup.idx === Number(activeTab))
-  //               )
-  //             }
-  //           >
-  //             <Link
-  //               to={
-  //                 popupList.find((popup) => popup.idx === Number(activeTab))
-  //                   .link
-  //               }
-  //               target="_blank"
-  //             >
-  //               {
-  //                 popupList.find((popup) => popup.idx === Number(activeTab))
-  //                   .linkBtn
-  //               }
-  //             </Link>
-  //           </Button>
-  //         ),
-  //       <Checkbox checked={ignoredForAWeek} onChange={handleIgnoreForAWeek}>
-  //         일주일간 보지 않기
-  //       </Checkbox>,
-  //     ]}
-  //     style={{
-  //       top: (popupList[0]?.content || popupList[0]?.link) && 20,
-  //       display: "flex",
-  //       flexDirection: "column",
-  //     }}
-  //   >
-  //     {popupList.length === 1 ? (
-  //       <div
-  //         style={{ marginTop: "30px", overflowY: "auto", maxHeight: "70vh" }}
-  //       >
-  //         <Image src={popupList[0].imageUrl} width={"100%"} />
-  //         {popupList[0].content && <p>{popupList[0].content}</p>}
-  //       </div>
-  //     ) : (
-  //       activeTab && (
-  //         <Tabs activeKey={activeTab} onChange={handleTabChange}>
-  //           {popupList.map((popup) => (
-  //             <Tabs.TabPane tab={popup.title} key={popup.idx}>
-  //               <div style={{ overflowY: "auto", maxHeight: "70vh" }}>
-  //                 <Image src={popup.imageUrl} width={"100%"} />
-  //                 {popup.content && <p>{popup.content}</p>}
-  //               </div>
-  //             </Tabs.TabPane>
-  //           ))}
-  //         </Tabs>
-  //       )
-  //     )}
-  //   </Modal>
-  // );
 }
 
 export default Popup;
